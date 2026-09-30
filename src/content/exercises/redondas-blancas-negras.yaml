@@ -1,0 +1,31 @@
+title: Redondas, blancas y negras
+status: borrador
+instructions: >-
+  Cuerdas al aire (E y A) para que toda tu atención vaya al ritmo. Cuenta en voz alta "1, 2, 3, 4" durante todo
+  el ejercicio y deja que cada nota dure exactamente lo que vale: la redonda, cuatro tiempos; la blanca, dos;
+  la negra, uno.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Cuentas en voz alta sin parar, también mientras suenan las notas largas
+  - Las redondas y las blancas duran todo su valor (no las cortas antes)
+  - Cada nota empieza justo con su clic
+tags:
+  - ritmo
+  - figuras
+  - contar
+alphaTex: |
+  \title "Redondas, blancas y negras"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :1 0.4 | 0.3 | :2 0.4 0.4 | 0.3 0.3 |
+  :4 0.4 0.4 0.4 0.4 | 0.3 0.3 0.3 0.3 | :2 0.4 :4 0.3 0.3 | :1 0.4

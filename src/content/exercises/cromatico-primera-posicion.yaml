@@ -1,0 +1,31 @@
+title: Cromático en primera posición (1-2-4)
+status: borrador
+instructions: >-
+  En cada cuerda: al aire, traste 1 (índice), traste 2 (medio) y traste 3 (meñique con el anular). Sube de la
+  E a la G y baja al revés. Deja cada dedo apoyado en su traste hasta que necesites el siguiente.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Todas las notas suenan limpias y con la misma duración
+  - La mano derecha sigue alternando índice y medio
+  - La mano izquierda no se tensa al llegar al traste 3
+tags:
+  - mano-izquierda
+  - cromatico
+  - calentamiento
+  - digitacion-1-2-4
+alphaTex: |
+  \title "Cromático en primera posición (1-2-4)"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 1.4 2.4 3.4 | 0.3 1.3 2.3 3.3 | 0.2 1.2 2.2 3.2 | 0.1 1.1 2.1 3.1 |
+  3.1 2.1 1.1 0.1 | 3.2 2.2 1.2 0.2 | 3.3 2.3 1.3 0.3 | 3.4 2.4 1.4 0.4

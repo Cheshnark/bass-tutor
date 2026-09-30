@@ -1,0 +1,34 @@
+title: Tu primera línea
+status: borrador
+instructions: >-
+  Una línea original en primera posición que junta todo lo anterior: corcheas con un silencio, notas pisadas
+  con 1-2-4 (traste 2 con el medio, traste 3 con el meñique) y cuerdas al aire. Practícala con la escalera de
+  tempo: empieza despacio y sube solo cuando salga limpia.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - El silencio de cada compás se oye (la E se corta a tiempo)
+  - Las notas pisadas suenan limpias y las cuerdas que no tocas no suenan
+  - Mantienes el tempo en los cambios de cuerda, sin acelerar
+  - Al escuchar tu grabación, suena igual de firme de principio a fin
+tags:
+  - linea
+  - ritmo
+  - mano-izquierda
+  - mano-derecha
+alphaTex: |
+  \title "Tu primera línea"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 0.4 r 0.4 :4 3.4 0.3 | :8 0.4 0.4 r 0.4 :4 2.3 0.3 |
+  :8 0.4 0.4 r 0.4 :4 3.4 0.3 | :4 0.2 2.3 0.3 3.4 |
+  :1 0.4

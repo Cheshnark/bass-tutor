@@ -19,7 +19,8 @@
 - [x] Módulos 0–1 en borrador (6 lecciones, 6 ejercicios).
 - [ ] **Tú**: probar los módulos 0–1 como alumno (¿se entiende?, ¿se puede tocar?, ¿el vídeo encaja con el texto?)
       y marcar `revisada` lo que esté bien. Anota lo que no.
-- [ ] Módulos 2–3 (mano izquierda, ritmo I) en borrador, tras la revisión de 0–1.
+- [x] Módulos 2–3 en borrador (mano izquierda: posición y presión, cromático, coordinación y apagado; ritmo I:
+      pulso y contar, corcheas y silencios, cómo practicar), 7 ejercicios nuevos. Escritos antes de la revisión de 0–1.
 - [ ] Módulos 4–5 (ubicarse, primeras líneas; usar `fundamental-quinta` en el 5).
 - [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz, metal/punk).
 - [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.
@@ -81,9 +82,9 @@
       (con scroll horizontal dentro de su caja). Revisar `display.layoutMode`/`scale` o un re-render al cambiar el ancho.
 - [ ] alphaTex: en alguna combinación mínima (p. ej. `\track "Bajo"` sin propiedades) el parser rechaza
       `\staff { score tabs }`. `content:check` lo detecta; si molesta, investigar la sintaxis exacta de alphaTab 1.8.
-- [ ] **Soundfont ausente en `dist/`:** pasó una vez, en el primer build, y no se ha podido reproducir en builds limpios.
-      CI lo comprueba (`test -s dist/soundfont/sonivox.sf2`). Si vuelve a pasar, investigar la carrera entre
-      `copyAssetsPlugin` y la copia de `public/`.
+- [x] **Soundfont ausente en `dist/` / servidor caído al reiniciar**: causa probable encontrada. `alphatab-vite`
+      copiaba fuentes y soundfont en cada arranque y en Windows fallaba con EBUSY si el fichero estaba abierto.
+      Sustituido por `scripts/vite-plugin-alphatab-assets.ts` (copia solo si falta o cambia). CI lo sigue comprobando.
 - [ ] Metrónomo en pestaña en segundo plano: los navegadores ralentizan `setInterval` a ~1 s y habría huecos.
       Opción: mover el temporizador a un Web Worker.
 - [ ] `TabPoc`: velocidad y bucle no se vuelven a aplicar si la instancia de alphaTab se recrea (p. ej., al cambiar `tex`).

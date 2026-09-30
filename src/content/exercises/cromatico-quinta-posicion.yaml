@@ -1,0 +1,31 @@
+title: Cromático en quinta posición (un dedo por traste)
+status: borrador
+instructions: >-
+  Mano izquierda en quinta posición: un dedo por traste, del 5 (índice) al 8 (meñique). Sube de la E a la G y
+  baja al revés. Aquí los trastes están más juntos y cabe un dedo en cada uno sin forzar.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Cada dedo cae en su traste sin mover la mano de sitio
+  - No hay notas que trasteen ni suenen apagadas
+  - Si la mano se estira de forma incómoda, vuelves a 1-2-4 y bajas el tempo
+tags:
+  - mano-izquierda
+  - cromatico
+  - calentamiento
+  - un-dedo-por-traste
+alphaTex: |
+  \title "Cromático en quinta posición"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4 6.4 7.4 8.4 | 5.3 6.3 7.3 8.3 | 5.2 6.2 7.2 8.2 | 5.1 6.1 7.1 8.1 |
+  8.1 7.1 6.1 5.1 | 8.2 7.2 6.2 5.2 | 8.3 7.3 6.3 5.3 | 8.4 7.4 6.4 5.4

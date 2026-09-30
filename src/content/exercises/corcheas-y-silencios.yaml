@@ -1,0 +1,35 @@
+title: Corcheas y silencios
+status: borrador
+instructions: >-
+  Cuerdas al aire. Cuenta "1 y 2 y 3 y 4 y": los números caen con el clic y las "y" justo en medio.
+  Compás a compás: corcheas seguidas, negra y silencio, mezcla de corcheas y negras, y solo las "y"
+  (contratiempos). Si los contratiempos cuestan, practica ese compás aparte y vuelve.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Las corcheas están igual de separadas entre sí (las "y" caen justo en medio de dos clics)
+  - "Los silencios se oyen: la nota se corta a tiempo"
+  - En el compás de contratiempos no tocas en el clic, solo entre clics
+  - La alternancia de dedos no se rompe con los silencios
+tags:
+  - ritmo
+  - corcheas
+  - silencios
+  - contratiempo
+alphaTex: |
+  \title "Corcheas y silencios"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 | :4 0.4 r 0.4 r |
+  :8 0.4 0.4 :4 0.4 :8 0.4 0.4 :4 0.4 | :8 r 0.4 r 0.4 r 0.4 r 0.4 |
+  :8 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 | :4 0.3 r 0.3 r |
+  :8 0.3 0.3 :4 0.3 :8 0.3 0.3 :4 0.3 | :1 0.4

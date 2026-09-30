@@ -71,6 +71,8 @@ Plantilla de pasos recomendada (docs/research.md §10):
 2. `## Por qué importa`
 3. `## Cómo se hace` (demostración)
 4. `## Ejercicio` (tempo inicial y objetivo)
+
+Las tablas Markdown funcionan (GFM). En móvil, mejor de **2 columnas**: con más, no caben con el texto grande.
 5. `## Errores comunes`
 6. `## Autoevaluación`
 
@@ -121,6 +123,8 @@ alphaTex: |
 ```
 
 - `alphaTex` va en un bloque `|` de YAML: las barras invertidas se escriben tal cual.
+- **Ojo con los dos puntos**: una línea de lista con `: ` dentro (`- Aprietas lo justo: puedes…`) YAML la lee como
+  un objeto. Ponla entre comillas: `- "Aprietas lo justo: puedes…"`. `content:check` lo detecta.
 - `content:check` **parsea el alphaTex con alphaTab** y da línea y columna del error
   (líneas contadas dentro del bloque de alphaTex, no del YAML).
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.

@@ -170,5 +170,14 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** no hay consenso entre métodos; es la opción más citada como segura para la mano en los primeros trastes
   (pedagogy.md). Se pasa a un dedo por traste a partir del 5.º–7.º traste.
 
+## 2026-09-30 · Copia propia de los recursos de alphaTab (`alphaTabAssets`)
+- **Motivo:** `@coderline/alphatab-vite` copia `font/` y `soundfont/` a `public/` en cada arranque. En Windows, con el
+  soundfont abierto, falló con EBUSY y tumbó el servidor de dev al reiniciar. Se usa `alphaTab({ assetOutputDir: false })`
+  y un plugin propio que copia solo si falta o cambia de tamaño, y si el destino está bloqueado sigue con la copia existente.
+
+## 2026-09-30 · `remark-gfm` en las lecciones
+- **Motivo:** MDX solo entiende CommonMark; las tablas de las lecciones se pintaban como texto. Las tablas se muestran
+  compactas y, si no caben, se desplazan ellas (nunca la página). Mejor tablas de 2 columnas para el móvil.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

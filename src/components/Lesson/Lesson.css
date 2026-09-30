@@ -456,3 +456,34 @@
 .course-style h4 {
   flex-wrap: wrap;
 }
+
+/* Tablas en las lecciones (remark-gfm) */
+/* display: block + overflow: si una tabla no cabe, se desplaza ella, no la página. */
+.lesson-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 8px 0 16px;
+  border-collapse: collapse;
+  font-size: 0.8em;
+  hyphens: auto;
+}
+
+.lesson-body th,
+.lesson-body td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.lesson-body th {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.lesson-body td:first-child {
+  white-space: nowrap;
+}

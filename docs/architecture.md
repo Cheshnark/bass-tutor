@@ -32,7 +32,8 @@
 /src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Tab/ (TabView diferido), SettingsBar
 /src/content/                  schema.ts (Zod), validate.ts + mdx.ts + frontmatter.ts (puros), course.ts (acceso tipado);
                                modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
-/scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts
+/scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts,
+                               vite-plugin-alphatab-assets.ts (copia font/ y soundfont/ a public/ si cambian)
 /src/theory/                   tunings, notation (anglo/latina, grados), catalog (+ textos), fretboard, dictionary
 /src/state/                    settings.ts (afinación, zurdo, nomenclatura) y metronome.ts (motor único + estado); IndexedDB en la Fase 3
 ```
@@ -105,7 +106,8 @@
 
 ### alphaTab (`src/components/Tab/TabView.tsx`)
 
-- `alphatab-vite` configura los web workers y audio worklets, y copia `font/` y `soundfont/` a `public/`.
+- `alphatab-vite` configura los web workers y audio worklets (`assetOutputDir: false`); `alphaTabAssets` copia
+  `font/` y `soundfont/` a `public/` solo si faltan o cambian (evita el EBUSY de Windows al reiniciar).
 - Se usa `PlayerMode.EnabledSynthesizer` con `soundfont/sonivox.sf2`.
 - La instancia de `AlphaTabApi` vive en un `useRef` (es mutable) y se destruye al desmontar.
 - Afinación de bajo en alphaTex: `\tuning (G2 D2 A1 E1)`, de aguda a grave. La cuerda 1 es G y la 4 es E.

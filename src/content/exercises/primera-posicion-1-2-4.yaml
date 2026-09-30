@@ -1,0 +1,32 @@
+title: Primera posición con 1-2-4
+status: borrador
+instructions: >-
+  Mano izquierda en primera posición: índice en el traste 1, medio en el 2 y meñique (ayudado por el anular)
+  en el 3. Cada nota se repite cuatro veces: busca la mínima presión que la hace sonar limpia. Primero en la
+  cuerda E y después en la A.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Cada dedo pisa justo detrás del traste, sin trastear
+  - "Aprietas lo justo: puedes aflojar un poco sin que la nota se apague"
+  - El pulgar va detrás del mástil y la muñeca izquierda está recta
+  - El meñique pisa con el anular apoyado detrás, sin forzar
+tags:
+  - mano-izquierda
+  - digitacion-1-2-4
+alphaTex: |
+  \title "Primera posición con 1-2-4"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 1.4 1.4 1.4 1.4 | 2.4 2.4 2.4 2.4 | 3.4 3.4 3.4 3.4 | 1.4 2.4 3.4 2.4 |
+  1.3 1.3 1.3 1.3 | 2.3 2.3 2.3 2.3 | 3.3 3.3 3.3 3.3 | 1.3 2.3 3.3 2.3 |
+  :1 1.4

@@ -78,7 +78,7 @@ test.describe('siguiendo la clase', () => {
   })
 
   test('al acabar el tronco común invita a elegir itinerario', async ({ page }) => {
-    await page.goto('/#/curso/apagado-mano-derecha/99')
+    await page.goto('/#/curso/como-practicar/99')
     await expect(stepHeadings(page)).toHaveText(['Autoevaluación'])
     await page.getByRole('link', { name: 'Elige tu itinerario →' }).click()
     await expect(page.getByRole('heading', { name: 'Itinerarios por estilo' })).toBeVisible()

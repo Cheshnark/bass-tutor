@@ -58,6 +58,11 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 | Salud | Relajación, mínimo esfuerzo, muñecas rectas, práctica casi diaria, volver poco a poco tras una pausa; **dolor = parar** | No Treble (Donovan Stokes, "Avoiding Injury: Five Tips"); StudyBass (Fretting: muñecas rectas) |
 | Afinar | Con afinador; afinar "subiendo" a la nota; comprobar con el traste 5 | Fender (How to Tune… Bass); práctica común |
 | Tablatura antes que partitura | Tab primero; partitura como opcional más adelante | research.md §2 (patrón común de los métodos modernos) |
+| Apagado mano izquierda | Cortar la nota **aflojando sin despegar** el dedo; dedos libres apoyados en las cuerdas que no se tocan | TalkingBass (3 Cool Muting Techniques); Wikipedia (Left-hand muting) |
+| Cromático | 1-2-4 en primera posición y un dedo por traste en quinta; 3–5 min como calentamiento, lento y limpio | Coherente con la digitación elegida; StudyBass (String-Crossing: "sloppy slowly…") |
+| Contar | En voz alta, "1 y 2 y 3 y 4 y"; las "y" justo en medio; practicar contratiempos aparte | StudyBass (The Eighth Note Subdivision); Dan Hawkins (1/8th note counting tip) |
+| Figuras | Redonda 4, blanca 2, negra 1, corchea ½ pulso en 4/4; cada silencio dura lo mismo que su figura | StudyBass (Rhythmic Notation) |
+| Practicar | Despacio y limpio; subir el tempo poco a poco; grabarse; sesiones cortas; alternar tareas (evidencia limitada) | StudyBass (Playing a Steady Pulse: empezar a 50–60 BPM, grabarse); research.md §1.1 (Carter y Grahn 2016; Wiseheart et al. 2017) |
 
 ## Fuentes
 
@@ -68,6 +73,10 @@ Escritas (base del texto):
 - TalkingBass — [Problems With The 1 Finger Per Fret System](https://www.talkingbass.net/problems-with-the-1-finger-per-fret-system/)
 - Bass Bros — [The Simandl Technique](https://bassbros.co.uk/blog/the-simandl-technique-game-changer-or-thing-of-the-past/)
 - No Treble — [Avoiding Injury: Five Tips for Bass Players](https://www.notreble.com/?p=36026)
+- TalkingBass — [3 Cool Muting Techniques For Bass](https://www.talkingbass.net/bass-technique-muting/)
+- StudyBass — [Playing a Steady Pulse](https://www.studybass.com/lessons/rhythm/playing-a-steady-pulse/) ·
+  [Rhythmic Notation](https://www.studybass.com/lessons/reading-music/rhythmic-notation/) ·
+  [The Eighth Note Subdivision](https://www.studybass.com/lessons/rhythm/the-eighth-note-subdivision/)
 - BassBuzz — [Beginner to Badass: lessons overview](https://www.bassbuzz.com/beginner-to-badass/lessons-overview) (orden de temas)
 
 Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de YouTube, 2026-09-30):
@@ -83,6 +92,16 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Raking vs alternancia | [Raking v. Alternating Showdown](https://www.youtube.com/watch?v=VS0nUyMKYBQ) | BassBuzz |
 | Apagado mano derecha | [Right hand muting (floating thumb and more!)](https://www.youtube.com/watch?v=yDSAd29kJ0o) | Scott's Bass Lessons |
 | Ancla móvil | [Adam Nitti's Moveable Anchor Technique](https://www.youtube.com/watch?v=hDzRqeS0ruQ) | D'Addario and Co. |
+| Mano izquierda | [Basic Bass Fretting Technique](https://www.youtube.com/watch?v=ux-i7FWOLzs) | BassBuzz |
+| Mano izquierda | [2 Great Tips For The Perfect Fretting Hand Technique](https://www.youtube.com/watch?v=8F0pVPr4VYw) | Scott's Bass Lessons |
+| Figuras y silencios | [Counting rhythms: Whole, half, quarter, eighth notes and rests](https://www.youtube.com/watch?v=g1vFnQdRAdo) | Mrs. Musical Pants (canal de educación musical general, no de bajo) |
+| Contar corcheas | [Quick & simple 1/8th note counting tip](https://www.youtube.com/watch?v=JUh7-hI_npQ) | Dan Hawkins Bass Lessons |
+
+Notas:
+- Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.
+- No se enlaza ningún vídeo del ejercicio "araña" en los primeros trastes: casi todos usan un dedo por traste ahí,
+  lo que contradice la digitación del curso. Tampoco hay vídeo de apagado con la mano izquierda (no encontré uno de
+  una fuente reconocida).
 
 Los vídeos están en inglés. **No he visto su contenido** (solo título y canal): el autor debe comprobar al revisar cada
 lección que el vídeo encaja con lo que explica el texto.
