@@ -1,0 +1,35 @@
+title: Fundamental, quinta y octava
+status: borrador
+instructions: >-
+  Cuerdas al aire, después fundamental y quinta, y al final el patrón 1-5-8 sobre G y C.
+  Mantén el dedo 1 en la fundamental y usa el 3 o el 4 para la quinta y la octava.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Todas las notas suenan limpias, sin trastear
+  - Cada nota cae con el clic del metrónomo
+  - La mano izquierda no se tensa al saltar a la octava
+tags:
+  - fundamental-quinta-octava
+  - mano-izquierda
+alphaTex: |
+  \title "Fundamental, quinta y octava"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 0.4 0.4 0.4 |
+  0.3 0.3 0.3 0.3 |
+  3.4 3.4 5.3 5.3 |
+  3.3 3.3 5.2 5.2 |
+  3.4 5.3 5.2 5.3 |
+  3.3 5.2 5.1 5.2 |
+  :2 3.4 5.3 |
+  :1 3.4

@@ -14,7 +14,7 @@
 | Tests unitarios | Vitest 5 (entorno `node`) | ✅ |
 | Tests e2e | Playwright (Chromium escritorio + Pixel 7) | ✅ |
 | CI | GitHub Actions (`.github/workflows/ci.yml`) | ✅ |
-| Contenido | MDX + Zod | Pendiente (Fase 2) |
+| Contenido | Zod 4 (esquema) + YAML (ejercicios, módulos) + MDX (lecciones) | Esquema y `content:check` ✅ · render MDX pendiente |
 | Estado/persistencia | Zustand (ajustes globales) + Dexie (IndexedDB) | Zustand ✅ · persistencia pendiente (Fase 3) |
 | PWA | Service worker con precache | Pendiente (Fase 3) |
 | Backend | Ninguno | — |
@@ -30,7 +30,8 @@
 /src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
 /src/App.tsx, useHashRoute.ts  navegación por hash entre vistas
 /src/components/               Fretboard/ (layout.ts puro + SVG), FretboardExplorer, Dictionary/, Metronome/MetronomePanel, SettingsBar, TabPoc
-/src/content/exercises/*.atex  ejercicios en alphaTex, importados con ?raw
+/src/content/                  schema.ts (Zod), validate.ts (puro), frontmatter.ts; modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
+/scripts/content-check.ts      lee src/content del disco y valida (tsx); se ejecuta antes del build
 /src/theory/                   tunings, notation (anglo/latina, grados), catalog (+ textos), fretboard, dictionary
 /src/state/                    settings.ts (Zustand: afinación, zurdo, nomenclatura); IndexedDB en la Fase 3
 ```
@@ -69,6 +70,17 @@
   entre notas del arpegio, más el texto del catálogo.
 - `ascendingMidis(entry, lowest)`: notas para "Escuchar" en registro de bajo, sin bajar de la cuerda más grave.
 - La vista reutiliza `<Fretboard/>` con los ajustes globales.
+
+### Contenido (`src/content/`) — guía: [content-guide.md](content-guide.md)
+
+- **Esquema Zod** (`schema.ts`): `ModuleSchema` (module.yaml), `LessonMetaSchema` (frontmatter), `ExerciseSchema`
+  (YAML con el alphaTex dentro) y `FretboardEmbedSchema` (props de `<Fretboard/>` en el MDX). Mensajes en español
+  (`z.config(z.locales.es())`). Ids = nombres de fichero; orden de módulos = prefijo `NN-`; orden de lecciones = module.yaml.
+- **Validación** (`validate.ts`, pura): esquema por fichero + referencias cruzadas (lecciones listadas ↔ ficheros,
+  ejercicios existentes, prerrequisitos anteriores, ids únicos) + alphaTex (el comprobador se inyecta). Errores y avisos.
+- **`scripts/content-check.ts`**: lee el disco, parsea alphaTex con alphaTab en Node (diagnósticos con línea/columna)
+  y sale con código 1 si hay errores. `npm run build` lo ejecuta primero. Tiene su propio `tsconfig.scripts.json`.
+- Pasos de lección = encabezados `##` del cuerpo MDX (modelo `Step` de research.md adaptado).
 
 ### Navegación
 

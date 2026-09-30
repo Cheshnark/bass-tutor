@@ -1,9 +1,11 @@
+import { parse } from 'yaml'
 import { Dictionary } from './components/Dictionary/Dictionary'
 import { FretboardExplorer } from './components/FretboardExplorer'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { SettingsBar } from './components/SettingsBar'
 import { TabPoc } from './components/TabPoc'
-import exerciseTex from './content/exercises/fundamental-quinta.atex?raw'
+import exerciseSource from './content/exercises/fundamental-quinta.yaml?raw'
+import { ExerciseSchema } from './content/schema'
 import { useHashRoute } from './useHashRoute'
 
 const VIEWS = [
@@ -15,6 +17,9 @@ const VIEWS = [
 
 type ViewId = (typeof VIEWS)[number]['id']
 const VIEW_IDS: readonly ViewId[] = VIEWS.map((v) => v.id)
+
+// Provisional hasta el cargador de contenido (Fase 2): el ejercicio ya pasa por el esquema.
+const tabExercise = ExerciseSchema.parse(parse(exerciseSource))
 
 function App() {
   const view = useHashRoute<ViewId>(VIEW_IDS, 'mastil')
@@ -39,7 +44,7 @@ function App() {
         <div hidden={view !== 'metronomo'}>
           <MetronomePanel />
         </div>
-        {view === 'tablatura' && <TabPoc tex={exerciseTex} />}
+        {view === 'tablatura' && <TabPoc tex={tabExercise.alphaTex} />}
       </main>
     </>
   )

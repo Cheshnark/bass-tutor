@@ -5,19 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run content:check && tsc -b && vite build",
     "preview": "vite preview",
     "lint": "oxlint",
     "typecheck": "tsc -b",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "content:check": "tsx scripts/content-check.ts"
   },
   "dependencies": {
     "@coderline/alphatab": "^1.8.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "tonal": "6.4.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5",
     "zustand": "^5.0.15"
   },
   "devDependencies": {
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
+    "tsx": "^4.23.15",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "vitest": "^5.0.2"

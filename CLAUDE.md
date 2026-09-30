@@ -14,7 +14,8 @@ Responde, documenta y comenta el código en **español**. Los identificadores de
 - `npm run typecheck`: `tsc -b`
 - `npm test`: Vitest (unitarios, `src/**/*.test.ts`)
 - `npm run test:e2e`: Playwright (hace build + preview en el puerto 4173)
-- `npm run build`: build de producción
+- `npm run content:check`: valida `src/content/` (esquema Zod + referencias + alphaTex); los errores rompen el build
+- `npm run build`: `content:check` + tipos + build de producción
 
 Antes de cada commit: `npm run lint && npm run typecheck && npm test && npm run build`.
 Si tocas UI o audio, ejecuta también `npm run test:e2e`.
@@ -35,7 +36,7 @@ Si tocas UI o audio, ejecuta también `npm run test:e2e`.
 - `AudioContext` se crea o reanuda solo tras un gesto del usuario (requisito de iOS).
 - Teoría musical siempre vía `src/theory/` (Tonal.js); no calcules notas a mano en los componentes.
 - Mástil: 4/5/6 cuerdas, afinaciones arbitrarias y zurdo desde el principio.
-- Contenido: solo ejercicios originales o de dominio público. Nada de tablaturas, letras ni audio de canciones con copyright.
+- Contenido: formato en `docs/content-guide.md`; todo lo que generes, `status: borrador`. Solo ejercicios originales o de dominio público. Nada de tablaturas, letras ni audio de canciones con copyright.
 - UI: objetivos táctiles ≥ 48 px en controles principales y contraste WCAG AA. Decoración skeuomórfica solo en el marco,
   nunca detrás del texto. No combines los rasgos de Orange Amps (ver `docs/spec.md`).
 - Nomenclatura por defecto: anglosajona (C-D-E); la latina, conmutable.

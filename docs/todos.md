@@ -8,7 +8,18 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
-## Fase 1: entregables pendientes
+## Fase 2: entregables
+
+- [x] Esquema Zod del contenido + `npm run content:check` (rompe el build si hay errores).
+- [ ] Cargador de contenido en la app + render MDX con `<Fretboard/>`, `<Tab/>`, `<Metronome/>` incrustados;
+      validar las props de esos componentes en `content:check`.
+      **Idea:** compilar/validar el contenido a JSON en build para no enviar Zod + yaml al navegador (el bundle
+      subió de 1,37 a 1,61 MB al meterlos).
+- [ ] Modo "siguiendo la clase" (un paso `##` por pantalla, texto grande, botón siguiente, Wake Lock).
+- [ ] Módulos 0–3 (~10 lecciones). **Escribe tú las 3 primeras** (research.md §12). La lección y el ejercicio de
+      ejemplo de `00-arranque` están en borrador: reescríbelos o márcalos como revisados tras tocarlos.
+
+## Fase 1: entregables
 
 - [x] Mástil SVG (4/5/6 cuerdas, afinaciones alternativas, zurdo, etiquetas nota/grado/intervalo, 12–24 trastes, sonido al pulsar).
 - [x] Metrónomo completo: tap tempo, acentos configurables (acento/normal/silencio por pulso), escalera de tempo
@@ -47,7 +58,10 @@
 
 - [ ] **alphaTab en móvil (375 px):** la partitura se maqueta más ancha que la pantalla y se ve recortada
       (con scroll horizontal dentro de su caja). Revisar `display.layoutMode`/`scale` o un re-render al cambiar el ancho.
-- [ ] **Bundle de 1,37 MB** (alphaTab dentro del chunk principal). Cargar el visor de tab con `import()` diferido.
+- [ ] **Bundle de 1,61 MB** (alphaTab + Zod + yaml en el chunk principal). Cargar el visor de tab con `import()` diferido
+      y compilar el contenido a JSON en build.
+- [ ] alphaTex: en alguna combinación mínima (p. ej. `\track "Bajo"` sin propiedades) el parser rechaza
+      `\staff { score tabs }`. `content:check` lo detecta; si molesta, investigar la sintaxis exacta de alphaTab 1.8.
 - [ ] **Soundfont ausente en `dist/`:** pasó una vez, en el primer build, y no se ha podido reproducir en builds limpios.
       CI lo comprueba (`test -s dist/soundfont/sonivox.sf2`). Si vuelve a pasar, investigar la carrera entre
       `copyAssetsPlugin` y la copia de `public/`.

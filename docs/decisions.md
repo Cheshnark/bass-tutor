@@ -101,5 +101,22 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 ## 2026-09-30 · Dobles alteraciones como ♭♭ / ♯♯
 - **Motivo:** 𝄫 y 𝄪 (U+1D12B/U+1D12A) no están en muchas fuentes de sistema de móvil y saldrían como cuadros.
 
+## 2026-09-30 · Formato del contenido: YAML + MDX, ids desde el nombre de fichero
+- **Ejercicios en un único YAML** con el alphaTex en un bloque `|` (en vez de `.atex` + metadatos aparte): un solo
+  fichero por ejercicio es más fácil de escribir a mano, y en un bloque `|` las barras invertidas no se escapan.
+  Los ejercicios son un banco común referenciado por id (reutilizables en lecciones y rutinas).
+- **Ids desde el nombre de fichero/carpeta**, no escritos dentro: no pueden desincronizarse.
+- **Orden**: módulos por prefijo `NN-`; lecciones por la lista de `module.yaml` (única fuente; sin `order` en la lección).
+- **Pasos = encabezados `##`** del cuerpo MDX, en vez de un array `steps` tipado (research.md §7): escribir prosa en MDX
+  es natural y los componentes (`<Fretboard/>`, `<Tab/>`…) van dentro de cada paso.
+- **`status: borrador | revisada`** en lecciones y ejercicios: lo que genera Claude es borrador hasta que el autor lo toca.
+- **Mínimo un ejercicio por lección** en el esquema: mitiga el riesgo "la app se vuelve pasiva" de research.md §11.
+
+## 2026-09-30 · `content:check` con alphaTab en Node y tsx
+- **Motivo:** el importador de alphaTex funciona en Node y da diagnósticos con línea y columna; así los errores de
+  notación se ven en el build, no en el navegador. También comprueba que `timeSignature` coincide con el `	s`.
+- `tsx` ejecuta el script (importa código de `src/` sin extensiones, que Node puro no resuelve).
+- Errores rompen el build; avisos (borradores, ejercicios sin usar) no.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

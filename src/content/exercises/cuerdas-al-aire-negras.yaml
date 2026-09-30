@@ -1,0 +1,33 @@
+title: Cuerdas al aire en negras
+status: borrador
+instructions: >-
+  Toca cada cuerda al aire en negras, dos compases por cuerda, de la 4.ª (E) a la 1.ª (G).
+  Alterna índice y medio en cada nota y apoya el dedo en la cuerda de abajo al pulsar.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Cada nota cae con el clic, ni antes ni después
+  - Índice y medio se alternan siempre, también al cambiar de cuerda
+  - Las cuerdas que no tocas no suenan
+  - Hombros y muñeca relajados durante todo el ejercicio
+tags:
+  - cuerdas-al-aire
+  - mano-derecha
+  - pulso
+alphaTex: |
+  \title "Cuerdas al aire en negras"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 0.4 0.4 0.4 | 0.4 0.4 0.4 0.4 |
+  0.3 0.3 0.3 0.3 | 0.3 0.3 0.3 0.3 |
+  0.2 0.2 0.2 0.2 | 0.2 0.2 0.2 0.2 |
+  0.1 0.1 0.1 0.1 | 0.1 0.1 0.1 0.1

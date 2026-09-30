@@ -2,36 +2,35 @@
 
 _Última actualización: 2026-09-30_
 
-## Fase 1 (herramientas núcleo): cerrada ✅
+## Fase actual: 2 (motor de lecciones). Entregable 1 hecho: esquema del contenido
 
-### Qué hay
+### Hecho en la Fase 2
 
-- **Navegación** por pestañas: Mástil · Diccionario · Metrónomo · Tablatura. El metrónomo sigue sonando al cambiar de vista.
-- **Ajustes globales** (Zustand, sin persistir aún): afinación de 4/5/6 cuerdas, zurdo y nomenclatura C-D-E / Do-Re-Mi,
-  compartidos por el mástil y el diccionario.
-- **Mástil SVG**: escalas, arpegios, intervalos y notas; etiquetas por nota/grado/intervalo; 0–12 a 0–24 trastes; sonido al pulsar.
-- **Diccionario**: 9 escalas y 9 arpegios con fórmula en grados, notas (se pueden escuchar una a una), pasos T/S
-  o intervalos entre notas, uso en el bajo, botón "Escuchar" (secuencia ascendente) y vista en el mástil.
-- **Metrónomo completo**: tap tempo, acentos por pulso, escalera de tempo (por compases o por pase), pulso visual grande.
-- **Tablatura** (PoC de la Fase 0): alphaTab con reproducción.
-- Tests: 84 unitarios y 40 e2e (escritorio + móvil), estables en ejecuciones repetidas.
+- **Esquema Zod** (`src/content/schema.ts`) para módulos (`module.yaml`), lecciones (frontmatter del `.mdx`),
+  ejercicios (`exercises/<id>.yaml` con el alphaTex dentro) y las props de `<Fretboard/>` incrustado.
+  Mensajes de error en español.
+- **`npm run content:check`**: valida cada fichero, las referencias cruzadas (lecciones ↔ módulos, ejercicios,
+  prerrequisitos, ids únicos) y **parsea el alphaTex con alphaTab** (errores con línea y columna, y comprueba que
+  el compás declarado coincide). Se ejecuta antes de cada build: **si el contenido no cumple el esquema, el build falla**
+  (criterio de aceptación de la Fase 2).
+- **Guía de contenido**: [content-guide.md](content-guide.md).
+- **Contenido de ejemplo** en borrador: módulo `00-arranque` con la lección `cuerdas-al-aire` y el ejercicio
+  `cuerdas-al-aire-negras`. El ejercicio de la PoC de tablatura pasó a `exercises/fundamental-quinta.yaml` y la
+  vista Tablatura ya lo carga validado por el esquema.
+- Tests: 98 unitarios (14 nuevos de validación) y 40 e2e.
 
-### Criterios de aceptación de la Fase 1 (roadmap)
+### Hecho en la Fase 1 (cerrada)
 
-- ✅ Tests unitarios de notas por traste y afinación.
-- ✅ Metrónomo sin deriva en 10 min (también con cambios de tempo en el primer tiempo).
-- ✅ La versión zurda es el espejo exacto.
-- ✅ Diccionario de escalas y arpegios con Tonal.js.
+Mástil SVG, metrónomo completo, diccionario de teoría, navegación por pestañas y ajustes globales. Ver [roadmap.md](roadmap.md).
 
 ### Pendiente de ti
 
-- **Probar en tu móvil real**: audio, tap tempo, legibilidad a un metro (`npm run dev -- --host`).
-- **Revisar los textos del diccionario** (`src/theory/catalog.ts`, campos `summary` y `usage`).
-- Confirmar que el CI de GitHub Actions pasa.
+- **Escribir las 3 primeras lecciones** siguiendo [content-guide.md](content-guide.md) (o reescribir la de ejemplo).
+- Revisar los textos del diccionario (`src/theory/catalog.ts`).
+- Probar en tu móvil real y confirmar el CI.
 
-## Siguiente paso: Fase 2 (motor de lecciones)
+## Siguiente paso inmediato
 
-Antes de programar nada hace falta decidir el formato. Primer entregable propuesto: **esquema Zod del contenido**
-(`Module`, `Lesson`, `Step`, `Exercise`, según research.md §7) + `npm run content:check` que haga fallar el build si
-una lección no cumple el esquema. Después, MDX con `<Fretboard/>`, `<Metronome/>` y `<Tab/>` incrustados, y el modo
-"siguiendo la clase". Recomendación de research.md: **escribe tú a mano las 3 primeras lecciones** como patrón de calidad.
+Fase 2, entregable **"cargador + render MDX"**: cargar el contenido en la app (idealmente precompilado a JSON en
+el build), renderizar las lecciones MDX con `<Fretboard/>`, `<Tab/>` y `<Metronome/>` incrustados, y validar las
+props de esos componentes en `content:check`. Después, el modo "siguiendo la clase".
