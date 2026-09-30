@@ -10,9 +10,11 @@ Base: [research.md](research.md) (investigación previa, con fuentes y nivel de 
 
 ## Usuarios
 
-- **Ahora:** uso personal del autor, de principiante a intermedio.
-- **Más adelante (sin decidir):** posible apertura a más usuarios. Eso cambiaría las decisiones de marca,
-  licencias y backend (ver [decisions.md](decisions.md)).
+- **El autor**: toca el bajo a nivel básico (controla la digitación) pero **no es profesor**. Quiere un curso desde
+  cero como referencia para progresar.
+- **Amigos bajistas** con quienes lo compartirá (decidido el 2026-09-30). Implica publicar la web en algún momento
+  (Fase 3), cuidar la identidad visual (research.md §6) y mantener todo el contenido original.
+- Cada persona guarda su progreso en su propio dispositivo (sin cuentas ni backend por ahora).
 
 ## Supuestos
 
@@ -26,6 +28,11 @@ Base: [research.md](research.md) (investigación previa, con fuentes y nivel de 
 2. Prueba de concepto de **alphaTab**: renderiza partitura + tablatura de un ejercicio alphaTex original y lo reproduce.
 3. Prueba de concepto de **metrónomo** programado sobre `AudioContext.currentTime`, sin deriva.
 4. Validación manual en el móvil propio (Chrome Android y/o Safari iOS): audio, standalone y almacenamiento.
+
+## Contenido del curso
+
+Método y fuentes en [pedagogy.md](pedagogy.md): **tronco común** (módulos 0–5) y después **itinerarios por estilo**
+(rock/pop, funk/soul/Motown, blues/jazz, metal/punk). Práctica prevista: 20–30 min al día.
 
 ## Fuera de alcance (explícito)
 

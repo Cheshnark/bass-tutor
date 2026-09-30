@@ -15,8 +15,14 @@
       props validadas en `content:check`. Bundle principal: 1,61 MB → 285 KB.
 - [x] Modo "siguiendo la clase": un paso por pantalla, paso en la URL, Anterior/Siguiente de 56 px, teclado y
       pedal, foco accesible, Wake Lock.
-- [ ] Módulos 0–3 (~10 lecciones). **Escribe tú las 3 primeras** (research.md §12). La lección y el ejercicio de
-      ejemplo de `00-arranque` están en borrador: reescríbelos o márcalos como revisados tras tocarlos.
+- [x] Método documentado (pedagogy.md), itinerarios en el esquema y `<Video>`.
+- [x] Módulos 0–1 en borrador (6 lecciones, 6 ejercicios).
+- [ ] **Tú**: probar los módulos 0–1 como alumno (¿se entiende?, ¿se puede tocar?, ¿el vídeo encaja con el texto?)
+      y marcar `revisada` lo que esté bien. Anota lo que no.
+- [ ] Módulos 2–3 (mano izquierda, ritmo I) en borrador, tras la revisión de 0–1.
+- [ ] Módulos 4–5 (ubicarse, primeras líneas; usar `fundamental-quinta` en el 5).
+- [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz, metal/punk).
+- [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.
 
 ## Lecciones: mejoras anotadas
 
@@ -94,8 +100,8 @@
 
 ## Decisiones abiertas (tuyas)
 
-1. ¿Currículo propio completo o compañero de un método existente? (Recomendado: híbrido, ~30 lecciones propias.)
+1. ~~¿Currículo propio o compañero de un método existente?~~ → Propio, con vídeos enlazados (pedagogy.md).
 2. Paleta: crema/negro, verde quirófano, burdeos, o naranja solo como acento. (Provisional: oscuro + ámbar.)
-3. ¿Se publicará algún día? Afecta a la marca, las licencias y el backend.
+3. ~~¿Se publicará?~~ → Sí, para amigos bajistas (sin backend por ahora).
 4. ¿Grabas tú los audios de demostración o solo síntesis?
 5. Nombre definitivo de la app (en research.md aparece "Bajo·Lab" como borrador).

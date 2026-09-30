@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ComponentType } from 'react'
 import type { MDXProps } from 'mdx/types'
-import { course, getLesson, neighbours } from '../../content/course'
+import { course, getLesson, neighbours, trackOf } from '../../content/course'
+import { getTrack } from '../../content/tracks'
 import { useSettings } from '../../state/settings'
 import { useWakeLock, type WakeLockStatus } from '../../useWakeLock'
 import { lessonComponents } from './lessonComponents'
@@ -100,6 +101,7 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
   }
 
   const module = course.modules.find((m) => m.id === lesson.moduleId)
+  const track = trackOf(lesson)
   const { previous, next } = neighbours(lesson.id)
   const Body = loaded?.id === lesson.id ? loaded.Body : null
   const problem = load ? error : `No se encuentra ${lesson.mdxPath}`
@@ -111,7 +113,7 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
     <article className={`panel lesson${follow ? ' lesson--follow' : ''}`} aria-labelledby="lesson-title">
       <header className="lesson-header">
         <p className="lesson-kicker">
-          <a href="#/curso">Curso</a> · Módulo {module?.order} · {module?.title}
+          <a href="#/curso">Curso</a> · {getTrack(track).label} · Módulo {module?.order} · {module?.title}
         </p>
         <h2 id="lesson-title">{lesson.title}</h2>
         <p className="lesson-meta">
@@ -198,7 +200,7 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
               </a>
             ) : (
               <a className="btn btn--primary" href="#/curso">
-                Volver al curso
+                {track === 'comun' ? 'Elige tu itinerario →' : 'Volver al curso'}
               </a>
             )}
           </div>

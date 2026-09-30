@@ -1,5 +1,8 @@
 title: Arranque
 summary: >-
-  Partes del bajo, afinación, postura y primeras notas con metrónomo.
+  Tu equipo, cómo afinar, una postura que no te haga daño y tus primeras notas con metrónomo.
+track: comun
 lessons:
+  - equipo-y-afinacion
+  - postura-y-salud
   - cuerdas-al-aire

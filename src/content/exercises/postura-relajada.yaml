@@ -1,0 +1,30 @@
+title: Negras relajadas
+status: borrador
+instructions: >-
+  Negras en la cuerda E al aire y después en la A. No importa la técnica todavía: fíjate solo en
+  la postura. Revisa hombros, muñecas y fuerza cada pocos compases y corrige lo que se haya tensado.
+tempo:
+  start: 60
+  target: 72
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Los hombros siguen bajos y relajados al terminar
+  - La muñeca derecha no se dobla en exceso
+  - Pulsas suave y el volumen lo pone el ampli o los auriculares
+  - Al acabar no notas cansancio ni molestias en el antebrazo
+tags:
+  - postura
+  - cuerdas-al-aire
+alphaTex: |
+  \title "Negras relajadas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 0.4 0.4 0.4 | 0.4 0.4 0.4 0.4 | 0.4 0.4 0.4 0.4 | 0.4 0.4 0.4 0.4 |
+  0.3 0.3 0.3 0.3 | 0.3 0.3 0.3 0.3 | 0.3 0.3 0.3 0.3 | :1 0.3

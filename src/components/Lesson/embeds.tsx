@@ -4,7 +4,7 @@
  */
 import { useEffect, useMemo, useState } from 'react'
 import { getExercise } from '../../content/course'
-import type { ExerciseEmbed, FretboardEmbed, MetronomeEmbed, TabEmbed } from '../../content/schema'
+import type { ExerciseEmbed, FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
 import { metronomeEngine, useMetronome } from '../../state/metronome'
 import { useSettings } from '../../state/settings'
 import type { FretboardView } from '../../theory/fretboard'
@@ -114,5 +114,23 @@ export function LessonExercise({ id }: ExerciseEmbed) {
         ))}
       </fieldset>
     </article>
+  )
+}
+
+/** Enlace a una demostración externa (se abre en otra pestaña; no se incrusta). */
+export function LessonVideo({ url, title, source }: VideoEmbed) {
+  return (
+    <a className="lesson-video" href={url} target="_blank" rel="noopener noreferrer">
+      <span className="lesson-video__icon" aria-hidden="true">
+        ▶
+      </span>
+      <span className="lesson-video__text">
+        <span className="lesson-video__label">Míralo en vídeo</span>
+        <span className="lesson-video__title">{title}</span>
+        <span className="lesson-video__source">
+          {source} · se abre en otra pestaña (en inglés)
+        </span>
+      </span>
+    </a>
   )
 }

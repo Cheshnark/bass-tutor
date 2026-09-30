@@ -1,0 +1,30 @@
+title: Afinar y escuchar cada cuerda
+status: borrador
+instructions: >-
+  Afina con el afinador y toca cada cuerda al aire en redondas (una nota cada cuatro clics),
+  de la 4.ª (E) a la 1.ª (G) y vuelta. Deja sonar cada nota los cuatro tiempos y escucha si
+  las cuatro suenan con un volumen parecido.
+tempo:
+  start: 60
+  target: 70
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Antes de empezar, el afinador marca la nota correcta en las cuatro cuerdas
+  - Cada nota suena los cuatro tiempos, sin cortarse
+  - Las cuatro cuerdas suenan con un volumen parecido
+tags:
+  - afinacion
+  - cuerdas-al-aire
+alphaTex: |
+  \title "Afinar y escuchar cada cuerda"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :1 0.4 | 0.3 | 0.2 | 0.1 |
+  0.1 | 0.2 | 0.3 | 0.4

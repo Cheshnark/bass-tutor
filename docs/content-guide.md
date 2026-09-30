@@ -30,6 +30,7 @@ src/content/
 ```yaml
 title: Arranque
 summary: Partes del bajo, afinación, postura y primeras notas con metrónomo.
+track: comun        # comun | rock-pop | funk-soul | blues-jazz | metal-punk (por defecto, comun)
 lessons:            # orden de estudio; única fuente del orden
   - cuerdas-al-aire
 ```
@@ -84,6 +85,7 @@ Solo estos cuatro. Las props tienen que ser **literales** (textos, números, lis
 | `<Fretboard … />` | Mástil (usa la afinación, el zurdo y la nomenclatura de los ajustes) | `<Fretboard mode="scale" root="A" type="minor pentatonic" frets={[0, 5]} labels="degree" />` |
 | `<Tab exercise="…" />` | Solo la partitura + tab de un ejercicio, con reproducción | `<Tab exercise="fundamental-quinta" />` |
 | `<Metronome … />` | Botón que arranca el metrónomo de la app a ese tempo | `<Metronome bpm={60} beatsPerBar={4} />` |
+| `<Video url="…" title="…" source="…" />` | Tarjeta que enlaza una demostración externa (se abre en otra pestaña) | `<Video url="https://www.youtube.com/watch?v=…" title="…" source="BassBuzz" />` |
 
 - `<Fretboard>`: `mode` = `notes` · `scale` · `arpeggio` · `interval`; `root` y `type` en nomenclatura de Tonal
   (los del diccionario); `frets` por defecto `[0, 12]`; `labels` = `note` · `degree` · `interval`.
@@ -122,6 +124,12 @@ alphaTex: |
 - `content:check` **parsea el alphaTex con alphaTab** y da línea y columna del error
   (líneas contadas dentro del bloque de alphaTex, no del YAML).
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.
+
+## Vídeos
+
+- Solo fuentes reconocidas y gratuitas; **verifica** título y canal antes de enlazar (por ejemplo con
+  `https://www.youtube.com/oembed?url=<url>&format=json`) y añádelo a la tabla de [pedagogy.md](pedagogy.md).
+- El vídeo apoya el texto: comprueba que muestra lo mismo que explica la lección.
 
 ## Estado: `borrador` y `revisada`
 

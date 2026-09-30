@@ -1,4 +1,4 @@
-import { LessonExercise, LessonFretboard, LessonMetronome, LessonTab } from './embeds'
+import { LessonExercise, LessonFretboard, LessonMetronome, LessonTab, LessonVideo } from './embeds'
 import { LessonStep } from './LessonStep'
 
 /**
@@ -10,5 +10,6 @@ export const lessonComponents = {
   Tab: LessonTab,
   Exercise: LessonExercise,
   Metronome: LessonMetronome,
+  Video: LessonVideo,
   LessonStep,
 }

@@ -1,0 +1,31 @@
+title: Solo suena la cuerda que tocas
+status: borrador
+instructions: >-
+  Negras en las cuerdas agudas mientras el pulgar mantiene calladas las graves; después, nota y
+  silencio: en cada silencio, apoya un dedo sobre la cuerda para cortarla justo en el clic.
+  Termina saltando entre la E y la G sin que se mezclen.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Mientras tocas la D o la G, la E y la A no suenan
+  - En los silencios, la nota se corta justo en el clic
+  - En los saltos E–G, la E deja de sonar cuando tocas la G
+tags:
+  - mano-derecha
+  - apagado
+alphaTex: |
+  \title "Solo suena la cuerda que tocas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.1 0.1 0.1 0.1 | 0.2 0.2 0.2 0.2 |
+  0.4 r 0.4 r | 0.3 r 0.3 r | 0.2 r 0.2 r | 0.1 r 0.1 r |
+  0.4 0.1 0.4 0.1 | :1 0.4

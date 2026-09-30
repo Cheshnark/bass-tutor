@@ -18,6 +18,7 @@ import {
   type Lesson,
   type Module,
 } from './schema'
+import { TRACK_IDS, type TrackId } from './tracks'
 
 export interface RawModule {
   /** Nombre de la carpeta: "00-arranque". */
@@ -221,19 +222,29 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
     }
   }
 
-  // ── Prerrequisitos: deben existir y estar antes en el curso ──
-  modules.sort((a, b) => a.order - b.order)
+  // ── Orden del curso: tronco común primero, luego cada itinerario; dentro, por número de módulo ──
+  const trackRank = (track: TrackId) => TRACK_IDS.indexOf(track)
+  modules.sort((a, b) => trackRank(a.track) - trackRank(b.track) || a.order - b.order)
+  const trackOfModule = new Map(modules.map((m) => [m.id, m.track]))
+  const trackOfLesson = new Map(lessons.map((l) => [l.id, trackOfModule.get(l.moduleId) ?? 'comun']))
+
   // Posición de cada lección en el curso; si un id está repetido, vale su primera aparición.
   const position = new Map<string, number>()
   for (const id of modules.flatMap((m) => m.lessons)) {
     if (lessonFile.has(id) && !position.has(id)) position.set(id, position.size)
   }
+
+  // ── Prerrequisitos: deben existir, ir antes y ser del tronco común o del mismo itinerario ──
   for (const lesson of lessons) {
     const path = lessonFile.get(lesson.id) ?? lesson.id
+    const track = trackOfLesson.get(lesson.id) ?? 'comun'
     for (const prerequisite of lesson.prerequisites) {
       const at = position.get(prerequisite)
+      const prerequisiteTrack = trackOfLesson.get(prerequisite)
       if (at === undefined) error(path, `prerrequisito "${prerequisite}" no existe`)
-      else if (at >= (position.get(lesson.id) ?? 0)) {
+      else if (prerequisiteTrack !== 'comun' && prerequisiteTrack !== track) {
+        error(path, `prerrequisito "${prerequisite}" es del itinerario "${prerequisiteTrack}": solo vale el tronco común o "${track}"`)
+      } else if (at >= (position.get(lesson.id) ?? 0)) {
         error(path, `prerrequisito "${prerequisite}" va después (o es la misma lección) en el orden del curso`)
       }
     }

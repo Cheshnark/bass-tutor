@@ -5,6 +5,11 @@ const LESSON = '/#/curso/cuerdas-al-aire'
 test('la portada es el índice del curso y enlaza a la lección', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'Curso', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Tronco común' })).toBeVisible()
+  // Los cuatro itinerarios aparecen aunque aún no tengan lecciones
+  for (const style of ['Rock / pop', 'Funk / soul / Motown', 'Blues / jazz', 'Metal / punk']) {
+    await expect(page.getByRole('heading', { name: new RegExp(`^${style.replace('/', '\\/')}`) })).toBeVisible()
+  }
   await page.getByRole('link', { name: /Cuerdas al aire con metrónomo/ }).click()
   await expect(page).toHaveURL(/#\/curso\/cuerdas-al-aire$/)
   await expect(page.getByRole('heading', { name: 'Cuerdas al aire con metrónomo', level: 2 })).toBeVisible()
@@ -26,8 +31,11 @@ test('la lección renderiza sus pasos y componentes sin errores', async ({ page 
   ])
   // El frontmatter no se pinta como texto
   await expect(body).not.toContainText('durationMin')
-  // <Fretboard mode="notes" frets={[0, 5]} />: 4 cuerdas × 6 casillas
-  await expect(body.getByTestId('fretboard').locator('.fb-note')).toHaveCount(4 * 6)
+  // <Video />: enlace externo que se abre en otra pestaña
+  const video = body.getByRole('link', { name: /Míralo en vídeo/ })
+  await expect(video).toHaveCount(1)
+  await expect(video).toHaveAttribute('target', '_blank')
+  await expect(video).toHaveAttribute('href', /^https:\/\/www\.youtube\.com\//)
   // <Exercise />: tarjeta con criterios
   const exercise = body.getByTestId('exercise-cuerdas-al-aire-negras')
   await expect(exercise.getByRole('checkbox')).toHaveCount(4)

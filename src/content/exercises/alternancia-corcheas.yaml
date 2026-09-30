@@ -1,0 +1,33 @@
+title: Alternancia en corcheas
+status: borrador
+instructions: >-
+  Corcheas (dos notas por clic) en cada cuerda al aire, dos compases por cuerda. Alterna índice y
+  medio en todas las notas, con apoyo. Tócalo una vez empezando con el índice y otra empezando con el medio.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Alternas índice y medio en todas las notas, sin repetir dedo
+  - Las dos corcheas de cada clic suenan igual de fuerte
+  - Puedes empezar tanto con el índice como con el medio
+  - Cada dedo termina apoyado en la cuerda de abajo
+tags:
+  - mano-derecha
+  - alternancia
+  - corcheas
+alphaTex: |
+  \title "Alternancia en corcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 | 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 | 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 | 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 |
+  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 | :1 0.1

@@ -149,5 +149,26 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Wake Lock** solo en modo seguimiento; se vuelve a pedir al volver a la pestaña. Si no está o se deniega, se dice.
 - Modo por defecto: seguimiento (research.md §4: "modo siguiendo la clase" como forma principal de usar la lección).
 
+## 2026-09-30 · Contenido redactado por Claude con fuentes contrastadas y vídeos enlazados
+- **Motivo:** el autor toca pero no es profesor, así que no puede validar la pedagogía. Se compensa con: contraste de
+  al menos dos fuentes por indicación técnica (tabla en pedagogy.md), un vídeo gratuito de una fuente reconocida por
+  tema técnico, el autor como alumno probador (`borrador` → `revisada`) y una clase suelta con un profesor recomendada.
+- **Descartado:** app como compañera de un curso existente (StudyBass/BassBuzz). Menos trabajo, pero el autor quiere
+  un curso propio para compartir.
+
+## 2026-09-30 · Tronco común + itinerarios por estilo
+- **Motivo:** propuesta del autor. Coincide con los métodos: técnica y ritmo comunes primero; los estilos como
+  vehículo de su *feel*. `module.yaml` lleva `track` (`comun` · `rock-pop` · `funk-soul` · `blues-jazz` · `metal-punk`).
+- Orden del curso: tronco común y después cada itinerario. Una lección solo puede depender del tronco común o de su
+  propio itinerario. "Siguiente lección" no salta de itinerario: al acabar el tronco común se elige en el índice.
+
+## 2026-09-30 · Vídeos enlazados, no incrustados (`<Video>`)
+- **Motivo:** funciona offline sin romper la lección, no carga rastreadores de terceros y no reproduce contenido ajeno
+  dentro de la app. Solo `https://`; cada URL se verifica (título y canal vía oEmbed) antes de usarla.
+
+## 2026-09-30 · Digitación de la mano izquierda: 1-2-4 en trastes bajos
+- **Motivo:** no hay consenso entre métodos; es la opción más citada como segura para la mano en los primeros trastes
+  (pedagogy.md). Se pasa a un dedo por traste a partir del 5.º–7.º traste.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

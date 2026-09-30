@@ -48,7 +48,13 @@
   border-color: var(--accent);
 }
 
+.course-lessons a {
+  flex-wrap: wrap;
+}
+
+/* En móvil, el título ocupa la línea y la duración/estado bajan si no caben. */
 .course-lessons__title {
+  flex: 1 1 14rem;
   font-weight: 700;
 }
 
@@ -350,4 +356,103 @@
 
 .lesson a.btn--primary {
   color: #1a1305;
+}
+
+/* Índice: itinerarios */
+.course-track {
+  display: grid;
+  gap: 12px;
+}
+
+.course-track > h3 {
+  margin: 8px 0 0;
+  font-size: 1.3rem;
+}
+
+.course-module h4,
+.course-style h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+}
+
+.course-style {
+  display: grid;
+  gap: 6px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.course-style .hint {
+  margin: 0;
+}
+
+.badge--muted {
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+
+/* <Video>: tarjeta enlazada a la demostración */
+.lesson a.lesson-video {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 8px 0 16px;
+  padding: 12px 16px;
+  min-height: 64px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.lesson a.lesson-video:hover {
+  border-color: var(--accent);
+}
+
+.lesson-video__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.lesson-video__text {
+  display: grid;
+  gap: 2px;
+  line-height: 1.3;
+}
+
+.lesson-video__label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lesson-video__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.lesson-video__source {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.badge {
+  white-space: nowrap;
+}
+
+.course-style h4 {
+  flex-wrap: wrap;
 }

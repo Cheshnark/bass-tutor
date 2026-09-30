@@ -60,19 +60,28 @@ test.describe('siguiendo la clase', () => {
   })
 
   test('los componentes del paso se montan al llegar a él', async ({ page }) => {
-    await page.goto(`${LESSON}/3`)
+    // Lección "equipo-y-afinacion": paso 5 con <Fretboard/>, paso 6 con <Exercise/>
+    await page.goto('/#/curso/equipo-y-afinacion/5')
+    await expect(stepHeadings(page)).toHaveText(['Comprobar con el traste 5'])
     await expect(page.getByTestId('lesson-body').getByTestId('fretboard')).toBeVisible()
     await page.keyboard.press('ArrowRight')
-    await expect(page.getByTestId('exercise-cuerdas-al-aire-negras')).toBeVisible()
+    await expect(page.getByTestId('exercise-afinar-y-escuchar')).toBeVisible()
     await expect(page.getByTestId('lesson-body').getByTestId('fretboard')).toHaveCount(0)
   })
 
-  test('último paso: "Volver al curso" (no hay siguiente lección) y paso fuera de rango', async ({ page }) => {
+  test('último paso: lleva a la lección siguiente del mismo itinerario', async ({ page }) => {
     await page.goto(`${LESSON}/99`)
     await expect(page.getByText('Paso 6 de 6')).toBeVisible()
     await expect(stepHeadings(page)).toHaveText(['Autoevaluación'])
-    await page.getByRole('link', { name: 'Volver al curso' }).click()
-    await expect(page.getByRole('heading', { name: 'Curso', level: 2 })).toBeVisible()
+    await page.getByRole('link', { name: 'Siguiente lección →' }).click()
+    await expect(page).toHaveURL(/#\/curso\/pulsacion-alterna$/)
+  })
+
+  test('al acabar el tronco común invita a elegir itinerario', async ({ page }) => {
+    await page.goto('/#/curso/apagado-mano-derecha/99')
+    await expect(stepHeadings(page)).toHaveText(['Autoevaluación'])
+    await page.getByRole('link', { name: 'Elige tu itinerario →' }).click()
+    await expect(page.getByRole('heading', { name: 'Itinerarios por estilo' })).toBeVisible()
   })
 
   test('se puede pasar a la lección completa y volver', async ({ page }) => {

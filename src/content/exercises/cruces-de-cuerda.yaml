@@ -1,0 +1,32 @@
+title: Cruces de cuerda
+status: borrador
+instructions: >-
+  Corcheas cambiando de cuerda: primero dos notas por cuerda, luego una sola, y al final saltando una
+  cuerda (E–D y A–G). La alternancia no se rompe nunca, aunque cambies de cuerda.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - La alternancia índice–medio no se rompe al cambiar de cuerda
+  - No aceleras justo antes de los saltos de cuerda
+  - Todas las notas suenan con el mismo volumen, también en la cuerda G
+tags:
+  - mano-derecha
+  - alternancia
+  - cambio-de-cuerda
+alphaTex: |
+  \title "Cruces de cuerda"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 0.4 0.3 0.3 0.2 0.2 0.1 0.1 | 0.1 0.1 0.2 0.2 0.3 0.3 0.4 0.4 |
+  0.4 0.3 0.4 0.3 0.4 0.3 0.4 0.3 | 0.3 0.2 0.3 0.2 0.3 0.2 0.3 0.2 |
+  0.2 0.1 0.2 0.1 0.2 0.1 0.2 0.1 | 0.4 0.2 0.4 0.2 0.4 0.2 0.4 0.2 |
+  0.3 0.1 0.3 0.1 0.3 0.1 0.3 0.1 | :1 0.4

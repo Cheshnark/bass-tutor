@@ -12,6 +12,7 @@ import { Chord } from 'tonal'
 import { z } from 'zod'
 import { MAX_BPM, MIN_BPM } from '../audio/beatClock'
 import { MAX_FRET, resolvePitchSet } from '../theory/fretboard'
+import { TRACK_IDS } from './tracks'
 
 // Mensajes de error de Zod en español (los propios de este esquema ya lo están).
 z.config(z.locales.es())
@@ -32,6 +33,8 @@ export const StatusSchema = z.enum(['borrador', 'revisada'])
 export const ModuleSchema = z.strictObject({
   title: text,
   summary: text,
+  /** Itinerario al que pertenece (src/content/tracks.ts). Por defecto, el tronco común. */
+  track: z.enum(TRACK_IDS).default('comun'),
   /** Ids de las lecciones, en el orden en que se estudian. Es la única fuente del orden. */
   lessons: z.array(slug).min(1, 'un módulo necesita al menos una lección'),
 })
@@ -128,12 +131,24 @@ export const MetronomeEmbedSchema = z.strictObject({
   beatsPerBar: z.number().int().min(1).max(12).optional(),
 })
 
+/**
+ * `<Video url="https://…" title="…" source="…" />`: enlace a una demostración externa gratuita.
+ * Se enlaza (no se incrusta): funciona offline sin romper nada y no carga rastreadores.
+ */
+export const VideoEmbedSchema = z.strictObject({
+  url: z.url({ protocol: /^https$/, error: 'tiene que ser una URL https://' }),
+  title: text,
+  /** Quién lo publica ("BassBuzz", "StudyBass"…). */
+  source: text,
+})
+
 /** Componentes que se pueden usar en una lección y el esquema de sus props. */
 export const EMBED_SCHEMAS = {
   Fretboard: FretboardEmbedSchema,
   Tab: TabEmbedSchema,
   Exercise: ExerciseEmbedSchema,
   Metronome: MetronomeEmbedSchema,
+  Video: VideoEmbedSchema,
 } as const
 
 export type EmbedName = keyof typeof EMBED_SCHEMAS
@@ -145,6 +160,7 @@ export type FretboardEmbed = z.input<typeof FretboardEmbedSchema>
 export type TabEmbed = z.infer<typeof TabEmbedSchema>
 export type ExerciseEmbed = z.infer<typeof ExerciseEmbedSchema>
 export type MetronomeEmbed = z.infer<typeof MetronomeEmbedSchema>
+export type VideoEmbed = z.infer<typeof VideoEmbedSchema>
 
 /** Contenido ya validado y con ids resueltos. */
 export interface Exercise extends ExerciseData {

@@ -204,8 +204,48 @@ describe('validateCourse', () => {
       'modules/00-arranque/uno.mdx: línea 16: <Tab> el ejercicio "fantasma" no existe en exercises/',
       'modules/00-arranque/uno.mdx: línea 18: <Fretboard> Escala desconocida: inventada',
       expect.stringMatching(/^modules\/00-arranque\/uno\.mdx: línea 20: <Metronome> bpm: /),
-      'modules/00-arranque/uno.mdx: línea 22: <Piano> no existe; disponibles: <Fretboard>, <Tab>, <Exercise>, <Metronome>',
+      'modules/00-arranque/uno.mdx: línea 22: <Piano> no existe; disponibles: <Fretboard>, <Tab>, <Exercise>, <Metronome>, <Video>',
       expect.stringMatching(/^modules\/00-arranque\/uno\.mdx: línea 24: <Fretboard> .*extra/),
+    ])
+  })
+
+  it('<Video>: URL https, título y fuente obligatorios', () => {
+    const raw = course()
+    raw.modules[0].lessons[0].source = lesson(
+      {},
+      [
+        '## Paso',
+        '<Exercise id="ej-a" />',
+        '<Video url="https://www.youtube.com/watch?v=abc" title="Demo" source="BassBuzz" />',
+        '<Video url="http://inseguro.com" title="Demo" source="X" />',
+        '<Video url="https://ok.com" title="Demo" />',
+      ].join('\n\n'),
+    )
+    expect(errors(raw)).toEqual([
+      'modules/00-arranque/uno.mdx: línea 16: <Video> url: tiene que ser una URL https://',
+      expect.stringMatching(/^modules\/00-arranque\/uno\.mdx: línea 18: <Video> source: /),
+    ])
+  })
+
+  it('itinerarios: el tronco común va primero y los prerrequisitos no cruzan itinerarios', () => {
+    const module = (dir: string, track: string, lessons: string[]) => ({
+      dir,
+      data: { title: dir, summary: 'x', track, lessons },
+      lessons: lessons.map((id) => ({ file: `${id}.mdx`, source: lesson() })),
+    })
+    const raw = course({
+      modules: [
+        module('10-funk-1', 'funk-soul', ['funk-a']),
+        module('11-rock-1', 'rock-pop', ['rock-a']),
+        module('00-base', 'comun', ['base-a']),
+      ],
+    })
+    raw.modules[0].lessons[0].source = lesson({ prerequisites: ['base-a', 'rock-a'] })
+    const result = validateCourse(raw)
+    expect(result.course.modules.map((m) => m.id)).toEqual(['base', 'rock-1', 'funk-1'])
+    expect(result.course.lessons.map((l) => l.id)).toEqual(['base-a', 'rock-a', 'funk-a'])
+    expect(errors(raw)).toEqual([
+      'modules/10-funk-1/funk-a.mdx: prerrequisito "rock-a" es del itinerario "rock-pop": solo vale el tronco común o "funk-soul"',
     ])
   })
 
