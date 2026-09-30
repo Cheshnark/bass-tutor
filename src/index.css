@@ -1,0 +1,171 @@
+/*
+ * Tokens de diseño provisionales (Fase 0). El tema "cabezal de ampli"
+ * completo llega en la Fase 6; aquí solo lo mínimo para usarlo en el móvil.
+ */
+:root {
+  --bg: #16171a;
+  --surface: #202227;
+  --surface-2: #2b2e35;
+  --text: #ecebe6;
+  --text-muted: #a9a8a2;
+  --accent: #e0a526; /* ámbar: piloto / estado activo */
+  --accent-strong: #f5c04a;
+  --danger: #ff6b5e;
+  --border: #3a3d45;
+
+  --radius: 10px;
+  --touch: 48px; /* objetivo táctil mínimo en controles principales */
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font: 18px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+}
+
+.app-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.app-main {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.panel {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn,
+select,
+input[type='number'] {
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1305;
+  font-weight: 700;
+}
+
+.btn--primary:not(:disabled):hover {
+  background: var(--accent-strong);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.bpm {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.bpm input {
+  width: 5ch;
+  box-sizing: content-box;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Pilotos de pulso */
+.beats {
+  display: flex;
+  gap: 12px;
+}
+
+.beat {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+}
+
+.beat--first {
+  border-color: var(--accent);
+}
+
+.beat--on {
+  background: var(--accent-strong);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.error {
+  color: var(--danger);
+  margin: 0;
+}
+
+/* alphaTab dibuja sobre fondo claro: se le da su propio lienzo. */
+.tab-viewport {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  background: #fbfaf5;
+  color: #111;
+}
