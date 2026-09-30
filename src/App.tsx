@@ -1,5 +1,5 @@
 import { FretboardExplorer } from './components/FretboardExplorer'
-import { MetronomePoc } from './components/MetronomePoc'
+import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { TabPoc } from './components/TabPoc'
 import exerciseTex from './content/exercises/fundamental-quinta.atex?raw'
 
@@ -12,7 +12,7 @@ function App() {
       </header>
       <main className="app-main">
         <FretboardExplorer />
-        <MetronomePoc />
+        <MetronomePanel />
         <TabPoc tex={exerciseTex} />
       </main>
     </>

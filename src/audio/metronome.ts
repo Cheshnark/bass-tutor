@@ -1,5 +1,7 @@
+import { clickFor, defaultAccents, type AccentLevel } from './accents'
 import { BeatClock, type BeatClockOptions, type Tick } from './beatClock'
 import { getAudioContext } from './context'
+import { TempoLadder, type LadderConfig } from './tempoLadder'
 
 /**
  * Metrónomo sobre Web Audio ("A Tale of Two Clocks", web.dev).
@@ -8,6 +10,7 @@ import { getAudioContext } from './context'
  * - Cada click se programa con `osc.start(tick.time)` sobre el reloj de audio.
  * - Usa el AudioContext compartido (`context.ts`), que se crea/reanuda dentro de
  *   `start()`: debe llamarse desde un gesto del usuario (requisito de iOS/Safari).
+ * - La escalera de tempo sube en el primer tiempo de compás (hook de `BeatClock.collect`).
  */
 
 const LOOKAHEAD_MS = 25
@@ -15,10 +18,9 @@ const SCHEDULE_AHEAD_S = 0.1
 /** Margen para que el primer click no caiga en el pasado. */
 const START_DELAY_S = 0.05
 
-const CLICK: Record<Tick['kind'], { freq: number; gain: number }> = {
-  downbeat: { freq: 1600, gain: 1 },
-  beat: { freq: 1000, gain: 0.7 },
-  subdivision: { freq: 800, gain: 0.35 },
+export interface MetronomeOptions extends BeatClockOptions {
+  /** Acento por pulso; si su longitud no coincide con `beatsPerBar`, los que falten son "normal". */
+  accents: AccentLevel[]
 }
 
 export class Metronome {
@@ -28,15 +30,21 @@ export class Metronome {
   private timer: ReturnType<typeof setInterval> | null = null
   /** Ticks programados pendientes de mostrarse en pantalla. */
   private visualQueue: Tick[] = []
-  private options: BeatClockOptions
+  private options: MetronomeOptions
+  private tempoLadder: TempoLadder | null = null
   private volume = 0.8
 
-  constructor(options: BeatClockOptions) {
-    this.options = { ...options }
+  constructor(options: Partial<MetronomeOptions> & BeatClockOptions) {
+    this.options = { accents: defaultAccents(options.beatsPerBar), ...options }
   }
 
   get isRunning(): boolean {
     return this.timer !== null
+  }
+
+  /** Escalera activa (solo lectura para la UI), o null. */
+  get ladder(): TempoLadder | null {
+    return this.tempoLadder
   }
 
   async start(): Promise<void> {
@@ -61,9 +69,24 @@ export class Metronome {
     this.visualQueue = []
   }
 
-  update(partial: Partial<BeatClockOptions>): void {
+  update(partial: Partial<MetronomeOptions>): void {
+    // Los acentos se leen en cada tick; solo tempo/compás/subdivisión tocan el reloj.
+    const { accents: _accents, ...clockPartial } = partial
     this.options = { ...this.options, ...partial }
-    this.clock?.update(partial)
+    if (Object.keys(clockPartial).length > 0) this.clock?.update(clockPartial)
+  }
+
+  /** Activa (o quita, con null) la escalera de tempo. El tempo pasa al inicio de la escalera. */
+  setLadder(config: LadderConfig | null): void {
+    this.tempoLadder = config ? new TempoLadder(config) : null
+    if (this.tempoLadder) this.applyBpm(this.tempoLadder.bpm)
+  }
+
+  /** Pase limpio: sube un escalón ya (desde el próximo tick). Devuelve el nuevo BPM o null. */
+  pass(): number | null {
+    const bpm = this.tempoLadder?.pass() ?? null
+    if (bpm !== null) this.applyBpm(bpm)
+    return bpm
   }
 
   setVolume(volume: number): void {
@@ -95,9 +118,17 @@ export class Metronome {
     this.output = null
   }
 
+  private applyBpm(bpm: number): void {
+    this.options = { ...this.options, bpm }
+    this.clock?.update({ bpm })
+  }
+
   private schedule(): void {
     if (!this.ctx || !this.clock || !this.output) return
-    const ticks = this.clock.collect(this.ctx.currentTime + SCHEDULE_AHEAD_S)
+    const ticks = this.clock.collect(this.ctx.currentTime + SCHEDULE_AHEAD_S, () => {
+      return this.tempoLadder?.barCompleted() ?? undefined
+    })
+    this.options.bpm = this.clock.bpm
     for (const tick of ticks) {
       this.playClick(tick)
       this.visualQueue.push(tick)
@@ -106,12 +137,13 @@ export class Metronome {
 
   private playClick(tick: Tick): void {
     if (!this.ctx || !this.output) return
-    const { freq, gain } = CLICK[tick.kind]
+    const sound = clickFor(tick, this.options.accents)
+    if (!sound) return
     const osc = this.ctx.createOscillator()
     const env = this.ctx.createGain()
-    osc.frequency.value = freq
+    osc.frequency.value = sound.freq
     env.gain.setValueAtTime(0, tick.time)
-    env.gain.linearRampToValueAtTime(gain, tick.time + 0.001)
+    env.gain.linearRampToValueAtTime(sound.gain, tick.time + 0.001)
     env.gain.exponentialRampToValueAtTime(0.0001, tick.time + 0.04)
     osc.connect(env).connect(this.output)
     osc.start(tick.time)

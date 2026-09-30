@@ -1,0 +1,351 @@
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
+import { nextAccent, resizeAccents, defaultAccents, type AccentLevel } from '../../audio/accents'
+import { clampBpm, MAX_BPM, MIN_BPM } from '../../audio/beatClock'
+import { Metronome } from '../../audio/metronome'
+import { TapTempo } from '../../audio/tapTempo'
+import { DEFAULT_LADDER, validateLadder, type LadderConfig, type LadderMode } from '../../audio/tempoLadder'
+import './Metronome.css'
+
+const SUBDIVISIONS = [
+  { value: 1, label: 'Negras' },
+  { value: 2, label: 'Corcheas' },
+  { value: 3, label: 'Tresillos' },
+  { value: 4, label: 'Semicorcheas' },
+]
+
+const ACCENT_LABEL: Record<AccentLevel, string> = {
+  accent: 'acento',
+  normal: 'normal',
+  silent: 'silencio',
+}
+
+interface LadderStatus {
+  progress: number
+  done: boolean
+}
+
+/** Metrónomo completo (Fase 1): tap tempo, acentos, escalera de tempo y pulso visual grande. */
+export function MetronomePanel() {
+  const [bpm, setBpm] = useState(80)
+  const [beatsPerBar, setBeatsPerBar] = useState(4)
+  const [subdivision, setSubdivision] = useState(1)
+  const [accents, setAccents] = useState<AccentLevel[]>(() => defaultAccents(4))
+  const [volume, setVolume] = useState(0.8)
+  const [running, setRunning] = useState(false)
+  const [beat, setBeat] = useState<number | null>(null)
+  const [bar, setBar] = useState(0)
+
+  const [ladderOn, setLadderOn] = useState(false)
+  const [ladderConfig, setLadderConfig] = useState<LadderConfig>(DEFAULT_LADDER)
+  const [ladderStatus, setLadderStatus] = useState<LadderStatus>({ progress: 0, done: false })
+  const ladderError = validateLadder(ladderConfig)
+
+  // Se crea una sola vez; el AudioContext no existe hasta pulsar "Iniciar".
+  const [metronome] = useState(() => new Metronome({ bpm, beatsPerBar, subdivision, accents }))
+  const [tapTempo] = useState(() => new TapTempo())
+  const bpmRef = useRef(bpm)
+
+  useEffect(() => {
+    bpmRef.current = bpm
+  }, [bpm])
+
+  // Con la escalera activa, el tempo lo manda el metrónomo (se sincroniza desde los ticks).
+  useEffect(() => {
+    if (!ladderOn) metronome.update({ bpm })
+  }, [metronome, bpm, ladderOn])
+
+  useEffect(() => {
+    metronome.update({ beatsPerBar, subdivision })
+  }, [metronome, beatsPerBar, subdivision])
+
+  useEffect(() => {
+    metronome.update({ accents })
+  }, [metronome, accents])
+
+  useEffect(() => {
+    metronome.setVolume(volume)
+  }, [metronome, volume])
+
+  // Pulso visual sincronizado con el reloj de audio, no con temporizadores.
+  useEffect(() => {
+    if (!running) return
+    let frame = 0
+    const loop = () => {
+      const tick = metronome.currentTick()
+      if (tick) {
+        if (tick.subInBeat === 0) setBeat(tick.beatInBar)
+        setBar(tick.bar)
+        const ladder = metronome.ladder
+        if (ladder) {
+          if (tick.bpm !== bpmRef.current) setBpm(tick.bpm)
+          setLadderStatus({ progress: (tick.bpm - ladder.config.start) / (ladder.config.target - ladder.config.start), done: tick.bpm >= ladder.config.target })
+        }
+      }
+      frame = requestAnimationFrame(loop)
+    }
+    frame = requestAnimationFrame(loop)
+    return () => cancelAnimationFrame(frame)
+  }, [metronome, running])
+
+  useEffect(() => {
+    return () => {
+      metronome.dispose()
+    }
+  }, [metronome])
+
+  const toggle = async () => {
+    if (metronome.isRunning) {
+      metronome.stop()
+      setRunning(false)
+      setBeat(null)
+    } else {
+      await metronome.start()
+      setRunning(true)
+    }
+  }
+
+  const changeBpm = (value: number) => {
+    if (Number.isFinite(value)) setBpm(clampBpm(Math.round(value)))
+  }
+
+  const changeBeats = (n: number) => {
+    setBeatsPerBar(n)
+    setAccents((prev) => resizeAccents(prev, n))
+  }
+
+  const cycleAccent = (i: number) => {
+    setAccents((prev) => prev.map((level, j) => (j === i ? nextAccent(level) : level)))
+  }
+
+  const tap = () => {
+    const result = tapTempo.tap(performance.now())
+    if (result !== null) setBpm(result)
+  }
+
+  const onTapKey = (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      tap()
+    }
+  }
+
+  const startLadder = () => {
+    if (ladderError) return
+    metronome.setLadder(ladderConfig)
+    setBpm(ladderConfig.start)
+    setLadderStatus({ progress: 0, done: false })
+    setLadderOn(true)
+  }
+
+  const stopLadder = () => {
+    metronome.setLadder(null)
+    setLadderOn(false)
+  }
+
+  const pass = () => {
+    const next = metronome.pass()
+    if (next !== null) {
+      setBpm(next)
+      const { start, target } = ladderConfig
+      setLadderStatus({ progress: (next - start) / (target - start), done: next >= target })
+    }
+  }
+
+  const setLadderField = <K extends keyof LadderConfig>(key: K, value: LadderConfig[K]) => {
+    setLadderConfig((prev) => ({ ...prev, [key]: value }))
+  }
+
+  const numberField = (key: 'start' | 'target' | 'step' | 'everyBars', label: string) => (
+    <label>
+      {label}
+      <input
+        type="number"
+        inputMode="numeric"
+        value={Number.isNaN(ladderConfig[key]) ? '' : ladderConfig[key]}
+        disabled={ladderOn}
+        onChange={(e) => setLadderField(key, e.target.valueAsNumber)}
+      />
+    </label>
+  )
+
+  return (
+    <section className="panel metronome" aria-labelledby="metronome-title">
+      <h2 id="metronome-title">Metrónomo</h2>
+
+      <div className="met-display" aria-live="off">
+        <span className={`met-pilot${beat !== null ? ' met-pilot--on' : ''}`} key={`${bar}-${beat}`} aria-hidden="true" />
+        <span className="met-bpm" data-testid="bpm-display">
+          {bpm}
+        </span>
+        <span className="met-unit">BPM</span>
+        {ladderOn && (
+          <span className="met-target">
+            → {ladderConfig.target}
+          </span>
+        )}
+        {running && <span className="met-bar">Compás {bar + 1}</span>}
+      </div>
+
+      <div className="met-beats" role="group" aria-label="Pulsos del compás: pulsa uno para cambiar su acento">
+        {accents.map((level, i) => (
+          <button
+            key={i}
+            type="button"
+            className={`met-beat met-beat--${level}${beat === i ? ' met-beat--on' : ''}`}
+            aria-label={`Pulso ${i + 1}: ${ACCENT_LABEL[level]}`}
+            onClick={() => cycleAccent(i)}
+          >
+            {i + 1}
+          </button>
+        ))}
+      </div>
+
+      <div className="row met-tempo">
+        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 5)} aria-label="Bajar 5 BPM">
+          −5
+        </button>
+        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 1)} aria-label="Bajar 1 BPM">
+          −1
+        </button>
+        <input
+          className="met-bpm-input"
+          type="number"
+          inputMode="numeric"
+          min={MIN_BPM}
+          max={MAX_BPM}
+          value={bpm}
+          disabled={ladderOn}
+          onChange={(e) => changeBpm(e.target.valueAsNumber)}
+          aria-label="BPM"
+        />
+        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 1)} aria-label="Subir 1 BPM">
+          +1
+        </button>
+        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 5)} aria-label="Subir 5 BPM">
+          +5
+        </button>
+      </div>
+
+      <input
+        className="met-slider"
+        type="range"
+        min={MIN_BPM}
+        max={MAX_BPM}
+        value={bpm}
+        disabled={ladderOn}
+        onChange={(e) => changeBpm(e.target.valueAsNumber)}
+        aria-label="Tempo"
+      />
+
+      <div className="met-main-actions">
+        <button
+          type="button"
+          className="btn met-tap"
+          disabled={ladderOn}
+          onPointerDown={tap}
+          onKeyDown={onTapKey}
+        >
+          Tap
+        </button>
+        <button type="button" className="btn btn--primary met-start" onClick={toggle} aria-pressed={running}>
+          {running ? 'Parar' : 'Iniciar'}
+        </button>
+      </div>
+
+      <div className="controls">
+        <label>
+          Compás
+          <select value={beatsPerBar} onChange={(e) => changeBeats(Number(e.target.value))}>
+            {[1, 2, 3, 4, 5, 6, 7, 9, 12].map((n) => (
+              <option key={n} value={n}>
+                {n}/4
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Subdivisión
+          <select value={subdivision} onChange={(e) => setSubdivision(Number(e.target.value))}>
+            {SUBDIVISIONS.map((s) => (
+              <option key={s.value} value={s.value}>
+                {s.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Volumen
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.05}
+            value={volume}
+            onChange={(e) => setVolume(e.target.valueAsNumber)}
+          />
+        </label>
+      </div>
+
+      <details className="met-ladder" open={ladderOn || undefined}>
+        <summary>Escalera de tempo</summary>
+        <p className="hint">
+          Empieza lento y sube poco a poco. Sube solo cuando lo toques limpio, a tiempo y sin tensión.
+        </p>
+        <div className="controls">
+          {numberField('start', 'Inicio (BPM)')}
+          {numberField('target', 'Objetivo (BPM)')}
+          {numberField('step', 'Paso (BPM)')}
+          <label>
+            Subir
+            <select
+              value={ladderConfig.mode}
+              disabled={ladderOn}
+              onChange={(e) => setLadderField('mode', e.target.value as LadderMode)}
+            >
+              <option value="manual">Al marcar un pase</option>
+              <option value="bars">Cada N compases</option>
+            </select>
+          </label>
+          {ladderConfig.mode === 'bars' && numberField('everyBars', 'N compases')}
+        </div>
+
+        {ladderError && !ladderOn && (
+          <p className="error" role="alert">
+            {ladderError}
+          </p>
+        )}
+
+        {ladderOn && (
+          <div className="met-ladder-status">
+            <progress value={ladderStatus.progress} max={1} aria-label="Progreso de la escalera" />
+            <p>
+              {ladderStatus.done
+                ? `¡Objetivo alcanzado: ${ladderConfig.target} BPM!`
+                : `${bpm} → ${ladderConfig.target} BPM`}
+            </p>
+          </div>
+        )}
+
+        <div className="row">
+          {ladderOn ? (
+            <>
+              <button type="button" className="btn btn--primary" onClick={pass} disabled={ladderStatus.done}>
+                Pase limpio: +{ladderConfig.step}
+              </button>
+              <button type="button" className="btn" onClick={startLadder}>
+                Reiniciar
+              </button>
+              <button type="button" className="btn" onClick={stopLadder}>
+                Quitar escalera
+              </button>
+            </>
+          ) : (
+            <button type="button" className="btn" onClick={startLadder} disabled={!!ladderError}>
+              Activar escalera
+            </button>
+          )}
+        </div>
+      </details>
+    </section>
+  )
+}

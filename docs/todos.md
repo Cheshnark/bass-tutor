@@ -11,8 +11,17 @@
 ## Fase 1: entregables pendientes
 
 - [x] Mástil SVG (4/5/6 cuerdas, afinaciones alternativas, zurdo, etiquetas nota/grado/intervalo, 12–24 trastes, sonido al pulsar).
-- [ ] Metrónomo completo: tap tempo, acentos configurables, escalera de tempo (subir X BPM cada N compases o tras marcar un "pase"), pulso visual grande.
+- [x] Metrónomo completo: tap tempo, acentos configurables (acento/normal/silencio por pulso), escalera de tempo
+      (cada N compases o al marcar un pase), pulso visual grande, ±1/±5, deslizador y volumen.
 - [ ] Diccionario de teoría: página de escalas y arpegios (fórmula, notas, grados) mostrados en el mástil.
+
+## Metrónomo: mejoras anotadas
+
+- [ ] "Gap click": N compases con clic y M en silencio (entrenar el pulso interno). Los acentos "silencio" ya cubren parte.
+- [ ] Cambiar compás/subdivisión en marcha reinicia el contador de compases (y el de la escalera por compases).
+- [ ] Recordar la configuración (tempo, compás, acentos, escalera) entre sesiones → Fase 3 (Zustand + IndexedDB).
+- [ ] Tap tempo: hoy es la media de los últimos 6 toques; si en el móvil resulta inestable, pasar a mediana.
+- [ ] La escalera solo sube; no hay modo "bajar" ni "sube-baja".
 
 ## Mástil: mejoras anotadas
 
@@ -36,7 +45,6 @@
 - [ ] Metrónomo en pestaña en segundo plano: los navegadores ralentizan `setInterval` a ~1 s y habría huecos.
       Opción: mover el temporizador a un Web Worker.
 - [ ] `TabPoc`: velocidad y bucle no se vuelven a aplicar si la instancia de alphaTab se recrea (p. ej., al cambiar `tex`).
-- [ ] Cambiar el compás o la subdivisión con el metrónomo en marcha reinicia el compás en el siguiente tick. Aceptable para la PoC.
 
 ## Fases siguientes (no entran en el primer hito)
 

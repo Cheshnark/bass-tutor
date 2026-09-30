@@ -63,5 +63,24 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** metrónomo y notas del mástil suenan a la vez; iOS limita los contextos y cada uno necesita
   su gesto de desbloqueo. `Metronome.dispose()` ya no cierra el contexto, solo desconecta su salida.
 
+## 2026-09-30 · Escalera de tempo decidida dentro del reloj, en el primer tiempo
+- **Motivo:** el planificador programa con 100 ms de antelación. Si la UI cambiara el tempo "cuando se entera",
+  el salto caería a mitad de compás. `BeatClock.collect(until, onBarStart)` consulta el hook justo antes de emitir
+  cada primer tiempo y se re-ancla en ese mismo instante. Cada `Tick` lleva su `bpm` y `bar`, y la UI muestra el
+  tempo cuando el tick suena.
+- **Consecuencia:** con la escalera activa, la UI no envía BPM al metrónomo (evita deshacer una subida recién
+  programada) y los controles de tempo se desactivan.
+
+## 2026-09-30 · Acentos editables desde los propios pilotos
+- **Motivo:** una sola pulsación grande (56 px) por pulso, sin menús: acento → normal → silencio. El "silencio"
+  quita también las subdivisiones de ese pulso, para practicar el pulso interno.
+
+## 2026-09-30 · Tap tempo en `pointerdown`, media de los últimos 6 toques
+- **Motivo:** `click` salta al soltar y añade la variación de lo que dura la pulsación. Se reinicia tras 2 s sin tocar.
+
+## 2026-09-30 · Columnas de grid con `minmax(0, 1fr)` en `.app-main` y `.panel`
+- **Motivo:** una columna `auto` crece hasta el min-content de su hijo más ancho y provocaba 11 px de scroll
+  lateral a 360 px. Detectado por el e2e de móvil.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

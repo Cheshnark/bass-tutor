@@ -15,7 +15,7 @@ test('el reproductor carga el soundfont', async ({ page }) => {
 
 test('el metrónomo arranca y enciende los pilotos de pulso', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('button', { name: 'Iniciar' }).click()
+  await page.getByRole('button', { name: 'Iniciar', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Parar' }).first()).toBeVisible()
-  await expect(page.locator('.beat--on')).toHaveCount(1, { timeout: 5_000 })
+  await expect(page.locator('.met-beat--on')).toHaveCount(1, { timeout: 5_000 })
 })

@@ -23,8 +23,18 @@ export interface Tick {
   beatInBar: number
   /** Índice del tick dentro del pulso (0 = el propio pulso). */
   subInBeat: number
+  /** Número de compás desde el arranque o el último cambio de compás/subdivisión (0 = primero). */
+  bar: number
+  /** Tempo al que suena este tick. */
+  bpm: number
   kind: TickKind
 }
+
+/**
+ * Se llama justo antes de emitir el primer tiempo de cada compás (a partir del segundo).
+ * Si devuelve un BPM, el cambio se aplica exactamente desde ese primer tiempo.
+ */
+export type BarStartHook = (bar: number) => number | void
 
 export const MIN_BPM = 20
 export const MAX_BPM = 300
@@ -56,21 +66,35 @@ export class BeatClock {
     return this.origin + this.n * this.secondsPerTick
   }
 
+  get bpm(): number {
+    return this.options.bpm
+  }
+
   /**
    * Devuelve (y consume) todos los ticks con `time < until`.
    * Llamadas sucesivas nunca repiten ni saltan ticks.
    */
-  collect(until: number): Tick[] {
+  collect(until: number, onBarStart?: BarStartHook): Tick[] {
     const ticks: Tick[] = []
     const { beatsPerBar, subdivision } = this.options
     const ticksPerBar = beatsPerBar * subdivision
     while (this.nextTime < until) {
       const inBar = this.position % ticksPerBar
+      const bar = Math.floor(this.position / ticksPerBar)
+      if (inBar === 0 && bar > 0 && onBarStart) {
+        const bpm = onBarStart(bar)
+        if (bpm !== undefined && clampBpm(bpm) !== this.options.bpm) {
+          // Re-ancla en este primer tiempo: su instante no cambia, los siguientes sí.
+          this.origin = this.nextTime
+          this.n = 0
+          this.options.bpm = clampBpm(bpm)
+        }
+      }
       const beatInBar = Math.floor(inBar / subdivision)
       const subInBeat = inBar % subdivision
       const kind: TickKind =
         subInBeat !== 0 ? 'subdivision' : beatInBar === 0 ? 'downbeat' : 'beat'
-      ticks.push({ time: this.nextTime, beatInBar, subInBeat, kind })
+      ticks.push({ time: this.nextTime, beatInBar, subInBeat, bar, bpm: this.options.bpm, kind })
       this.n += 1
       this.position += 1
     }

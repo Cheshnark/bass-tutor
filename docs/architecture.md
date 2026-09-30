@@ -27,8 +27,8 @@
 /docs/                         fuente de verdad del proyecto
 /e2e/                          tests Playwright
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
-/src/audio/                    context.ts (AudioContext compartido), beatClock.ts (puro) + metronome.ts, notePlayer.ts
-/src/components/               componentes React: Fretboard/ (layout.ts puro + SVG), FretboardExplorer, PoC
+/src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
+/src/components/               componentes React: Fretboard/ (layout.ts puro + SVG), FretboardExplorer, Metronome/MetronomePanel, TabPoc
 /src/content/exercises/*.atex  ejercicios en alphaTex, importados con ?raw
 /src/theory/                   tunings, notation (anglo/latina, grados), catalog (escalas/arpegios/intervalos), fretboard
 /src/state/                    (Fase 3) stores + IndexedDB
@@ -40,11 +40,16 @@
 
 - `BeatClock` es **puro**: dado un origen y el tempo, devuelve los ticks con `time < until`.
   Cada instante se calcula como `origin + n * secondsPerTick` (sin sumas acumuladas, así que no hay deriva).
-  Al cambiar el tempo se re-ancla en el próximo tick pendiente.
+  Al cambiar el tempo se re-ancla en el próximo tick pendiente. Cada tick lleva `bar` y `bpm`.
+  `collect(until, onBarStart)` permite cambiar el tempo exactamente en un primer tiempo (escalera).
+- Piezas puras: `accents.ts` (patrón por pulso y sonido de cada tick), `tapTempo.ts`, `tempoLadder.ts`
+  (modo "cada N compases" o "al marcar pase").
 - `Metronome` obtiene el `AudioContext` compartido en `start()` (tiene que venir de un gesto del usuario, por iOS).
   Un `setInterval` de 25 ms **solo despierta** al planificador, que programa osciladores con 100 ms
   de margen (`osc.start(tick.time)`). El piloto visual lee `currentTick()` en `requestAnimationFrame`
   comparando con `ctx.currentTime`.
+- `MetronomePanel` (UI): lectura grande del BPM con piloto, pulsos de 56 px que editan el acento, ±1/±5,
+  deslizador, Tap, Iniciar/Parar de 64 px, compás, subdivisión, volumen y escalera (`<details>`).
 
 ### Mástil (`src/theory/` + `src/components/Fretboard/`)
 

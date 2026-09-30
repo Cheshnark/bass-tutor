@@ -65,6 +65,8 @@ body {
 
 .app-main {
   display: grid;
+  /* minmax(0, …): la columna nunca crece por el min-content de un hijo (evita scroll lateral en móvil). */
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   padding: 16px;
   max-width: 960px;
@@ -73,6 +75,7 @@ body {
 
 .panel {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   padding: 16px;
   border: 1px solid var(--border);
@@ -128,43 +131,6 @@ input[type='number'] {
 :focus-visible {
   outline: 3px solid var(--accent-strong);
   outline-offset: 2px;
-}
-
-.bpm {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.bpm input {
-  width: 5ch;
-  box-sizing: content-box;
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* Pilotos de pulso */
-.beats {
-  display: flex;
-  gap: 12px;
-}
-
-.beat {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  background: var(--surface-2);
-}
-
-.beat--first {
-  border-color: var(--accent);
-}
-
-.beat--on {
-  background: var(--accent-strong);
-  box-shadow: 0 0 16px var(--accent);
 }
 
 .error {
