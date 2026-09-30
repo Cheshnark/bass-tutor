@@ -5,7 +5,7 @@ const display = (page: Page) => page.getByTestId('bpm-display')
 
 test.describe('metrónomo', () => {
   test('±1/±5 y el deslizador cambian el tempo', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     await expect(display(page)).toHaveText('80')
     await page.getByRole('button', { name: 'Subir 5 BPM' }).click()
     await page.getByRole('button', { name: 'Bajar 1 BPM' }).click()
@@ -15,7 +15,7 @@ test.describe('metrónomo', () => {
   })
 
   test('tap tempo calcula el BPM a partir de las pulsaciones', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     const tap = page.getByRole('button', { name: 'Tap' })
     for (let i = 0; i < 5; i++) {
       await tap.dispatchEvent('pointerdown')
@@ -27,7 +27,7 @@ test.describe('metrónomo', () => {
   })
 
   test('pulsar un piloto cambia su acento y se adapta al compás', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     const beats = panel(page).getByRole('group', { name: /Pulsos del compás/ }).getByRole('button')
     await expect(beats).toHaveCount(4)
     await expect(beats.nth(0)).toHaveAccessibleName('Pulso 1: acento')
@@ -41,7 +41,7 @@ test.describe('metrónomo', () => {
   })
 
   test('escalera manual: el pase sube el tempo hasta el objetivo', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     await page.getByText('Escalera de tempo').click()
     await page.getByLabel('Inicio (BPM)').fill('70')
     await page.getByLabel('Objetivo (BPM)').fill('78')
@@ -61,7 +61,7 @@ test.describe('metrónomo', () => {
   })
 
   test('escalera por compases: sube sola mientras suena', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     await page.getByText('Escalera de tempo').click()
     await page.getByLabel('Inicio (BPM)').fill('240')
     await page.getByLabel('Objetivo (BPM)').fill('260')
@@ -77,7 +77,7 @@ test.describe('metrónomo', () => {
   })
 
   test('configuración de escalera inválida muestra el error', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/metronomo')
     await page.getByText('Escalera de tempo').click()
     await page.getByLabel('Objetivo (BPM)').fill('40')
     await expect(page.getByRole('alert')).toHaveText('El objetivo tiene que ser mayor que el inicio')

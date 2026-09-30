@@ -13,15 +13,24 @@
 - [x] Mástil SVG (4/5/6 cuerdas, afinaciones alternativas, zurdo, etiquetas nota/grado/intervalo, 12–24 trastes, sonido al pulsar).
 - [x] Metrónomo completo: tap tempo, acentos configurables (acento/normal/silencio por pulso), escalera de tempo
       (cada N compases o al marcar un pase), pulso visual grande, ±1/±5, deslizador y volumen.
-- [ ] Diccionario de teoría: página de escalas y arpegios (fórmula, notas, grados) mostrados en el mástil.
+- [x] Diccionario de teoría: escalas y arpegios con fórmula, notas, pasos/intervalos, uso en el bajo, audio y mástil.
+- [ ] **Revisar tú los textos del diccionario** (`summary`/`usage` en `src/theory/catalog.ts`): los redactó Claude.
 
 ## Metrónomo: mejoras anotadas
 
 - [ ] "Gap click": N compases con clic y M en silencio (entrenar el pulso interno). Los acentos "silencio" ya cubren parte.
 - [ ] Cambiar compás/subdivisión en marcha reinicia el contador de compases (y el de la escalera por compases).
-- [ ] Recordar la configuración (tempo, compás, acentos, escalera) entre sesiones → Fase 3 (Zustand + IndexedDB).
+- [ ] Recordar la configuración (tempo, compás, acentos, escalera) y los ajustes globales entre sesiones → Fase 3
+      (el store de Zustand ya existe; falta persistirlo en IndexedDB).
 - [ ] Tap tempo: hoy es la media de los últimos 6 toques; si en el móvil resulta inestable, pasar a mediana.
 - [ ] La escalera solo sube; no hay modo "bajar" ni "sube-baja".
+
+## Diccionario y navegación: mejoras anotadas
+
+- [ ] Resaltar en el mástil la nota que suena al pulsar "Escuchar".
+- [ ] Más entradas: modos restantes (frigia, lidia, locria), menor melódica, acordes 6, sus2/sus4, 9.
+- [ ] Indicador en la cabecera de que el metrónomo está sonando (con BPM) cuando estás en otra vista.
+- [ ] Enlazar desde el diccionario al explorador del mástil con la misma selección.
 
 ## Mástil: mejoras anotadas
 

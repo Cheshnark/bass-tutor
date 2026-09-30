@@ -15,7 +15,7 @@
 | Tests e2e | Playwright (Chromium escritorio + Pixel 7) | ✅ |
 | CI | GitHub Actions (`.github/workflows/ci.yml`) | ✅ |
 | Contenido | MDX + Zod | Pendiente (Fase 2) |
-| Estado/persistencia | Zustand + Dexie (IndexedDB) | Pendiente (Fase 3) |
+| Estado/persistencia | Zustand (ajustes globales) + Dexie (IndexedDB) | Zustand ✅ · persistencia pendiente (Fase 3) |
 | PWA | Service worker con precache | Pendiente (Fase 3) |
 | Backend | Ninguno | — |
 
@@ -28,10 +28,11 @@
 /e2e/                          tests Playwright
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
 /src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
-/src/components/               componentes React: Fretboard/ (layout.ts puro + SVG), FretboardExplorer, Metronome/MetronomePanel, TabPoc
+/src/App.tsx, useHashRoute.ts  navegación por hash entre vistas
+/src/components/               Fretboard/ (layout.ts puro + SVG), FretboardExplorer, Dictionary/, Metronome/MetronomePanel, SettingsBar, TabPoc
 /src/content/exercises/*.atex  ejercicios en alphaTex, importados con ?raw
-/src/theory/                   tunings, notation (anglo/latina, grados), catalog (escalas/arpegios/intervalos), fretboard
-/src/state/                    (Fase 3) stores + IndexedDB
+/src/theory/                   tunings, notation (anglo/latina, grados), catalog (+ textos), fretboard, dictionary
+/src/state/                    settings.ts (Zustand: afinación, zurdo, nomenclatura); IndexedDB en la Fase 3
 ```
 
 ## Piezas clave
@@ -61,6 +62,18 @@
   números y notas. Cada casilla es pulsable y suena con `playNote(midi)`. Las notas visibles son
   focusables (`role="button"`, Enter/Espacio).
 - Afinaciones de grave a aguda (índice 0 = la más grave, dibujada abajo).
+
+### Diccionario (`src/theory/dictionary.ts` + `src/components/Dictionary/`)
+
+- `describeEntry(kind, id, root)` (puro): fórmula en grados, notas, semitonos y pasos (T/S/1½T) o intervalos
+  entre notas del arpegio, más el texto del catálogo.
+- `ascendingMidis(entry, lowest)`: notas para "Escuchar" en registro de bajo, sin bajar de la cuerda más grave.
+- La vista reutiliza `<Fretboard/>` con los ajustes globales.
+
+### Navegación
+
+- `useHashRoute` + pestañas en la cabecera. `MetronomePanel` siempre montado (oculto) para seguir sonando;
+  las demás vistas se montan al activarse.
 
 ### alphaTab (`src/components/TabPoc.tsx`)
 

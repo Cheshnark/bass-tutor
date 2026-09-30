@@ -5,7 +5,7 @@ Detalle y justificación en [research.md §8](research.md). Trabaja **una fase (
 | Fase | Entregables | Criterios de aceptación |
 |---|---|---|
 | **0. Especificación y andamiaje** | CLAUDE.md, docs, Vite+React+TS, lint, Vitest, Playwright, CI; PoC de alphaTab y metrónomo | `npm test` y `npm run build` en verde; la PoC renderiza tab + partitura y suena en Chrome Android y Safari iOS |
-| **1. Herramientas núcleo** | Mástil SVG (4/5/6 cuerdas, zurdo, etiquetas), metrónomo completo (tap tempo, escalera de tempo), diccionario de escalas/arpegios con Tonal.js | Tests de notas por traste y afinación; metrónomo sin deriva en 10 min; zurdo = espejo exacto |
+| **1. Herramientas núcleo** ✅ | Mástil SVG (4/5/6 cuerdas, zurdo, etiquetas), metrónomo completo (tap tempo, escalera de tempo), diccionario de escalas/arpegios con Tonal.js | Tests de notas por traste y afinación; metrónomo sin deriva en 10 min; zurdo = espejo exacto |
 | **2. Motor de lecciones** | Esquema Zod, MDX con componentes, modo "siguiendo la clase", módulos 0–3 (~10 lecciones) | El build falla si el contenido no cumple el esquema; cada lección tiene objetivos, ejercicio y criterio; usable a 1 m |
 | **3. Progreso + PWA offline** | IndexedDB, tempo limpio, `persist()`, service worker, manifest | Modo avión: todo el curso funciona; el progreso sobrevive a reinicios; Lighthouse ≥ 90 |
 | **4. Práctica inteligente** | Repaso espaciado (Leitner), rutinas con alternancia, quiz de mástil | La cola diaria sale del historial; tests del algoritmo |

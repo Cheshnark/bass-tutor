@@ -82,5 +82,24 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** una columna `auto` crece hasta el min-content de su hijo más ancho y provocaba 11 px de scroll
   lateral a 360 px. Detectado por el e2e de móvil.
 
+## 2026-09-30 · Zustand adelantado a la Fase 1 (sin persistencia)
+- **Motivo:** mástil y diccionario comparten afinación, zurdo y nomenclatura (modelo `Settings` de research.md).
+  Un store global evita duplicar estado y migrarlo después. La persistencia en IndexedDB sigue en la Fase 3.
+
+## 2026-09-30 · Navegación por hash (`#/mastil`, `#/diccionario`, `#/metronomo`, `#/tablatura`)
+- **Motivo:** sin dependencias (no hace falta un router), funciona offline y sin reescrituras en el hosting.
+- **El metrónomo está siempre montado** (oculto con `hidden`) para que siga sonando al cambiar de vista.
+  El resto de vistas se montan solo cuando están activas (alphaTab no maqueta bien en un contenedor oculto).
+
+## 2026-09-30 · Diccionario: datos de Tonal, textos curados
+- **Motivo:** fórmula, notas, pasos e intervalos se calculan siempre con Tonal (nada a mano). En el catálogo solo va
+  el texto para el usuario (`summary`, `usage`), que hay que revisar como cualquier contenido pedagógico.
+- Pasos de escala en español: T (tono), S (semitono), 1½T. Arpegios: intervalo entre notas consecutivas.
+- "Escuchar" programa toda la secuencia de golpe sobre el reloj de audio; el `setTimeout` del componente solo
+  reactiva el botón y no dispara sonido.
+
+## 2026-09-30 · Dobles alteraciones como ♭♭ / ♯♯
+- **Motivo:** 𝄫 y 𝄪 (U+1D12B/U+1D12A) no están en muchas fuentes de sistema de móvil y saldrían como cuadros.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

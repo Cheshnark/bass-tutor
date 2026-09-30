@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 
 test('alphaTab renderiza el ejercicio sin errores', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/tablatura')
   const tab = page.getByTestId('alphatab')
   await expect(tab).toHaveAttribute('data-status', 'listo', { timeout: 20_000 })
   await expect(tab.locator('svg').first()).toBeVisible()
@@ -9,12 +9,12 @@ test('alphaTab renderiza el ejercicio sin errores', async ({ page }) => {
 })
 
 test('el reproductor carga el soundfont', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/tablatura')
   await expect(page.getByRole('button', { name: 'Reproducir' })).toBeEnabled({ timeout: 30_000 })
 })
 
 test('el metrónomo arranca y enciende los pilotos de pulso', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/metronomo')
   await page.getByRole('button', { name: 'Iniciar', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Parar' }).first()).toBeVisible()
   await expect(page.locator('.met-beat--on')).toHaveCount(1, { timeout: 5_000 })

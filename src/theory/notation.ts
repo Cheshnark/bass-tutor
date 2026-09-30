@@ -13,11 +13,12 @@ const LATIN: Record<string, string> = {
   B: 'Si',
 }
 
+// Dobles alteraciones con dos signos: 𝄪/𝄫 no están en muchas fuentes de móvil.
 const ACCIDENTAL: Record<string, string> = {
   '#': '♯',
-  '##': '𝄪',
+  '##': '♯♯',
   b: '♭',
-  bb: '𝄫',
+  bb: '♭♭',
   '': '',
 }
 
