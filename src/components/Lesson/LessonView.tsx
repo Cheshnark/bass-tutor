@@ -2,9 +2,11 @@ import { useEffect, useMemo, useState, type ComponentType } from 'react'
 import type { MDXProps } from 'mdx/types'
 import { course, getLesson, neighbours, trackOf } from '../../content/course'
 import { getTrack } from '../../content/tracks'
+import { saveLastStep } from '../../state/progress/db'
 import { useSettings } from '../../state/settings'
 import { useWakeLock, type WakeLockStatus } from '../../useWakeLock'
 import { lessonComponents } from './lessonComponents'
+import { LessonCompletion } from './LessonCompletion'
 import { LessonStepContext } from './lessonStepContext'
 import './Lesson.css'
 
@@ -54,6 +56,11 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
   const current = Number.isFinite(requested) ? Math.min(Math.max(requested - 1, 0), Math.max(total - 1, 0)) : 0
   const wakeLock = useWakeLock(follow && lesson !== undefined)
   const stepState = useMemo(() => ({ follow, current }), [follow, current])
+
+  // Recordar el último paso visto para retomar la lección desde el índice.
+  useEffect(() => {
+    if (follow && lesson) void saveLastStep(lesson.id, current)
+  }, [follow, lesson, current])
 
   useEffect(() => {
     if (!lesson || !load) return
@@ -174,6 +181,8 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
           </LessonStepContext.Provider>
         )}
       </div>
+
+      {(!follow || isLast) && <LessonCompletion lessonId={lesson.id} exerciseIds={lesson.exercises} />}
 
       {follow ? (
         <div className="lesson-stepper">

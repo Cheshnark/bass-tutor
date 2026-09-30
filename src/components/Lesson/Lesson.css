@@ -487,3 +487,101 @@
 .lesson-body td:first-child {
   white-space: nowrap;
 }
+
+/* Progreso */
+.course-module__done {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.course-lessons li.is-done a {
+  border-color: #3d5a3a;
+}
+
+.course-lessons__check {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #4caf6a;
+  color: #0e1a10;
+  font-size: 0.8rem;
+  vertical-align: 1px;
+}
+
+.badge--ok {
+  background: #1f3a24;
+  color: #7fd896;
+}
+
+.course-progress {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.course-progress h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.lesson-exercise__progress {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.lesson-exercise__progress strong {
+  color: var(--text);
+}
+
+.lesson-exercise__attempt {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.lesson-exercise__attempt label {
+  display: grid;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.lesson-exercise__bpm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+
+.lesson-exercise__bpm input {
+  width: 6ch;
+  box-sizing: content-box;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lesson-exercise__attempt .hint {
+  margin: 0;
+}
+
+.lesson-completion {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.lesson-completion--done {
+  margin: 0;
+  color: #7fd896;
+  font-weight: 700;
+}

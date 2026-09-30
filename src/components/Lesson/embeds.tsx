@@ -4,7 +4,7 @@
  */
 import { useEffect, useMemo, useState } from 'react'
 import { getExercise } from '../../content/course'
-import type { ExerciseEmbed, FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
+import type { FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
 import { metronomeEngine, useMetronome } from '../../state/metronome'
 import { useSettings } from '../../state/settings'
 import type { FretboardView } from '../../theory/fretboard'
@@ -79,41 +79,6 @@ export function LessonMetronome({ bpm, beatsPerBar }: MetronomeEmbed) {
         {running ? `Parar metrónomo (${current} BPM)` : `Metrónomo a ${target} BPM`}
       </button>
     </div>
-  )
-}
-
-/** Tarjeta de ejercicio: instrucciones, tempo, notación, metrónomo y criterios de superación. */
-export function LessonExercise({ id }: ExerciseEmbed) {
-  const exercise = getExercise(id)
-  const [checked, setChecked] = useState<boolean[]>([])
-  if (!exercise) return null
-  const { tempo, passCriteria } = exercise
-  const [numerator, denominator] = exercise.timeSignature.split('/').map(Number)
-
-  return (
-    <article className="lesson-exercise" aria-labelledby={`exercise-${id}`} data-testid={`exercise-${id}`}>
-      <h3 id={`exercise-${id}`}>Ejercicio · {exercise.title}</h3>
-      <p>{exercise.instructions}</p>
-      <p className="lesson-exercise__tempo">
-        Empieza a <strong>{tempo.start} BPM</strong> y sube {tempo.step} BPM cada vez que lo toques limpio,
-        hasta <strong>{tempo.target} BPM</strong>. Compás {exercise.timeSignature}.
-      </p>
-      <LessonMetronome bpm={tempo.start} beatsPerBar={denominator === 4 ? numerator : undefined} />
-      <LazyTabView tex={exercise.alphaTex} title={exercise.title} />
-      <fieldset className="lesson-exercise__criteria">
-        <legend>Autoevaluación: ¿lo has tocado…?</legend>
-        {passCriteria.map((criterion, i) => (
-          <label key={criterion}>
-            <input
-              type="checkbox"
-              checked={checked[i] ?? false}
-              onChange={(e) => setChecked((prev) => Object.assign([...prev], { [i]: e.target.checked }))}
-            />
-            {criterion}
-          </label>
-        ))}
-      </fieldset>
-    </article>
   )
 }
 

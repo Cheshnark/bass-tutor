@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Icono original de Bass Tutor: un trozo de mástil (4 cuerdas, 2 trastes) y un piloto ámbar. -->
+  <rect width="512" height="512" rx="96" fill="#16171a"/>
+  <rect x="64" y="136" width="384" height="240" rx="18" fill="#3b2a20"/>
+  <rect x="176" y="136" width="10" height="240" fill="#b9bcc2"/>
+  <rect x="326" y="136" width="10" height="240" fill="#b9bcc2"/>
+  <g stroke="#cfd2d6" stroke-linecap="round">
+    <line x1="48" y1="166" x2="464" y2="166" stroke-width="6"/>
+    <line x1="48" y1="226" x2="464" y2="226" stroke-width="8"/>
+    <line x1="48" y1="286" x2="464" y2="286" stroke-width="10"/>
+    <line x1="48" y1="346" x2="464" y2="346" stroke-width="12"/>
+  </g>
+  <circle cx="256" cy="286" r="42" fill="#e0a526" stroke="#f5c04a" stroke-width="8"/>
+</svg>

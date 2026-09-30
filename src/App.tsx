@@ -4,6 +4,7 @@ import { CourseIndex } from './components/Lesson/CourseIndex'
 import { LessonView } from './components/Lesson/LessonView'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { SettingsBar } from './components/SettingsBar'
+import { UpdatePrompt } from './components/UpdatePrompt'
 import { useHashRoute } from './useHashRoute'
 
 const VIEWS = [
@@ -33,6 +34,7 @@ function App() {
         </nav>
       </header>
       <main className="app-main">
+        <UpdatePrompt />
         {view === 'curso' &&
           (lessonId ? <LessonView key={lessonId} lessonId={lessonId} stepParam={step} /> : <CourseIndex />)}
         {(view === 'mastil' || view === 'diccionario') && <SettingsBar />}

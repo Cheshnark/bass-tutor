@@ -12,6 +12,8 @@ export default defineConfig({
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
   use: {
     baseURL: `http://localhost:${PORT}`,
+    // El service worker se bloquea salvo en e2e/offline.spec.ts: así cada test ve la red, no una caché previa.
+    serviceWorkers: 'block',
     trace: 'on-first-retry',
   },
   projects: [

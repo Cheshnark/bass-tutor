@@ -1,4 +1,5 @@
-import { LessonExercise, LessonFretboard, LessonMetronome, LessonTab, LessonVideo } from './embeds'
+import { LessonFretboard, LessonMetronome, LessonTab, LessonVideo } from './embeds'
+import { LessonExercise } from './ExerciseCard'
 import { LessonStep } from './LessonStep'
 
 /**

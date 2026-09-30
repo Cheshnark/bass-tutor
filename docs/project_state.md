@@ -2,37 +2,29 @@
 
 _Última actualización: 2026-09-30_
 
-## Fase actual: 2 (motor de lecciones). Motor terminado; **tronco común completo** (en borrador)
+## Fases 0–3 cerradas; contenido: tronco común completo (borrador); itinerario metal/punk en marcha
 
-El autor toca pero no es profesor y quiere compartir el curso con amigos: el contenido lo redacta Claude siguiendo
-el método documentado en [pedagogy.md](pedagogy.md) (fuentes contrastadas + vídeos enlazados verificados).
+### Fase 3 (progreso + PWA): hecha
 
-### Tronco común (todo en borrador)
+- **Progreso** en el dispositivo (IndexedDB): intentos por ejercicio (tempo y pase limpio), mejor tempo limpio,
+  tempo sugerido para el siguiente intento, lecciones completadas (exige un intento de cada ejercicio) y "Sigue en
+  el paso N" en el índice. **Copia exportable/importable** (JSON).
+- **Ajustes y metrónomo** se recuerdan al volver.
+- **Sin conexión**: tras la primera visita funciona todo el curso, partitura y sonido incluidos (e2e en modo avión,
+  también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
+- **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
+- **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
+- Tests: 131 unitarios y 78 e2e.
 
-| Módulo | Lecciones |
-|---|---|
-| 0 · Arranque | Equipo y afinación · Postura y salud · Cuerdas al aire |
-| 1 · Mano derecha | Pulsación alterna · Cambios de cuerda · Apagado mano derecha |
-| 2 · Mano izquierda | Posición y presión (1-2-4) · Cromático (1.ª y 5.ª posición) · Coordinación y apagado |
-| 3 · Ritmo I | Pulso y contar · Corcheas y silencios · Cómo practicar ("Tu primera línea") |
-| 4 · Ubicarse | Leer tablatura · Notas en E y A · La octava |
-| 5 · Primeras líneas | Acordes y fundamental (I–IV–V) · Fundamental y quinta · 1-5-8 |
+### Contenido
 
-18 lecciones, 20 ejercicios originales (todos en uso) y 17 vídeos verificados. Los ejercicios del módulo 5 muestran
-el cifrado de los acordes sobre la partitura.
-
-- Tests: 114 unitarios y 64 e2e.
+Tronco común: 6 módulos, 18 lecciones, 20 ejercicios, todo en borrador (ver [pedagogy.md](pedagogy.md)).
 
 ### Pendiente de ti
 
-- **Probar el tronco común como alumno** (módulos 0–5; los 2–5 se escribieron sin tu revisión de los anteriores):
-  ¿se entiende?, ¿se puede tocar?, ¿el vídeo encaja? Marca `revisada` lo que esté bien y cuéntame lo que no.
-- Probar en tu móvil y confirmar el CI.
+- **Activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar el workflow "Publicar en GitHub Pages".
+- Probar el tronco común como alumno y en tu móvil (instalada como app).
 
 ## Siguiente paso
 
-Dos opciones:
-1. **Temario de los itinerarios** (rock/pop, funk/soul, blues/jazz, metal/punk): proponer los módulos de cada uno y
-   empezar por el que prefieras.
-2. **Fase 3** (progreso guardado + PWA offline + publicar la web): necesaria para compartir el curso con tus amigos
-   y para que la autoevaluación y el tempo limpio se guarden.
+Itinerario **metal/punk**: temario y primer módulo.

@@ -15,8 +15,9 @@
 | Tests e2e | Playwright (Chromium escritorio + Pixel 7) | ✅ |
 | CI | GitHub Actions (`.github/workflows/ci.yml`) | ✅ |
 | Contenido | Zod 4 + YAML + MDX (`@mdx-js/rollup`, `remark-mdx`) + plugin `virtual:course` | ✅ esquema, validación, carga y render |
-| Estado/persistencia | Zustand (ajustes globales, metrónomo) + Dexie (IndexedDB) | Zustand ✅ · persistencia pendiente (Fase 3) |
-| PWA | Service worker con precache | Pendiente (Fase 3) |
+| Estado/persistencia | Zustand (+ `persist` en localStorage para ajustes y metrónomo) + Dexie (IndexedDB) para el progreso | ✅ |
+| PWA | `vite-plugin-pwa` (Workbox): precache de todo el curso, manifest, iconos (`@vite-pwa/assets-generator`) | ✅ |
+| Despliegue | GitHub Pages (`.github/workflows/deploy.yml`, `BASE_PATH=/bass-tutor/`) | Preparado; lo activa el autor |
 | Backend | Ninguno | — |
 
 ## Estructura
@@ -35,7 +36,7 @@
 /scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts,
                                vite-plugin-alphatab-assets.ts (copia font/ y soundfont/ a public/ si cambian)
 /src/theory/                   tunings, notation (anglo/latina, grados), catalog (+ textos), fretboard, dictionary
-/src/state/                    settings.ts (afinación, zurdo, nomenclatura) y metronome.ts (motor único + estado); IndexedDB en la Fase 3
+/src/state/                    settings.ts y metronome.ts (Zustand + localStorage); progress/ (model.ts puro, db.ts Dexie, hooks.ts)
 ```
 
 ## Piezas clave
@@ -99,10 +100,29 @@
   del paso, y Screen Wake Lock (`useWakeLock`) mientras se sigue la clase. `lessonMode` en `useSettings`.
 - `TabView` (alphaTab) se carga con `React.lazy`: el bundle principal pasó de 1,61 MB a 285 KB.
 
+### Progreso y persistencia (`src/state/progress/`)
+
+- `model.ts` (puro): `applyAttempt` (mejor tempo limpio, caja de Leitner 1–5, historial ≤ 200), `suggestTempo`
+  (mejor limpio + paso, sin pasar del objetivo), `canCompleteLesson` (≥ 1 intento por ejercicio) y la validación de
+  la copia exportada (`parseProgressExport`, sin Zod para no cargarlo en el navegador).
+- `db.ts` (Dexie, BD `bass-tutor`): tablas `exercises` y `lessons`; `recordAttempt`, `completeLesson`,
+  `saveLastStep`, `exportProgress`/`importProgress` (valida antes de borrar) y `requestPersistence` (Storage API).
+- `hooks.ts`: `useLiveQuery` de dexie-react-hooks; la UI se actualiza sola al guardar.
+- UI: `ExerciseCard` (registrar intento; pase limpio = todos los criterios marcados), `LessonCompletion`,
+  `CourseIndex` (✓, n/m por módulo, "Sigue en el paso N") y `ProgressPanel` (exportar/importar JSON).
+- Ajustes y configuración del metrónomo: `persist` de Zustand en localStorage, saneados al recuperar.
+
+### PWA y despliegue
+
+- Workbox precachea ~7,6 MB (39 ficheros): app, lecciones, alphaTab (worker y worklet), `Bravura.woff2` y
+  `sonivox.sf2`. `registerType: 'prompt'`: `UpdatePrompt` avisa de versiones nuevas sin recargar en mitad de una práctica.
+- `base` configurable con `BASE_PATH` (GitHub Pages sirve en `/bass-tutor/`); probado offline bajo esa ruta.
+- En e2e el service worker está bloqueado salvo en `e2e/offline.spec.ts`.
+
 ### Navegación
 
-- `useHashRoute` + pestañas en la cabecera (Curso · Mástil · Diccionario · Metrónomo), con parámetro
-  (`#/curso/<lección>`). `MetronomePanel` siempre montado (oculto) para seguir sonando; el resto se monta al activarse.
+- `useHashRoute` + pestañas en la cabecera (Curso · Mástil · Diccionario · Metrónomo), con parámetros
+  (`#/curso/<lección>/<paso>`). `MetronomePanel` siempre montado (oculto) para seguir sonando; el resto se monta al activarse.
 
 ### alphaTab (`src/components/Tab/TabView.tsx`)
 

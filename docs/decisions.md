@@ -179,5 +179,28 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** MDX solo entiende CommonMark; las tablas de las lecciones se pintaban como texto. Las tablas se muestran
   compactas y, si no caben, se desplazan ellas (nunca la página). Mejor tablas de 2 columnas para el móvil.
 
+## 2026-09-30 · Persistencia: progreso en IndexedDB (Dexie), ajustes en localStorage
+- **Motivo:** research.md §5.2. El progreso crece (historial de intentos) y necesita consultas; los ajustes son un
+  objeto pequeño que se lee al arrancar. Todo lo recuperado se valida/sanea (un localStorage manipulado o de otra
+  versión no debe romper nada).
+- **Copia exportable (JSON)** + `navigator.storage.persist()`: mitigan el riesgo de iOS/almacenamiento (research §11).
+  La importación valida antes de pedir confirmación y antes de borrar nada.
+
+## 2026-09-30 · Completar una lección exige un intento de cada ejercicio
+- **Motivo:** research.md §11 ("la app se vuelve pasiva"): la lección no se da por hecha solo leyéndola.
+  Pase limpio = todos los criterios de autoevaluación marcados; el mejor tempo limpio alimenta el tempo sugerido.
+
+## 2026-09-30 · Service worker con aviso, no con actualización automática
+- **Motivo:** una recarga automática cortaría el metrónomo en mitad de una práctica. El aviso es un banner en el
+  flujo (no flotante) para no tapar la barra Anterior/Siguiente.
+
+## 2026-09-30 · Lighthouse 12+ ya no tiene categoría PWA
+- El criterio "Lighthouse PWA ≥ 90" se sustituye por: rendimiento, accesibilidad y buenas prácticas ≥ 90 (medido:
+  98/100/100 en la portada y 97/100/100 en una lección, móvil) + e2e de funcionamiento sin conexión.
+
+## 2026-09-30 · Despliegue en GitHub Pages, activado por el autor
+- **Motivo:** el repositorio es público y Pages es gratuito; la ruta con hash no necesita reescrituras. El workflow
+  solo publica si se lanza a mano o si existe la variable `PAGES_ENABLED=true`: la decisión de publicar es del autor.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

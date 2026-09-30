@@ -8,6 +8,15 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 3: hecha
+
+- [x] Progreso en IndexedDB, completar lección con intentos, retomar, exportar/importar, `persist()`.
+- [x] Ajustes y metrónomo recordados. PWA offline (e2e en modo avión) y Lighthouse ≥ 90.
+- [ ] **Tú: activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar "Publicar en GitHub Pages"
+      desde Actions (o crear la variable `PAGES_ENABLED=true` para publicar en cada push).
+- [ ] Probar la app instalada en el móvil (iOS: añadir a pantalla de inicio; comprobar que el progreso se conserva).
+- [ ] Avisos de build de alphaTab (`import.meta` en formato iife de sus workers): funcionan, pero vigilar al actualizar.
+
 ## Fase 2: entregables
 
 - [x] Esquema Zod del contenido + `npm run content:check` (rompe el build si hay errores).
@@ -33,10 +42,10 @@
 - [ ] En el paso 1 del móvil, la cabecera (título, objetivos) ocupa casi toda la pantalla; valorar plegar los
       objetivos o moverlos al primer paso.
 - [ ] Al recargar, el navegador restaura el scroll antiguo en vez de empezar arriba del paso.
-- [ ] Recordar el modo (paso a paso / completa) entre sesiones → Fase 3.
+- [x] Recordar el modo (paso a paso / completa) entre sesiones.
 
 - [ ] "Practicar con escalera" desde la tarjeta de ejercicio (usar su `tempo.start/target/step` en la escalera).
-- [ ] Guardar la autoevaluación y el tempo limpio (Fase 3; hoy los checkboxes no se guardan).
+- [x] Guardar la autoevaluación y el tempo limpio (intentos en IndexedDB).
 - [ ] Acceso a los ajustes (afinación, zurdo, nombres) desde la lección; hoy solo desde Mástil/Diccionario.
 - [ ] Indicador en la cabecera de que el metrónomo suena (útil ahora que se arranca desde las lecciones).
 - [ ] Vite avisa de que la carga "nativa" de la config (futuro por defecto) exigirá extensiones en los imports de
@@ -54,8 +63,7 @@
 
 - [ ] "Gap click": N compases con clic y M en silencio (entrenar el pulso interno). Los acentos "silencio" ya cubren parte.
 - [ ] Cambiar compás/subdivisión en marcha reinicia el contador de compases (y el de la escalera por compases).
-- [ ] Recordar la configuración (tempo, compás, acentos, escalera) y los ajustes globales entre sesiones → Fase 3
-      (el store de Zustand ya existe; falta persistirlo en IndexedDB).
+- [x] Recordar la configuración del metrónomo y los ajustes globales entre sesiones (localStorage).
 - [ ] Tap tempo: hoy es la media de los últimos 6 toques; si en el móvil resulta inestable, pasar a mediana.
 - [ ] La escalera solo sube; no hay modo "bajar" ni "sube-baja".
 
