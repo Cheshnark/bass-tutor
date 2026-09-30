@@ -69,8 +69,23 @@ Plantilla de pasos recomendada (docs/research.md §10):
 5. `## Errores comunes`
 6. `## Autoevaluación`
 
-> Los componentes incrustados (`<Fretboard />`, `<Tab />`, `<Metronome />`) llegan en el siguiente entregable
-> de la Fase 2. Sus props ya tienen esquema (`FretboardEmbedSchema` reutiliza el modelo `FretboardView` del mástil).
+### Componentes que puedes usar en el cuerpo
+
+Solo estos cuatro. Las props tienen que ser **literales** (textos, números, listas): nada de código.
+`content:check` valida nombre, props y referencias, y da la **línea del fichero** si algo falla.
+
+| Componente | Qué pinta | Ejemplo |
+|---|---|---|
+| `<Exercise id="…" />` | Tarjeta del ejercicio: instrucciones, tempo, botón de metrónomo, partitura con reproducción y autoevaluación | `<Exercise id="cuerdas-al-aire-negras" />` |
+| `<Fretboard … />` | Mástil (usa la afinación, el zurdo y la nomenclatura de los ajustes) | `<Fretboard mode="scale" root="A" type="minor pentatonic" frets={[0, 5]} labels="degree" />` |
+| `<Tab exercise="…" />` | Solo la partitura + tab de un ejercicio, con reproducción | `<Tab exercise="fundamental-quinta" />` |
+| `<Metronome … />` | Botón que arranca el metrónomo de la app a ese tempo | `<Metronome bpm={60} beatsPerBar={4} />` |
+
+- `<Fretboard>`: `mode` = `notes` · `scale` · `arpeggio` · `interval`; `root` y `type` en nomenclatura de Tonal
+  (los del diccionario); `frets` por defecto `[0, 12]`; `labels` = `note` · `degree` · `interval`.
+- Todo ejercicio de `exercises` del frontmatter debería aparecer con `<Exercise id="…" />` (si no, aviso), y todo
+  `<Exercise>` del cuerpo tiene que estar en `exercises` (si no, error).
+- No se permiten `import`/`export` ni expresiones `{…}`; sí comentarios `{/* nota */}`.
 
 ## Ejercicio: `<id>.yaml`
 

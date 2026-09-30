@@ -2,35 +2,31 @@
 
 _Última actualización: 2026-09-30_
 
-## Fase actual: 2 (motor de lecciones). Entregable 1 hecho: esquema del contenido
+## Fase actual: 2 (motor de lecciones). Entregables 2 de 4 hechos
 
 ### Hecho en la Fase 2
 
-- **Esquema Zod** (`src/content/schema.ts`) para módulos (`module.yaml`), lecciones (frontmatter del `.mdx`),
-  ejercicios (`exercises/<id>.yaml` con el alphaTex dentro) y las props de `<Fretboard/>` incrustado.
-  Mensajes de error en español.
-- **`npm run content:check`**: valida cada fichero, las referencias cruzadas (lecciones ↔ módulos, ejercicios,
-  prerrequisitos, ids únicos) y **parsea el alphaTex con alphaTab** (errores con línea y columna, y comprueba que
-  el compás declarado coincide). Se ejecuta antes de cada build: **si el contenido no cumple el esquema, el build falla**
-  (criterio de aceptación de la Fase 2).
-- **Guía de contenido**: [content-guide.md](content-guide.md).
-- **Contenido de ejemplo** en borrador: módulo `00-arranque` con la lección `cuerdas-al-aire` y el ejercicio
-  `cuerdas-al-aire-negras`. El ejercicio de la PoC de tablatura pasó a `exercises/fundamental-quinta.yaml` y la
-  vista Tablatura ya lo carga validado por el esquema.
-- Tests: 98 unitarios (14 nuevos de validación) y 40 e2e.
-
-### Hecho en la Fase 1 (cerrada)
-
-Mástil SVG, metrónomo completo, diccionario de teoría, navegación por pestañas y ajustes globales. Ver [roadmap.md](roadmap.md).
+1. **Esquema del contenido** + `npm run content:check` (ver [content-guide.md](content-guide.md)).
+2. **Cargador y render MDX**:
+   - La app arranca en **Curso**: índice de módulos y lecciones → página de lección (`#/curso/<id>`) con objetivos,
+     pasos, componentes y navegación anterior/siguiente.
+   - Componentes para las lecciones: `<Exercise/>` (tarjeta con instrucciones, tempo, metrónomo, partitura con
+     reproducción y autoevaluación), `<Fretboard/>`, `<Tab/>` y `<Metronome/>`.
+   - `content:check` y el build validan nombre, props (con Zod) y referencias de esos componentes, con la línea
+     real del fichero en cada error.
+   - El contenido llega a la app como JSON validado (`virtual:course`): Zod y yaml ya no van al navegador. alphaTab
+     y cada lección se cargan bajo demanda. **Bundle principal: 1,61 MB → 285 KB.**
+   - El metrónomo es un motor único: el de la lección y el del panel son el mismo.
+- Tests: 105 unitarios y 44 e2e (escritorio + móvil).
 
 ### Pendiente de ti
 
-- **Escribir las 3 primeras lecciones** siguiendo [content-guide.md](content-guide.md) (o reescribir la de ejemplo).
+- **Escribir las 3 primeras lecciones** con [content-guide.md](content-guide.md) (la de ejemplo sigue en borrador).
 - Revisar los textos del diccionario (`src/theory/catalog.ts`).
 - Probar en tu móvil real y confirmar el CI.
 
 ## Siguiente paso inmediato
 
-Fase 2, entregable **"cargador + render MDX"**: cargar el contenido en la app (idealmente precompilado a JSON en
-el build), renderizar las lecciones MDX con `<Fretboard/>`, `<Tab/>` y `<Metronome/>` incrustados, y validar las
-props de esos componentes en `content:check`. Después, el modo "siguiendo la clase".
+Fase 2, entregable **"modo siguiendo la clase"**: un paso (`##`) por pantalla, texto grande, botón "Siguiente"
+de ≥ 48 px, progreso de pasos y pantalla siempre encendida (Wake Lock, si el navegador lo permite).
+Después: módulos 0–3 (~10 lecciones), que dependen de que escribas las primeras.

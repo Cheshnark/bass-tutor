@@ -116,10 +116,35 @@ export const FretboardEmbedSchema = z
     }
   })
 
+/** `<Tab exercise="id" />`: solo la notación de un ejercicio, con reproducción. */
+export const TabEmbedSchema = z.strictObject({ exercise: slug })
+
+/** `<Exercise id="id" />`: tarjeta completa del ejercicio (instrucciones, tempo, notación, criterios). */
+export const ExerciseEmbedSchema = z.strictObject({ id: slug })
+
+/** `<Metronome bpm={60} beatsPerBar={4} />`: botón que arranca el metrónomo global a ese tempo. */
+export const MetronomeEmbedSchema = z.strictObject({
+  bpm: bpm.optional(),
+  beatsPerBar: z.number().int().min(1).max(12).optional(),
+})
+
+/** Componentes que se pueden usar en una lección y el esquema de sus props. */
+export const EMBED_SCHEMAS = {
+  Fretboard: FretboardEmbedSchema,
+  Tab: TabEmbedSchema,
+  Exercise: ExerciseEmbedSchema,
+  Metronome: MetronomeEmbedSchema,
+} as const
+
+export type EmbedName = keyof typeof EMBED_SCHEMAS
+
 export type ModuleData = z.infer<typeof ModuleSchema>
 export type LessonMeta = z.infer<typeof LessonMetaSchema>
 export type ExerciseData = z.infer<typeof ExerciseSchema>
-export type FretboardEmbed = z.infer<typeof FretboardEmbedSchema>
+export type FretboardEmbed = z.input<typeof FretboardEmbedSchema>
+export type TabEmbed = z.infer<typeof TabEmbedSchema>
+export type ExerciseEmbed = z.infer<typeof ExerciseEmbedSchema>
+export type MetronomeEmbed = z.infer<typeof MetronomeEmbedSchema>
 
 /** Contenido ya validado y con ids resueltos. */
 export interface Exercise extends ExerciseData {
@@ -129,9 +154,9 @@ export interface Exercise extends ExerciseData {
 export interface Lesson extends LessonMeta {
   id: string
   moduleId: string
-  /** Cuerpo MDX (sin frontmatter). Cada `## título` es un paso del modo "siguiendo la clase". */
-  body: string
-  /** Títulos de los pasos (encabezados `##`), en orden. */
+  /** Ruta del .mdx relativa a src/content ("modules/00-arranque/cuerdas-al-aire.mdx"). */
+  mdxPath: string
+  /** Títulos de los pasos (encabezados `##`), en orden. Cada uno es una pantalla en "siguiendo la clase". */
   steps: string[]
 }
 

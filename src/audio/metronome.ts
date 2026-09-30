@@ -30,6 +30,7 @@ export class Metronome {
   private timer: ReturnType<typeof setInterval> | null = null
   /** Ticks programados pendientes de mostrarse en pantalla. */
   private visualQueue: Tick[] = []
+  private lastTick: Tick | null = null
   private options: MetronomeOptions
   private tempoLadder: TempoLadder | null = null
   private volume = 0.8
@@ -58,6 +59,7 @@ export class Metronome {
     }
     this.clock = new BeatClock(this.options, ctx.currentTime + START_DELAY_S)
     this.visualQueue = []
+    this.lastTick = null
     this.schedule()
     this.timer = setInterval(() => this.schedule(), LOOKAHEAD_MS)
   }
@@ -67,6 +69,7 @@ export class Metronome {
     this.timer = null
     this.clock = null
     this.visualQueue = []
+    this.lastTick = null
   }
 
   update(partial: Partial<MetronomeOptions>): void {
@@ -97,17 +100,16 @@ export class Metronome {
   }
 
   /**
-   * Devuelve el último tick que ya ha sonado (según el reloj de audio),
-   * o null. Pensado para llamarse desde requestAnimationFrame.
+   * Último tick que ya ha sonado (según el reloj de audio), o null. Pensado para
+   * requestAnimationFrame. No "consume": varios componentes pueden leerlo a la vez.
    */
   currentTick(): Tick | null {
-    if (!this.ctx) return null
+    if (!this.ctx || !this.isRunning) return null
     const now = this.ctx.currentTime
-    let current: Tick | null = null
     while (this.visualQueue.length > 0 && this.visualQueue[0].time <= now) {
-      current = this.visualQueue.shift() ?? null
+      this.lastTick = this.visualQueue.shift() ?? null
     }
-    return current
+    return this.lastTick
   }
 
   /** Para y desconecta su salida. El contexto compartido no se cierra. */

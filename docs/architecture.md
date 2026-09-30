@@ -14,8 +14,8 @@
 | Tests unitarios | Vitest 5 (entorno `node`) | ✅ |
 | Tests e2e | Playwright (Chromium escritorio + Pixel 7) | ✅ |
 | CI | GitHub Actions (`.github/workflows/ci.yml`) | ✅ |
-| Contenido | Zod 4 (esquema) + YAML (ejercicios, módulos) + MDX (lecciones) | Esquema y `content:check` ✅ · render MDX pendiente |
-| Estado/persistencia | Zustand (ajustes globales) + Dexie (IndexedDB) | Zustand ✅ · persistencia pendiente (Fase 3) |
+| Contenido | Zod 4 + YAML + MDX (`@mdx-js/rollup`, `remark-mdx`) + plugin `virtual:course` | ✅ esquema, validación, carga y render |
+| Estado/persistencia | Zustand (ajustes globales, metrónomo) + Dexie (IndexedDB) | Zustand ✅ · persistencia pendiente (Fase 3) |
 | PWA | Service worker con precache | Pendiente (Fase 3) |
 | Backend | Ninguno | — |
 
@@ -28,12 +28,13 @@
 /e2e/                          tests Playwright
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
 /src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
-/src/App.tsx, useHashRoute.ts  navegación por hash entre vistas
-/src/components/               Fretboard/ (layout.ts puro + SVG), FretboardExplorer, Dictionary/, Metronome/MetronomePanel, SettingsBar, TabPoc
-/src/content/                  schema.ts (Zod), validate.ts (puro), frontmatter.ts; modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
-/scripts/content-check.ts      lee src/content del disco y valida (tsx); se ejecuta antes del build
+/src/App.tsx, useHashRoute.ts  navegación por hash (#/curso, #/curso/<id>, #/mastil…)
+/src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Tab/ (TabView diferido), SettingsBar
+/src/content/                  schema.ts (Zod), validate.ts + mdx.ts + frontmatter.ts (puros), course.ts (acceso tipado);
+                               modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
+/scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts
 /src/theory/                   tunings, notation (anglo/latina, grados), catalog (+ textos), fretboard, dictionary
-/src/state/                    settings.ts (Zustand: afinación, zurdo, nomenclatura); IndexedDB en la Fase 3
+/src/state/                    settings.ts (afinación, zurdo, nomenclatura) y metronome.ts (motor único + estado); IndexedDB en la Fase 3
 ```
 
 ## Piezas clave
@@ -50,6 +51,8 @@
   Un `setInterval` de 25 ms **solo despierta** al planificador, que programa osciladores con 100 ms
   de margen (`osc.start(tick.time)`). El piloto visual lee `currentTick()` en `requestAnimationFrame`
   comparando con `ctx.currentTime`.
+- **Motor único** (`src/state/metronome.ts`): `metronomeEngine` + store de Zustand. Lo controlan el panel y los
+  `<Metronome/>` de las lecciones. `currentTick()` no consume la cola (varios lectores a la vez).
 - `MetronomePanel` (UI): lectura grande del BPM con piloto, pulsos de 56 px que editan el acento, ±1/±5,
   deslizador, Tap, Iniciar/Parar de 64 px, compás, subdivisión, volumen y escalera (`<details>`).
 
@@ -81,13 +84,20 @@
 - **`scripts/content-check.ts`**: lee el disco, parsea alphaTex con alphaTab en Node (diagnósticos con línea/columna)
   y sale con código 1 si hay errores. `npm run build` lo ejecuta primero. Tiene su propio `tsconfig.scripts.json`.
 - Pasos de lección = encabezados `##` del cuerpo MDX (modelo `Step` de research.md adaptado).
+- **`mdx.ts`** analiza el MDX sin ejecutarlo (unified + remark-mdx): pasos, componentes con props evaluadas solo si
+  son literales, y construcciones prohibidas (import/export, expresiones). Los errores dan la línea real del fichero.
+- **Carga en la app**: `scripts/vite-plugin-course.ts` expone `virtual:course` = curso validado como JSON (sin Zod ni
+  yaml en el navegador); en dev invalida y recarga al cambiar `src/content`; si hay errores, falla el build.
+  Los `.mdx` se compilan con `@mdx-js/rollup` (+ `remark-frontmatter`) y se cargan con `import.meta.glob`: un chunk
+  por lección. `lessonComponents` mapea `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>` a componentes React.
+- `TabView` (alphaTab) se carga con `React.lazy`: el bundle principal pasó de 1,61 MB a 285 KB.
 
 ### Navegación
 
-- `useHashRoute` + pestañas en la cabecera. `MetronomePanel` siempre montado (oculto) para seguir sonando;
-  las demás vistas se montan al activarse.
+- `useHashRoute` + pestañas en la cabecera (Curso · Mástil · Diccionario · Metrónomo), con parámetro
+  (`#/curso/<lección>`). `MetronomePanel` siempre montado (oculto) para seguir sonando; el resto se monta al activarse.
 
-### alphaTab (`src/components/TabPoc.tsx`)
+### alphaTab (`src/components/Tab/TabView.tsx`)
 
 - `alphatab-vite` configura los web workers y audio worklets, y copia `font/` y `soundfont/` a `public/`.
 - Se usa `PlayerMode.EnabledSynthesizer` con `soundfont/sonivox.sf2`.

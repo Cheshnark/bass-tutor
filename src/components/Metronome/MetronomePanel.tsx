@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
-import { nextAccent, resizeAccents, defaultAccents, type AccentLevel } from '../../audio/accents'
-import { clampBpm, MAX_BPM, MIN_BPM } from '../../audio/beatClock'
-import { Metronome } from '../../audio/metronome'
+import { useEffect, useState, type KeyboardEvent } from 'react'
+import type { AccentLevel } from '../../audio/accents'
+import { MAX_BPM, MIN_BPM } from '../../audio/beatClock'
 import { TapTempo } from '../../audio/tapTempo'
 import { DEFAULT_LADDER, validateLadder, type LadderConfig, type LadderMode } from '../../audio/tempoLadder'
+import { metronomeEngine, useMetronome } from '../../state/metronome'
 import './Metronome.css'
 
 const SUBDIVISIONS = [
@@ -24,98 +24,69 @@ interface LadderStatus {
   done: boolean
 }
 
-/** Metrónomo completo (Fase 1): tap tempo, acentos, escalera de tempo y pulso visual grande. */
+/**
+ * Metrónomo completo: tap tempo, acentos, escalera de tempo y pulso visual grande.
+ * El estado vive en `useMetronome` (compartido con los `<Metronome/>` de las lecciones).
+ */
 export function MetronomePanel() {
-  const [bpm, setBpm] = useState(80)
-  const [beatsPerBar, setBeatsPerBar] = useState(4)
-  const [subdivision, setSubdivision] = useState(1)
-  const [accents, setAccents] = useState<AccentLevel[]>(() => defaultAccents(4))
-  const [volume, setVolume] = useState(0.8)
-  const [running, setRunning] = useState(false)
-  const [beat, setBeat] = useState<number | null>(null)
+  const {
+    bpm,
+    beatsPerBar,
+    subdivision,
+    accents,
+    volume,
+    running,
+    ladderActive: ladderOn,
+    setBpm,
+    setBeatsPerBar,
+    setSubdivision,
+    cycleAccent,
+    setVolume,
+    start,
+    stop,
+    setLadder,
+  } = useMetronome()
+  const [lastBeat, setBeat] = useState<number | null>(null)
+  // Parado no hay pulso encendido (derivado, sin setState en el efecto).
+  const beat = running ? lastBeat : null
   const [bar, setBar] = useState(0)
 
-  const [ladderOn, setLadderOn] = useState(false)
   const [ladderConfig, setLadderConfig] = useState<LadderConfig>(DEFAULT_LADDER)
   const [ladderStatus, setLadderStatus] = useState<LadderStatus>({ progress: 0, done: false })
   const ladderError = validateLadder(ladderConfig)
 
-  // Se crea una sola vez; el AudioContext no existe hasta pulsar "Iniciar".
-  const [metronome] = useState(() => new Metronome({ bpm, beatsPerBar, subdivision, accents }))
   const [tapTempo] = useState(() => new TapTempo())
-  const bpmRef = useRef(bpm)
-
-  useEffect(() => {
-    bpmRef.current = bpm
-  }, [bpm])
-
-  // Con la escalera activa, el tempo lo manda el metrónomo (se sincroniza desde los ticks).
-  useEffect(() => {
-    if (!ladderOn) metronome.update({ bpm })
-  }, [metronome, bpm, ladderOn])
-
-  useEffect(() => {
-    metronome.update({ beatsPerBar, subdivision })
-  }, [metronome, beatsPerBar, subdivision])
-
-  useEffect(() => {
-    metronome.update({ accents })
-  }, [metronome, accents])
-
-  useEffect(() => {
-    metronome.setVolume(volume)
-  }, [metronome, volume])
 
   // Pulso visual sincronizado con el reloj de audio, no con temporizadores.
   useEffect(() => {
     if (!running) return
     let frame = 0
     const loop = () => {
-      const tick = metronome.currentTick()
+      const tick = metronomeEngine.currentTick()
       if (tick) {
         if (tick.subInBeat === 0) setBeat(tick.beatInBar)
         setBar(tick.bar)
-        const ladder = metronome.ladder
+        const ladder = metronomeEngine.ladder
         if (ladder) {
-          if (tick.bpm !== bpmRef.current) setBpm(tick.bpm)
-          setLadderStatus({ progress: (tick.bpm - ladder.config.start) / (ladder.config.target - ladder.config.start), done: tick.bpm >= ladder.config.target })
+          // Con la escalera activa, el tempo lo manda el motor: la UI lo refleja cuando suena.
+          if (tick.bpm !== useMetronome.getState().bpm) useMetronome.getState().syncBpm(tick.bpm)
+          const { start: from, target } = ladder.config
+          setLadderStatus({ progress: (tick.bpm - from) / (target - from), done: tick.bpm >= target })
         }
       }
       frame = requestAnimationFrame(loop)
     }
     frame = requestAnimationFrame(loop)
     return () => cancelAnimationFrame(frame)
-  }, [metronome, running])
-
-  useEffect(() => {
-    return () => {
-      metronome.dispose()
-    }
-  }, [metronome])
+  }, [running])
 
   const toggle = async () => {
-    if (metronome.isRunning) {
-      metronome.stop()
-      setRunning(false)
-      setBeat(null)
-    } else {
-      await metronome.start()
-      setRunning(true)
-    }
+    if (running) stop()
+    else await start()
   }
 
-  const changeBpm = (value: number) => {
-    if (Number.isFinite(value)) setBpm(clampBpm(Math.round(value)))
-  }
-
-  const changeBeats = (n: number) => {
-    setBeatsPerBar(n)
-    setAccents((prev) => resizeAccents(prev, n))
-  }
-
-  const cycleAccent = (i: number) => {
-    setAccents((prev) => prev.map((level, j) => (j === i ? nextAccent(level) : level)))
-  }
+  const changeBpm = (value: number) => setBpm(value)
+  const changeBeats = (n: number) => setBeatsPerBar(n)
 
   const tap = () => {
     const result = tapTempo.tap(performance.now())
@@ -131,23 +102,17 @@ export function MetronomePanel() {
 
   const startLadder = () => {
     if (ladderError) return
-    metronome.setLadder(ladderConfig)
-    setBpm(ladderConfig.start)
+    setLadder(ladderConfig)
     setLadderStatus({ progress: 0, done: false })
-    setLadderOn(true)
   }
 
-  const stopLadder = () => {
-    metronome.setLadder(null)
-    setLadderOn(false)
-  }
+  const stopLadder = () => setLadder(null)
 
   const pass = () => {
-    const next = metronome.pass()
+    const next = useMetronome.getState().pass()
     if (next !== null) {
-      setBpm(next)
-      const { start, target } = ladderConfig
-      setLadderStatus({ progress: (next - start) / (target - start), done: next >= target })
+      const { start: from, target } = ladderConfig
+      setLadderStatus({ progress: (next - from) / (target - from), done: next >= target })
     }
   }
 

@@ -11,13 +11,20 @@
 ## Fase 2: entregables
 
 - [x] Esquema Zod del contenido + `npm run content:check` (rompe el build si hay errores).
-- [ ] Cargador de contenido en la app + render MDX con `<Fretboard/>`, `<Tab/>`, `<Metronome/>` incrustados;
-      validar las props de esos componentes en `content:check`.
-      **Idea:** compilar/validar el contenido a JSON en build para no enviar Zod + yaml al navegador (el bundle
-      subió de 1,37 a 1,61 MB al meterlos).
+- [x] Cargador (`virtual:course`) + render MDX con `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>`;
+      props validadas en `content:check`. Bundle principal: 1,61 MB → 285 KB.
 - [ ] Modo "siguiendo la clase" (un paso `##` por pantalla, texto grande, botón siguiente, Wake Lock).
 - [ ] Módulos 0–3 (~10 lecciones). **Escribe tú las 3 primeras** (research.md §12). La lección y el ejercicio de
       ejemplo de `00-arranque` están en borrador: reescríbelos o márcalos como revisados tras tocarlos.
+
+## Lecciones: mejoras anotadas
+
+- [ ] "Practicar con escalera" desde la tarjeta de ejercicio (usar su `tempo.start/target/step` en la escalera).
+- [ ] Guardar la autoevaluación y el tempo limpio (Fase 3; hoy los checkboxes no se guardan).
+- [ ] Acceso a los ajustes (afinación, zurdo, nombres) desde la lección; hoy solo desde Mástil/Diccionario.
+- [ ] Indicador en la cabecera de que el metrónomo suena (útil ahora que se arranca desde las lecciones).
+- [ ] Vite avisa de que la carga "nativa" de la config (futuro por defecto) exigirá extensiones en los imports de
+      `vite.config` → `scripts/` → `src/`. Hoy es solo un aviso.
 
 ## Fase 1: entregables
 
@@ -58,8 +65,6 @@
 
 - [ ] **alphaTab en móvil (375 px):** la partitura se maqueta más ancha que la pantalla y se ve recortada
       (con scroll horizontal dentro de su caja). Revisar `display.layoutMode`/`scale` o un re-render al cambiar el ancho.
-- [ ] **Bundle de 1,61 MB** (alphaTab + Zod + yaml en el chunk principal). Cargar el visor de tab con `import()` diferido
-      y compilar el contenido a JSON en build.
 - [ ] alphaTex: en alguna combinación mínima (p. ej. `\track "Bajo"` sin propiedades) el parser rechaza
       `\staff { score tabs }`. `content:check` lo detecta; si molesta, investigar la sintaxis exacta de alphaTab 1.8.
 - [ ] **Soundfont ausente en `dist/`:** pasó una vez, en el primer build, y no se ha podido reproducir en builds limpios.

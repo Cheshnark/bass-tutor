@@ -118,5 +118,24 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - `tsx` ejecuta el script (importa código de `src/` sin extensiones, que Node puro no resuelve).
 - Errores rompen el build; avisos (borradores, ejercicios sin usar) no.
 
+## 2026-09-30 · Contenido en la app vía `virtual:course` (JSON validado en build)
+- **Motivo:** la validación (Zod, yaml, alphaTab) solo corre en Node; el navegador recibe JSON ya validado y los MDX
+  compilados. Así no viajan Zod ni yaml, y un contenido roto nunca llega a producción (el plugin falla el build).
+- El plugin reutiliza `scripts/course-source.ts`, igual que `content:check`: una sola implementación.
+- `import.meta.url` en vez de `import.meta.dirname` (Vite reescribe el primero al empaquetar `vite.config`).
+- `tsconfig.node.json` pasa a `moduleResolution: bundler` (vite.config importa scripts/ sin extensión).
+
+## 2026-09-30 · Componentes MDX con props literales, validadas estáticamente
+- **Motivo:** el contenido lo escribe una persona (o Claude en borrador). Analizar el MDX sin ejecutarlo y admitir
+  solo literales permite validar las props con Zod en build y dar errores con la línea del fichero.
+  Se prohíben `import`/`export` y expresiones `{…}` (solo comentarios).
+
+## 2026-09-30 · Metrónomo como motor único en un store (Zustand)
+- **Motivo:** el `<Metronome/>` de una lección y el panel tienen que ser el mismo metrónomo (un solo clic, mismo tempo).
+  El store llama al motor en cada acción (sin efectos que sincronicen). `syncBpm` refleja la escalera sin reenviar.
+
+## 2026-09-30 · Vista "Curso" por defecto; fuera la vista "Tablatura"
+- La tablatura se ve ahora dentro de las lecciones (`<Exercise/>`, `<Tab/>`). La PoC ya no tiene vista propia.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

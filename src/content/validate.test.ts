@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extractSteps, parseFrontmatter } from './frontmatter'
+import { parseFrontmatter } from './frontmatter'
 import { FretboardEmbedSchema, LessonMetaSchema } from './schema'
 import { validateCourse, type RawCourse } from './validate'
 
@@ -14,7 +14,7 @@ const exercise = (overrides: Record<string, unknown> = {}) => ({
   ...overrides,
 })
 
-const lesson = (front: Record<string, unknown> = {}, body = '## Paso 1\n\nTexto') => {
+const lesson = (front: Record<string, unknown> = {}, body = '## Paso 1\n\nTexto\n\n<Exercise id="ej-a" />') => {
   const meta = {
     title: 'Lección',
     level: 'principiante',
@@ -56,7 +56,12 @@ describe('validateCourse', () => {
     expect(issues).toEqual([])
     expect(result.modules).toEqual([expect.objectContaining({ id: 'arranque', order: 0, title: 'Arranque' })])
     expect(result.lessons.map((l) => l.id)).toEqual(['uno', 'dos'])
-    expect(result.lessons[0]).toMatchObject({ moduleId: 'arranque', steps: ['Paso 1'], prerequisites: [] })
+    expect(result.lessons[0]).toMatchObject({
+      moduleId: 'arranque',
+      mdxPath: 'modules/00-arranque/uno.mdx',
+      steps: ['Paso 1'],
+      prerequisites: [],
+    })
     expect(result.lessons[0].review.afterDays).toEqual([1, 3, 7, 21])
     expect(result.exercises[0]).toMatchObject({ id: 'ej-a', feel: 'straight', tags: [] })
   })
@@ -173,6 +178,44 @@ describe('validateCourse', () => {
     ])
   })
 
+  it('componentes incrustados: nombre, props y referencias', () => {
+    const raw = course({
+      exercises: [
+        { file: 'ej-a.yaml', data: exercise() },
+        { file: 'ej-b.yaml', data: exercise() },
+      ],
+    })
+    raw.modules[0].lessons[0].source = lesson(
+      {},
+      [
+        '## Paso',
+        '<Exercise id="ej-a" />',
+        '<Exercise id="ej-b" />',
+        '<Tab exercise="fantasma" />',
+        '<Fretboard mode="scale" root="A" type="inventada" />',
+        '<Metronome bpm={500} />',
+        '<Piano />',
+        '<Fretboard mode="notes" frets={[0, 5]} extra="x" />',
+      ].join('\n\n'),
+    )
+    // Líneas del fichero completo: frontmatter (8 líneas) + línea en blanco + cuerpo.
+    expect(errors(raw)).toEqual([
+      'modules/00-arranque/uno.mdx: línea 14: <Exercise> el ejercicio "ej-b" no está en "exercises" del frontmatter',
+      'modules/00-arranque/uno.mdx: línea 16: <Tab> el ejercicio "fantasma" no existe en exercises/',
+      'modules/00-arranque/uno.mdx: línea 18: <Fretboard> Escala desconocida: inventada',
+      expect.stringMatching(/^modules\/00-arranque\/uno\.mdx: línea 20: <Metronome> bpm: /),
+      'modules/00-arranque/uno.mdx: línea 22: <Piano> no existe; disponibles: <Fretboard>, <Tab>, <Exercise>, <Metronome>',
+      expect.stringMatching(/^modules\/00-arranque\/uno\.mdx: línea 24: <Fretboard> .*extra/),
+    ])
+  })
+
+  it('avisa si un ejercicio del frontmatter no se incrusta con <Exercise>', () => {
+    const raw = course()
+    raw.modules[0].lessons[0].source = lesson({}, '## Paso\n\nSin ejercicio')
+    const warnings = validateCourse(raw).issues.filter((i) => i.level === 'warning')
+    expect(warnings.map((w) => w.message)).toEqual(['el ejercicio "ej-a" no aparece en el cuerpo con <Exercise id="ej-a" />'])
+  })
+
   it('avisa (sin error) de borradores y ejercicios sin usar', () => {
     const raw = course({
       exercises: [
@@ -188,13 +231,10 @@ describe('validateCourse', () => {
 
 describe('frontmatter', () => {
   it('separa YAML y cuerpo (también con BOM y CRLF)', () => {
-    const { data, body } = parseFrontmatter('﻿---\r\ntitle: Hola\r\n---\r\n## Uno\r\n')
+    const { data, body, bodyLine } = parseFrontmatter('﻿---\r\ntitle: Hola\r\n---\r\n## Uno\r\n')
     expect(data).toEqual({ title: 'Hola' })
     expect(body).toBe('## Uno\r\n')
-  })
-
-  it('los pasos son los ## fuera de bloques de código', () => {
-    expect(extractSteps('# Título\n## Uno\ntexto\n```\n## no\n```\n### sub\n## Dos ##')).toEqual(['Uno', 'Dos'])
+    expect(bodyLine).toBe(4)
   })
 })
 

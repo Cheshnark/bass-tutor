@@ -5,13 +5,18 @@ const BASE = import.meta.env.BASE_URL
 
 type Status = 'cargando' | 'listo' | 'error'
 
-interface TabPocProps {
+interface TabViewProps {
   /** Código alphaTex del ejercicio. */
   tex: string
+  /** Nombre accesible del bloque (lectores de pantalla). */
+  title?: string
 }
 
-/** Prueba de concepto de alphaTab (Fase 0): partitura + tab + reproducción. */
-export function TabPoc({ tex }: TabPocProps) {
+/**
+ * Partitura + tablatura con reproducción (alphaTab). Se carga de forma diferida
+ * (ver LazyTabView.tsx) para que alphaTab no pese en el bundle principal.
+ */
+export default function TabView({ tex, title = 'Tablatura y partitura' }: TabViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const apiRef = useRef<AlphaTabApi | null>(null)
   const [status, setStatus] = useState<Status>('cargando')
@@ -63,8 +68,7 @@ export function TabPoc({ tex }: TabPocProps) {
   }
 
   return (
-    <section className="panel" aria-labelledby="tab-title">
-      <h2 id="tab-title">Tablatura y partitura</h2>
+    <section className="tab-view" aria-label={title}>
 
       <div className="row">
         <button

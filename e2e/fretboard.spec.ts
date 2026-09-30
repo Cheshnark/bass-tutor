@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 test.describe('mástil', () => {
   test('por defecto: 4 cuerdas, trastes 0–12, pentatónica menor de A', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/mastil')
     const board = page.getByTestId('fretboard')
     await expect(board).toHaveAttribute('aria-label', /4 cuerdas.*A · Pentatónica menor/)
     await expect(board.locator('.fb-note')).toHaveCount(4 * 13)
@@ -11,7 +11,7 @@ test.describe('mástil', () => {
   })
 
   test('6 cuerdas', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/mastil')
     await page.getByLabel('Afinación').selectOption('standard-6')
     const board = page.getByTestId('fretboard')
     await expect(board.locator('.fb-note')).toHaveCount(6 * 13)
@@ -19,7 +19,7 @@ test.describe('mástil', () => {
   })
 
   test('zurdo: la cejuela pasa a la derecha', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/mastil')
     const nut = page.getByTestId('fretboard').locator('.fb-nut')
     const width = Number(await page.getByTestId('fretboard').getAttribute('width'))
     const before = Number(await nut.getAttribute('x1'))
@@ -30,7 +30,7 @@ test.describe('mástil', () => {
   })
 
   test('grados y nomenclatura latina', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/mastil')
     await page.getByLabel('Ver').selectOption('arpeggio')
     await page.getByLabel('Etiquetas').selectOption('degree')
     await page.getByLabel('Nombres').selectOption('latina')
@@ -43,7 +43,7 @@ test.describe('mástil', () => {
   test('pulsar una nota la marca (y no rompe nada)', async ({ page }) => {
     const errors: string[] = []
     page.on('pageerror', (e) => errors.push(e.message))
-    await page.goto('/')
+    await page.goto('/#/mastil')
     const note = page.getByTestId('fretboard').locator('[data-string="0"][data-fret="5"]')
     await note.click()
     await expect(note).toHaveClass(/fb-note--played/)
@@ -52,7 +52,7 @@ test.describe('mástil', () => {
 
   test('en móvil el mástil se desplaza dentro de su caja, no la página', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/')
+    await page.goto('/#/mastil')
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
     expect(overflow).toBe(0)
   })

@@ -4,13 +4,16 @@
  * Es pura: recibe el contenido ya leído. La lectura de disco está en scripts/content-check.ts.
  */
 import type { z } from 'zod'
-import { extractSteps, parseFrontmatter } from './frontmatter'
+import { parseFrontmatter } from './frontmatter'
+import { analyzeMdx } from './mdx'
 import {
+  EMBED_SCHEMAS,
   ExerciseSchema,
   LessonMetaSchema,
   ModuleSchema,
   SLUG_PATTERN,
   type Course,
+  type EmbedName,
   type Exercise,
   type Lesson,
   type Module,
@@ -178,13 +181,43 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
         issues.push(...zodIssues(path, parsed.error))
         continue
       }
-      const steps = extractSteps(document.body)
+      const analysis = analyzeMdx(document.body, document.bodyLine)
+      for (const problem of analysis.problems) error(path, problem)
+      const { steps } = analysis
       if (steps.length === 0) error(path, 'el cuerpo no tiene pasos: cada paso empieza con un encabezado "## Título"')
       if (parsed.data.status === 'borrador') warn(path, 'lección en borrador: revísala y márcala como "revisada"')
       for (const exerciseId of parsed.data.exercises) {
         if (!exerciseIds.has(exerciseId)) error(path, `el ejercicio "${exerciseId}" no existe en exercises/`)
       }
-      lessons.push({ id, moduleId, ...parsed.data, body: document.body, steps })
+
+      // Componentes incrustados: nombre conocido, props válidas y referencias existentes.
+      const embeddedExercises = new Set<string>()
+      for (const embed of analysis.embeds) {
+        const where = `${embed.line ? `línea ${embed.line}: ` : ''}<${embed.name}>`
+        if (!(embed.name in EMBED_SCHEMAS)) {
+          error(path, `${where} no existe; disponibles: ${Object.keys(EMBED_SCHEMAS).map((n) => `<${n}>`).join(', ')}`)
+          continue
+        }
+        const result = EMBED_SCHEMAS[embed.name as EmbedName].safeParse(embed.props)
+        if (!result.success) {
+          for (const issue of result.error.issues) {
+            error(path, `${where} ${issue.path.length ? issue.path.join('.') + ': ' : ''}${issue.message}`)
+          }
+          continue
+        }
+        const ref = embed.name === 'Exercise' ? String(embed.props.id) : embed.name === 'Tab' ? String(embed.props.exercise) : null
+        if (ref === null) continue
+        if (!exerciseIds.has(ref)) error(path, `${where} el ejercicio "${ref}" no existe en exercises/`)
+        if (embed.name === 'Exercise') {
+          embeddedExercises.add(ref)
+          if (!parsed.data.exercises.includes(ref)) error(path, `${where} el ejercicio "${ref}" no está en "exercises" del frontmatter`)
+        }
+      }
+      for (const exerciseId of parsed.data.exercises) {
+        if (!embeddedExercises.has(exerciseId)) warn(path, `el ejercicio "${exerciseId}" no aparece en el cuerpo con <Exercise id="${exerciseId}" />`)
+      }
+
+      lessons.push({ id, moduleId, mdxPath: `${dir}/${lesson.file}`, ...parsed.data, steps })
     }
   }
 
