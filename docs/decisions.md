@@ -137,5 +137,17 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 ## 2026-09-30 · Vista "Curso" por defecto; fuera la vista "Tablatura"
 - La tablatura se ve ahora dentro de las lecciones (`<Exercise/>`, `<Tab/>`). La PoC ya no tiene vista propia.
 
+## 2026-09-30 · "Siguiendo la clase": pasos agrupados en compilación, solo se monta el actual
+- **Agrupar en compilación** (plugin de remark) en vez de dividir el DOM: cada paso es un subárbol React propio y el
+  modo completo reutiliza el mismo MDX.
+- **Solo se monta el paso actual**: alphaTab no maqueta bien dentro de un contenedor oculto (ancho 0). El estado
+  que importa (metrónomo) es global, así que no se pierde nada al cambiar de paso.
+- **Paso en la URL** (`#/curso/<id>/<n>`): recargar mantiene el paso y "atrás" vuelve al anterior.
+- **Teclas ←/→ y RePág/AvPág**: es lo que envían los pedales de pasar página Bluetooth (manos ocupadas con el bajo).
+  El paso se lee del hash en cada pulsación: con pulsaciones rápidas, el valor del render estaba desfasado (lo
+  detectó un e2e).
+- **Wake Lock** solo en modo seguimiento; se vuelve a pedir al volver a la pestaña. Si no está o se deniega, se dice.
+- Modo por defecto: seguimiento (research.md §4: "modo siguiendo la clase" como forma principal de usar la lección).
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

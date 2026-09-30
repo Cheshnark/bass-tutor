@@ -57,8 +57,12 @@ review:                      # opcional; por defecto [1, 3, 7, 21]
 ---
 ```
 
-**Cada `## Título` del cuerpo es un paso** del modo "siguiendo la clase" (una pantalla con el botón "siguiente").
-Hace falta al menos uno. Los `###` son subapartados dentro del paso.
+**Cada `## Título` del cuerpo es un paso** del modo "siguiendo la clase": una pantalla, con texto grande y el botón
+"Siguiente" abajo. Hace falta al menos uno. Los `###` son subapartados dentro del paso.
+
+- Los `##` tienen que ir al nivel principal, nunca dentro de un componente (es un error de `content:check`).
+- Lo que escribas antes del primer `##` se muestra junto al primer paso.
+- Piensa cada paso como **una pantalla de móvil**: una idea, y como mucho un componente grande (`<Exercise/>`, `<Fretboard/>`).
 
 Plantilla de pasos recomendada (docs/research.md §10):
 

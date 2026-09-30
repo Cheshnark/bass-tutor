@@ -2,18 +2,19 @@ import { useEffect, useState } from 'react'
 
 export interface Route<T extends string> {
   view: T
-  /** Segmento tras la vista: `#/curso/cuerdas-al-aire` → "cuerdas-al-aire". */
-  param?: string
+  /** Segmentos tras la vista: `#/curso/cuerdas-al-aire/3` → ["cuerdas-al-aire", "3"]. */
+  params: string[]
 }
 
 function readHash<T extends string>(views: readonly T[], fallback: T): Route<T> {
-  const [id, param] = window.location.hash.replace(/^#\/?/, '').split('/')
+  const [id, ...rest] = window.location.hash.replace(/^#\/?/, '').split('/')
   const view = (views as readonly string[]).includes(id) ? (id as T) : fallback
-  return { view, param: view === id && param ? decodeURIComponent(param) : undefined }
+  const params = view === id ? rest.filter(Boolean).map(decodeURIComponent) : []
+  return { view, params }
 }
 
 /**
- * Ruta mínima por hash (`#/diccionario`, `#/curso/<id>`). Funciona sin servidor y offline,
+ * Ruta mínima por hash (`#/diccionario`, `#/curso/<id>/<paso>`). Funciona sin servidor y offline,
  * y no hace falta configurar reescrituras en el hosting. `views` debe ser estable (constante de módulo).
  */
 export function useHashRoute<T extends string>(views: readonly T[], fallback: T): Route<T> {

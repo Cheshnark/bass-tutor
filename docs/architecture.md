@@ -90,6 +90,12 @@
   yaml en el navegador); en dev invalida y recarga al cambiar `src/content`; si hay errores, falla el build.
   Los `.mdx` se compilan con `@mdx-js/rollup` (+ `remark-frontmatter`) y se cargan con `import.meta.glob`: un chunk
   por lección. `lessonComponents` mapea `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>` a componentes React.
+- **Pasos**: `src/content/remarkLessonSteps.ts` (plugin de remark, en `vite.config`) envuelve cada `##` de primer
+  nivel y su contenido en `<LessonStep index>`. En modo "siguiendo la clase" `LessonStep` solo monta el paso actual
+  (contexto `LessonStepContext`). `analyzeMdx` cuenta los mismos pasos (y rechaza `##` anidados).
+- **Modo seguimiento** (`LessonView`): paso en la URL (`#/curso/<id>/<n>`, 1-based), barra de progreso enlazable,
+  barra inferior fija Anterior/Siguiente (56 px), teclas ←/→ y RePág/AvPág (pedales Bluetooth), foco al título
+  del paso, y Screen Wake Lock (`useWakeLock`) mientras se sigue la clase. `lessonMode` en `useSettings`.
 - `TabView` (alphaTab) se carga con `React.lazy`: el bundle principal pasó de 1,61 MB a 285 KB.
 
 ### Navegación

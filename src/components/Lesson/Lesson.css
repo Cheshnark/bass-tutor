@@ -228,3 +228,126 @@
   min-height: 48px;
   font-weight: 700;
 }
+
+/* ── Modo "siguiendo la clase": un paso por pantalla, texto grande ── */
+.lesson-mode {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.lesson--follow .lesson-body {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.lesson--follow .lesson-body h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 1.6rem;
+}
+
+.lesson-body h2:focus {
+  outline: none;
+}
+
+.lesson-progress {
+  display: grid;
+  gap: 8px;
+}
+
+.lesson-progress__label {
+  margin: 0;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.lesson-progress ol {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-progress li {
+  flex: 1 1 0;
+}
+
+/* Cada segmento es un enlace al paso: alto de 24 px (mínimo WCAG 2.5.8) con una barra visible de 8 px. */
+.lesson-progress a {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.lesson-progress a::before {
+  content: '';
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.lesson-progress a.is-done::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  opacity: 0.6;
+}
+
+.lesson-progress a[aria-current='step']::before {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+/* Barra inferior fija: "Siguiente" siempre a mano, con el bajo colgado. */
+.lesson-stepper {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
+  gap: 6px;
+  margin: 0 -16px -16px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--surface);
+}
+
+.lesson-stepper__buttons {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.lesson-stepper .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  font-size: 1.15rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* "Anterior" en una línea; el botón principal ocupa el resto y puede partirse ("Siguiente lección →"). */
+.lesson-stepper__buttons > :first-child {
+  white-space: nowrap;
+}
+
+.lesson-stepper__wake {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Los enlaces con aspecto de botón no heredan el color de enlace de .lesson a */
+.lesson a.btn {
+  color: var(--text);
+}
+
+.lesson a.btn--primary {
+  color: #1a1305;
+}

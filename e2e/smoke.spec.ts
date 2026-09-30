@@ -14,6 +14,7 @@ test('la lección renderiza sus pasos y componentes sin errores', async ({ page 
   const errors: string[] = []
   page.on('pageerror', (e) => errors.push(e.message))
   await page.goto(LESSON)
+  await page.getByRole('button', { name: 'Ver la lección completa' }).click()
   const body = page.getByTestId('lesson-body')
   await expect(body.getByRole('heading', { level: 2 })).toHaveText([
     'Objetivo',
@@ -34,7 +35,7 @@ test('la lección renderiza sus pasos y componentes sin errores', async ({ page 
 })
 
 test('alphaTab renderiza el ejercicio y carga el soundfont', async ({ page }) => {
-  await page.goto(LESSON)
+  await page.goto(`${LESSON}/4`)
   const tab = page.getByTestId('alphatab')
   await expect(tab).toHaveAttribute('data-status', 'listo', { timeout: 20_000 })
   await expect(tab.locator('svg').first()).toBeVisible()
@@ -42,7 +43,7 @@ test('alphaTab renderiza el ejercicio y carga el soundfont', async ({ page }) =>
 })
 
 test('el metrónomo de la lección es el mismo que el del panel', async ({ page }) => {
-  await page.goto(LESSON)
+  await page.goto(`${LESSON}/4`)
   await page.getByRole('button', { name: 'Metrónomo a 60 BPM' }).click()
   await expect(page.getByRole('button', { name: 'Parar metrónomo (60 BPM)' })).toBeVisible()
   await page.getByRole('link', { name: 'Metrónomo' }).click()

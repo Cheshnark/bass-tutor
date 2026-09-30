@@ -13,11 +13,19 @@
 - [x] Esquema Zod del contenido + `npm run content:check` (rompe el build si hay errores).
 - [x] Cargador (`virtual:course`) + render MDX con `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>`;
       props validadas en `content:check`. Bundle principal: 1,61 MB → 285 KB.
-- [ ] Modo "siguiendo la clase" (un paso `##` por pantalla, texto grande, botón siguiente, Wake Lock).
+- [x] Modo "siguiendo la clase": un paso por pantalla, paso en la URL, Anterior/Siguiente de 56 px, teclado y
+      pedal, foco accesible, Wake Lock.
 - [ ] Módulos 0–3 (~10 lecciones). **Escribe tú las 3 primeras** (research.md §12). La lección y el ejercicio de
       ejemplo de `00-arranque` están en borrador: reescríbelos o márcalos como revisados tras tocarlos.
 
 ## Lecciones: mejoras anotadas
+
+- [ ] **Wake Lock en tu móvil**: en el navegador integrado de desarrollo se deniega; comprobar en Chrome Android y
+      Safari iOS (también instalada como app). **[Hipótesis: debería funcionar en ambos; verificar]**
+- [ ] En el paso 1 del móvil, la cabecera (título, objetivos) ocupa casi toda la pantalla; valorar plegar los
+      objetivos o moverlos al primer paso.
+- [ ] Al recargar, el navegador restaura el scroll antiguo en vez de empezar arriba del paso.
+- [ ] Recordar el modo (paso a paso / completa) entre sesiones → Fase 3.
 
 - [ ] "Practicar con escalera" desde la tarjeta de ejercicio (usar su `tempo.start/target/step` en la escalera).
 - [ ] Guardar la autoevaluación y el tempo limpio (Fase 3; hoy los checkboxes no se guardan).

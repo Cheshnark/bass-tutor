@@ -112,7 +112,11 @@ export function analyzeMdx(body: string, firstLine = 1): MdxAnalysis {
   const walk = (node: Node) => {
     switch (node.type) {
       case 'heading':
-        if (node.depth === 2) steps.push(textOf(node).trim())
+        // Los pasos son los ## de primer nivel (igual que remarkLessonSteps). Uno anidado no abriría paso.
+        if (node.depth === 2) {
+          if (tree.children?.includes(node)) steps.push(textOf(node).trim())
+          else problems.push(`${lineOf(node)}los encabezados ## tienen que ir al nivel principal, no dentro de un componente`)
+        }
         break
       case 'mdxjsEsm':
         problems.push(`${lineOf(node)}no se permiten import/export en las lecciones`)

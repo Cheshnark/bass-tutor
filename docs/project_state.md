@@ -2,31 +2,37 @@
 
 _Última actualización: 2026-09-30_
 
-## Fase actual: 2 (motor de lecciones). Entregables 2 de 4 hechos
+## Fase actual: 2 (motor de lecciones). Entregables 3 de 4 hechos: solo falta el contenido
 
 ### Hecho en la Fase 2
 
 1. **Esquema del contenido** + `npm run content:check` (ver [content-guide.md](content-guide.md)).
-2. **Cargador y render MDX**:
-   - La app arranca en **Curso**: índice de módulos y lecciones → página de lección (`#/curso/<id>`) con objetivos,
-     pasos, componentes y navegación anterior/siguiente.
-   - Componentes para las lecciones: `<Exercise/>` (tarjeta con instrucciones, tempo, metrónomo, partitura con
-     reproducción y autoevaluación), `<Fretboard/>`, `<Tab/>` y `<Metronome/>`.
-   - `content:check` y el build validan nombre, props (con Zod) y referencias de esos componentes, con la línea
-     real del fichero en cada error.
-   - El contenido llega a la app como JSON validado (`virtual:course`): Zod y yaml ya no van al navegador. alphaTab
-     y cada lección se cargan bajo demanda. **Bundle principal: 1,61 MB → 285 KB.**
-   - El metrónomo es un motor único: el de la lección y el del panel son el mismo.
-- Tests: 105 unitarios y 44 e2e (escritorio + móvil).
+2. **Cargador y render MDX**: vista Curso, lecciones con `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>`;
+   contenido validado en build (`virtual:course`); bundle principal 285 KB.
+3. **Modo "siguiendo la clase"** (por defecto):
+   - Un paso (`##`) por pantalla con texto grande; "Paso N de M" y barra de progreso con enlace a cada paso.
+   - Barra inferior fija con **Anterior / Siguiente** de 56 px; en el último paso, "Siguiente lección" o "Volver al curso".
+   - **Teclas ←/→ y RePág/AvPág**, que es lo que envían los pedales de pasar página Bluetooth.
+   - El paso va en la URL (`#/curso/<id>/3`): recargar lo mantiene y "atrás" vuelve al anterior.
+   - **Pantalla siempre encendida** (Screen Wake Lock) mientras sigues la clase; si el navegador no lo permite, lo dice.
+   - Botón para ver la lección completa y volver.
+- Tests: 109 unitarios y 62 e2e (escritorio + móvil), estables en ejecuciones repetidas.
+
+### Criterios de aceptación de la Fase 2 (roadmap)
+
+- ✅ El build falla si el contenido no cumple el esquema.
+- ✅ Cada lección tiene objetivos, ejercicio y criterio (lo exige el esquema).
+- ⏳ "Se puede usar a un metro de distancia (revisión manual en móvil)": pendiente de que lo pruebes tú.
+- ⏳ Módulos 0–3 completos (~10 lecciones): pendiente (contenido).
 
 ### Pendiente de ti
 
-- **Escribir las 3 primeras lecciones** con [content-guide.md](content-guide.md) (la de ejemplo sigue en borrador).
-- Revisar los textos del diccionario (`src/theory/catalog.ts`).
-- Probar en tu móvil real y confirmar el CI.
+- **Escribir las 3 primeras lecciones** con [content-guide.md](content-guide.md). Es lo que desbloquea el resto de la Fase 2.
+- **Probar en tu móvil**: modo paso a paso a un metro, Wake Lock, audio y tap tempo (`npm run dev -- --host`).
+- Revisar los textos del diccionario (`src/theory/catalog.ts`) y confirmar el CI.
 
-## Siguiente paso inmediato
+## Siguiente paso
 
-Fase 2, entregable **"modo siguiendo la clase"**: un paso (`##`) por pantalla, texto grande, botón "Siguiente"
-de ≥ 48 px, progreso de pasos y pantalla siempre encendida (Wake Lock, si el navegador lo permite).
-Después: módulos 0–3 (~10 lecciones), que dependen de que escribas las primeras.
+El último entregable de la Fase 2 es **contenido** (módulos 0–3). Opciones:
+- Escribes tú las 3 primeras lecciones y después Claude redacta borradores del resto con ese patrón.
+- O se adelanta la **Fase 3** (progreso en IndexedDB + PWA offline) mientras escribes.

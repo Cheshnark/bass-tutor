@@ -17,7 +17,8 @@ type ViewId = (typeof VIEWS)[number]['id']
 const VIEW_IDS: readonly ViewId[] = VIEWS.map((v) => v.id)
 
 function App() {
-  const { view, param } = useHashRoute<ViewId>(VIEW_IDS, 'curso')
+  const { view, params } = useHashRoute<ViewId>(VIEW_IDS, 'curso')
+  const [lessonId, step] = params
 
   return (
     <>
@@ -32,7 +33,8 @@ function App() {
         </nav>
       </header>
       <main className="app-main">
-        {view === 'curso' && (param ? <LessonView key={param} lessonId={param} /> : <CourseIndex />)}
+        {view === 'curso' &&
+          (lessonId ? <LessonView key={lessonId} lessonId={lessonId} stepParam={step} /> : <CourseIndex />)}
         {(view === 'mastil' || view === 'diccionario') && <SettingsBar />}
         {view === 'mastil' && <FretboardExplorer />}
         {view === 'diccionario' && <Dictionary />}
