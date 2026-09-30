@@ -1,0 +1,32 @@
+title: La forma de octava
+status: borrador
+instructions: >-
+  Fundamental con el índice y octava dos cuerdas más arriba y dos trastes más, con el meñique (o el anular).
+  Mueve la forma sin cambiarla: G, A, C y D. El índice, apoyado suavemente, calla la cuerda que queda en medio.
+  Al final, corcheas en octavas.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - La forma no cambia al moverla por el mástil
+  - La cuerda del medio no suena al saltar de la fundamental a la octava
+  - La fundamental y la octava suenan con el mismo volumen
+tags:
+  - octava
+  - mastil
+  - forma
+alphaTex: |
+  \title "La forma de octava"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 5.2 3.4 5.2 | 5.4 7.2 5.4 7.2 | 3.3 5.1 3.3 5.1 | 5.3 7.1 5.3 7.1 |
+  :8 3.4 5.2 3.4 5.2 3.4 5.2 3.4 5.2 | 3.3 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :2 3.4 5.2 | :1 3.4

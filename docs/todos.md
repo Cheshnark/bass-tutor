@@ -21,7 +21,8 @@
       y marcar `revisada` lo que esté bien. Anota lo que no.
 - [x] Módulos 2–3 en borrador (mano izquierda: posición y presión, cromático, coordinación y apagado; ritmo I:
       pulso y contar, corcheas y silencios, cómo practicar), 7 ejercicios nuevos. Escritos antes de la revisión de 0–1.
-- [ ] Módulos 4–5 (ubicarse, primeras líneas; usar `fundamental-quinta` en el 5).
+- [x] Módulos 4–5 en borrador (tablatura, notas en E y A, octava; fundamental, quinta, 1-5-8 sobre I–IV–V).
+      **Tronco común completo** (6 módulos, 18 lecciones, 20 ejercicios).
 - [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz, metal/punk).
 - [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.
 
@@ -78,8 +79,8 @@
 
 ## Bugs y riesgos conocidos
 
-- [ ] **alphaTab en móvil (375 px):** la partitura se maqueta más ancha que la pantalla y se ve recortada
-      (con scroll horizontal dentro de su caja). Revisar `display.layoutMode`/`scale` o un re-render al cambiar el ancho.
+- [ ] **alphaTab en móvil (375 px):** en las lecciones ya se maqueta a un compás por línea y cabe; comprobar en un
+      móvil real y en horizontal.
 - [ ] alphaTex: en alguna combinación mínima (p. ej. `\track "Bajo"` sin propiedades) el parser rechaza
       `\staff { score tabs }`. `content:check` lo detecta; si molesta, investigar la sintaxis exacta de alphaTab 1.8.
 - [x] **Soundfont ausente en `dist/` / servidor caído al reiniciar**: causa probable encontrada. `alphatab-vite`

@@ -1,0 +1,31 @@
+title: Notas naturales en las cuerdas E y A
+status: borrador
+instructions: >-
+  Recorre las notas naturales (sin sostenidos ni bemoles) de la cuerda E, del traste 0 al 12, y después las de la
+  cuerda A. Di el nombre de cada nota en voz alta mientras suena. Mueve la mano por el mástil sin prisa: aquí
+  importa saber dónde estás, no la técnica de digitación.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Dices el nombre de cada nota antes o mientras la tocas
+  - Sabes que entre E y F, y entre B y C, solo hay un traste
+  - El traste 12 suena igual que la cuerda al aire, una octava más aguda
+tags:
+  - notas
+  - mastil
+alphaTex: |
+  \title "Notas naturales en las cuerdas E y A"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :2 0.4 1.4 | 3.4 5.4 | 7.4 8.4 | 10.4 12.4 |
+  0.3 2.3 | 3.3 5.3 | 7.3 8.3 | 10.3 12.3 |
+  :1 0.4

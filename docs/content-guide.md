@@ -128,6 +128,8 @@ alphaTex: |
 - `content:check` **parsea el alphaTex con alphaTab** y da línea y columna del error
   (líneas contadas dentro del bloque de alphaTex, no del YAML).
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.
+- **Cifrado sobre la partitura**: pon `{ch "G"}` detrás de la primera nota del acorde (`3.4 {ch "G"} 3.4 3.4 3.4`).
+  Si el ejercicio tiene acordes, añade también `backing.harmony` (un acorde por compás).
 
 ## Vídeos
 

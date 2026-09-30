@@ -1,0 +1,34 @@
+title: Fundamental y quinta en blancas
+status: borrador
+instructions: >-
+  Fundamental en el tiempo 1 y quinta en el tiempo 3 (blancas). En G y C, la quinta está arriba: cuerda siguiente,
+  dos trastes más (meñique o anular). En D, pasa a quinta posición y toca la quinta abajo: cuerda anterior, mismo
+  traste, con el mismo dedo (el índice), rodando la yema.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, G, C, C, D, D, G, G]
+passCriteria:
+  - Cada nota dura sus dos tiempos, sin cortarse antes
+  - Encuentras la quinta de arriba y la de abajo sin mirar la tablatura
+  - El cambio a quinta posición (D) y la vuelta a G caen a tiempo
+tags:
+  - fundamental
+  - quinta
+  - acordes
+  - i-iv-v
+alphaTex: |
+  \title "Fundamental y quinta en blancas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :2 3.4 {ch "G"} 5.3 | 3.4 5.3 | 3.3 {ch "C"} 5.2 | 3.3 5.2 |
+  5.3 {ch "D"} 5.4 | 5.3 5.4 | 3.4 {ch "G"} 5.3 | :1 3.4

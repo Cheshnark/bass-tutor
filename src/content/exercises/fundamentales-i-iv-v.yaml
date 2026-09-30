@@ -1,0 +1,32 @@
+title: Fundamentales sobre G, C y D
+status: borrador
+instructions: >-
+  Toca solo la fundamental de cada acorde, en negras, siguiendo el cifrado de arriba: G, C, D y vuelta a G.
+  Todo en tercera posición (índice en el traste 3): G y C con el índice, D con el meñique en el traste 5.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, G, C, C, D, D, G, G]
+passCriteria:
+  - Cambias de acorde justo en el primer tiempo del compás, sin retrasarte
+  - Sabes qué acorde suena en cada momento mirando el cifrado
+  - Las negras suenan largas y parejas, sin huecos entre ellas
+tags:
+  - fundamental
+  - acordes
+  - i-iv-v
+alphaTex: |
+  \title "Fundamentales sobre G, C y D"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 {ch "G"} 3.4 3.4 3.4 | 3.4 3.4 3.4 3.4 | 3.3 {ch "C"} 3.3 3.3 3.3 | 3.3 3.3 3.3 3.3 |
+  5.3 {ch "D"} 5.3 5.3 5.3 | 5.3 5.3 5.3 5.3 | 3.4 {ch "G"} 3.4 3.4 3.4 | :1 3.4

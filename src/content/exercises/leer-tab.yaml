@@ -1,0 +1,29 @@
+title: Leer tablatura
+status: borrador
+instructions: >-
+  Lee solo la tablatura (el pentagrama de abajo, con números). Antes de tocar cada compás, dilo en voz alta:
+  "cuerda A, traste 2…". Todo está en primera posición: traste 2 con el medio, traste 3 con el meñique.
+tempo:
+  start: 60
+  target: 80
+  step: 4
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Encuentras cada nota sin mirar la partitura de arriba
+  - Sabes decir en qué cuerda y traste está cada nota antes de tocarla
+  - Tocas el ejercicio completo sin pararte
+tags:
+  - lectura
+  - tablatura
+alphaTex: |
+  \title "Leer tablatura"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.3 2.3 3.3 2.3 | 0.2 2.2 3.2 2.2 | 3.4 0.3 2.3 0.3 | :2 3.4 0.4 |
+  :4 0.4 3.4 0.3 2.3 | 3.3 2.3 0.3 3.4 | :2 0.3 3.4 | :1 0.4

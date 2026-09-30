@@ -1,0 +1,35 @@
+title: 1-5-8 sobre G, C y D
+status: borrador
+instructions: >-
+  El patrón fundamental–quinta–octava–quinta en negras sobre cada acorde. Forma de la mano: índice en la
+  fundamental, anular en la quinta y meñique en la octava. G y C en tercera posición; D en quinta posición
+  (índice en el traste 5).
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, G, C, C, D, D, G, G]
+passCriteria:
+  - La forma de la mano es la misma en los tres acordes; solo se mueve de sitio
+  - Los cambios de acorde caen en el primer tiempo sin huecos
+  - La octava no suena más fuerte que el resto
+tags:
+  - fundamental
+  - quinta
+  - octava
+  - acordes
+  - i-iv-v
+alphaTex: |
+  \title "1-5-8 sobre G, C y D"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 {ch "G"} 5.3 5.2 5.3 | 3.4 5.3 5.2 5.3 | 3.3 {ch "C"} 5.2 5.1 5.2 | 3.3 5.2 5.1 5.2 |
+  5.3 {ch "D"} 7.2 7.1 7.2 | 5.3 7.2 7.1 7.2 | 3.4 {ch "G"} 5.3 5.2 5.3 | :1 3.4

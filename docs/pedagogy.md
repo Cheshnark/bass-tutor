@@ -62,6 +62,11 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 | Cromático | 1-2-4 en primera posición y un dedo por traste en quinta; 3–5 min como calentamiento, lento y limpio | Coherente con la digitación elegida; StudyBass (String-Crossing: "sloppy slowly…") |
 | Contar | En voz alta, "1 y 2 y 3 y 4 y"; las "y" justo en medio; practicar contratiempos aparte | StudyBass (The Eighth Note Subdivision); Dan Hawkins (1/8th note counting tip) |
 | Figuras | Redonda 4, blanca 2, negra 1, corchea ½ pulso en 4/4; cada silencio dura lo mismo que su figura | StudyBass (Rhythmic Notation) |
+| Tablatura | Línea de abajo = cuerda E; números = trastes; la tab a menudo no indica ritmo (escuchar/partitura) | StudyBass (How to Read Bass Tab) |
+| Notas del mástil | 7 naturales; sin nota intermedia entre E–F y B–C; referencias en trastes 3, 5, 7 y 12; empezar por E y A | StudyBass (Musical Alphabet; Note Name Memorization); TalkingBass (Beginners Guide To The Bass Fretboard) |
+| Octava | Dos cuerdas arriba, dos trastes más; índice + meñique/anular; callar la cuerda del medio | StudyBass (Octaves); TalkingBass (Bass Octaves For Beginners) |
+| Fundamental y quinta | La fundamental es la nota más fuerte; después la quinta. Quinta arriba: cuerda siguiente +2 trastes; abajo: cuerda anterior, mismo traste y mismo dedo | StudyBass (Roots and Fifths; Chord Tones in Basslines) |
+| Dedo de la quinta | StudyBass propone el anular; con 1-2-4 en los primeros trastes sale el meñique. Se presentan las dos | StudyBass (Roots and Fifths) + decisión de digitación de este curso |
 | Practicar | Despacio y limpio; subir el tempo poco a poco; grabarse; sesiones cortas; alternar tareas (evidencia limitada) | StudyBass (Playing a Steady Pulse: empezar a 50–60 BPM, grabarse); research.md §1.1 (Carter y Grahn 2016; Wiseheart et al. 2017) |
 
 ## Fuentes
@@ -74,6 +79,10 @@ Escritas (base del texto):
 - Bass Bros — [The Simandl Technique](https://bassbros.co.uk/blog/the-simandl-technique-game-changer-or-thing-of-the-past/)
 - No Treble — [Avoiding Injury: Five Tips for Bass Players](https://www.notreble.com/?p=36026)
 - TalkingBass — [3 Cool Muting Techniques For Bass](https://www.talkingbass.net/bass-technique-muting/)
+- StudyBass — [How to Read Bass Tab](https://www.studybass.com/lessons/reading-music/how-to-read-bass-tab/) ·
+  [Octaves](https://www.studybass.com/lessons/common-bass-patterns/octaves/) ·
+  [Roots and Fifths](https://www.studybass.com/lessons/common-bass-patterns/roots-and-fifths/) ·
+  [Chord Tones in Basslines](https://www.studybass.com/lessons/harmony/chord-tones-in-basslines/)
 - StudyBass — [Playing a Steady Pulse](https://www.studybass.com/lessons/rhythm/playing-a-steady-pulse/) ·
   [Rhythmic Notation](https://www.studybass.com/lessons/reading-music/rhythmic-notation/) ·
   [The Eighth Note Subdivision](https://www.studybass.com/lessons/rhythm/the-eighth-note-subdivision/)
@@ -96,9 +105,15 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Mano izquierda | [2 Great Tips For The Perfect Fretting Hand Technique](https://www.youtube.com/watch?v=8F0pVPr4VYw) | Scott's Bass Lessons |
 | Figuras y silencios | [Counting rhythms: Whole, half, quarter, eighth notes and rests](https://www.youtube.com/watch?v=g1vFnQdRAdo) | Mrs. Musical Pants (canal de educación musical general, no de bajo) |
 | Contar corcheas | [Quick & simple 1/8th note counting tip](https://www.youtube.com/watch?v=JUh7-hI_npQ) | Dan Hawkins Bass Lessons |
+| Tablatura | [Bass Tabs: Everything You Need To Know To Get Started Reading Bass Tabs](https://www.youtube.com/watch?v=Y1Gy5P7vgfw) | Luke from Become A Bassist |
+| Notas del mástil | [Beginners Guide To The Bass Fretboard - Learning The Notes](https://www.youtube.com/watch?v=IJYxp5T4tLI) | TalkingBass |
+| Octavas | [Bass Octaves For Beginners](https://www.youtube.com/watch?v=q7ZuUBjUWlk) | TalkingBass |
+| 1-5-8 | [Root–Fifth–Octave Bass Line: Fix Your Pinky Technique…](https://www.youtube.com/watch?v=HZjHtaidfjE) | Ryan Madora |
 
 Notas:
 - Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.
+ - Descartados al verificar: un vídeo de tablatura que daba **404** (retirado) y uno que el buscador atribuía a
+  BassBuzz pero era de otro autor. Por eso toda URL se comprueba con oEmbed antes de enlazarla.
 - No se enlaza ningún vídeo del ejercicio "araña" en los primeros trastes: casi todos usan un dedo por traste ahí,
   lo que contradice la digitación del curso. Tampoco hay vídeo de apagado con la mano izquierda (no encontré uno de
   una fuente reconocida).
