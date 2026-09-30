@@ -2,27 +2,33 @@
 
 _Última actualización: 2026-09-30_
 
-## Fase actual: 0 (especificación y andamiaje), casi cerrada
+## Fase actual: 1 (herramientas núcleo). Entregable 1 de 3 hecho: mástil SVG
 
-### Hecho
+### Hecho en la Fase 1
 
-- Proyecto Vite 8 + React 19 + TypeScript 6 estricto, oxlint, Vitest, Playwright y CI en GitHub Actions.
-- **PoC metrónomo** (`src/audio/`): reloj puro testeado (6 tests, incluido "sin deriva en 10 min con jitter")
-  y una capa Web Audio con lookahead de 25 ms / 100 ms. Tiene compás, subdivisión, ±5 BPM y pilotos visuales.
-- **PoC alphaTab** (`src/components/TabPoc.tsx`): ejercicio original `fundamental-quinta.atex` renderizado
-  como partitura + tab en afinación de bajo, con reproducción, velocidad y bucle.
-- Verificado en el navegador de escritorio: render correcto, soundfont cargado, reproducción y metrónomo
-  funcionando, sin errores en consola. A 375 px no hay scroll horizontal de página.
-- e2e (Chromium de escritorio + Pixel 7 emulado): 6/6 en verde.
-- Docs: business, architecture, decisions, spec, roadmap, todos y research.
+- **`src/theory/`** (Tonal.js 6.4.3): afinaciones de 4/5/6 cuerdas (estándar, drop D, medio tono abajo, Do agudo),
+  nota por cuerda/traste, escalas, arpegios e intervalos con la ortografía correcta, grados (♭3, ♭7...),
+  nomenclatura anglo/latina y un catálogo con nombres en español.
+- **`<Fretboard/>`**: SVG con 4/5/6 cuerdas, zurdo (espejo exacto), etiquetas por nota/grado/intervalo,
+  0–12 a 0–24 trastes, fundamental resaltada y sonido al pulsar cualquier casilla.
+- **`FretboardExplorer`** en la página principal para probarlo todo.
+- `AudioContext` compartido entre el metrónomo y el mástil.
+- Tests: 52 unitarios (teoría, geometría, zurdo = espejo, reloj del metrónomo) y 18 e2e (escritorio + móvil).
+- Verificado en el navegador: pentatónica menor de A, La m7 en 6 cuerdas zurdo con grados y nombres latinos,
+  y sonido al pulsar. Sin errores en consola.
 
-### Falta para cerrar la Fase 0
+### Criterios de aceptación de la Fase 1 (roadmap)
 
-- Probarlo en **tu móvil real** (ver [todos.md](todos.md) › Fase 0).
-- Confirmar que el primer run de CI pasa.
+- ✅ Tests unitarios de notas por traste y afinación.
+- ✅ La versión zurda es el espejo exacto (test de geometría + e2e de la cejuela).
+- ✅ Metrónomo sin deriva en 10 min (test del reloj, desde la Fase 0).
+- ⏳ Metrónomo completo (tap tempo, escalera de tempo) y diccionario de teoría: pendientes.
+
+### Arrastrado de la Fase 0
+
+- Probarlo en **tu móvil real** y confirmar el primer run de CI (ver [todos.md](todos.md)).
 
 ## Siguiente paso inmediato
 
-Probar la PoC en el móvil (`npm run dev -- --host` y abrir la IP local desde el teléfono).
-Después, **Fase 1, entregable "mástil SVG"**: `src/theory/` (afinaciones + nota por cuerda/traste con Tonal.js)
-con tests y componente `<Fretboard/>` con 4/5/6 cuerdas y modo zurdo.
+Fase 1, entregable **"metrónomo completo"**: tap tempo, acentos configurables, escalera de tempo
+(subir X BPM cada N compases o tras marcar un pase) y pulso visual grande. Después, el diccionario de teoría.

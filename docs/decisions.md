@@ -38,5 +38,30 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** cada página levanta el worker de alphaTab (~2 MB). Con más workers en paralelo aparecían
   timeouts intermitentes; con 2, 3 de 3 ejecuciones en verde y más rápidas.
 
+## 2026-09-30 · Tonal.js fijado en 6.4.3 exacto
+- **Motivo:** la 6.5.0 (publicada el 2026-09-28) declara `main: dist/index.js` y `types: dist/index.d.ts`,
+  pero solo publica `index.mjs`/`index.cjs`. Node y TypeScript no la resuelven. La 6.4.3 sí incluye esos ficheros.
+
+## 2026-09-30 · Mástil: afinaciones de grave a aguda; ortografía según el conjunto
+- **Motivo:** coincide con el modelo de research.md (`["B0","E1",...]`). La pertenencia a la escala o al
+  arpegio se decide por *chroma*, pero el nombre sale de la ortografía de Tonal para ese conjunto
+  (Bb mayor → Eb, no D#; F# mayor → E#). Fuera de un conjunto: sostenidos, o bemoles si la fundamental lleva bemol.
+- La conversión a alphaTex (de aguda a grave) está centralizada en `toAlphaTexTuning`.
+
+## 2026-09-30 · Grados con alteración relativa a mayor/justa (♭3, ♭7, ♯4)
+- **Motivo:** es la notación habitual en bajo para arpegios y *chord tones*. Se deriva del intervalo de Tonal.
+  Los intervalos se muestran con "J" (justa) en vez de la "P" de Tonal.
+
+## 2026-09-30 · Geometría del mástil pura y zurdo calculado (no `scale(-1)`)
+- **Motivo:** un `transform` invertiría el texto. Con `x' = ancho − x` el espejo es exacto y testeable
+  (criterio de aceptación de la Fase 1).
+- **Estrechamiento de trastes:** la mitad del real (`2^(-1/24)` por traste). Con el real, el traste 24 mide la
+  mitad del 1 y es difícil de pulsar en el móvil. El mástil no se encoge: si no cabe, se desplaza dentro de su caja.
+- **Orientación:** la cuerda grave abajo, como en la tablatura.
+
+## 2026-09-30 · Un único AudioContext compartido (`src/audio/context.ts`)
+- **Motivo:** metrónomo y notas del mástil suenan a la vez; iOS limita los contextos y cada uno necesita
+  su gesto de desbloqueo. `Metronome.dispose()` ya no cierra el contexto, solo desconecta su salida.
+
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).

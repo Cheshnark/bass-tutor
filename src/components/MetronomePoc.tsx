@@ -39,7 +39,7 @@ export function MetronomePoc() {
 
   useEffect(() => {
     return () => {
-      void metronome.dispose()
+      metronome.dispose()
     }
   }, [metronome])
 

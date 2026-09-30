@@ -1,12 +1,13 @@
 import { BeatClock, type BeatClockOptions, type Tick } from './beatClock'
+import { getAudioContext } from './context'
 
 /**
  * Metrónomo sobre Web Audio ("A Tale of Two Clocks", web.dev).
  *
  * - setInterval SOLO despierta al planificador; nunca dispara sonido.
  * - Cada click se programa con `osc.start(tick.time)` sobre el reloj de audio.
- * - El AudioContext se crea/reanuda dentro de `start()`, que debe llamarse
- *   desde un gesto del usuario (requisito de iOS/Safari).
+ * - Usa el AudioContext compartido (`context.ts`), que se crea/reanuda dentro de
+ *   `start()`: debe llamarse desde un gesto del usuario (requisito de iOS/Safari).
  */
 
 const LOOKAHEAD_MS = 25
@@ -40,14 +41,14 @@ export class Metronome {
 
   async start(): Promise<void> {
     if (this.isRunning) return
-    if (!this.ctx) {
-      this.ctx = new AudioContext({ latencyHint: 'interactive' })
-      this.output = this.ctx.createGain()
+    const ctx = await getAudioContext()
+    if (this.ctx !== ctx || !this.output) {
+      this.ctx = ctx
+      this.output = ctx.createGain()
       this.output.gain.value = this.volume
-      this.output.connect(this.ctx.destination)
+      this.output.connect(ctx.destination)
     }
-    if (this.ctx.state !== 'running') await this.ctx.resume()
-    this.clock = new BeatClock(this.options, this.ctx.currentTime + START_DELAY_S)
+    this.clock = new BeatClock(this.options, ctx.currentTime + START_DELAY_S)
     this.visualQueue = []
     this.schedule()
     this.timer = setInterval(() => this.schedule(), LOOKAHEAD_MS)
@@ -86,9 +87,10 @@ export class Metronome {
     return current
   }
 
-  async dispose(): Promise<void> {
+  /** Para y desconecta su salida. El contexto compartido no se cierra. */
+  dispose(): void {
     this.stop()
-    await this.ctx?.close()
+    this.output?.disconnect()
     this.ctx = null
     this.output = null
   }

@@ -8,6 +8,23 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 1: entregables pendientes
+
+- [x] Mástil SVG (4/5/6 cuerdas, afinaciones alternativas, zurdo, etiquetas nota/grado/intervalo, 12–24 trastes, sonido al pulsar).
+- [ ] Metrónomo completo: tap tempo, acentos configurables, escalera de tempo (subir X BPM cada N compases o tras marcar un "pase"), pulso visual grande.
+- [ ] Diccionario de teoría: página de escalas y arpegios (fórmula, notas, grados) mostrados en el mástil.
+
+## Mástil: mejoras anotadas
+
+- [ ] Marcadores (puntos) de los trastes 7 y 12 quedan en parte tapados por notas en algunas vistas. Estético.
+- [ ] Móvil en vertical: solo se ven ~3–4 trastes (el resto, con scroll dentro de la caja). Valorar un zoom o
+      recomendar horizontal (modo atril, Fase 6).
+- [ ] Rango de trastes con inicio ≠ 0 (el componente lo soporta; el explorador solo ofrece 0–N).
+- [ ] Navegación por teclado: hoy solo con Tab por las notas visibles; las flechas entre casillas serían más cómodas.
+- [ ] Sonido de nota sintético (sierra filtrada). Valorar samples propios en la Fase 5.
+- [ ] Tonal 6.5.0 está mal empaquetado (`main`/`types` apuntan a ficheros que no existen). Fijado en 6.4.3;
+      revisar cuando salga una 6.5.x corregida.
+
 ## Bugs y riesgos conocidos
 
 - [ ] **alphaTab en móvil (375 px):** la partitura se maqueta más ancha que la pantalla y se ve recortada
@@ -23,8 +40,6 @@
 
 ## Fases siguientes (no entran en el primer hito)
 
-- Fase 1: mástil SVG (4/5/6 cuerdas, zurdo, etiquetas nota/grado/intervalo), `src/theory/` con Tonal.js,
-  tap tempo, escalera de tempo y diccionario de escalas y arpegios.
 - Fase 2: esquema Zod + MDX, `npm run content:check`, modo "siguiendo la clase" y módulos 0–3.
   **Las 3 primeras lecciones, escritas a mano por ti** como patrón de calidad.
 - Fase 3: Zustand + Dexie, `persist()`, service worker, manifest, iconos, exportar/importar el progreso en JSON.

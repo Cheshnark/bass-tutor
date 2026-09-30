@@ -1,0 +1,99 @@
+.fretboard-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.fretboard {
+  display: block;
+  min-width: 100%;
+  font-family: var(--sans);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fb-wood {
+  fill: var(--fb-wood);
+}
+
+.fb-inlay {
+  fill: var(--fb-inlay);
+}
+
+.fb-wire {
+  stroke: var(--fb-wire);
+  stroke-width: 3;
+}
+
+.fb-nut {
+  stroke: var(--fb-nut);
+  stroke-width: 8;
+}
+
+.fb-string {
+  stroke: var(--fb-string);
+}
+
+.fb-fret-number {
+  fill: var(--text-muted);
+  font-size: 13px;
+  text-anchor: middle;
+}
+
+.fb-hit {
+  fill: transparent;
+}
+
+.fb-note {
+  cursor: pointer;
+}
+
+.fb-note:focus {
+  outline: none;
+}
+
+.fb-note circle {
+  fill: var(--fb-note-bg);
+  stroke: var(--fb-note-border);
+  stroke-width: 2;
+  transition: transform 80ms ease-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.fb-note--root circle {
+  fill: var(--accent);
+  stroke: var(--accent-strong);
+}
+
+.fb-note:focus-visible circle {
+  stroke: var(--accent-strong);
+  stroke-width: 4;
+}
+
+.fb-note--played circle {
+  transform: scale(1.15);
+  stroke: var(--text);
+}
+
+.fb-note--out:hover .fb-hit,
+.fb-note--out:active .fb-hit {
+  fill: rgb(255 255 255 / 0.08);
+}
+
+.fb-label {
+  fill: var(--fb-note-text);
+  font-size: 14px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.fb-label--small {
+  font-size: 11px;
+}
+
+.fb-note--root .fb-label {
+  fill: #1a1305;
+}

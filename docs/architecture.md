@@ -8,7 +8,7 @@
 | Build/dev | Vite 8 + `@vitejs/plugin-react` | ✅ |
 | UI | React 19 (SPA) | ✅ |
 | Tablatura/partitura + reproducción | `@coderline/alphatab` 1.8 + `@coderline/alphatab-vite` | ✅ PoC |
-| Teoría musical | `tonal` 6 | Instalado, sin usar aún (Fase 1) |
+| Teoría musical | `tonal` 6.4.3 (versión exacta, ver decisions.md) | ✅ `src/theory/` |
 | Audio propio | Web Audio nativo | ✅ metrónomo |
 | Lint | oxlint (lo trae la plantilla oficial de Vite) | ✅ |
 | Tests unitarios | Vitest 5 (entorno `node`) | ✅ |
@@ -27,10 +27,10 @@
 /docs/                         fuente de verdad del proyecto
 /e2e/                          tests Playwright
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
-/src/audio/                    beatClock.ts (lógica pura, testeada) + metronome.ts (Web Audio)
-/src/components/               componentes React (por ahora, las PoC)
+/src/audio/                    context.ts (AudioContext compartido), beatClock.ts (puro) + metronome.ts, notePlayer.ts
+/src/components/               componentes React: Fretboard/ (layout.ts puro + SVG), FretboardExplorer, PoC
 /src/content/exercises/*.atex  ejercicios en alphaTex, importados con ?raw
-/src/theory/                   (Fase 1) wrappers de Tonal.js, afinaciones, mapeo de mástil
+/src/theory/                   tunings, notation (anglo/latina, grados), catalog (escalas/arpegios/intervalos), fretboard
 /src/state/                    (Fase 3) stores + IndexedDB
 ```
 
@@ -41,10 +41,21 @@
 - `BeatClock` es **puro**: dado un origen y el tempo, devuelve los ticks con `time < until`.
   Cada instante se calcula como `origin + n * secondsPerTick` (sin sumas acumuladas, así que no hay deriva).
   Al cambiar el tempo se re-ancla en el próximo tick pendiente.
-- `Metronome` crea el `AudioContext` en `start()` (tiene que venir de un gesto del usuario, por iOS).
+- `Metronome` obtiene el `AudioContext` compartido en `start()` (tiene que venir de un gesto del usuario, por iOS).
   Un `setInterval` de 25 ms **solo despierta** al planificador, que programa osciladores con 100 ms
   de margen (`osc.start(tick.time)`). El piloto visual lee `currentTick()` en `requestAnimationFrame`
   comparando con `ctx.currentTime`.
+
+### Mástil (`src/theory/` + `src/components/Fretboard/`)
+
+- `buildFretboard(tuning, view)` (puro) devuelve cada posición cuerda/traste con midi, nombre con la ortografía
+  del conjunto, `inSet`, `isRoot` e intervalo desde la fundamental. `FretboardView` coincide con el modelo de
+  contenido (`mode`, `root`, `type`, `frets`, `labels`), así las lecciones podrán incrustar vistas del mástil.
+- `computeLayout(...)` (puro) calcula la geometría; el zurdo es `x' = ancho − x`.
+- `<Fretboard/>` pinta el SVG: diapasón, marcadores, trastes/cejuela, cuerdas (más gruesas las graves),
+  números y notas. Cada casilla es pulsable y suena con `playNote(midi)`. Las notas visibles son
+  focusables (`role="button"`, Enter/Espacio).
+- Afinaciones de grave a aguda (índice 0 = la más grave, dibujada abajo).
 
 ### alphaTab (`src/components/TabPoc.tsx`)
 
