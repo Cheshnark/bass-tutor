@@ -1,5 +1,6 @@
 import { BLOCK_LABELS, ROUTINE_LENGTHS, TEMPLATES, type RoutineLength } from '../../practice/routine'
 import { DailyQueue } from './DailyQueue'
+import { EarTraining } from './EarTraining'
 import { FretboardQuiz } from './FretboardQuiz'
 import { RoutinePlayer } from './RoutinePlayer'
 import './Practice.css'
@@ -19,6 +20,18 @@ export function PracticeView({ params }: { params: string[] }) {
         </p>
         <h2 id="practice-title">Quiz de mástil</h2>
         <FretboardQuiz />
+      </section>
+    )
+  }
+
+  if (section === 'oido') {
+    return (
+      <section className="panel practice" aria-labelledby="practice-title">
+        <p className="lesson-kicker">
+          <a href="#/practica">Práctica</a>
+        </p>
+        <h2 id="practice-title">Oído: intervalos</h2>
+        <EarTraining />
       </section>
     )
   }
@@ -67,6 +80,14 @@ export function PracticeView({ params }: { params: string[] }) {
         <p className="hint">Nombra y encuentra notas en el mástil. Las que te cuestan vuelven antes.</p>
         <a className="btn btn--big" href="#/practica/quiz">
           Abrir el quiz
+        </a>
+      </section>
+
+      <section aria-labelledby="practice-ear">
+        <h3 id="practice-ear">Oído</h3>
+        <p className="hint">Reconoce intervalos en el registro del bajo, de la quinta y la octava a todos.</p>
+        <a className="btn btn--big" href="#/practica/oido">
+          Entrenar el oído
         </a>
       </section>
     </section>

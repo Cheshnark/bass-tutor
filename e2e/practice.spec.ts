@@ -109,3 +109,15 @@ test('el índice del curso avisa de los repasos pendientes', async ({ page }) =>
   await page.getByRole('link', { name: 'Ir a Práctica' }).click()
   await expect(page).toHaveURL(/#\/practica$/)
 })
+
+test('oído: reconocer un intervalo y verlo en el mástil', async ({ page }) => {
+  const LABELS: Record<string, string> = { '4P': 'Cuarta justa', '5P': 'Quinta justa', '8P': 'Octava' }
+  await page.goto('/#/practica/oido')
+  await page.getByRole('button', { name: /Empezar ronda/ }).click()
+  const interval = await page.getByTestId('ear-question').getAttribute('data-interval')
+  expect(Object.keys(LABELS)).toContain(interval)
+  await page.getByRole('group', { name: 'Intervalos' }).getByRole('button', { name: LABELS[interval!] }).click()
+  await expect(page.getByTestId('ear-feedback')).toContainText('¡Bien!')
+  await expect(page.getByTestId('fretboard')).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Siguiente' })).toBeFocused()
+})

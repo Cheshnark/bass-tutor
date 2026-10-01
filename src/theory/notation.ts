@@ -1,4 +1,4 @@
-import { Note } from 'tonal'
+import { Interval, Note } from 'tonal'
 
 /** Nomenclatura mostrada al usuario. La interna (Tonal) es siempre anglosajona. */
 export type Notation = 'anglo' | 'latina'
@@ -57,4 +57,16 @@ export function degreeFromInterval(interval: string): string {
 /** Intervalo en notación española: "3m" → "3m", "5P" → "5J", "7M" → "7M". */
 export function formatInterval(interval: string): string {
   return interval.replace('P', 'J')
+}
+
+/** Nombre de una nota MIDI con sostenidos ("E1", "F♯2"; "Mi1" en latina). */
+export function midiName(midi: number, notation: Notation, withOctave = true): string {
+  return formatNote(Note.fromMidiSharps(midi), notation, withOctave)
+}
+
+/** Semitonos de un intervalo de Tonal ("5P" → 7). */
+export function intervalSemitones(interval: string): number {
+  const semitones = Interval.semitones(interval)
+  if (semitones === undefined || Number.isNaN(semitones)) throw new Error(`Intervalo desconocido: ${interval}`)
+  return semitones
 }

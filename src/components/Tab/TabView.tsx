@@ -34,6 +34,10 @@ export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: T
   const [scoreBpm, setScoreBpm] = useState<number | null>(null)
   /** Tempo elegido a mano en el selector; deja de valer si cambia el tempo de práctica. */
   const [choice, setChoice] = useState<{ practiceBpm?: number; bpm: number } | null>(null)
+  /** Pistas de la partitura: la 1.ª es el bajo; las demás, acompañamiento (batería, acordes…). */
+  const [trackCount, setTrackCount] = useState(0)
+  const [bassOn, setBassOn] = useState(true)
+  const [backingOn, setBackingOn] = useState(true)
   const chosenBpm = choice && choice.practiceBpm === bpm ? choice.bpm : undefined
   const playbackBpm = chosenBpm ?? bpm ?? scoreBpm
 
@@ -48,7 +52,10 @@ export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: T
         soundFont: `${BASE}soundfont/sonivox.sf2`,
       },
     })
-    instance.scoreLoaded.on((score) => setScoreBpm(score.tempo))
+    instance.scoreLoaded.on((score) => {
+      setScoreBpm(score.tempo)
+      setTrackCount(score.tracks.length)
+    })
     instance.renderFinished.on(() => setStatus('listo'))
     instance.error.on((e) => {
       setStatus('error')
@@ -66,8 +73,18 @@ export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: T
       setPlayerReady(false)
       setPlaying(false)
       setScoreBpm(null)
+      setTrackCount(0)
     }
   }, [tex])
+
+  // Silenciar el bajo (para tocar tú su parte con la banda) o el acompañamiento. Se reaplica si alphaTab se recrea.
+  useEffect(() => {
+    const api = apiRef.current
+    if (!api?.score || !playerReady) return
+    const [bass, ...backing] = api.score.tracks
+    api.changeTrackMute([bass], !bassOn)
+    if (backing.length > 0) api.changeTrackMute(backing, !backingOn)
+  }, [bassOn, backingOn, playerReady, trackCount])
 
   // La velocidad se aplica también si alphaTab se recrea (cambia `tex`) o si cambia el tempo de práctica.
   useEffect(() => {
@@ -99,6 +116,16 @@ export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: T
         <button type="button" className="btn" onClick={toggleLoop} aria-pressed={looping}>
           Bucle: {looping ? 'sí' : 'no'}
         </button>
+        {trackCount > 1 && (
+          <>
+            <button type="button" className="btn" aria-pressed={bassOn} onClick={() => setBassOn(!bassOn)}>
+              Bajo: {bassOn ? 'suena' : 'silenciado'}
+            </button>
+            <button type="button" className="btn" aria-pressed={backingOn} onClick={() => setBackingOn(!backingOn)}>
+              Acompañamiento: {backingOn ? 'suena' : 'silenciado'}
+            </button>
+          </>
+        )}
         <label>
           Tempo{' '}
           <select

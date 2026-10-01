@@ -1,0 +1,99 @@
+/* Afinador */
+.tuner h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.tuner-strings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 12px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tuner-strings .btn[aria-pressed='true'],
+.tuner-reference .btn[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #1a1305;
+  font-weight: 700;
+}
+
+.tuner-display {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.tuner-note {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.tuner-display.is-in-tune .tuner-note,
+.tuner-display.is-in-tune .tuner-status {
+  color: var(--ok);
+}
+
+.tuner-meter {
+  position: relative;
+  width: min(100%, 420px);
+  height: 40px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Zona "afinado": ±5 cents de ±50 → 10 % del ancho */
+.tuner-meter__zone {
+  position: absolute;
+  inset: 0 45%;
+  background: rgb(111 207 138 / 0.2);
+}
+
+.tuner-meter__center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--text-muted);
+}
+
+.tuner-meter__needle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--accent-strong);
+  transition: left 80ms linear;
+}
+
+.tuner-display.is-in-tune .tuner-meter__needle {
+  background: var(--ok);
+}
+
+.tuner-cents,
+.tuner-status {
+  margin: 0;
+  min-height: 1.4em;
+}
+
+.tuner-status {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.tuner-reference {
+  display: grid;
+  gap: 8px;
+}

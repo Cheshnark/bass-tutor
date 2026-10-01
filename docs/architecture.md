@@ -28,10 +28,10 @@
 /docs/                         fuente de verdad del proyecto
 /e2e/                          tests Playwright
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
-/src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
+/src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder/pitch (puros) + metronome.ts, notePlayer.ts, tuner.ts
 /src/App.tsx, useHashRoute.ts  navegación por hash (#/curso, #/curso/<id>, #/mastil…)
 /src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Practice/ (repaso, rutinas, quiz), Tab/ (TabView diferido), SettingsBar
-/src/practice/                 leitner.ts, queue.ts, routine.ts, quiz.ts: lógica pura de la práctica inteligente (Fase 4)
+/src/practice/                 leitner.ts, queue.ts, routine.ts, quiz.ts, ear.ts: lógica pura de la práctica (Fases 4–5)
 /src/content/                  schema.ts (Zod), validate.ts + mdx.ts + frontmatter.ts (puros), course.ts (acceso tipado);
                                modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
 /scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts,
@@ -135,9 +135,27 @@
 - `base` configurable con `BASE_PATH` (GitHub Pages sirve en `/bass-tutor/`); probado offline bajo esa ruta.
 - En e2e el service worker está bloqueado salvo en `e2e/offline.spec.ts`.
 
+### Audio avanzado (Fase 5)
+
+- **Afinador** (`src/audio/pitch.ts` puro + `src/audio/tuner.ts` + `components/Tuner/`): YIN (CMND, umbral, mínimo
+  local, interpolación parabólica) sobre 8192 muestras diezmadas a ~12 kHz, ~15 análisis por segundo en
+  `requestAnimationFrame`. Rango 28–400 Hz en automático; con cuerda elegida, ± media octava (evita errores de
+  octava). Mediana de 5 lecturas y mínimo de 3 antes de mostrar. Micro sin cancelación de eco, supresión de ruido ni
+  control de ganancia. Tono de referencia sostenido por cuerda. Pruebas: [afinador-pruebas.md](afinador-pruebas.md).
+- **Backing tracks** (`src/content/backing.ts`): para ejercicios con `backing.harmony` y una sola pista, se añaden al
+  alphaTex una batería (según compás y *feel*; tresillos en swing/shuffle) y acordes en piano eléctrico
+  (`src/theory/voicing.ts`, disposición cerrada). `playableTex` (course.ts) lo memoriza. `content:check` exige un
+  acorde por compás y parsea el resultado con alphaTab. En `TabView`, botones para silenciar el bajo o el
+  acompañamiento (`changeTrackMute`).
+- **Oído** (`src/practice/ear.ts` + `components/Practice/EarTraining.tsx`, `#/practica/oido`): intervalos melódicos
+  en el registro del bajo (E1–C3), con Leitner por intervalo en la tabla `cards` (`oido:5P`); al responder, el
+  intervalo se dibuja en el mástil. Las dos notas se programan sobre el reloj de audio (`playSequence`).
+- **Grábate** (`components/Lesson/Recorder.tsx`): MediaRecorder en la tarjeta de ejercicio; se escucha ahí mismo y
+  no se guarda.
+
 ### Navegación
 
-- `useHashRoute` + pestañas en la cabecera (Curso · Práctica · Mástil · Diccionario · Metrónomo), con parámetros
+- `useHashRoute` + pestañas en la cabecera (Curso · Práctica · Mástil · Diccionario · Metrónomo · Afinador), con parámetros
   (`#/curso/<lección>/<paso>`). `MetronomePanel` siempre montado (oculto) para seguir sonando; el resto se monta al activarse.
 
 ### alphaTab (`src/components/Tab/TabView.tsx`)

@@ -8,6 +8,17 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 5: hecha (falta la prueba en bajo real)
+
+- [x] Afinador experimental (YIN, < 0,7 cents con tono sintético), tono de referencia, backing tracks generados,
+      silenciar bajo/acompañamiento, oído (intervalos), grábate.
+- [ ] **Tú**: probar el afinador con tu bajo en tu móvil (y en iOS si puedes) y rellenar `docs/afinador-pruebas.md`.
+- [ ] **Tú**: escuchar la mezcla del acompañamiento (batería y piano eléctrico frente al bajo); ajustar volúmenes.
+- [ ] Oído: dictado rítmico e identificar la fundamental de un acorde; intervalos armónicos (a la vez).
+- [ ] Afinador: si la E grave falla en móviles, probar MPM o una ventana más larga; calibración de La (440 Hz fijo).
+- [ ] Grábate: hoy no se guarda; valorar guardar la última grabación por ejercicio (IndexedDB) para comparar.
+- [ ] Backing: más estilos de batería por ejercicio (hoy un ritmo de rock genérico por compás/feel).
+
 ## Fase 4: hecha
 
 - [x] Leitner por días calculado del historial; cola diaria; rutinas 15/30/45 con alternancia; quiz de mástil.
@@ -49,7 +60,7 @@
 - [x] Metal/punk, módulo 3 · Riffs graves en drop D (3 lecciones, 4 ejercicios) en borrador.
 - [x] Metal/punk, módulo 4 · Tocar con la banda (3 lecciones, 5 ejercicios con batería). **Itinerario completo.**
 - [ ] Revisar de oído la mezcla de batería/guitarra/bajo del soundfont (volúmenes por pista; hoy no se ajustan).
-- [ ] Opción de silenciar el bajo en la reproducción (tocar tú la parte del bajo con la banda).
+- [x] Opción de silenciar el bajo en la reproducción (tocar tú la parte del bajo con la banda).
 - [ ] Drop D: buscar un vídeo de una fuente reconocida.
 - [ ] Galope: buscar un vídeo de técnica (no de una canción) de una fuente reconocida.
 - [ ] Ejercicios de metal/punk con dedos: hoy solo hay notación de púa (⊓/V); valorar indicar la alternativa.

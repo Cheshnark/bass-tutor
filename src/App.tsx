@@ -4,6 +4,7 @@ import { CourseIndex } from './components/Lesson/CourseIndex'
 import { LessonView } from './components/Lesson/LessonView'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { PracticeView } from './components/Practice/PracticeView'
+import { Tuner } from './components/Tuner/Tuner'
 import { SettingsBar } from './components/SettingsBar'
 import { UpdatePrompt } from './components/UpdatePrompt'
 import { useHashRoute } from './useHashRoute'
@@ -14,6 +15,7 @@ const VIEWS = [
   { id: 'mastil', label: 'Mástil' },
   { id: 'diccionario', label: 'Diccionario' },
   { id: 'metronomo', label: 'Metrónomo' },
+  { id: 'afinador', label: 'Afinador' },
 ] as const
 
 type ViewId = (typeof VIEWS)[number]['id']
@@ -43,6 +45,7 @@ function App() {
         {(view === 'mastil' || view === 'diccionario') && <SettingsBar />}
         {view === 'mastil' && <FretboardExplorer />}
         {view === 'diccionario' && <Dictionary />}
+        {view === 'afinador' && <Tuner />}
         {/* Siempre montado: el metrónomo sigue sonando mientras navegas por otras vistas. */}
         <div hidden={view !== 'metronomo'}>
           <MetronomePanel />

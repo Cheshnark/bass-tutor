@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { degreeFromInterval, formatInterval, formatNote } from './notation'
+import { degreeFromInterval, formatInterval, formatNote, intervalSemitones, midiName } from './notation'
 
 describe('formatNote', () => {
   it('anglosajona con alteraciones tipográficas', () => {
@@ -46,5 +46,23 @@ describe('formatInterval', () => {
   it('justa = J', () => {
     expect(formatInterval('5P')).toBe('5J')
     expect(formatInterval('3m')).toBe('3m')
+  })
+})
+
+describe('midiName', () => {
+  it('nombra notas MIDI con sostenidos y octava', () => {
+    expect(midiName(28, 'anglo')).toBe('E1')
+    expect(midiName(30, 'anglo')).toBe('F♯1')
+    expect(midiName(33, 'latina')).toBe('La1')
+    expect(midiName(33, 'anglo', false)).toBe('A')
+  })
+})
+
+describe('intervalSemitones', () => {
+  it('cuenta semitonos', () => {
+    expect(intervalSemitones('5P')).toBe(7)
+    expect(intervalSemitones('4A')).toBe(6)
+    expect(intervalSemitones('8P')).toBe(12)
+    expect(() => intervalSemitones('9X')).toThrow('Intervalo desconocido')
   })
 })

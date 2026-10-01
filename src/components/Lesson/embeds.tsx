@@ -3,7 +3,7 @@
  * (EMBED_SCHEMAS en src/content/schema.ts), así que aquí se confía en ellas.
  */
 import { useEffect, useMemo, useState } from 'react'
-import { getExercise } from '../../content/course'
+import { getExercise, playableTex } from '../../content/course'
 import type { FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
 import { metronomeEngine, useMetronome } from '../../state/metronome'
 import { useSettings } from '../../state/settings'
@@ -35,7 +35,7 @@ export function LessonTab({ exercise: id }: TabEmbed) {
   if (!exercise) return null
   return (
     <figure className="lesson-embed">
-      <LazyTabView tex={exercise.alphaTex} title={exercise.title} />
+      <LazyTabView tex={playableTex(exercise)} title={exercise.title} />
     </figure>
   )
 }

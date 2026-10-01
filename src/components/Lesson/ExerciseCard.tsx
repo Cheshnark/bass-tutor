@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getExercise } from '../../content/course'
+import { getExercise, playableTex } from '../../content/course'
 import type { ExerciseEmbed } from '../../content/schema'
 import { useMetronome } from '../../state/metronome'
 import { recordAttempt, requestPersistence } from '../../state/progress/db'
@@ -7,6 +7,7 @@ import { useExerciseProgress } from '../../state/progress/hooks'
 import { reachedTarget, suggestTempo } from '../../state/progress/model'
 import { LazyTabView } from '../Tab/LazyTabView'
 import { LessonMetronome } from './embeds'
+import { Recorder } from './Recorder'
 
 /** Fecha del intento: se toma al guardar, no al pintar. */
 const nowIso = () => new Date().toISOString()
@@ -63,7 +64,8 @@ export function LessonExercise({ id }: ExerciseEmbed) {
       </p>
 
       <LessonMetronome bpm={suggestion} beatsPerBar={denominator === 4 ? numerator : undefined} />
-      <LazyTabView tex={exercise.alphaTex} title={exercise.title} bpm={validBpm ? bpm : undefined} />
+      <LazyTabView tex={playableTex(exercise)} title={exercise.title} bpm={validBpm ? bpm : undefined} />
+      <Recorder />
 
       <fieldset className="lesson-exercise__criteria">
         <legend>Autoevaluación: ¿lo has tocado…?</legend>

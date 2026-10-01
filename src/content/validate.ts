@@ -19,6 +19,7 @@ import {
   type Module,
 } from './schema'
 import { TRACK_IDS, type TrackId } from './tracks'
+import { withBacking } from './backing'
 
 export interface RawModule {
   /** Nombre de la carpeta: "00-arranque". */
@@ -51,6 +52,10 @@ export interface AlphaTexCheck {
   error?: string
   /** Compás del primer compás, "4/4". */
   timeSignature?: string
+  /** Número de compases. */
+  bars?: number
+  /** Número de pistas (1 = solo el bajo). */
+  tracks?: number
 }
 
 export interface ValidateOptions {
@@ -104,6 +109,16 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
       if (check.error) error(path, `alphaTex: ${check.error}`)
       else if (check.timeSignature && check.timeSignature !== exercise.timeSignature) {
         error(path, `timeSignature es "${exercise.timeSignature}" pero el alphaTex empieza en ${check.timeSignature}`)
+      }
+      // Acompañamiento generado (backing.ts): un acorde por compás y el resultado tiene que parsear.
+      const harmony = exercise.backing?.harmony
+      if (!check.error && harmony && check.bars !== undefined && harmony.length !== check.bars) {
+        error(path, `backing.harmony tiene ${harmony.length} acordes pero el alphaTex tiene ${check.bars} compases (uno por compás)`)
+      } else if (!check.error && harmony && check.tracks === 1) {
+        const backed = options.checkAlphaTex(
+          withBacking(exercise.alphaTex, { harmony, timeSignature: exercise.timeSignature, feel: exercise.feel }),
+        )
+        if (backed.error) error(path, `el acompañamiento generado no es válido: ${backed.error}`)
       }
     }
     exercises.push(exercise)

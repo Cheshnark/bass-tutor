@@ -1,4 +1,5 @@
 import data from 'virtual:course'
+import { withBacking } from './backing'
 import type { Course, Exercise, Lesson, Module } from './schema'
 import type { TrackId } from './tracks'
 
@@ -64,4 +65,20 @@ export function lessonOfExercise(exerciseId: string): Lesson | undefined {
 /** Intervalos de repaso (días) de un ejercicio: los de su lección. */
 export function reviewDaysOf(exerciseId: string): number[] | undefined {
   return lessonByExercise.get(exerciseId)?.review.afterDays
+}
+
+// alphaTex que suena: el del ejercicio más batería y acordes si tiene armonía (src/content/backing.ts).
+const playable = new Map<string, string>()
+
+export function playableTex(exercise: Exercise): string {
+  let tex = playable.get(exercise.id)
+  if (tex === undefined) {
+    tex = withBacking(exercise.alphaTex, {
+      harmony: exercise.backing?.harmony,
+      timeSignature: exercise.timeSignature,
+      feel: exercise.feel,
+    })
+    playable.set(exercise.id, tex)
+  }
+  return tex
 }

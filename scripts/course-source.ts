@@ -31,7 +31,11 @@ export function checkAlphaTex(tex: string): AlphaTexCheck {
     const score = alphaTab.importer.ScoreLoader.loadAlphaTex(tex)
     const first = score.masterBars[0]
     if (!first) return { error: 'no tiene ningún compás' }
-    return { timeSignature: `${first.timeSignatureNumerator}/${first.timeSignatureDenominator}` }
+    return {
+      timeSignature: `${first.timeSignatureNumerator}/${first.timeSignatureDenominator}`,
+      bars: score.masterBars.length,
+      tracks: score.tracks.length,
+    }
   } catch (e) {
     // alphaTab lanza el error con diagnósticos a veces directamente y a veces envuelto en `cause`.
     const direct = e as DiagnosticsError & { cause?: DiagnosticsError }

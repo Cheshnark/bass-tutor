@@ -149,6 +149,11 @@ input[type='number'] {
   cursor: default;
 }
 
+.btn--big {
+  min-height: 56px;
+  font-size: 1.05rem;
+}
+
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);

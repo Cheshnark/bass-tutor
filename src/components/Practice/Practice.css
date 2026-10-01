@@ -25,11 +25,6 @@
   color: #1a1305;
 }
 
-.btn--big {
-  min-height: 56px;
-  font-size: 1.05rem;
-}
-
 /* Repaso de hoy */
 .queue-list {
   display: grid;
@@ -189,6 +184,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
   gap: 8px;
+}
+
+.quiz-answers--wide {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .quiz-answer.is-ok {

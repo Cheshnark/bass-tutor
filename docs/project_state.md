@@ -2,7 +2,17 @@
 
 _Última actualización: 2026-10-01_
 
-## Fases 0–4 cerradas; contenido: tronco común e itinerario metal/punk completos (borrador)
+## Fases 0–5 cerradas (falta probar el afinador en bajo real); contenido: tronco común y metal/punk (borrador)
+
+### Fase 5 (audio avanzado): hecha
+
+- **Afinador (experimental)**, pestaña nueva: detección YIN por micrófono, automático o por cuerda, aguja de cents y
+  tono de referencia para afinar de oído. Error con tono sintético < 0,7 cents (criterio: < 3). **Falta la prueba en
+  bajo real** por dispositivo: protocolo y tabla en [afinador-pruebas.md](afinador-pruebas.md).
+- **Backing tracks**: los ejercicios con armonía suenan con batería y acordes generados; se puede silenciar el bajo
+  (tocar tú con la banda) o el acompañamiento.
+- **Oído** (Práctica → Oído): reconocer intervalos en el registro del bajo, con repaso espaciado.
+- **Grábate**: en cada ejercicio, grabar y escucharte (no se guarda).
 
 ### Fase 4 (práctica inteligente): hecha
 
@@ -27,7 +37,7 @@ _Última actualización: 2026-10-01_
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
 - **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
-- Tests: 176 unitarios y 94 e2e.
+- Tests: 216 unitarios y 104 e2e.
 
 ### Contenido
 
@@ -58,7 +68,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 ## Siguiente paso
 
 Opciones, por orden de recomendación:
-1. **Tú**: probar el curso como alumno durante unos días (también la Práctica: la cola necesita días reales).
-2. Fase 5 (audio avanzado: backing tracks, oído, afinador experimental). Los ejercicios con batería ya son un primer
-   paso de backing tracks.
+1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
+   el curso y la Práctica unos días.
+2. Fase 6 (diseño "cabezal" y pulido: tema, modo atril, alto contraste, WCAG 2.2 AA).
 3. Otro itinerario (rock/pop es el más cercano a lo ya escrito).

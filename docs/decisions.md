@@ -275,3 +275,24 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Las tarjetas se identifican por la cuerda al aire con octava (`nombrar:E1:5`), no por el índice: con otra afinación
   (drop D, 5 cuerdas) son tarjetas distintas, como en el instrumento.
 - En la casilla preguntada, el nombre accesible no incluye la nota (no se revela la respuesta con lector de pantalla).
+
+## 2026-10-01 · Afinador: YIN propio sobre señal diezmada, sin librerías
+- **Motivo:** research.md recomienda YIN o MPM con ventana ≥ 4096, bloqueo de rango por cuerda y comprobación de
+  octava. YIN cabe en unas 60 líneas puras y testeables. Diezmar 48 kHz → 12 kHz reduce el coste ~16 veces sin perder
+  precisión en la fundamental del bajo (error medido < 0,7 cents con tono sintético). No se usa una librería (p. ej.,
+  `pitchy`, que implementa MPM; no la he evaluado): sería una dependencia más para algo que se prueba bien en casa.
+- Marcado **experimental**: el micro del móvil y el procesado de iOS son el punto débil (research.md). Se ofrece el tono
+  de referencia como alternativa y se recomienda un afinador de pinza.
+- No se muestra lectura hasta tener 3 seguidas: las primeras ventanas tras activar el micro o pulsar la cuerda son
+  inestables (visto en el e2e con micro simulado).
+
+## 2026-10-01 · Backing tracks generados a partir de `backing.harmony`
+- **Motivo:** el contenido ya declaraba la armonía por compás. Generar batería y acordes en alphaTex (texto, sin
+  ficheros de audio ni derechos) da acompañamiento a todos esos ejercicios, offline y al tempo de práctica.
+  Los ejercicios que ya traen sus pistas no se tocan. `content:check` comprueba un acorde por compás.
+- Se puede silenciar el bajo para tocar tú su parte con la banda.
+
+## 2026-10-01 · Oído: intervalos melódicos, de quinta y octava a todos
+- **Motivo:** research.md (módulo "Oído": intervalos, identificar fundamentales). Se empieza por 4P, 5P y 8P porque son
+  los saltos de las primeras líneas del curso. Mismo Leitner que el quiz (tabla `cards`). Dictado rítmico e
+  identificar fundamentales quedan pendientes.

@@ -88,3 +88,16 @@ test('la reproducción de la partitura sigue el tempo de práctica', async ({ pa
   await expect(playback).toHaveValue('170')
   await expect(playback.locator('option:checked')).toHaveText('170 BPM (tu tempo)')
 })
+
+test('los ejercicios con armonía suenan con batería y acordes, y se puede silenciar el bajo', async ({ page }) => {
+  await page.goto('/#/curso/uno-cinco-ocho/4')
+  const card = page.getByTestId('exercise-uno-cinco-ocho-i-iv-v')
+  const bass = card.getByRole('button', { name: /^Bajo:/ })
+  await expect(bass).toHaveText('Bajo: suena', { timeout: 20_000 })
+  await bass.click()
+  await expect(bass).toHaveText('Bajo: silenciado')
+  await expect(bass).toHaveAttribute('aria-pressed', 'false')
+  await expect(card.getByRole('button', { name: /^Acompañamiento:/ })).toHaveText('Acompañamiento: suena')
+  // Un ejercicio sin armonía no tiene acompañamiento.
+  await expect(page.getByTestId('exercise-fundamental-quinta').getByRole('button', { name: /^Bajo:/ })).toHaveCount(0)
+})

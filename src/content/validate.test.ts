@@ -106,6 +106,25 @@ describe('validateCourse', () => {
     ])
   })
 
+  it('backing.harmony: un acorde por compás, y el acompañamiento generado se comprueba', () => {
+    const raw = course({
+      exercises: [
+        { file: 'ej-a.yaml', data: exercise({ backing: { harmony: ['G', 'C'] } }) },
+        { file: 'ej-b.yaml', data: exercise({ backing: { harmony: ['G', 'C', 'D'] } }) },
+      ],
+    })
+    const checked: string[] = []
+    const checkAlphaTex = (tex: string) => {
+      checked.push(tex)
+      return { timeSignature: '4/4', bars: 2, tracks: tex.includes('Batería') ? 3 : 1 }
+    }
+    expect(errors(raw, { checkAlphaTex })).toEqual([
+      'exercises/ej-b.yaml: backing.harmony tiene 3 acordes pero el alphaTex tiene 2 compases (uno por compás)',
+    ])
+    // ej-a: se comprueba también el alphaTex con batería y acordes añadidos.
+    expect(checked.some((tex) => tex.includes('"Acordes"'))).toBe(true)
+  })
+
   it('lección: ejercicio inexistente, sin pasos, sin frontmatter y sin ejercicios', () => {
     const raw = course()
     raw.modules[0].lessons = [
