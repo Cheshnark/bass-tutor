@@ -223,3 +223,10 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 ## 2026-10-01 · Notación de púa en alphaTex: `{sd}`/`{su}` y `{pm}`
 - **Motivo:** alphaTab 1.8 los entiende y los dibuja (⊓/V y línea P.M.), y el instrumento `Electric Bass Pick`
   (programa GM 34) suena con ataque de púa. Comprobado parseando los ejercicios con alphaTab y en el navegador.
+
+## 2026-10-01 · Galope con golpe al aire (abajo-(arriba)-abajo-arriba)
+- **Motivo:** es lo que enseña Fundamental Changes (Rob Thorpe), y Riffhard también recomienda alternar (Wikipedia
+  solo define el ritmo). Una sola fuente detallada: **fuente débil**, revisar con un vídeo. La mano mantiene el péndulo de
+  semicorcheas y todos los pulsos empiezan hacia abajo, así el ritmo no se desordena. La partitura marca solo los
+  golpes que suenan; el golpe al aire se explica en el texto.
+- Se cuenta "1 e y a" (adaptación del "1 e & a" de los métodos en inglés), coherente con el "1 y" del tronco común.

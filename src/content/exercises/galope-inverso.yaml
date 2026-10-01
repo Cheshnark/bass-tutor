@@ -1,0 +1,40 @@
+title: Galope y galope inverso
+status: borrador
+instructions: >-
+  El galope (corchea y dos semicorcheas: "1… y a") y el galope inverso (dos semicorcheas y una corchea:
+  "1 e y…"). En el inverso: abajo, arriba, abajo, y arriba al aire en la "a". Primero un compás de cada, después
+  dos pulsos de cada uno dentro del mismo compás. Todo con palm mute.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Distingues de oído el galope del galope inverso
+  - En el galope inverso las dos semicorcheas van al principio del pulso, no al final
+  - El cambio de uno a otro dentro del compás no mueve el pulso
+  - Cada pulso empieza con la púa hacia abajo
+tags:
+  - pua
+  - galope
+  - semicorcheas
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Galope y galope inverso"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} |
+  :8 0.3{pm} {sd} :16 0.3{pm} {sd} 0.3{pm} {su} :8 0.3{pm} {sd} :16 0.3{pm} {sd} 0.3{pm} {su} :16 0.3{pm} {sd} 0.3{pm} {su} :8 0.3{pm} {sd} :16 0.3{pm} {sd} 0.3{pm} {su} :8 0.3{pm} {sd} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :1 0.4 {sd}

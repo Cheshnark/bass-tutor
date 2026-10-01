@@ -46,12 +46,12 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 ### Itinerario metal/punk (temario, borrador)
 
 Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
-alternancia índice-medio. Solo el módulo 1 está escrito; el resto es la propuesta de temario.
+alternancia índice-medio. Los módulos 1 y 2 están escritos; el resto es la propuesta de temario.
 
 | Módulo | Lecciones |
 |---|---|
 | 1 · Púa ✍️ | Coger la púa y tocar hacia abajo · Púa alterna y cambios de cuerda · Palm mute y la corchea punk |
-| 2 · Galope y semicorcheas | Semicorcheas con púa alterna · El galope y el galope inverso · Resistencia: rápido sin tensión |
+| 2 · Galope y semicorcheas ✍️ | Semicorcheas con púa alterna · El galope y el galope inverso · Resistencia: rápido sin tensión |
 | 3 · Riffs graves | Drop D: afinar y riffs en la cuerda grave · Fundamental, quinta y octava en riffs · Escala menor y cromatismos (♭2, ♭5) |
 | 4 · Tocar con la banda | Doblar el riff o sostener la fundamental · Punk rápido (160+ BPM) con cabeza · 5 cuerdas y afinaciones más graves (opcional) |
 
@@ -89,6 +89,9 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Grosor de la púa | Media-gruesa (0,8–1,2 mm) para empezar; probar varias | StudyBass (Pick vs Fingers: experimentar); comentarios al vídeo de BassBuzz (~1 mm). **Fuente débil: es un punto de partida, no una regla** |
 | Dónde y cómo pulsar con púa | Cerca del puente; talón de la mano callando las graves; movimiento pequeño de muñeca | TalkingBass (Beginner Guide…: puente = sonido más ajustado; talón de la mano calla las cuerdas). Muñeca: Wikipedia (Downpicking) y foros (TalkBass). **Fuente débil para la muñeca; contrastar con los vídeos** |
 | Solo abajo vs alterna | Abajo = sonido más pesado y uniforme, pero cansa; alterna para tempos altos y semicorcheas | Wikipedia (Downpicking: más "pesado", exige resistencia; Ramones a 180–200 BPM); foro TalkBass/BassBuzz (corcheas hacia abajo como base del rock/punk) |
+| Semicorcheas | Contar "1 e y a"; púa alterna: abajo en el número y en la "y", arriba en la "e" y en la "a" | LibreTexts (Counting, sixteenth notes); vídeo de TalkingBass. Contar en voz alta: ver la fila "Contar" |
+| Galope | Corchea + dos semicorcheas (1 · y · a); la mano sigue en semicorcheas con un **golpe al aire** en la "e" (abajo-(arriba)-abajo-arriba). Inverso: dos semicorcheas + corchea | Ritmo: Wikipedia (Heavy metal gallop). Púa: Fundamental Changes (Rob Thorpe, Metal Picking Riffs: "Down-Down-Up" manteniendo el movimiento de semicorcheas); Riffhard (alternar y estar relajado). **Solo una fuente detalla el golpe al aire** |
+| Resistencia | Mínimo esfuerzo, sin tensión; practicar casi a diario; alargar la práctica poco a poco; subir 5 BPM cuando sale **fácil** varias veces; dolor = parar | No Treble (Donovan Stokes, "Developing Stamina" y "Playing Bass… Fast": subir 5 BPM tras diez pases fáciles; "tocar rápido bien se siente fácil"); No Treble ("Avoiding Injury") |
 | Palm mute | Canto de la mano de la púa sobre las cuerdas, junto al puente, presión ligera; más hacia el mástil = más apagado | Wikipedia (Palm mute); TalkingBass (Beginner Guide…). El texto de TalkingBass dice "fretting hand", con toda probabilidad una errata: ninguna otra fuente lo hace con la izquierda |
 
 ## Fuentes
@@ -111,7 +114,12 @@ Escritas (base del texto):
 - BassBuzz — [Beginner to Badass: lessons overview](https://www.bassbuzz.com/beginner-to-badass/lessons-overview) (orden de temas)
 - StudyBass — [Pick vs Fingers](https://www.studybass.com/lessons/bass-technique/pick-vs-fingers/)
 - TalkingBass — [Beginner Guide To Bass Pick Technique](https://www.talkingbass.net/bass-technique-pick-for-beginners/)
-- Wikipedia — [Downpicking](https://en.wikipedia.org/wiki/Downpicking) · [Palm mute](https://en.wikipedia.org/wiki/Palm_mute)
+- Wikipedia — [Downpicking](https://en.wikipedia.org/wiki/Downpicking) · [Palm mute](https://en.wikipedia.org/wiki/Palm_mute) ·
+  [Heavy metal gallop](https://en.wikipedia.org/wiki/Heavy_metal_gallop)
+- Fundamental Changes — [Metal Picking Riffs](https://www.fundamental-changes.com/metal-picking/) (Rob Thorpe)
+- Riffhard — [How to Gallop on a Guitar](https://www.riffhard.com/?p=36763)
+- LibreTexts — [Counting (syncopated subdivisions)](https://human.libretexts.org/Courses/Sierra_College/Equipping_the_Musical_Ear/19%3A_Syncopated_Subdivisions/19.05%3A_Counting)
+- No Treble (Donovan Stokes) — [Developing Stamina](https://www.notreble.com/?p=19547) · [Playing Bass… Fast](https://www.notreble.com/?p=32647)
 
 Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de YouTube, 2026-09-30):
 
@@ -139,10 +147,16 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Púa alterna | [How to Play Bass with a PICK (Noob to Bad-Ass)](https://www.youtube.com/watch?v=R1gjqjaHpxU) | Scott's Bass Lessons |
 | Ejercicios de púa | [4 Killer Exercises To Whip Your Pick Playing Into Shape!](https://www.youtube.com/watch?v=tu7FlXKGXdY) | Scott's Bass Lessons |
 | Palm mute | [Master the Art of Bass Palm Muting – Groove Like a Pro](https://www.youtube.com/watch?v=wTqt4Uj8XL0) | Dan Hawkins Bass Lessons |
+| Semicorcheas | [How To Read Sixteenth Notes - The Heart Of Funk and Metal Bass Playing!](https://www.youtube.com/watch?v=eOSR_4GgPwI) | TalkingBass |
+| Resistencia | [Build Speed, Stamina, Strength & Excellent Bass Technique](https://www.youtube.com/watch?v=YKjO-0Y2MzA) | Dan Hawkins Bass Lessons |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
 de una fuente reconocida verificable.
+
+Módulo 2 (verificados el 2026-10-01): **sin vídeo de galope**. El único de una fuente reconocida (TalkingBass) enseña
+una canción con copyright con su tablatura; no se enlaza. Descartado también un vídeo de técnica de púa de un canal
+atribuido a un bajista conocido, porque no pude confirmar que el canal fuera oficial.
 
 Notas:
 - Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.

@@ -1,0 +1,43 @@
+title: El galope
+status: borrador
+instructions: >-
+  Galope: una corchea y dos semicorcheas en cada pulso ("1… y a, 2… y a"), con palm mute. La mano sigue
+  moviéndose en semicorcheas: abajo en el número, arriba al aire en la "e" sin tocar la cuerda, abajo en la "y" y
+  arriba en la "a". Es la línea de "Corcheas punk en la fundamental", ahora al galope. E al aire, C en el traste 3
+  de la A y D en el traste 5 de la A.
+tempo:
+  start: 60
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E5, E5, C5, D5, E5, E5, D5, E5]
+passCriteria:
+  - El galope suena igual en todos los pulsos ("taa-ta-ta"), sin convertirse en tresillo
+  - 'La mano no se para en la "e": sube al aire y vuelve a bajar'
+  - Los cambios de acorde caen en el primer tiempo sin perder el galope
+  - Al terminar, el antebrazo sigue suelto
+tags:
+  - pua
+  - galope
+  - semicorcheas
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "El galope"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "E5"} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :8 3.3{pm} {sd ch "C5"} :16 3.3{pm} {sd} 3.3{pm} {su} :8 3.3{pm} {sd} :16 3.3{pm} {sd} 3.3{pm} {su} :8 3.3{pm} {sd} :16 3.3{pm} {sd} 3.3{pm} {su} :8 3.3{pm} {sd} :16 3.3{pm} {sd} 3.3{pm} {su} |
+  :8 5.3{pm} {sd ch "D5"} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} |
+  :8 0.4{pm} {sd ch "E5"} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} :8 0.4{pm} {sd} :16 0.4{pm} {sd} 0.4{pm} {su} |
+  :8 5.3{pm} {sd ch "D5"} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} :8 5.3{pm} {sd} :16 5.3{pm} {sd} 5.3{pm} {su} |
+  :1 0.4 {sd ch "E5"}

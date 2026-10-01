@@ -1,0 +1,39 @@
+title: Semicorcheas con púa alterna
+status: borrador
+instructions: >-
+  Cuenta en voz alta "1 e y a, 2 e y a…": cuatro notas por clic. Alterna abajo y arriba sin parar: abajo en el
+  número y en la "y", arriba en la "e" y en la "a". Primero un compás de corcheas y otro de semicorcheas, para
+  notar que la mano solo va el doble de rápido; después en la A y cambiando de cuerda en cada pulso. Sin palm mute.
+tempo:
+  start: 50
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Las cuatro semicorcheas de cada clic duran lo mismo (no se agrupan ni se atropellan)
+  - Cada clic empieza con la púa hacia abajo
+  - Las notas hacia arriba suenan igual de fuertes que las de abajo
+  - Al pasar de corcheas a semicorcheas el clic no se mueve
+tags:
+  - pua
+  - semicorcheas
+  - mano-derecha
+  - metal-punk
+alphaTex: |
+  \title "Semicorcheas con púa alterna"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 50
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} |
+  :16 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} |
+  :8 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} |
+  :16 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} |
+  :16 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} |
+  :16 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} |
+  :16 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 3.4 {sd} 3.4 {su} 3.4 {sd} 3.4 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} |
+  :1 0.4 {sd}

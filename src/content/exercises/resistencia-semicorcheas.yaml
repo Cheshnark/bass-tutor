@@ -1,0 +1,49 @@
+title: Resistencia en semicorcheas
+status: borrador
+instructions: >-
+  Semicorcheas con púa alterna y palm mute, con compases de negras para recuperar en medio. Primero dos compases
+  de semicorcheas; después cuatro y al final cuatro más, con cambios de acorde. En las negras, afloja la mano y
+  respira. Si notas que el antebrazo se carga, para aunque no hayas terminado: ese tempo aún no es tu tempo.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E5, E5, E5, E5, E5, E5, C5, D5, E5, E5, E5, E5, C5, D5, E5]
+passCriteria:
+  - Las semicorcheas del último bloque suenan tan parejas y a tiempo como las del primero
+  - En los compases de negras sueltas la mano y respiras
+  - "Terminas sin dolor ni carga en el antebrazo (si la hay: para y baja el tempo)"
+  - Las cuerdas que no tocas no suenan
+tags:
+  - pua
+  - semicorcheas
+  - resistencia
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Resistencia en semicorcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4{pm} {sd ch "E5"} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :4 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  :4 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 3.3{pm} {sd ch "C5"} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} |
+  :16 5.3{pm} {sd ch "D5"} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} |
+  :4 0.4 {sd ch "E5"} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  :4 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} 0.4{pm} {sd} 0.4{pm} {su} |
+  :16 3.3{pm} {sd ch "C5"} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} 3.3{pm} {sd} 3.3{pm} {su} |
+  :16 5.3{pm} {sd ch "D5"} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} 5.3{pm} {sd} 5.3{pm} {su} |
+  :1 0.4 {sd ch "E5"}
