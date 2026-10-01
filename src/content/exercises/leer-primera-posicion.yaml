@@ -1,0 +1,38 @@
+title: Notas naturales en primera posición
+status: borrador
+instructions: >-
+  Solo partitura. Notas naturales de E a F en primera posición, con la digitación 1-2-4: F con el índice (traste
+  1), G y C con el meñique (traste 3), B y E (cuerda D) con el dedo medio (traste 2). Sube y baja por grados y
+  al final con saltos. Di el nombre de cada nota.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Encuentras cada nota sin mirar el mástil
+  - Usas la digitación 1-2-4 sin mover la mano
+  - Los saltos del final no te hacen parar
+tags:
+  - lectura
+  - clave-de-fa
+  - notas
+  - primera-posicion
+alphaTex: |
+  \title "Notas naturales en primera posición"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 1.4 3.4 0.3 |
+  :4 2.3 3.3 0.2 2.2 |
+  :4 3.2 2.2 0.2 3.3 |
+  :4 2.3 0.3 3.4 1.4 |
+  :2 0.4 3.4 |
+  :2 3.3 2.2 |
+  :4 1.4 0.3 3.3 2.2 |
+  :1 0.4

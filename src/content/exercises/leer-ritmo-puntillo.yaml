@@ -1,0 +1,37 @@
+title: Puntillos y silencios
+status: borrador
+instructions: >-
+  Solo partitura y una sola nota (la A al aire): toda la atención al ritmo. Blanca con puntillo (3 tiempos),
+  negra con puntillo y corchea (1 y medio + medio), corcheas y silencios. Cuenta "1 y 2 y" en voz alta.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - 'La negra con puntillo dura uno y medio: la corchea siguiente cae en la "y" del 2 (o del 4)'
+  - 'Los silencios se notan: la nota se corta a tiempo'
+  - Cuentas en voz alta sin perder el pulso
+tags:
+  - lectura
+  - ritmo
+  - figuras
+  - puntillo
+alphaTex: |
+  \title "Puntillos y silencios"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.3 0.3 0.3 0.3 |
+  :2 0.3 {d} :4 0.3 |
+  :4 0.3 {d} :8 0.3 :4 0.3 {d} :8 0.3 |
+  :4 0.3 :8 r 0.3 :4 0.3 r |
+  :8 0.3 0.3 :4 0.3 :8 0.3 0.3 :4 0.3 |
+  :4 0.3 {d} :8 0.3 :2 0.3 |
+  :4 0.3 r :8 0.3 0.3 :4 0.3 |
+  :1 0.3

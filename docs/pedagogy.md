@@ -47,7 +47,7 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
   | 1 · Arpegios ✍️ | Tríadas: mayor y menor · Arpegios sobre una progresión · Cuatriadas: maj7, 7 y m7 |
   | 2 · Escalas ✍️ | La escala mayor · Menor natural y pentatónica menor · De la escala a la línea |
   | 3 · Groove y feels ✍️ | Síncopa: tocar entre los tiempos · Shuffle y swing · Notas muertas y dinámica |
-  | 4 · Leer partitura | La clave de Fa · Ritmo leído · Leer una línea entera |
+  | 4 · Leer partitura ✍️ | La clave de Fa · El ritmo en la partitura · Leer una línea entera |
 
 - **Itinerarios por estilo** (tras el tronco común): Rock/pop · Funk/soul/Motown · Blues/jazz · Metal/punk.
   Cada uno enseña el *feel* de su estilo y la teoría que ese estilo necesita. Una lección de un itinerario solo puede
@@ -119,6 +119,10 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Shuffle y swing | Shuffle = tresillo con las dos primeras unidas (largo-corto), rígido; swing = más libre, no se escribe exacto; se escribe en corcheas con indicación | StudyBass (Shuffle and Swing Rhythms; The Eighth Note Triplet Subdivision); vídeo de SBL |
 | Notas muertas | Dedos de la izquierda apoyados sin pisar; pulsar normal; más claras cerca del puente; se marcan con x; rellenan entre notas | TalkingBass (How To Play Funky Ghost Note Basslines); Bass Musician Magazine (Kevin Guin, "Dead Notes": los ejercicios de acentos ayudan) |
 | Acentos y dinámica | Acentuar el 1 y los golpes de bombo; tocar más fuerte las acentuadas y relajar las demás | No Treble (Ryan Madora, "Keep It Groovy: Adding Accents To Your Pulsing Bass Line"); vídeo de SBL (dinámica) |
+| Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
+| Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
+| Practicar lectura | 50–60 BPM, contar en voz alta, decir los nombres, no parar, poco y a menudo, mano en posición fija | StudyBass (How to Practice Reading Music); research.md §1.1 (práctica distribuida) |
+| Alteraciones y armadura | Una alteración dura hasta el final del compás; la armadura vale para todas las notas de ese nombre en toda la pieza | Wikipedia (Accidental); StudyBass (Key Signatures) |
 | Semicorcheas | Contar "1 e y a"; púa alterna: abajo en el número y en la "y", arriba en la "e" y en la "a" | LibreTexts (Counting, sixteenth notes); vídeo de TalkingBass. Contar en voz alta: ver la fila "Contar" |
 | Galope | Corchea + dos semicorcheas (1 · y · a); la mano sigue en semicorcheas con un **golpe al aire** en la "e" (abajo-(arriba)-abajo-arriba). Inverso: dos semicorcheas + corchea | Ritmo: Wikipedia (Heavy metal gallop). Púa: Fundamental Changes (Rob Thorpe, Metal Picking Riffs: "Down-Down-Up" manteniendo el movimiento de semicorcheas); Riffhard (alternar y estar relajado). **Solo una fuente detalla el golpe al aire** |
 | Resistencia | Mínimo esfuerzo, sin tensión; practicar casi a diario; alargar la práctica poco a poco; subir 5 BPM cuando sale **fácil** varias veces; dolor = parar | No Treble (Donovan Stokes, "Developing Stamina" y "Playing Bass… Fast": subir 5 BPM tras diez pases fáciles; "tocar rápido bien se siente fácil"); No Treble ("Avoiding Injury") |
@@ -169,6 +173,11 @@ Escritas (base del texto):
   [Natural Minor Scale](https://www.studybass.com/lessons/bass-scales/one-octave-natural-minor-scale/) ·
   [How to Practice Scales](https://www.studybass.com/lessons/bass-scales/how-to-practice-scales/) ·
   [Scale Tones in Basslines](https://www.studybass.com/lessons/harmony/scale-tones-in-basslines/)
+- StudyBass — [Pitch Notation](https://www.studybass.com/lessons/reading-music/pitch-notation/) ·
+  [Key Signatures](https://www.studybass.com/lessons/reading-music/key-signatures/) ·
+  [How to Practice Reading Music](https://www.studybass.com/lessons/reading-music/how-to-practice-reading-music/)
+- Wikipedia — [Transposing instrument](https://en.wikipedia.org/wiki/Transposing_instrument) ·
+  [Accidental (music)](https://en.wikipedia.org/wiki/Accidental_(music))
 - StudyBass — [Shuffle and Swing Rhythms](https://www.studybass.com/lessons/rhythm/shuffle-and-swing-rhythms/) ·
   [The Eighth Note Triplet Subdivision](https://www.studybass.com/lessons/rhythm/the-eighth-note-triplet-subdivision/)
 - TalkingBass — [2 Killer Riffs For Developing Rhythmic Accuracy](https://www.talkingbass.net/?p=7401) ·
@@ -222,6 +231,9 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Shuffle | [2 Exercises To Develop a Great Shuffle Feel!](https://www.youtube.com/watch?v=xWfRxy9zEmE) | Scott's Bass Lessons |
 | Notas muertas | [How To Play Funky Ghost Note Basslines](https://www.youtube.com/watch?v=s72wZ87tTxk) | TalkingBass |
 | Dinámica | [Groove Harder With These 3 Deadly Dynamics Exercises](https://www.youtube.com/watch?v=fa9jA08bYr4) | Scott's Bass Lessons |
+| Leer partitura | [How To Read Music On Bass Guitar - Lesson 1](https://www.youtube.com/watch?v=1GAEv__HYwo) | TalkingBass |
+| Leer ritmo | [How To Read Music On Bass Guitar - Basic Rhythms](https://www.youtube.com/watch?v=6tyHYup8muM) | TalkingBass |
+| Leer con acompañamiento | [Reading Music on Bass Guitar [With Play Along]](https://www.youtube.com/watch?v=OsEhzv72V0w) | Dan Hawkins Bass Lessons |
 | Bombo | [Creating Bass Lines #1 - Locking With The Bass Drum](https://www.youtube.com/watch?v=4Ty2gkdW8xw) | TalkingBass |
 | Con batería | [How to Play Bass with a Drummer (Foolproof Beginner Blueprint)](https://www.youtube.com/watch?v=PSw5uqkTPzs) | BassBuzz |
 | 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |

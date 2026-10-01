@@ -12,8 +12,10 @@ _Última actualización: 2026-10-01_
   - **Escalas**: mayor, menor natural y pentatónica menor, secuencias y notas de paso (3 lecciones, 5 ejercicios).
   - **Groove y feels**: contratiempo y anticipaciones, tresillos y shuffle, notas muertas, dinámica y acentos
     (3 lecciones, 6 ejercicios; el shuffle suena con batería en shuffle).
+  - **Leer partitura**: clave de Fa, ritmo leído (puntillos, ligaduras), una línea entera con armadura (3 lecciones,
+    6 ejercicios solo de partitura). **Ampliación común completa** (4 módulos, 12 lecciones).
   - Ejercicios con la digitación en la partitura y acompañamiento generado.
-- Pendiente: ampliación (leer partitura) e itinerarios rock/pop, blues/jazz y funk/soul.
+- Pendiente: itinerarios rock/pop, blues/jazz y funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -91,5 +93,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: ampliación común (leer partitura) y después rock/pop.
+2. Seguir la Fase 7: itinerario rock/pop, después blues/jazz y funk/soul.
 3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

@@ -1,0 +1,37 @@
+title: Leer las cuerdas al aire
+status: borrador
+instructions: >-
+  Solo partitura, sin tablatura. Las cuatro cuerdas al aire en distinto orden: E en la primera línea adicional
+  por debajo del pentagrama, A en el primer espacio, D en la línea del medio y G en el último espacio. Di el
+  nombre de cada nota en voz alta antes de tocarla.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Sabes qué cuerda es cada nota sin mirar la tablatura
+  - No te paras a pensar entre una nota y la siguiente
+  - 'Lees por delante: miras la nota siguiente mientras tocas la actual'
+tags:
+  - lectura
+  - clave-de-fa
+  - cuerdas-al-aire
+alphaTex: |
+  \title "Leer las cuerdas al aire"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 0.3 0.2 0.1 |
+  :4 0.1 0.2 0.3 0.4 |
+  :4 0.4 0.2 0.3 0.1 |
+  :4 0.3 0.4 0.1 0.2 |
+  :2 0.4 0.3 |
+  :2 0.2 0.1 |
+  :4 0.3 0.2 0.4 0.3 |
+  :1 0.4

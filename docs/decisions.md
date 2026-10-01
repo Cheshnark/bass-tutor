@@ -333,3 +333,8 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   balanceo. Lo habitual en partitura es escribir corcheas con la indicación "shuffle"; la lección lo explica. Con
   `feel: shuffle` la batería generada va en tresillos y coincide con el bajo.
 - Groove sobre cuerdas al aire (A, D, E): toda la atención al ritmo, sin carga de mano izquierda.
+
+## 2026-10-01 · Lectura: ejercicios solo de partitura, en primera posición
+- **Motivo:** con la tablatura delante no se aprende a leer. `\staff { score }` oculta la tablatura solo en esos
+  ejercicios. Primera posición con 1-2-4 (mano quieta, como recomienda StudyBass para leer sin mirar las manos).
+  El ritmo se practica primero sobre una sola nota.

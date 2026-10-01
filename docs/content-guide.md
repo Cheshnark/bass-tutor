@@ -148,6 +148,8 @@ alphaTex: |
 - **Digitación** (dedos de la mano izquierda): `{lf N}` pegado a la nota, con N = dedo + 1 (`lf 2` índice … `lf 5`
   meñique; `lf 1` es el pulgar). alphaTab dibuja el número del dedo junto a la nota: `5.4{lf 3}` = traste 5 con el
   dedo 2.
+- **Lectura**: `\staff { score }` (sin `tabs`) muestra solo la partitura; armadura con `\ks G` (después de `\clef`).
+  alphaTab escribe el bajo una octava por encima de como suena, igual que las partituras de bajo.
 - **Groove**: nota muerta `0.3{x}`; acento `0.3{ac}`; dinámica en el pulso `0.3 {dy p}` (sigue hasta el siguiente
   `dy`); ligadura con la nota anterior `0.2{t}` (no se vuelve a pulsar); tresillo `:8 0.3 {tu 3} 0.3 {tu 3} 0.3 {tu 3}`.
 - **Shuffle**: escríbelo en tresillos (`:4 R {tu 3} :8 R {tu 3}` por pulso) y pon `feel: shuffle`: la reproducción

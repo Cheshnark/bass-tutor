@@ -1,0 +1,40 @@
+title: Una línea en Sol mayor (con armadura)
+status: borrador
+instructions: >-
+  Una línea en Sol mayor: la armadura (un sostenido en la línea de F) hace que todos los F sean F#, aunque no
+  lleven el sostenido al lado. F# en el traste 2 de la E, con el dedo medio. Sobre G, C y D con acompañamiento.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, C, D, G, G, C, D, G]
+passCriteria:
+  - Tocas F# (no F) en todas las notas F
+  - La tocas entera sin pararte
+  - Los cambios de acorde caen en el 1
+tags:
+  - lectura
+  - linea
+  - armadura
+  - acordes
+alphaTex: |
+  \title "Una línea en Sol mayor (con armadura)"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ks G
+  \ts (4 4)
+  :4 3.4 {ch "G"} 2.3 0.2 2.3 |
+  :4 3.3 {ch "C"} 2.2 0.1 2.2 |
+  :4 0.2 {ch "D"} 0.3 2.4 0.3 |
+  :4 3.4 {ch "G"} :8 r 2.4 :2 3.4 |
+  :8 3.4 {ch "G"} 3.4 :4 2.3 :8 0.2 0.2 :4 2.3 |
+  :4 3.3 {ch "C"} 2.2 :8 r 0.1 :4 2.2 |
+  :4 0.2 {ch "D"} :8 r 2.4 :4 0.3 :8 r 2.4 |
+  :1 3.4 {ch "G"}

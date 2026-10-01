@@ -1,0 +1,39 @@
+title: Una línea en Do mayor
+status: borrador
+instructions: >-
+  Una línea entera en Do mayor (sin alteraciones), solo partitura, sobre C, F y G con acompañamiento. Mezcla
+  notas y ritmos de las dos lecciones anteriores. Primero léela despacio sin parar; después, a tempo con la
+  batería.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, F, G, C, C, F, G, C]
+passCriteria:
+  - La tocas entera sin pararte, aunque falles alguna nota
+  - Los cambios de acorde caen en el 1
+  - Respetas puntillos y silencios
+tags:
+  - lectura
+  - linea
+  - acordes
+alphaTex: |
+  \title "Una línea en Do mayor"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "C"} 2.2 0.1 2.2 |
+  :4 1.4 {d ch "F"} :8 0.3 :2 3.3 |
+  :4 3.4 {ch "G"} 2.3 0.2 2.3 |
+  :2 3.3 {d ch "C"} :4 r |
+  :8 3.3 {ch "C"} 3.3 :4 2.2 :8 0.1 0.1 :4 2.2 |
+  :4 1.4 {ch "F"} 0.3 :8 r 3.3 :4 0.3 |
+  :4 3.4 {ch "G"} :8 r 2.3 :4 0.2 :8 r 2.3 |
+  :1 3.3 {ch "C"}
