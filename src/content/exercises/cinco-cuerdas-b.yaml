@@ -1,0 +1,54 @@
+title: La cuerda B grave
+status: borrador
+instructions: >-
+  Solo con bajo de cinco cuerdas (B E A D G). Con batería. Nota pedal en la B al aire con palm mute, con C (traste
+  1) y D (traste 3) encima; después, fundamental, quinta y octava sobre B (B, F# en el traste 2 de la E y B en el 2
+  de la A) y sobre D (trastes 3, 5 y 5). El pulgar descansa sobre la B cuando tocas en las cuerdas agudas, para que
+  no suene sola.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock en corcheas
+  harmony: [B5, B5, B5, B5, B5, D5, B5, B5]
+passCriteria:
+  - La B grave suena definida, no como un retumbe
+  - Cuando tocas en otras cuerdas, la B no suena por simpatía
+  - Las formas de quinta y octava son las mismas que en la cuerda E, una cuerda más abajo
+tags:
+  - cinco-cuerdas
+  - nota-pedal
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "La cuerda B grave"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1 B0)
+  \clef bass
+  \ts (4 4)
+  :8 0.5{pm} {sd ch "B5"} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} |
+  :8 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} |
+  :8 0.5{pm} {sd} 0.5{pm} {sd} 1.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 3.5{pm} {sd} 0.5{pm} {sd} 1.5{pm} {sd} |
+  :8 0.5{pm} {sd} 0.5{pm} {sd} 1.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 3.5{pm} {sd} 1.5{pm} {sd} 0.5{pm} {sd} |
+  :8 0.5 {sd} 0.5 {sd} 2.4 {sd} 2.4 {sd} 2.3 {sd} 2.3 {sd} 2.4 {sd} 2.4 {sd} |
+  :8 3.5 {sd ch "D5"} 3.5 {sd} 5.4 {sd} 5.4 {sd} 5.3 {sd} 5.3 {sd} 5.4 {sd} 5.4 {sd} |
+  :8 0.5{pm} {sd ch "B5"} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} 0.5{pm} {sd} |
+  :1 0.5 {sd}
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

@@ -1,0 +1,70 @@
+title: Doblar el riff o sostener la fundamental
+status: borrador
+instructions: >-
+  Con guitarra y batería. La guitarra toca el mismo riff en los ocho compases. En los cuatro primeros, tú lo
+  doblas una octava más grave (E E G E A G E D); en los cuatro siguientes, sostienes la fundamental: E en corcheas.
+  Todo hacia abajo y con palm mute. Escucha la diferencia: doblar suma peso al riff; sostener deja el riff a la
+  guitarra y el bajo hace de suelo.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock en corcheas
+  harmony: [E5, E5, E5, E5, E5, E5, E5, E5, E5]
+passCriteria:
+  - Al doblar, tus notas caen a la vez que las de la guitarra
+  - Al sostener, las corcheas siguen el charles sin acelerarse
+  - El paso de doblar a sostener (compás 5) no pierde el tempo
+  - Sabes decir cuál de las dos versiones te gusta más para este riff, y por qué
+tags:
+  - banda
+  - riff
+  - fundamental
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Doblar el riff o sostener la fundamental"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.3{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 5.3{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.3{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 5.3{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.3{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 5.3{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.3{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 5.3{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :1 0.4 {sd}
+  \track "Guitarra" { instrument "Distortion Guitar" }
+  \staff { tabs }
+  \tuning (E4 B3 G3 D3 A2 E2)
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :8 0.6{pm} 0.6{pm} 3.6{pm} 0.6{pm} 0.5{pm} 3.6{pm} 0.6{pm} 5.5{pm} |
+  :1 (0.6 2.5 2.4)
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

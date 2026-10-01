@@ -78,3 +78,13 @@ test('un mástil de lección puede fijar la afinación (drop D) sin tocar los aj
   await page.goto('/#/curso/drop-d/3')
   await expect(page.getByText('Afinación: 4 cuerdas · drop D (D A D G)')).toBeVisible()
 })
+
+test('la reproducción de la partitura sigue el tempo de práctica', async ({ page }) => {
+  await page.goto('/#/curso/punk-rapido-y-cortes/4')
+  const card = page.getByTestId('exercise-punk-rapido')
+  const playback = card.locator('label:has(select)', { hasText: /^Tempo/ }).locator('select')
+  await expect(playback).toHaveValue('120')
+  await card.getByRole('spinbutton', { name: /Tempo al que lo has tocado/ }).fill('170')
+  await expect(playback).toHaveValue('170')
+  await expect(playback.locator('option:checked')).toHaveText('170 BPM (tu tempo)')
+})

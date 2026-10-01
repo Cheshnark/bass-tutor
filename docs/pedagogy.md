@@ -46,14 +46,14 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 ### Itinerario metal/punk (temario, borrador)
 
 Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
-alternancia índice-medio. Los módulos 1–3 están escritos; el 4 es la propuesta de temario.
+alternancia índice-medio. **Itinerario completo** (4 módulos, 12 lecciones), todo en borrador.
 
 | Módulo | Lecciones |
 |---|---|
 | 1 · Púa ✍️ | Coger la púa y tocar hacia abajo · Púa alterna y cambios de cuerda · Palm mute y la corchea punk |
 | 2 · Galope y semicorcheas ✍️ | Semicorcheas con púa alterna · El galope y el galope inverso · Resistencia: rápido sin tensión |
 | 3 · Riffs graves ✍️ | Drop D: la cuerda grave en D · Fundamental, quinta y octava en riffs · Sonidos oscuros: frigio y tritono |
-| 4 · Tocar con la banda | Doblar el riff o sostener la fundamental · Punk rápido (160+ BPM) con cabeza · 5 cuerdas y afinaciones más graves (opcional) |
+| 4 · Tocar con la banda ✍️ | Con la batería y la guitarra (bombo; doblar o sostener) · Punk rápido y cortes · El bajo de cinco cuerdas (opcional) |
 
 Criterio del orden: primero el ataque y el pulso (lo que define el sonido del estilo), después el ritmo propio
 (galope, semicorcheas) y por último el lenguaje (afinaciones, riffs, escalas). La velocidad nunca es un objetivo
@@ -96,6 +96,9 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Acorde de quinta | Fundamental + quinta (+ octava), ni mayor ni menor; el bajo toca sobre todo la fundamental | Wikipedia (Power chord); Wikipedia (Heavy metal bass: raíces, nota pedal o doblar el riff) |
 | Papel del bajo en el metal | Primero el ritmo con la batería y la guitarra; sostener la fundamental o moverse con octavas y quintas | Wikipedia (Heavy metal bass); No Treble (Damian Erskine, "Rhythm Bass?": "el ritmo manda", fundamentales). Foros (TalkBass) en la misma línea |
 | Frigio y tritono | Frigio = menor natural con ♭2; tritono = 6 semitonos; *diabolus in musica* sin citas medievales conocidas; Black Sabbath (1970) | Wikipedia (Phrygian mode: uso en metal); Wikipedia (Tritone); vídeo de TalkingBass (modos) |
+| Encajar con el bombo | Tocar donde suena el bombo (en rock sencillo, 1 y 3); no obliga a tocar solo ahí; primero el tiempo | Worship Artistry (Daniel Ornellas, "The Relationship Between Bass and Drums"); Wikiversity (Joseph Patrick Moore, "How to lock in with a drummer": al unísono con el bombo o alrededor, según la canción); vídeo de TalkingBass |
+| Bajo en el punk | Líneas sencillas y repetitivas, corcheas en la fundamental, normalmente con púa; tempos rápidos | Wikipedia (Punk rock: características musicales); Wikipedia (Downpicking) |
+| Cinco cuerdas | B E A D G; las formas no cambian (todas las cuerdas a una cuarta); apagar más (pulgar flotante / ancla) | Wikipedia (Extended-range bass: B grave, resonancia por simpatía, "floating thumb"); Wikipedia (Heavy metal bass: 5 cuerdas habituales desde los 90); vídeos de TalkingBass y SBL |
 | Palm mute | Canto de la mano de la púa sobre las cuerdas, junto al puente, presión ligera; más hacia el mástil = más apagado | Wikipedia (Palm mute); TalkingBass (Beginner Guide…). El texto de TalkingBass dice "fretting hand", con toda probabilidad una errata: ninguna otra fuente lo hace con la izquierda |
 
 ## Fuentes
@@ -126,6 +129,9 @@ Escritas (base del texto):
 - Wikipedia — [Drop D tuning](https://en.wikipedia.org/wiki/Drop_D_tuning) · [Power chord](https://en.wikipedia.org/wiki/Power_chord) ·
   [Heavy metal bass](https://en.wikipedia.org/wiki/Heavy_metal_bass) · [Phrygian mode](https://en.wikipedia.org/wiki/Phrygian_mode) ·
   [Tritone](https://en.wikipedia.org/wiki/Tritone)
+- Wikipedia — [Punk rock](https://en.wikipedia.org/wiki/Punk_rock) · [Extended-range bass](https://en.wikipedia.org/wiki/Extended-range_bass)
+- Worship Artistry (Daniel Ornellas) — [The Relationship Between Bass and Drums](https://worshipartistry.com/greenroom/bass/the-relationship-between-bass-and-drums)
+- Wikiversity (Joseph Patrick Moore) — [How to lock in with a drummer](https://en.wikiversity.org/wiki/Learning_bass_guitar_with_Joseph_Patrick_Moore/How_to_lock_in_with_a_drummer)
 - No Treble (Damian Erskine) — [Rhythm Bass? What To Do When the Rhythm Guitar is Missing](https://www.notreble.com/?p=25719)
 - No Treble (Donovan Stokes) — [Developing Stamina](https://www.notreble.com/?p=19547) · [Playing Bass… Fast](https://www.notreble.com/?p=32647)
 
@@ -159,6 +165,10 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Resistencia | [Build Speed, Stamina, Strength & Excellent Bass Technique](https://www.youtube.com/watch?v=YKjO-0Y2MzA) | Dan Hawkins Bass Lessons |
 | Riffs | [Rock Bass - Learn How To Make Riffs](https://www.youtube.com/watch?v=pQCf47_kK5c) | Dan Hawkins Bass Lessons |
 | Modos (frigio) | [Modes For Bass Explained..In Record Time!](https://www.youtube.com/watch?v=x6mnPBMJWOc) | TalkingBass |
+| Bombo | [Creating Bass Lines #1 - Locking With The Bass Drum](https://www.youtube.com/watch?v=4Ty2gkdW8xw) | TalkingBass |
+| Con batería | [How to Play Bass with a Drummer (Foolproof Beginner Blueprint)](https://www.youtube.com/watch?v=PSw5uqkTPzs) | BassBuzz |
+| 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |
+| 5 cuerdas | [How to SOUND AWESOME on the 5 STRING BASS… for 4 string players](https://www.youtube.com/watch?v=h3BGK3m7O_A) | Scott's Bass Lessons |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
@@ -170,6 +180,9 @@ atribuido a un bajista conocido, porque no pude confirmar que el canal fuera ofi
 
 Módulo 3 (verificados el 2026-10-01): **sin vídeo de drop D**; los que aparecen son de canales que no están entre
 las fuentes reconocidas del curso o enseñan canciones.
+
+Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
+canciones con copyright.
 
 Notas:
 - Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.

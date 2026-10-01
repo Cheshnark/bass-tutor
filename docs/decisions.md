@@ -240,3 +240,15 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 ## 2026-10-01 · Metal/punk módulo 3 entero en drop D
 - **Motivo:** cambiar de afinación entre lecciones es incómodo y la D al aire es la nota pedal de todos los riffs
   del módulo. La lección 1 enseña a afinar y comprobar de oído; la última recuerda volver a la estándar.
+
+## 2026-10-01 · Ejercicios con batería y guitarra (pistas extra en el alphaTex)
+- **Motivo:** el módulo "Tocar con la banda" necesita algo con lo que encajar. alphaTab dibuja solo la primera pista
+  (`api.tex(tex)` sin `tracks`) pero genera MIDI de todas, y el soundfont (Sonivox) trae kits de batería (banco 128).
+  Comprobado: canal 9 con la percusión en el MIDI, y en el navegador solo aparece el bajo. Sin ficheros de audio:
+  todo sigue siendo texto, offline y original. Los backing tracks de la Fase 5 pueden partir de aquí.
+
+## 2026-10-01 · La reproducción de la partitura sigue el tempo de práctica
+- **Motivo:** con un selector de velocidad del 50 al 110 % no se podía tocar con la batería al tempo objetivo (punk a
+  170 desde una partitura a 120). `TabView` recibe `bpm` (el sugerido o el escrito en la tarjeta) y ajusta
+  `playbackSpeed = bpm / tempo de la partitura`. El selector muestra BPM y el alumno puede elegir otro; si cambia el
+  tempo de práctica, manda el nuevo. La velocidad se vuelve a aplicar si alphaTab se recrea.

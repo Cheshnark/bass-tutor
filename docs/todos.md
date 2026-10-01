@@ -36,11 +36,13 @@
 - [x] Metal/punk, módulo 1 · Púa (3 lecciones, 4 ejercicios) en borrador.
 - [x] Metal/punk, módulo 2 · Galope y semicorcheas (3 lecciones, 4 ejercicios) en borrador.
 - [x] Metal/punk, módulo 3 · Riffs graves en drop D (3 lecciones, 4 ejercicios) en borrador.
-- [ ] Metal/punk, módulo 4: tocar con la banda.
+- [x] Metal/punk, módulo 4 · Tocar con la banda (3 lecciones, 5 ejercicios con batería). **Itinerario completo.**
+- [ ] Revisar de oído la mezcla de batería/guitarra/bajo del soundfont (volúmenes por pista; hoy no se ajustan).
+- [ ] Opción de silenciar el bajo en la reproducción (tocar tú la parte del bajo con la banda).
 - [ ] Drop D: buscar un vídeo de una fuente reconocida.
 - [ ] Galope: buscar un vídeo de técnica (no de una canción) de una fuente reconocida.
 - [ ] Ejercicios de metal/punk con dedos: hoy solo hay notación de púa (⊓/V); valorar indicar la alternativa.
-- [ ] **Tú**: probar los módulos 1–3 de metal/punk; confirmar púa por defecto y el foco (metal, punk o ambos).
+- [ ] **Tú**: probar el itinerario metal/punk; confirmar púa por defecto y el foco (metal, punk o ambos).
 - [ ] Palm mute: buscar un vídeo con púa de una fuente reconocida (el enlazado puede ser con pulgar).
 - [ ] Comprobar de oído si alphaTab reproduce distinto las notas con palm mute (`{pm}`); no verificado.
 - [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.
@@ -106,7 +108,7 @@
       Sustituido por `scripts/vite-plugin-alphatab-assets.ts` (copia solo si falta o cambia). CI lo sigue comprobando.
 - [ ] Metrónomo en pestaña en segundo plano: los navegadores ralentizan `setInterval` a ~1 s y habría huecos.
       Opción: mover el temporizador a un Web Worker.
-- [ ] `TabPoc`: velocidad y bucle no se vuelven a aplicar si la instancia de alphaTab se recrea (p. ej., al cambiar `tex`).
+- [ ] `TabView`: el bucle no se vuelve a aplicar si la instancia de alphaTab se recrea (al cambiar `tex`). La velocidad sí.
 
 ## Fases siguientes (no entran en el primer hito)
 

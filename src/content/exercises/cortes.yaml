@@ -1,0 +1,54 @@
+title: Cortes con la banda
+status: borrador
+instructions: >-
+  Con batería. Dos compases de corcheas en E, uno en G (traste 3 de la E) y uno en A (al aire). Después, los
+  cortes: en el compás 5 la banda da un golpe en el 1 y se calla; en el 6, golpes en el 1, en la "y" del 2 y en el
+  3. En los silencios, apaga la cuerda en el momento exacto: el silencio también se toca. Sigue contando por dentro
+  para volver a entrar a tiempo en el compás 7.
+tempo:
+  start: 90
+  target: 150
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock en corcheas con cortes
+  harmony: [E5, E5, G5, A5, E5, E5, E5, E5]
+passCriteria:
+  - En los cortes, el bajo deja de sonar a la vez que la batería
+  - Los golpes del compás 6 caen con el bombo
+  - Vuelves a entrar en el compás 7 justo en el 1
+tags:
+  - banda
+  - cortes
+  - silencios
+  - metal-punk
+alphaTex: |
+  \title "Cortes con la banda"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 90
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 3.4{pm} {sd ch "G5"} 3.4{pm} {sd} 3.4{pm} {sd} 3.4{pm} {sd} 3.4{pm} {sd} 3.4{pm} {sd} 3.4{pm} {sd} 3.4{pm} {sd} |
+  :8 0.3{pm} {sd ch "A5"} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} |
+  :8 0.4 {sd ch "E5"} :8 r :4 r :2 r |
+  :8 0.4 {sd} :8 r :8 r :8 0.4 {sd} :8 0.4 {sd} :8 r :4 r |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :1 0.4 {sd}
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) r :4 r :2 r |
+  :8 (KickHit CrashMediumHit) r r (KickHit CrashMediumHit) (KickHit CrashMediumHit) r :4 r |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

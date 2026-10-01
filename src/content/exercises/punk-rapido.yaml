@@ -1,0 +1,57 @@
+title: Punk rápido
+status: borrador
+instructions: >-
+  Con batería. Corcheas en la fundamental sobre E, B, C# y A, dos vueltas. E al aire, B en el traste 2 de la A
+  (índice), C# en el 4 (meñique) y A al aire. Todo hacia abajo mientras llegues sin tensión; a partir de ahí, púa
+  alterna. Movimiento mínimo y palm mute ligero. El tempo objetivo es alto: súbelo poco a poco y solo cuando el pase
+  sea fácil.
+tempo:
+  start: 120
+  target: 170
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock en corcheas
+  harmony: [E5, B5, C#5, A5, E5, B5, C#5, A5, E5]
+passCriteria:
+  - Las corcheas van con el charles, sin acelerar ni frenar
+  - Los cambios de nota caen en el 1 de cada compás
+  - Terminas sin carga en el antebrazo (si la hay, baja el tempo o pasa a púa alterna)
+tags:
+  - banda
+  - punk
+  - corcheas
+  - velocidad
+  - metal-punk
+alphaTex: |
+  \title "Punk rápido"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 120
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 2.3{pm} {sd ch "B5"} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} |
+  :8 4.3{pm} {sd ch "C#5"} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} |
+  :8 0.3{pm} {sd ch "A5"} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} |
+  :8 0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 2.3{pm} {sd ch "B5"} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} 2.3{pm} {sd} |
+  :8 4.3{pm} {sd ch "C#5"} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} 4.3{pm} {sd} |
+  :8 0.3{pm} {sd ch "A5"} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} |
+  :1 0.4 {sd ch "E5"}
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

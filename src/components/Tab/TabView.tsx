@@ -1,5 +1,6 @@
 import { AlphaTabApi, PlayerMode, synth } from '@coderline/alphatab'
 import { useEffect, useRef, useState } from 'react'
+import { playbackSpeedFor, tempoOptions } from './playbackTempo'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -10,21 +11,31 @@ interface TabViewProps {
   tex: string
   /** Nombre accesible del bloque (lectores de pantalla). */
   title?: string
+  /**
+   * Tempo de práctica (BPM): la reproducción suena a este tempo en vez del escrito en la partitura,
+   * para tocar encima (con batería) al tempo en que estás. El alumno puede cambiarlo en el selector.
+   */
+  bpm?: number
 }
 
 /**
  * Partitura + tablatura con reproducción (alphaTab). Se carga de forma diferida
  * (ver LazyTabView.tsx) para que alphaTab no pese en el bundle principal.
  */
-export default function TabView({ tex, title = 'Tablatura y partitura' }: TabViewProps) {
+export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: TabViewProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const apiRef = useRef<AlphaTabApi | null>(null)
   const [status, setStatus] = useState<Status>('cargando')
   const [errorMessage, setErrorMessage] = useState('')
   const [playerReady, setPlayerReady] = useState(false)
   const [playing, setPlaying] = useState(false)
-  const [speed, setSpeed] = useState(1)
   const [looping, setLooping] = useState(false)
+  /** Tempo escrito en la partitura (`\tempo`), conocido al cargarla. */
+  const [scoreBpm, setScoreBpm] = useState<number | null>(null)
+  /** Tempo elegido a mano en el selector; deja de valer si cambia el tempo de práctica. */
+  const [choice, setChoice] = useState<{ practiceBpm?: number; bpm: number } | null>(null)
+  const chosenBpm = choice && choice.practiceBpm === bpm ? choice.bpm : undefined
+  const playbackBpm = chosenBpm ?? bpm ?? scoreBpm
 
   useEffect(() => {
     const el = containerRef.current
@@ -37,6 +48,7 @@ export default function TabView({ tex, title = 'Tablatura y partitura' }: TabVie
         soundFont: `${BASE}soundfont/sonivox.sf2`,
       },
     })
+    instance.scoreLoaded.on((score) => setScoreBpm(score.tempo))
     instance.renderFinished.on(() => setStatus('listo'))
     instance.error.on((e) => {
       setStatus('error')
@@ -53,13 +65,14 @@ export default function TabView({ tex, title = 'Tablatura y partitura' }: TabVie
       apiRef.current = null
       setPlayerReady(false)
       setPlaying(false)
+      setScoreBpm(null)
     }
   }, [tex])
 
-  const changeSpeed = (value: number) => {
-    setSpeed(value)
-    if (apiRef.current) apiRef.current.playbackSpeed = value
-  }
+  // La velocidad se aplica también si alphaTab se recrea (cambia `tex`) o si cambia el tempo de práctica.
+  useEffect(() => {
+    if (apiRef.current && scoreBpm && playbackBpm) apiRef.current.playbackSpeed = playbackSpeedFor(playbackBpm, scoreBpm)
+  }, [playbackBpm, scoreBpm, playerReady])
 
   const toggleLoop = () => {
     const next = !looping
@@ -87,13 +100,21 @@ export default function TabView({ tex, title = 'Tablatura y partitura' }: TabVie
           Bucle: {looping ? 'sí' : 'no'}
         </button>
         <label>
-          Velocidad{' '}
-          <select value={speed} onChange={(e) => changeSpeed(Number(e.target.value))}>
-            {[0.5, 0.75, 0.9, 1, 1.1].map((s) => (
-              <option key={s} value={s}>
-                {Math.round(s * 100)} %
-              </option>
-            ))}
+          Tempo{' '}
+          <select
+            value={playbackBpm ?? ''}
+            disabled={!scoreBpm}
+            onChange={(e) => setChoice({ practiceBpm: bpm, bpm: Number(e.target.value) })}
+          >
+            {scoreBpm ? (
+              tempoOptions(scoreBpm, bpm).map((option) => (
+                <option key={option} value={option}>
+                  {option} BPM{option === bpm ? ' (tu tempo)' : ''}
+                </option>
+              ))
+            ) : (
+              <option value="">…</option>
+            )}
           </select>
         </label>
       </div>

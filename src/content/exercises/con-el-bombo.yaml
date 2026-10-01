@@ -1,0 +1,54 @@
+title: Con el bombo
+status: borrador
+instructions: >-
+  Pulsa Reproducir y toca con la batería. El bajo suena exactamente donde suena el bombo: en el 1, en la "y" del 2
+  y en el 3 de cada compás ("1… y 3…"). Deja que cada nota dure hasta la siguiente. Escucha el bombo más que el
+  charles: si tu nota y el bombo suenan como un solo golpe, estás encajado. E al aire, C en el traste 3 de la A y
+  D en el 5 de la A.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock con bombo en 1, "y" del 2 y 3
+  harmony: [E5, E5, C5, D5, E5, E5, D5, E5]
+passCriteria:
+  - Tu nota y el bombo suenan como un solo golpe, sin "flam" (dos golpes casi juntos)
+  - La nota de la "y" del 2 no se adelanta ni se retrasa
+  - Las notas duran hasta la siguiente, sin huecos
+tags:
+  - banda
+  - bombo
+  - ritmo
+  - metal-punk
+alphaTex: |
+  \title "Con el bombo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 {sd d ch "E5"} :8 0.4 {sd} :2 0.4 {sd} |
+  :4 0.4 {sd d} :8 0.4 {sd} :2 0.4 {sd} |
+  :4 3.3 {sd d ch "C5"} :8 3.3 {sd} :2 3.3 {sd} |
+  :4 5.3 {sd d ch "D5"} :8 5.3 {sd} :2 5.3 {sd} |
+  :4 0.4 {sd d ch "E5"} :8 0.4 {sd} :2 0.4 {sd} |
+  :4 0.4 {sd d} :8 0.4 {sd} :2 0.4 {sd} |
+  :4 5.3 {sd d ch "D5"} :8 5.3 {sd} :2 5.3 {sd} |
+  :1 0.4 {sd ch "E5"}
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) (KickHit HiHatClosed) (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

@@ -147,6 +147,21 @@ alphaTex: |
 - **Púa** (itinerario metal/punk): `instrument "Electric Bass Pick"`. Dirección de cada golpe como efecto del pulso,
   `{sd}` hacia abajo (⊓) y `{su}` hacia arriba (V). **Palm mute** como efecto de la nota, pegado a ella: `0.4{pm}`.
   Se combinan así: `0.4{pm} {sd ch "E5"}`. Acordes de quinta (*power chords*): `E5`, `C5`…
+- **Acompañamiento** (batería, guitarra): pistas extra **después** de la del bajo. Solo se dibuja la primera pista
+  (el bajo), pero suenan todas. Batería:
+
+  ```
+  	rack "Batería"
+  \instrument percussion
+  \clef neutral
+  rticulation defaults
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed …
+  ```
+
+  Guitarra: `	rack "Guitarra" { instrument "Distortion Guitar" }`, `\staff { tabs }` y
+  `	uning (E4 B3 G3 D3 A2 E2)`. Todas las pistas tienen que tener el mismo número de compases.
+- La reproducción suena al **tempo de práctica** del alumno (el sugerido o el que escriba), no al `	empo` del
+  alphaTex: escribe `	empo` igual a `tempo.start` y no te preocupes por el resto.
 
 ## Vídeos
 

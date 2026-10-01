@@ -63,7 +63,7 @@ export function LessonExercise({ id }: ExerciseEmbed) {
       </p>
 
       <LessonMetronome bpm={suggestion} beatsPerBar={denominator === 4 ? numerator : undefined} />
-      <LazyTabView tex={exercise.alphaTex} title={exercise.title} />
+      <LazyTabView tex={exercise.alphaTex} title={exercise.title} bpm={validBpm ? bpm : undefined} />
 
       <fieldset className="lesson-exercise__criteria">
         <legend>Autoevaluación: ¿lo has tocado…?</legend>
