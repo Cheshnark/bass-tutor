@@ -31,6 +31,15 @@ export function modulesOf(track: TrackId): Module[] {
 }
 
 /**
+ * Número de módulo que ve el alumno. En el tronco común, el de la carpeta (0–5); en un itinerario, su
+ * posición dentro de él (1, 2…), porque las carpetas usan un bloque por itinerario (40-… en metal/punk).
+ */
+export function moduleNumber(module: Module): number {
+  if (module.track === 'comun') return module.order
+  return modulesOf(module.track).indexOf(module) + 1
+}
+
+/**
  * Lecciones anterior y siguiente dentro del mismo itinerario (no salta del tronco común
  * a un estilo: al acabar el tronco común, el alumno elige itinerario en el índice).
  */

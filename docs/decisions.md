@@ -204,3 +204,22 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 
 ## 2026-09-30 · Dev server en el puerto 5180
 - **Motivo:** el 5173 lo usa otro proyecto local (retro-engine).
+
+## 2026-10-01 · Itinerario metal/punk: púa por defecto y temario en 4 módulos
+- **Motivo:** la púa es el ataque típico de los dos estilos (StudyBass: el metal "suena bien" con púa; Wikipedia:
+  el *downpicking* es la base del punk y del thrash). Se admite tocar con dedos: hay referentes del metal que lo
+  hacen y todos los ejercicios se pueden tocar con alternancia índice-medio.
+- Orden del temario: ataque y pulso (púa, palm mute, corchea punk) → ritmo (semicorcheas, galope, resistencia) →
+  lenguaje (drop D, riffs, escala menor y cromatismos) → tocar con la banda. Detalle en pedagogy.md.
+- Las preferencias del autor (púa o dedos, metal o punk primero) no se pudieron preguntar; se eligió la opción
+  recomendada. Revisable al probar el módulo 1.
+
+## 2026-10-01 · Carpetas de módulo por bloques de decenas; número visible relativo al itinerario
+- **Motivo:** el número de carpeta es único en todo el curso (lo exige `content:check`) y fija el orden. Un bloque de
+  decenas por itinerario (metal/punk = 40–49) deja sitio para crecer sin renumerar. El alumno ve 1, 2, 3… dentro de
+  cada itinerario (`moduleNumber` en `src/content/course.ts`); en el tronco común se mantiene 0–5.
+- En el índice, los módulos de un itinerario usan `h5` (van bajo el `h4` del itinerario) para no romper la jerarquía.
+
+## 2026-10-01 · Notación de púa en alphaTex: `{sd}`/`{su}` y `{pm}`
+- **Motivo:** alphaTab 1.8 los entiende y los dibuja (⊓/V y línea P.M.), y el instrumento `Electric Bass Pick`
+  (programa GM 34) suena con ataque de púa. Comprobado parseando los ejercicios con alphaTab y en el navegador.

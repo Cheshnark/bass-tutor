@@ -1,0 +1,42 @@
+title: Corcheas punk en la fundamental
+status: borrador
+instructions: >-
+  Una línea original en el estilo: corcheas sin pausa en la fundamental de cada acorde, todas hacia abajo y con
+  palm mute. E al aire; C en el traste 3 de la A y D en el traste 5 de la A, con el índice. El último compás, la E
+  al aire y sin palm mute, dejándola sonar. Lo difícil es aguantar el tempo hasta el final con el antebrazo suelto.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E5, E5, C5, D5, E5, E5, D5, E5]
+passCriteria:
+  - Las corcheas no se aceleran ni se frenan en todo el ejercicio
+  - Los cambios de acorde caen en el primer tiempo sin huecos
+  - Todas las notas tienen el mismo volumen y el mismo palm mute
+  - Al terminar, el antebrazo no está cargado (si lo está, baja el tempo)
+tags:
+  - pua
+  - palm-mute
+  - corcheas
+  - fundamental
+  - metal-punk
+alphaTex: |
+  \title "Corcheas punk en la fundamental"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  3.3{pm} {sd ch "C5"} 3.3{pm} {sd} 3.3{pm} {sd} 3.3{pm} {sd} 3.3{pm} {sd} 3.3{pm} {sd} 3.3{pm} {sd} 3.3{pm} {sd} |
+  5.3{pm} {sd ch "D5"} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} |
+  0.4{pm} {sd ch "E5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  5.3{pm} {sd ch "D5"} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} 5.3{pm} {sd} |
+  :1 0.4 {sd ch "E5"}

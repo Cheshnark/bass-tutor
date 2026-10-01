@@ -1,0 +1,41 @@
+title: Púa alterna y cambios de cuerda
+status: borrador
+instructions: >-
+  Corcheas alternando abajo (⊓) y arriba (V) en todas las notas, también al cambiar de cuerda. Primero en la E
+  y en la A al aire, después cambiando de cuerda cada dos notas y en cada nota, y al final el 1-5-8-5 en
+  corcheas sobre G y C. Cada pulso empieza con la púa hacia abajo: si un pulso empieza hacia arriba, te has
+  saltado un golpe.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Alternas abajo y arriba en todas las notas, también en los cambios de cuerda
+  - "Las notas hacia arriba suenan igual de fuertes que las de abajo"
+  - Cada pulso empieza con la púa hacia abajo
+  - Las cuerdas que no tocas no suenan
+tags:
+  - pua
+  - mano-derecha
+  - corcheas
+  - cambios-de-cuerda
+  - metal-punk
+alphaTex: |
+  \title "Púa alterna y cambios de cuerda"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} 0.4 {sd} 0.4 {su} |
+  0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} 0.3 {sd} 0.3 {su} |
+  0.4 {sd} 0.4 {su} 0.3 {sd} 0.3 {su} 0.4 {sd} 0.4 {su} 0.3 {sd} 0.3 {su} |
+  0.4 {sd} 0.3 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.3 {su} |
+  3.4 {sd} 3.4 {su} 5.3 {sd} 5.3 {su} 5.2 {sd} 5.2 {su} 5.3 {sd} 5.3 {su} |
+  3.3 {sd} 3.3 {su} 5.2 {sd} 5.2 {su} 5.1 {sd} 5.1 {su} 5.2 {sd} 5.2 {su} |
+  3.4 {sd} 3.4 {su} 5.3 {sd} 5.3 {su} 5.2 {sd} 5.2 {su} 5.3 {sd} 5.3 {su} |
+  :1 3.4 {sd}

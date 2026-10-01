@@ -1,0 +1,39 @@
+title: Púa hacia abajo en corcheas
+status: borrador
+instructions: >-
+  Todas las notas con la púa hacia abajo (símbolo ⊓ sobre la nota). Primero negras en la E al aire, después
+  corcheas en la E y en la A, y al final cambios de cuerda cada medio compás. La mano que sostiene la púa
+  apoya el talón cerca del puente y calla las cuerdas que no tocas; el movimiento sale de la muñeca y es pequeño.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Todas las notas van hacia abajo y suenan con el mismo volumen
+  - El movimiento es pequeño y sale de la muñeca, no del codo ni del hombro
+  - La púa no se gira ni se te escurre entre los dedos
+  - El antebrazo sigue relajado al terminar
+tags:
+  - pua
+  - mano-derecha
+  - corcheas
+  - metal-punk
+alphaTex: |
+  \title "Púa hacia abajo en corcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  :8 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  :1 0.4 {sd}

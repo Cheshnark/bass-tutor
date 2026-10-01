@@ -37,6 +37,18 @@ lessons:            # orden de estudio; única fuente del orden
 
 Toda lección `.mdx` de la carpeta tiene que estar en `lessons`, y todo lo listado tiene que existir.
 
+**Número de carpeta**: es único en todo el curso. Cada itinerario usa su propio bloque de decenas:
+
+| Itinerario | Carpetas |
+|---|---|
+| Tronco común | `00`–`09` |
+| Rock/pop | `10`–`19` |
+| Funk/soul | `20`–`29` |
+| Blues/jazz | `30`–`39` |
+| Metal/punk | `40`–`49` |
+
+El alumno no ve ese número: en un itinerario, los módulos se muestran como 1, 2, 3… según su orden.
+
 ## Lección: `<id>.mdx`
 
 Frontmatter YAML y, debajo, el cuerpo en Markdown/MDX.
@@ -130,6 +142,9 @@ alphaTex: |
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.
 - **Cifrado sobre la partitura**: pon `{ch "G"}` detrás de la primera nota del acorde (`3.4 {ch "G"} 3.4 3.4 3.4`).
   Si el ejercicio tiene acordes, añade también `backing.harmony` (un acorde por compás).
+- **Púa** (itinerario metal/punk): `instrument "Electric Bass Pick"`. Dirección de cada golpe como efecto del pulso,
+  `{sd}` hacia abajo (⊓) y `{su}` hacia arriba (V). **Palm mute** como efecto de la nota, pegado a ella: `0.4{pm}`.
+  Se combinan así: `0.4{pm} {sd ch "E5"}`. Acordes de quinta (*power chords*): `E5`, `C5`…
 
 ## Vídeos
 

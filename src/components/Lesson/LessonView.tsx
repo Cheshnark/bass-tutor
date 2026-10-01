@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ComponentType } from 'react'
 import type { MDXProps } from 'mdx/types'
-import { course, getLesson, neighbours, trackOf } from '../../content/course'
+import { course, getLesson, moduleNumber, neighbours, trackOf } from '../../content/course'
 import { getTrack } from '../../content/tracks'
 import { saveLastStep } from '../../state/progress/db'
 import { useSettings } from '../../state/settings'
@@ -120,7 +120,7 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
     <article className={`panel lesson${follow ? ' lesson--follow' : ''}`} aria-labelledby="lesson-title">
       <header className="lesson-header">
         <p className="lesson-kicker">
-          <a href="#/curso">Curso</a> · {getTrack(track).label} · Módulo {module?.order} · {module?.title}
+          <a href="#/curso">Curso</a> · {getTrack(track).label} · Módulo {module && moduleNumber(module)} · {module?.title}
         </p>
         <h2 id="lesson-title">{lesson.title}</h2>
         <p className="lesson-meta">

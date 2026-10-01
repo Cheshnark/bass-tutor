@@ -32,7 +32,12 @@
       pulso y contar, corcheas y silencios, cómo practicar), 7 ejercicios nuevos. Escritos antes de la revisión de 0–1.
 - [x] Módulos 4–5 en borrador (tablatura, notas en E y A, octava; fundamental, quinta, 1-5-8 sobre I–IV–V).
       **Tronco común completo** (6 módulos, 18 lecciones, 20 ejercicios).
-- [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz, metal/punk).
+- [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz). Metal/punk: hecho (pedagogy.md).
+- [x] Metal/punk, módulo 1 · Púa (3 lecciones, 4 ejercicios) en borrador.
+- [ ] Metal/punk, módulos 2–4: galope y semicorcheas · riffs graves (drop D) · tocar con la banda.
+- [ ] **Tú**: probar el módulo 1 de metal/punk; confirmar púa por defecto y el foco (metal, punk o ambos).
+- [ ] Palm mute: buscar un vídeo con púa de una fuente reconocida (el enlazado puede ser con pulgar).
+- [ ] Comprobar de oído si alphaTab reproduce distinto las notas con palm mute (`{pm}`); no verificado.
 - [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.
 
 ## Lecciones: mejoras anotadas

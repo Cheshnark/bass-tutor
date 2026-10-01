@@ -64,3 +64,12 @@ test('una lección inexistente muestra un aviso', async ({ page }) => {
   await page.goto('/#/curso/no-existe')
   await expect(page.getByRole('heading', { name: 'Lección no encontrada' })).toBeVisible()
 })
+
+test('el itinerario metal/punk numera sus módulos desde 1 y enlaza a sus lecciones', async ({ page }) => {
+  await page.goto('/')
+  const metal = page.getByRole('region', { name: /^Metal \/ punk/ })
+  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 5 })).toBeVisible()
+  await metal.getByRole('link', { name: /Coger la púa y tocar hacia abajo/ }).click()
+  await expect(page).toHaveURL(/#\/curso\/coger-la-pua$/)
+  await expect(page.getByText('Metal / punk · Módulo 1 · Púa')).toBeVisible()
+})

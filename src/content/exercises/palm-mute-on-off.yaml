@@ -1,0 +1,38 @@
+title: Palm mute, sí y no
+status: borrador
+instructions: >-
+  Corcheas con la púa hacia abajo. Un compás sin palm mute y otro con él (P.M.), en la E y después en la A. Al
+  final, medio compás con palm mute y medio sin él: el canto de la mano se apoya y se levanta sin perder el
+  tempo. El canto de la mano descansa sobre las cuerdas justo donde salen del puente, sin apretar.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Con palm mute, la nota suena corta y grave pero se oye su altura (no es un golpe sordo)
+  - Sin palm mute, la nota vuelve a sonar abierta
+  - Apoyas y levantas la mano sin perder el tempo
+  - La mano no aprieta las cuerdas (no desafinan)
+tags:
+  - pua
+  - palm-mute
+  - apagado
+  - metal-punk
+alphaTex: |
+  \title "Palm mute, sí y no"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} |
+  0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} 0.4 {sd} |
+  0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3{pm} {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} 0.3 {sd} |
+  :1 0.4 {sd}

@@ -42,6 +42,22 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 - **Itinerarios por estilo** (tras el tronco común): Rock/pop · Funk/soul/Motown · Blues/jazz · Metal/punk.
   Cada uno enseña el *feel* de su estilo y la teoría que ese estilo necesita. Una lección de un itinerario solo puede
   depender del tronco común o de su propio itinerario (lo comprueba `content:check`).
+
+### Itinerario metal/punk (temario, borrador)
+
+Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
+alternancia índice-medio. Solo el módulo 1 está escrito; el resto es la propuesta de temario.
+
+| Módulo | Lecciones |
+|---|---|
+| 1 · Púa ✍️ | Coger la púa y tocar hacia abajo · Púa alterna y cambios de cuerda · Palm mute y la corchea punk |
+| 2 · Galope y semicorcheas | Semicorcheas con púa alterna · El galope y el galope inverso · Resistencia: rápido sin tensión |
+| 3 · Riffs graves | Drop D: afinar y riffs en la cuerda grave · Fundamental, quinta y octava en riffs · Escala menor y cromatismos (♭2, ♭5) |
+| 4 · Tocar con la banda | Doblar el riff o sostener la fundamental · Punk rápido (160+ BPM) con cabeza · 5 cuerdas y afinaciones más graves (opcional) |
+
+Criterio del orden: primero el ataque y el pulso (lo que define el sonido del estilo), después el ritmo propio
+(galope, semicorcheas) y por último el lenguaje (afinaciones, riffs, escalas). La velocidad nunca es un objetivo
+en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 - Lección: 20–30 min en total, siguiendo la plantilla de content-guide.md.
 
 ## Decisiones técnicas del contenido
@@ -68,6 +84,12 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 | Fundamental y quinta | La fundamental es la nota más fuerte; después la quinta. Quinta arriba: cuerda siguiente +2 trastes; abajo: cuerda anterior, mismo traste y mismo dedo | StudyBass (Roots and Fifths; Chord Tones in Basslines) |
 | Dedo de la quinta | StudyBass propone el anular; con 1-2-4 en los primeros trastes sale el meñique. Se presentan las dos | StudyBass (Roots and Fifths) + decisión de digitación de este curso |
 | Practicar | Despacio y limpio; subir el tempo poco a poco; grabarse; sesiones cortas; alternar tareas (evidencia limitada) | StudyBass (Playing a Steady Pulse: empezar a 50–60 BPM, grabarse); research.md §1.1 (Carter y Grahn 2016; Wiseheart et al. 2017) |
+| Púa o dedos | Las dos valen; decide el sonido. El itinerario metal/punk usa púa y admite dedos | StudyBass (Pick vs Fingers: "elige el sonido"; el metal "suena bien" con púa); TalkingBass (Beginner Guide To Bass Pick Technique) |
+| Agarre de la púa | Entre la yema del pulgar y el lateral del índice doblado, punta perpendicular al pulgar, **asomando poco**; firme sin apretar | TalkingBass (Beginner Guide…: agarre "apretado" para rock/metal y palm mute); vídeo de BassBuzz. Matiz propio: "firme sin apretar" por el principio de mínima tensión |
+| Grosor de la púa | Media-gruesa (0,8–1,2 mm) para empezar; probar varias | StudyBass (Pick vs Fingers: experimentar); comentarios al vídeo de BassBuzz (~1 mm). **Fuente débil: es un punto de partida, no una regla** |
+| Dónde y cómo pulsar con púa | Cerca del puente; talón de la mano callando las graves; movimiento pequeño de muñeca | TalkingBass (Beginner Guide…: puente = sonido más ajustado; talón de la mano calla las cuerdas). Muñeca: Wikipedia (Downpicking) y foros (TalkBass). **Fuente débil para la muñeca; contrastar con los vídeos** |
+| Solo abajo vs alterna | Abajo = sonido más pesado y uniforme, pero cansa; alterna para tempos altos y semicorcheas | Wikipedia (Downpicking: más "pesado", exige resistencia; Ramones a 180–200 BPM); foro TalkBass/BassBuzz (corcheas hacia abajo como base del rock/punk) |
+| Palm mute | Canto de la mano de la púa sobre las cuerdas, junto al puente, presión ligera; más hacia el mástil = más apagado | Wikipedia (Palm mute); TalkingBass (Beginner Guide…). El texto de TalkingBass dice "fretting hand", con toda probabilidad una errata: ninguna otra fuente lo hace con la izquierda |
 
 ## Fuentes
 
@@ -87,6 +109,9 @@ Escritas (base del texto):
   [Rhythmic Notation](https://www.studybass.com/lessons/reading-music/rhythmic-notation/) ·
   [The Eighth Note Subdivision](https://www.studybass.com/lessons/rhythm/the-eighth-note-subdivision/)
 - BassBuzz — [Beginner to Badass: lessons overview](https://www.bassbuzz.com/beginner-to-badass/lessons-overview) (orden de temas)
+- StudyBass — [Pick vs Fingers](https://www.studybass.com/lessons/bass-technique/pick-vs-fingers/)
+- TalkingBass — [Beginner Guide To Bass Pick Technique](https://www.talkingbass.net/bass-technique-pick-for-beginners/)
+- Wikipedia — [Downpicking](https://en.wikipedia.org/wiki/Downpicking) · [Palm mute](https://en.wikipedia.org/wiki/Palm_mute)
 
 Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de YouTube, 2026-09-30):
 
@@ -109,6 +134,15 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Notas del mástil | [Beginners Guide To The Bass Fretboard - Learning The Notes](https://www.youtube.com/watch?v=IJYxp5T4tLI) | TalkingBass |
 | Octavas | [Bass Octaves For Beginners](https://www.youtube.com/watch?v=q7ZuUBjUWlk) | TalkingBass |
 | 1-5-8 | [Root–Fifth–Octave Bass Line: Fix Your Pinky Technique…](https://www.youtube.com/watch?v=HZjHtaidfjE) | Ryan Madora |
+| Púa (agarre) | [How To Play Bass With A Pick - Essential Tips](https://www.youtube.com/watch?v=LQANg6fX2kg) | TalkingBass |
+| Púa (básico) | [How to Play Bass With a Pick (from an ex-Pick Hater)](https://www.youtube.com/watch?v=vaQL21UL7Wc) | BassBuzz |
+| Púa alterna | [How to Play Bass with a PICK (Noob to Bad-Ass)](https://www.youtube.com/watch?v=R1gjqjaHpxU) | Scott's Bass Lessons |
+| Ejercicios de púa | [4 Killer Exercises To Whip Your Pick Playing Into Shape!](https://www.youtube.com/watch?v=tu7FlXKGXdY) | Scott's Bass Lessons |
+| Palm mute | [Master the Art of Bass Palm Muting – Groove Like a Pro](https://www.youtube.com/watch?v=wTqt4Uj8XL0) | Dan Hawkins Bass Lessons |
+
+Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
+lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
+de una fuente reconocida verificable.
 
 Notas:
 - Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.

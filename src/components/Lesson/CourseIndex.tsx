@@ -1,4 +1,4 @@
-import { lessonsOf, modulesOf } from '../../content/course'
+import { lessonsOf, moduleNumber, modulesOf } from '../../content/course'
 import type { Module } from '../../content/schema'
 import { TRACKS } from '../../content/tracks'
 import { useLessonsProgress } from '../../state/progress/hooks'
@@ -6,18 +6,26 @@ import type { LessonProgress } from '../../state/progress/model'
 import { ProgressPanel } from './ProgressPanel'
 import './Lesson.css'
 
-function ModuleBlock({ module, progress }: { module: Module; progress: ReadonlyMap<string, LessonProgress> }) {
+interface ModuleBlockProps {
+  module: Module
+  progress: ReadonlyMap<string, LessonProgress>
+  /** h4 en el tronco común; h5 dentro de un itinerario, que ya va bajo un h4. */
+  headingLevel: 4 | 5
+}
+
+function ModuleBlock({ module, progress, headingLevel }: ModuleBlockProps) {
   const lessons = lessonsOf(module)
+  const Heading = headingLevel === 4 ? 'h4' : 'h5'
   const done = lessons.filter((l) => progress.get(l.id)?.completedAt).length
 
   return (
     <section className="course-module" aria-labelledby={`module-${module.id}`}>
-      <h4 id={`module-${module.id}`}>
-        <span className="course-module__number">{module.order}</span> {module.title}
+      <Heading id={`module-${module.id}`} className="course-module__heading">
+        <span className="course-module__number">{moduleNumber(module)}</span> {module.title}
         <span className="course-module__done" aria-label={`${done} de ${lessons.length} lecciones completadas`}>
           {done}/{lessons.length}
         </span>
-      </h4>
+      </Heading>
       <p className="hint">{module.summary}</p>
       <ol className="course-lessons">
         {lessons.map((lesson) => {
@@ -64,7 +72,7 @@ export function CourseIndex() {
         <p className="hint">{common.summary}</p>
         {commonModules.length === 0 && <p className="hint">Todavía no hay lecciones.</p>}
         {commonModules.map((m) => (
-          <ModuleBlock key={m.id} module={m} progress={progress} />
+          <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
         ))}
       </section>
 
@@ -81,7 +89,7 @@ export function CourseIndex() {
               </h4>
               <p className="hint">{track.summary}</p>
               {modules.map((m) => (
-                <ModuleBlock key={m.id} module={m} progress={progress} />
+                <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={5} />
               ))}
             </section>
           )
