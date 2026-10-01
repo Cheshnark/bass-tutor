@@ -1,0 +1,43 @@
+title: Riff con fundamental, quinta y octava
+status: borrador
+instructions: >-
+  Afinación drop D. En cada acorde, la fundamental en la cuarta cuerda, la octava en la segunda y la quinta en la
+  tercera, las tres en el mismo traste. Púa alterna. Sobre D todo va al aire; F en el traste 3 y G en el traste 5,
+  con el índice apoyado plano sobre las tres cuerdas sin apretar.
+tempo:
+  start: 60
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [D5, D5, F5, G5, D5, D5, G5, D5]
+passCriteria:
+  - Alternas abajo y arriba también en los saltos de cuerda
+  - Solo suena la nota que tocas (la octava no se mezcla con la fundamental)
+  - Los cambios de acorde caen en el primer tiempo sin huecos
+  - La fundamental se oye como la nota principal; la quinta y la octava la acompañan
+tags:
+  - drop-d
+  - fundamental
+  - quinta
+  - octava
+  - pua
+  - metal-punk
+alphaTex: |
+  \title "Riff con fundamental, quinta y octava"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 D1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {sd ch "D5"} 0.4 {su} 0.2 {sd} 0.4 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.2 {su} |
+  :8 0.4 {sd} 0.4 {su} 0.2 {sd} 0.4 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.2 {su} |
+  :8 3.4 {sd ch "F5"} 3.4 {su} 3.2 {sd} 3.4 {su} 3.4 {sd} 3.3 {su} 3.4 {sd} 3.2 {su} |
+  :8 5.4 {sd ch "G5"} 5.4 {su} 5.2 {sd} 5.4 {su} 5.4 {sd} 5.3 {su} 5.4 {sd} 5.2 {su} |
+  :8 0.4 {sd ch "D5"} 0.4 {su} 0.2 {sd} 0.4 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.2 {su} |
+  :8 0.4 {sd} 0.4 {su} 0.2 {sd} 0.4 {su} 0.4 {sd} 0.3 {su} 0.4 {sd} 0.2 {su} |
+  :8 5.4 {sd ch "G5"} 5.4 {su} 5.2 {sd} 5.4 {su} 5.4 {sd} 5.3 {su} 5.4 {sd} 5.2 {su} |
+  :1 0.4 {sd ch "D5"}

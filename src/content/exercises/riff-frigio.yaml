@@ -1,0 +1,38 @@
+title: Riff frigio en D
+status: borrador
+instructions: >-
+  Afinación drop D. Nota pedal en D al aire con palm mute y, encima, la segunda menor (Eb, traste 1): el semitono
+  que da al modo frigio su sonido oscuro. Después aparece F (traste 3) y, en el último compás, una subida
+  D–Eb–F–G y vuelta. Todo hacia abajo. Digitación 1-2-4: índice en el traste 1 y meñique en el 3; para el G
+  (traste 5), desplaza la mano dos trastes y vuelve.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - Se oye claramente el roce de semitono entre D y Eb
+  - La D al aire mantiene el pulso aunque cambien las notas de encima
+  - Las notas pisadas no suenan más largas que la D (palm mute igual en todas)
+tags:
+  - drop-d
+  - frigio
+  - nota-pedal
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Riff frigio en D"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 D1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 5.4{pm} {sd} 3.4{pm} {sd} 1.4{pm} {sd} |
+  :1 0.4 {sd}

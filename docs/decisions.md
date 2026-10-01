@@ -230,3 +230,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   semicorcheas y todos los pulsos empiezan hacia abajo, así el ritmo no se desordena. La partitura marca solo los
   golpes que suenan; el golpe al aire se explica en el texto.
 - Se cuenta "1 e y a" (adaptación del "1 e & a" de los métodos en inglés), coherente con el "1 y" del tronco común.
+
+## 2026-10-01 · `<Fretboard tuning="…">`: afinación fija en un mástil de lección
+- **Motivo:** la lección de drop D necesita mostrar el mástil en esa afinación aunque el alumno tenga la estándar.
+  Se fija solo en ese mástil (el resto de la app sigue los ajustes) y se indica con un rótulo. Validado en
+  `content:check` contra `TUNINGS`. Alternativa descartada: pedir al alumno que cambie los ajustes (más pasos y
+  hoy los ajustes no están accesibles desde la lección).
+
+## 2026-10-01 · Metal/punk módulo 3 entero en drop D
+- **Motivo:** cambiar de afinación entre lecciones es incómodo y la D al aire es la nota pedal de todos los riffs
+  del módulo. La lección 1 enseña a afinar y comprobar de oído; la última recuerda volver a la estándar.

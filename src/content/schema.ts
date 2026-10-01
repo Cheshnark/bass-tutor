@@ -12,6 +12,7 @@ import { Chord } from 'tonal'
 import { z } from 'zod'
 import { MAX_BPM, MIN_BPM } from '../audio/beatClock'
 import { MAX_FRET, resolvePitchSet } from '../theory/fretboard'
+import { TUNINGS } from '../theory/tunings'
 import { TRACK_IDS } from './tracks'
 
 // Mensajes de error de Zod en español (los propios de este esquema ya lo están).
@@ -110,6 +111,16 @@ export const FretboardEmbedSchema = z
       .refine(([a, b]) => a <= b, 'el primer traste no puede ser mayor que el último')
       .default([0, 12]),
     labels: z.enum(['note', 'degree', 'interval']).default('note'),
+    /**
+     * Afinación fija para este mástil (p. ej. "drop-d-4"), por encima de la de los ajustes.
+     * Solo cuando la lección trata de esa afinación; si no, se respeta la del alumno.
+     */
+    tuning: z
+      .string()
+      .refine((id) => TUNINGS.some((t) => t.id === id), {
+        error: `afinación desconocida; disponibles: ${TUNINGS.map((t) => t.id).join(', ')}`,
+      })
+      .optional(),
   })
   .superRefine((view, ctx) => {
     try {

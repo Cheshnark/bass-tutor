@@ -12,8 +12,10 @@ import { getTuning } from '../../theory/tunings'
 import { Fretboard } from '../Fretboard/Fretboard'
 import { LazyTabView } from '../Tab/LazyTabView'
 
-export function LessonFretboard({ mode, root, type, frets = [0, 12], labels = 'note' }: FretboardEmbed) {
+export function LessonFretboard({ mode, root, type, frets = [0, 12], labels = 'note', tuning: fixedTuning }: FretboardEmbed) {
   const { tuningId, leftHanded, notation } = useSettings()
+  // Una lección puede fijar la afinación (p. ej. drop D); el resto de ajustes (zurdo, nombres) siguen siendo del alumno.
+  const tuning = getTuning(fixedTuning ?? tuningId)
   // `frets` llega como array nuevo en cada render del MDX: se memoriza por valor.
   const [from, to] = frets
   const view = useMemo<FretboardView>(
@@ -22,7 +24,8 @@ export function LessonFretboard({ mode, root, type, frets = [0, 12], labels = 'n
   )
   return (
     <figure className="lesson-embed">
-      <Fretboard tuning={getTuning(tuningId)} view={view} leftHanded={leftHanded} notation={notation} />
+      <Fretboard tuning={tuning} view={view} leftHanded={leftHanded} notation={notation} />
+      {fixedTuning && fixedTuning !== tuningId && <figcaption className="hint">Afinación: {tuning.name}</figcaption>}
     </figure>
   )
 }

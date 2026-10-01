@@ -1,0 +1,43 @@
+title: Nota pedal en drop D
+status: borrador
+instructions: >-
+  Afinación drop D (D A D G). Corcheas hacia abajo con palm mute sobre la D al aire, la nota más grave del bajo
+  de cuatro cuerdas. Después, la D se alterna con F (traste 3), G (traste 5) y A (traste 7) en la misma cuerda,
+  como en un riff con nota pedal. Al final, sin palm mute, fundamental, quinta y octava al aire (D–A–D) y la
+  misma forma en el traste 5 (G).
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [D5, D5, D5, D5, D5, D5, G5, D5]
+passCriteria:
+  - La cuarta cuerda está afinada en D (el traste 7 suena igual que la A al aire)
+  - La D al aire no se pierde de tempo al alternarla con las notas pisadas
+  - Las notas pisadas suenan igual de fuertes que la D al aire
+  - Sin palm mute, solo suena la cuerda que tocas
+tags:
+  - drop-d
+  - nota-pedal
+  - pua
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Nota pedal en drop D"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 D1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd ch "D5"} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 5.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 5.4{pm} {sd} 7.4{pm} {sd} 5.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 5.4{pm} {sd} 0.4{pm} {sd} 3.4{pm} {sd} |
+  :8 0.4 {sd} 0.4 {sd} 0.3 {sd} 0.3 {sd} 0.2 {sd} 0.2 {sd} 0.3 {sd} 0.3 {sd} |
+  :8 5.4 {sd ch "G5"} 5.4 {sd} 5.3 {sd} 5.3 {sd} 5.2 {sd} 5.2 {sd} 5.3 {sd} 5.3 {sd} |
+  :1 0.4 {sd ch "D5"}

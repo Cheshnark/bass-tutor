@@ -46,13 +46,13 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
 ### Itinerario metal/punk (temario, borrador)
 
 Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
-alternancia índice-medio. Los módulos 1 y 2 están escritos; el resto es la propuesta de temario.
+alternancia índice-medio. Los módulos 1–3 están escritos; el 4 es la propuesta de temario.
 
 | Módulo | Lecciones |
 |---|---|
 | 1 · Púa ✍️ | Coger la púa y tocar hacia abajo · Púa alterna y cambios de cuerda · Palm mute y la corchea punk |
 | 2 · Galope y semicorcheas ✍️ | Semicorcheas con púa alterna · El galope y el galope inverso · Resistencia: rápido sin tensión |
-| 3 · Riffs graves | Drop D: afinar y riffs en la cuerda grave · Fundamental, quinta y octava en riffs · Escala menor y cromatismos (♭2, ♭5) |
+| 3 · Riffs graves ✍️ | Drop D: la cuerda grave en D · Fundamental, quinta y octava en riffs · Sonidos oscuros: frigio y tritono |
 | 4 · Tocar con la banda | Doblar el riff o sostener la fundamental · Punk rápido (160+ BPM) con cabeza · 5 cuerdas y afinaciones más graves (opcional) |
 
 Criterio del orden: primero el ataque y el pulso (lo que define el sonido del estilo), después el ritmo propio
@@ -92,6 +92,10 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Semicorcheas | Contar "1 e y a"; púa alterna: abajo en el número y en la "y", arriba en la "e" y en la "a" | LibreTexts (Counting, sixteenth notes); vídeo de TalkingBass. Contar en voz alta: ver la fila "Contar" |
 | Galope | Corchea + dos semicorcheas (1 · y · a); la mano sigue en semicorcheas con un **golpe al aire** en la "e" (abajo-(arriba)-abajo-arriba). Inverso: dos semicorcheas + corchea | Ritmo: Wikipedia (Heavy metal gallop). Púa: Fundamental Changes (Rob Thorpe, Metal Picking Riffs: "Down-Down-Up" manteniendo el movimiento de semicorcheas); Riffhard (alternar y estar relajado). **Solo una fuente detalla el golpe al aire** |
 | Resistencia | Mínimo esfuerzo, sin tensión; practicar casi a diario; alargar la práctica poco a poco; subir 5 BPM cuando sale **fácil** varias veces; dolor = parar | No Treble (Donovan Stokes, "Developing Stamina" y "Playing Bass… Fast": subir 5 BPM tras diez pases fáciles; "tocar rápido bien se siente fácil"); No Treble ("Avoiding Injury") |
+| Drop D | Bajar la 4.ª cuerda un tono (D A D G); comprobar: traste 7 = A al aire, armónico 12 = D al aire. Las notas de la 4.ª suben dos trastes. Quinta y octava en el mismo traste | Wikipedia (Drop D tuning: acordes de quinta con un dedo). Las notas (D1 A1 D2 G2) y las comprobaciones son aritmética de intervalos. **Sin fuente específica de bajo de las reconocidas** |
+| Acorde de quinta | Fundamental + quinta (+ octava), ni mayor ni menor; el bajo toca sobre todo la fundamental | Wikipedia (Power chord); Wikipedia (Heavy metal bass: raíces, nota pedal o doblar el riff) |
+| Papel del bajo en el metal | Primero el ritmo con la batería y la guitarra; sostener la fundamental o moverse con octavas y quintas | Wikipedia (Heavy metal bass); No Treble (Damian Erskine, "Rhythm Bass?": "el ritmo manda", fundamentales). Foros (TalkBass) en la misma línea |
+| Frigio y tritono | Frigio = menor natural con ♭2; tritono = 6 semitonos; *diabolus in musica* sin citas medievales conocidas; Black Sabbath (1970) | Wikipedia (Phrygian mode: uso en metal); Wikipedia (Tritone); vídeo de TalkingBass (modos) |
 | Palm mute | Canto de la mano de la púa sobre las cuerdas, junto al puente, presión ligera; más hacia el mástil = más apagado | Wikipedia (Palm mute); TalkingBass (Beginner Guide…). El texto de TalkingBass dice "fretting hand", con toda probabilidad una errata: ninguna otra fuente lo hace con la izquierda |
 
 ## Fuentes
@@ -119,6 +123,10 @@ Escritas (base del texto):
 - Fundamental Changes — [Metal Picking Riffs](https://www.fundamental-changes.com/metal-picking/) (Rob Thorpe)
 - Riffhard — [How to Gallop on a Guitar](https://www.riffhard.com/?p=36763)
 - LibreTexts — [Counting (syncopated subdivisions)](https://human.libretexts.org/Courses/Sierra_College/Equipping_the_Musical_Ear/19%3A_Syncopated_Subdivisions/19.05%3A_Counting)
+- Wikipedia — [Drop D tuning](https://en.wikipedia.org/wiki/Drop_D_tuning) · [Power chord](https://en.wikipedia.org/wiki/Power_chord) ·
+  [Heavy metal bass](https://en.wikipedia.org/wiki/Heavy_metal_bass) · [Phrygian mode](https://en.wikipedia.org/wiki/Phrygian_mode) ·
+  [Tritone](https://en.wikipedia.org/wiki/Tritone)
+- No Treble (Damian Erskine) — [Rhythm Bass? What To Do When the Rhythm Guitar is Missing](https://www.notreble.com/?p=25719)
 - No Treble (Donovan Stokes) — [Developing Stamina](https://www.notreble.com/?p=19547) · [Playing Bass… Fast](https://www.notreble.com/?p=32647)
 
 Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de YouTube, 2026-09-30):
@@ -149,6 +157,8 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Palm mute | [Master the Art of Bass Palm Muting – Groove Like a Pro](https://www.youtube.com/watch?v=wTqt4Uj8XL0) | Dan Hawkins Bass Lessons |
 | Semicorcheas | [How To Read Sixteenth Notes - The Heart Of Funk and Metal Bass Playing!](https://www.youtube.com/watch?v=eOSR_4GgPwI) | TalkingBass |
 | Resistencia | [Build Speed, Stamina, Strength & Excellent Bass Technique](https://www.youtube.com/watch?v=YKjO-0Y2MzA) | Dan Hawkins Bass Lessons |
+| Riffs | [Rock Bass - Learn How To Make Riffs](https://www.youtube.com/watch?v=pQCf47_kK5c) | Dan Hawkins Bass Lessons |
+| Modos (frigio) | [Modes For Bass Explained..In Record Time!](https://www.youtube.com/watch?v=x6mnPBMJWOc) | TalkingBass |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
@@ -157,6 +167,9 @@ de una fuente reconocida verificable.
 Módulo 2 (verificados el 2026-10-01): **sin vídeo de galope**. El único de una fuente reconocida (TalkingBass) enseña
 una canción con copyright con su tablatura; no se enlaza. Descartado también un vídeo de técnica de púa de un canal
 atribuido a un bajista conocido, porque no pude confirmar que el canal fuera oficial.
+
+Módulo 3 (verificados el 2026-10-01): **sin vídeo de drop D**; los que aparecen son de canales que no están entre
+las fuentes reconocidas del curso o enseñan canciones.
 
 Notas:
 - Los vídeos de mano izquierda pueden enseñar **un dedo por traste** desde el traste 1; la lección lo advierte.

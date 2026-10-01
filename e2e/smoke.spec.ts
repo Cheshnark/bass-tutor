@@ -73,3 +73,8 @@ test('el itinerario metal/punk numera sus módulos desde 1 y enlaza a sus leccio
   await expect(page).toHaveURL(/#\/curso\/coger-la-pua$/)
   await expect(page.getByText('Metal / punk · Módulo 1 · Púa')).toBeVisible()
 })
+
+test('un mástil de lección puede fijar la afinación (drop D) sin tocar los ajustes', async ({ page }) => {
+  await page.goto('/#/curso/drop-d/3')
+  await expect(page.getByText('Afinación: 4 cuerdas · drop D (D A D G)')).toBeVisible()
+})

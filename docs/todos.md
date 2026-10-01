@@ -35,10 +35,12 @@
 - [ ] Itinerarios: definir temario de cada estilo (rock/pop, funk/soul, blues/jazz). Metal/punk: hecho (pedagogy.md).
 - [x] Metal/punk, módulo 1 · Púa (3 lecciones, 4 ejercicios) en borrador.
 - [x] Metal/punk, módulo 2 · Galope y semicorcheas (3 lecciones, 4 ejercicios) en borrador.
-- [ ] Metal/punk, módulos 3–4: riffs graves (drop D) · tocar con la banda.
+- [x] Metal/punk, módulo 3 · Riffs graves en drop D (3 lecciones, 4 ejercicios) en borrador.
+- [ ] Metal/punk, módulo 4: tocar con la banda.
+- [ ] Drop D: buscar un vídeo de una fuente reconocida.
 - [ ] Galope: buscar un vídeo de técnica (no de una canción) de una fuente reconocida.
 - [ ] Ejercicios de metal/punk con dedos: hoy solo hay notación de púa (⊓/V); valorar indicar la alternativa.
-- [ ] **Tú**: probar los módulos 1–2 de metal/punk; confirmar púa por defecto y el foco (metal, punk o ambos).
+- [ ] **Tú**: probar los módulos 1–3 de metal/punk; confirmar púa por defecto y el foco (metal, punk o ambos).
 - [ ] Palm mute: buscar un vídeo con púa de una fuente reconocida (el enlazado puede ser con pulgar).
 - [ ] Comprobar de oído si alphaTab reproduce distinto las notas con palm mute (`{pm}`); no verificado.
 - [ ] Publicar la web para compartirla (Fase 3: PWA + hosting). Revisar identidad visual (research.md §6) antes.

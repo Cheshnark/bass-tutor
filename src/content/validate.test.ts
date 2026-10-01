@@ -301,4 +301,11 @@ describe('FretboardEmbedSchema', () => {
     expect(FretboardEmbedSchema.safeParse({ mode: 'scale', root: 'A', type: 'inventada' }).success).toBe(false)
     expect(FretboardEmbedSchema.safeParse({ mode: 'notes', frets: [7, 5] }).success).toBe(false)
   })
+
+  it('acepta una afinación conocida y rechaza las inventadas', () => {
+    expect(FretboardEmbedSchema.safeParse({ mode: 'notes', tuning: 'drop-d-4' }).success).toBe(true)
+    const wrong = FretboardEmbedSchema.safeParse({ mode: 'notes', tuning: 'drop-c' })
+    expect(wrong.success).toBe(false)
+    expect(wrong.error?.issues[0].message).toMatch(/afinación desconocida.*drop-d-4/)
+  })
 })

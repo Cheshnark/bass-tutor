@@ -1,0 +1,38 @@
+title: Riff con tritono en D
+status: borrador
+instructions: >-
+  Afinación drop D. Nota pedal en D con palm mute y el tritono (Ab, traste 6), que se resuelve medio tono abajo
+  en G (traste 5). Después una bajada G–F–Eb (trastes 5, 3 y 1) de vuelta a la D. Digitación: índice en el 5 y
+  medio en el 6; para la bajada, meñique en el 3 e índice en el 1. Al final, el tritono sin palm mute: D y Ab
+  dejándolos sonar.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+passCriteria:
+  - El tritono (D–Ab) suena tenso y la G lo resuelve
+  - El salto al traste 6 no retrasa la nota
+  - Las notas largas del final duran su valor completo
+tags:
+  - drop-d
+  - tritono
+  - nota-pedal
+  - palm-mute
+  - metal-punk
+alphaTex: |
+  \title "Riff con tritono en D"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Pick" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 D1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} 5.4{pm} {sd} 3.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} |
+  :8 0.4{pm} {sd} 0.4{pm} {sd} 6.4{pm} {sd} 5.4{pm} {sd} 5.4{pm} {sd} 3.4{pm} {sd} 1.4{pm} {sd} 0.4{pm} {sd} |
+  :2 0.4 {sd} 6.4 {sd} |
+  :1 0.4 {sd}

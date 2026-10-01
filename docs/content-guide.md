@@ -103,6 +103,8 @@ Solo estos cuatro. Las props tienen que ser **literales** (textos, números, lis
 
 - `<Fretboard>`: `mode` = `notes` · `scale` · `arpeggio` · `interval`; `root` y `type` en nomenclatura de Tonal
   (los del diccionario); `frets` por defecto `[0, 12]`; `labels` = `note` · `degree` · `interval`.
+  `tuning` (opcional) fija la afinación de ese mástil (`drop-d-4`, `standard-5`… ids de `src/theory/tunings.ts`)
+  por encima de la de los ajustes; úsalo solo si la lección trata de esa afinación. Se muestra un rótulo.
 - Todo ejercicio de `exercises` del frontmatter debería aparecer con `<Exercise id="…" />` (si no, aviso), y todo
   `<Exercise>` del cuerpo tiene que estar en `exercises` (si no, error).
 - No se permiten `import`/`export` ni expresiones `{…}`; sí comentarios `{/* nota */}`.
