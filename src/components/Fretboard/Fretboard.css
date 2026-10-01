@@ -66,6 +66,27 @@
   stroke: var(--accent-strong);
 }
 
+.fb-note--ask circle {
+  fill: var(--accent);
+  stroke: var(--accent-strong);
+}
+
+.fb-note--ok circle {
+  fill: var(--ok);
+  stroke: var(--text);
+}
+
+.fb-note--wrong circle {
+  fill: var(--danger);
+  stroke: var(--text);
+}
+
+.fb-note--ask .fb-label,
+.fb-note--ok .fb-label,
+.fb-note--wrong .fb-label {
+  fill: #16171a;
+}
+
 .fb-note:focus-visible circle {
   stroke: var(--accent-strong);
   stroke-width: 4;

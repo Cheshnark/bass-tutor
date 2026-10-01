@@ -50,3 +50,18 @@ export function neighbours(id: string): { previous?: Lesson; next?: Lesson } {
   const index = sameTrack.findIndex((l) => l.id === id)
   return { previous: sameTrack[index - 1], next: sameTrack[index + 1] }
 }
+
+// Primera lección (en el orden del curso) que usa cada ejercicio: da el contexto y los intervalos de repaso.
+const lessonByExercise = new Map<string, Lesson>()
+for (const lesson of course.lessons) {
+  for (const exerciseId of lesson.exercises) if (!lessonByExercise.has(exerciseId)) lessonByExercise.set(exerciseId, lesson)
+}
+
+export function lessonOfExercise(exerciseId: string): Lesson | undefined {
+  return lessonByExercise.get(exerciseId)
+}
+
+/** Intervalos de repaso (días) de un ejercicio: los de su lección. */
+export function reviewDaysOf(exerciseId: string): number[] | undefined {
+  return lessonByExercise.get(exerciseId)?.review.afterDays
+}

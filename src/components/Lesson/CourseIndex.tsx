@@ -1,6 +1,7 @@
 import { lessonsOf, moduleNumber, modulesOf } from '../../content/course'
 import type { Module } from '../../content/schema'
 import { TRACKS } from '../../content/tracks'
+import { PracticeReminder } from '../Practice/PracticeReminder'
 import { useLessonsProgress } from '../../state/progress/hooks'
 import type { LessonProgress } from '../../state/progress/model'
 import { ProgressPanel } from './ProgressPanel'
@@ -66,6 +67,7 @@ export function CourseIndex() {
   return (
     <section className="panel course" aria-labelledby="course-title">
       <h2 id="course-title">Curso</h2>
+      <PracticeReminder />
 
       <section className="course-track" aria-labelledby="track-comun">
         <h3 id="track-comun">{common.label}</h3>

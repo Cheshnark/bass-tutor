@@ -1,9 +1,20 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from './db'
-import type { ExerciseProgress, LessonProgress } from './model'
+import type { CardProgress, ExerciseProgress, LessonProgress } from './model'
 
 const EMPTY_EXERCISES: ReadonlyMap<string, ExerciseProgress> = new Map()
 const EMPTY_LESSONS: ReadonlyMap<string, LessonProgress> = new Map()
+const EMPTY_CARDS: readonly CardProgress[] = []
+
+/** Progreso de todos los ejercicios (para la cola de repaso y las rutinas). `undefined` mientras carga. */
+export function useAllExercisesProgress(): readonly ExerciseProgress[] | undefined {
+  return useLiveQuery(() => db.exercises.toArray(), [])
+}
+
+/** Historial de todas las tarjetas del quiz. */
+export function useCardsProgress(): readonly CardProgress[] {
+  return useLiveQuery(() => db.cards.toArray(), []) ?? EMPTY_CARDS
+}
 
 /** Progreso de un ejercicio (se actualiza solo al guardar intentos). */
 export function useExerciseProgress(exerciseId: string): ExerciseProgress | undefined {

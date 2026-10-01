@@ -578,3 +578,22 @@
   color: #7fd896;
   font-weight: 700;
 }
+
+/* Aviso de repasos pendientes en el índice */
+.practice-reminder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.practice-reminder a.btn {
+  display: inline-flex;
+  align-items: center;
+  color: #1a1305;
+  text-decoration: none;
+}

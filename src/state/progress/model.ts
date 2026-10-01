@@ -2,6 +2,7 @@
  * Modelo del progreso del alumno (docs/research.md §7): lógica pura, sin IndexedDB.
  * La persistencia está en db.ts.
  */
+import { MAX_BOX, schedule } from '../../practice/leitner'
 
 export interface Attempt {
   /** ISO 8601. */
@@ -16,7 +17,10 @@ export interface ExerciseProgress {
   /** Mejor tempo con pase limpio, o null si aún no hay ninguno. */
   bestCleanBpm: number | null
   lastPracticed: string
-  /** Caja de Leitner (1–5) para el repaso espaciado de la Fase 4. */
+  /**
+   * Caja de Leitner (1–5) con los intervalos por defecto. Es una copia informativa: el repaso
+   * la recalcula siempre del historial con los intervalos de la lección (src/practice/leitner.ts).
+   */
   box: number
   history: Attempt[]
 }
@@ -29,21 +33,47 @@ export interface LessonProgress {
   updatedAt: string
 }
 
+/** Respuesta a una tarjeta del quiz de mástil. */
+export interface CardAnswer {
+  /** ISO 8601. */
+  date: string
+  ok: boolean
+  /** Tiempo de respuesta. */
+  ms: number
+}
+
+/** Historial de una tarjeta del quiz de mástil (src/practice/quiz.ts). */
+export interface CardProgress {
+  cardId: string
+  history: CardAnswer[]
+}
+
+export const CARD_HISTORY_LIMIT = 50
+
+export function applyCardAnswer(prev: CardProgress | undefined, cardId: string, answer: CardAnswer): CardProgress {
+  return { cardId, history: [...(prev?.history ?? []), answer].slice(-CARD_HISTORY_LIMIT) }
+}
+
 /** Lo mínimo de un ejercicio que necesita esta lógica (evita depender del esquema de contenido). */
 export interface ExerciseTempo {
   tempo: { start: number; target: number; step: number }
 }
 
 export const HISTORY_LIMIT = 200
-export const MAX_BOX = 5
+export { MAX_BOX }
 
 /** Aplica un intento al progreso previo (o crea el primero). */
 export function applyAttempt(prev: ExerciseProgress | undefined, exerciseId: string, attempt: Attempt): ExerciseProgress {
   const previousBest = prev?.bestCleanBpm ?? null
   const bestCleanBpm = attempt.passed ? Math.max(previousBest ?? 0, attempt.bpm) : previousBest
-  const box = attempt.passed ? Math.min((prev?.box ?? 0) + 1, MAX_BOX) : 1
   const history = [...(prev?.history ?? []), attempt].slice(-HISTORY_LIMIT)
+  const box = schedule(attemptOutcomes(history))?.box ?? 1
   return { exerciseId, bestCleanBpm, lastPracticed: attempt.date, box, history }
+}
+
+/** Intentos como resultados para el repaso espaciado: un pase limpio es un acierto. */
+export function attemptOutcomes(history: readonly Attempt[]): { date: string; ok: boolean }[] {
+  return history.map((a) => ({ date: a.date, ok: a.passed }))
 }
 
 /** Tempo recomendado para el próximo intento: el mejor limpio + un paso, sin pasar del objetivo. */
@@ -65,7 +95,8 @@ export function canCompleteLesson(exerciseIds: string[], progress: ReadonlyMap<s
 
 // ── Exportar / importar ─────────────────────────────────────────────────────
 
-export const EXPORT_VERSION = 1
+/** v2 añade las tarjetas del quiz; se siguen aceptando copias v1 (sin tarjetas). */
+export const EXPORT_VERSION = 2
 
 export interface ProgressExport {
   app: 'bass-tutor'
@@ -73,6 +104,7 @@ export interface ProgressExport {
   exportedAt: string
   exercises: ExerciseProgress[]
   lessons: LessonProgress[]
+  cards: CardProgress[]
 }
 
 const isObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v)
@@ -95,6 +127,15 @@ function isExerciseProgress(v: unknown): v is ExerciseProgress {
   )
 }
 
+function isCardProgress(v: unknown): v is CardProgress {
+  return (
+    isObject(v) &&
+    isString(v.cardId) &&
+    Array.isArray(v.history) &&
+    v.history.every((a) => isObject(a) && isString(a.date) && typeof a.ok === 'boolean' && isNumber(a.ms))
+  )
+}
+
 function isLessonProgress(v: unknown): v is LessonProgress {
   return (
     isObject(v) &&
@@ -108,18 +149,23 @@ function isLessonProgress(v: unknown): v is LessonProgress {
 /** Valida un JSON importado. Lanza un Error con un mensaje legible si no es válido. */
 export function parseProgressExport(data: unknown): ProgressExport {
   if (!isObject(data) || data.app !== 'bass-tutor') throw new Error('El fichero no es una copia de progreso de Bass Tutor.')
-  if (data.version !== EXPORT_VERSION) throw new Error(`Versión de copia no compatible: ${String(data.version)}.`)
+  if (data.version !== 1 && data.version !== EXPORT_VERSION) {
+    throw new Error(`Versión de copia no compatible: ${String(data.version)}.`)
+  }
   if (!Array.isArray(data.exercises) || !data.exercises.every(isExerciseProgress)) {
     throw new Error('La copia tiene datos de ejercicios dañados.')
   }
   if (!Array.isArray(data.lessons) || !data.lessons.every(isLessonProgress)) {
     throw new Error('La copia tiene datos de lecciones dañados.')
   }
+  const cards = data.version === 1 ? [] : data.cards
+  if (!Array.isArray(cards) || !cards.every(isCardProgress)) throw new Error('La copia tiene datos del quiz dañados.')
   return {
     app: 'bass-tutor',
     version: EXPORT_VERSION,
     exportedAt: isString(data.exportedAt) ? data.exportedAt : new Date().toISOString(),
     exercises: data.exercises,
     lessons: data.lessons,
+    cards,
   }
 }

@@ -13,6 +13,7 @@ import { z } from 'zod'
 import { MAX_BPM, MIN_BPM } from '../audio/beatClock'
 import { MAX_FRET, resolvePitchSet } from '../theory/fretboard'
 import { TUNINGS } from '../theory/tunings'
+import { DEFAULT_REVIEW_DAYS } from '../practice/leitner'
 import { TRACK_IDS } from './tracks'
 
 // Mensajes de error de Zod en español (los propios de este esquema ya lo están).
@@ -42,7 +43,7 @@ export const ModuleSchema = z.strictObject({
 
 // ── Lección (frontmatter del .mdx) ──────────────────────────────────────────
 
-export const DEFAULT_REVIEW_DAYS = [1, 3, 7, 21]
+export { DEFAULT_REVIEW_DAYS }
 
 export const LessonMetaSchema = z.strictObject({
   title: text,

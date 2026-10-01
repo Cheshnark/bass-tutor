@@ -3,12 +3,14 @@ import { FretboardExplorer } from './components/FretboardExplorer'
 import { CourseIndex } from './components/Lesson/CourseIndex'
 import { LessonView } from './components/Lesson/LessonView'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
+import { PracticeView } from './components/Practice/PracticeView'
 import { SettingsBar } from './components/SettingsBar'
 import { UpdatePrompt } from './components/UpdatePrompt'
 import { useHashRoute } from './useHashRoute'
 
 const VIEWS = [
   { id: 'curso', label: 'Curso' },
+  { id: 'practica', label: 'Práctica' },
   { id: 'mastil', label: 'Mástil' },
   { id: 'diccionario', label: 'Diccionario' },
   { id: 'metronomo', label: 'Metrónomo' },
@@ -37,6 +39,7 @@ function App() {
         <UpdatePrompt />
         {view === 'curso' &&
           (lessonId ? <LessonView key={lessonId} lessonId={lessonId} stepParam={step} /> : <CourseIndex />)}
+        {view === 'practica' && <PracticeView params={params} />}
         {(view === 'mastil' || view === 'diccionario') && <SettingsBar />}
         {view === 'mastil' && <FretboardExplorer />}
         {view === 'diccionario' && <Dictionary />}

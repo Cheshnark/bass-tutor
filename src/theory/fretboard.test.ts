@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { ARPEGGIOS, INTERVALS, SCALES } from './catalog'
-import { buildFretboard, resolvePitchSet, spellMidi, type FretboardView } from './fretboard'
+import { buildFretboard, chromaNames, fretPitch, resolvePitchSet, spellMidi, type FretboardView } from './fretboard'
 import { getTuning, toAlphaTexTuning, TUNINGS } from './tunings'
 
 const standard4 = getTuning('standard-4')
@@ -141,5 +141,18 @@ describe('spellMidi', () => {
   it('ajusta la octava en los cruces B/C', () => {
     expect(spellMidi(59, 'Cb')).toBe('Cb4')
     expect(spellMidi(60, 'B#')).toBe('B#3')
+  })
+})
+
+describe('fretPitch y chromaNames', () => {
+  it('calcula la altura de una casilla', () => {
+    expect(fretPitch('E1', 5)).toEqual({ midi: 33, chroma: 9 })
+    expect(fretPitch('D1', 7).chroma).toBe(fretPitch('A1', 0).chroma)
+  })
+
+  it('da la natural o los dos enarmónicos', () => {
+    expect(chromaNames(2)).toEqual(['D'])
+    expect(chromaNames(1)).toEqual(['C#', 'Db'])
+    expect(chromaNames(10)).toEqual(['A#', 'Bb'])
   })
 })

@@ -120,3 +120,21 @@ export function buildFretboard(tuning: Tuning, view: FretboardView): FretPositio
   })
   return positions
 }
+
+/** Altura de una casilla: midi y clase de altura (0 = C … 11 = B). */
+export function fretPitch(open: string, fret: number): { midi: number; chroma: number } {
+  const openMidi = Note.midi(open)
+  if (openMidi === null) throw new Error(`Cuerda no válida: ${open}`)
+  const midi = openMidi + fret
+  return { midi, chroma: midi % 12 }
+}
+
+/**
+ * Nombres de una clase de altura (0–11): la natural ("D") o sus dos enarmónicos ("C#", "Db").
+ * Sirve para preguntar y responder notas sin depender de una tonalidad.
+ */
+export function chromaNames(chroma: number): string[] {
+  const sharp = Note.pitchClass(Note.fromMidiSharps(60 + chroma))
+  const flat = Note.pitchClass(Note.fromMidi(60 + chroma))
+  return sharp === flat ? [sharp] : [sharp, flat]
+}

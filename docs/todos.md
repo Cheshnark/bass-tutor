@@ -8,6 +8,17 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 4: hecha
+
+- [x] Leitner por días calculado del historial; cola diaria; rutinas 15/30/45 con alternancia; quiz de mástil.
+- [ ] **Tú**: usar la Práctica varios días seguidos y comprobar que la cola tiene sentido (¿demasiados repasos?
+      ¿intervalos cortos o largos?). Los intervalos por defecto (1, 3, 7, 21 días) son una propuesta.
+- [ ] Quiz en móvil vertical: el mástil solo enseña 3–4 trastes y hay que desplazarlo (aviso de girar el móvil).
+      Valorar un mástil compacto para el quiz.
+- [ ] Rutina: el temporizador de cada bloque arranca en pausa; valorar que siga solo al pasar de bloque.
+- [ ] Rutina: solo usa ejercicios ya practicados; valorar sugerir la siguiente lección pendiente como bloque.
+- [ ] Quiz: más tipos (intervalos, octavas, notas por encima del traste 12).
+
 ## Fase 3: hecha
 
 - [x] Progreso en IndexedDB, completar lección con intentos, retomar, exportar/importar, `persist()`.

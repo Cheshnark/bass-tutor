@@ -2,7 +2,20 @@
 
 _Última actualización: 2026-10-01_
 
-## Fases 0–3 cerradas; contenido: tronco común e itinerario metal/punk completos (borrador)
+## Fases 0–4 cerradas; contenido: tronco común e itinerario metal/punk completos (borrador)
+
+### Fase 4 (práctica inteligente): hecha
+
+- Nueva pestaña **Práctica** (`#/practica`):
+  - **Repaso de hoy**: ejercicios cuyo repaso ha vencido, calculados del historial con Leitner por días (más
+    atrasados primero), y notas del mástil pendientes. Cada uno se practica ahí mismo. Aviso en el índice del curso.
+  - **Rutinas de 15, 30 y 45 min**: bloques que alternan calentamiento, técnica, mástil y groove, con los ejercicios
+    ya practicados (primero los que tocan) y un temporizador por bloque. Pantalla encendida durante la rutina.
+  - **Quiz de mástil**: nombrar la nota de una casilla o encontrarla en una cuerda; cuerdas graves o todas, solo
+    naturales opcional. Cada nota tiene su repaso espaciado. Sin marcador: al final, aciertos, tiempo medio y lo que
+    más cuesta.
+- Corregido: varios pases limpios el mismo día ya no adelantan el repaso semanas.
+- La copia de progreso incluye el quiz (versión 2; las copias anteriores se siguen importando).
 
 ### Fase 3 (progreso + PWA): hecha
 
@@ -14,7 +27,7 @@ _Última actualización: 2026-10-01_
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
 - **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
-- Tests: 135 unitarios y 84 e2e.
+- Tests: 176 unitarios y 94 e2e.
 
 ### Contenido
 
@@ -44,7 +57,8 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 
 ## Siguiente paso
 
-Itinerario metal/punk terminado (en borrador). Opciones, por orden de recomendación:
-1. **Tú**: probar el itinerario y el tronco común como alumno (el contenido sin revisar es el mayor riesgo).
-2. Fase 4 (práctica inteligente: repaso espaciado, rutinas, quiz de mástil).
+Opciones, por orden de recomendación:
+1. **Tú**: probar el curso como alumno durante unos días (también la Práctica: la cola necesita días reales).
+2. Fase 5 (audio avanzado: backing tracks, oído, afinador experimental). Los ejercicios con batería ya son un primer
+   paso de backing tracks.
 3. Otro itinerario (rock/pop es el más cercano a lo ya escrito).

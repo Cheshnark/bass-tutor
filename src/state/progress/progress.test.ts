@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto'
 import { afterEach, describe, expect, it } from 'vitest'
-import { completeLesson, exportProgress, importProgress, ProgressDb, recordAttempt, saveLastStep } from './db'
+import { completeLesson, exportProgress, importProgress, ProgressDb, recordAttempt, recordCardAnswer, saveLastStep } from './db'
 import { applyAttempt, canCompleteLesson, HISTORY_LIMIT, parseProgressExport, reachedTarget, suggestTempo } from './model'
 
 const exercise = { tempo: { start: 60, target: 80, step: 5 } }
@@ -31,11 +31,18 @@ describe('applyAttempt', () => {
     expect(applyAttempt(undefined, 'ej', at(60, false)).bestCleanBpm).toBeNull()
   })
 
-  it('la caja no pasa de 5 y el historial se recorta', () => {
+  it('muchos pases el mismo día no suben de caja, y el historial se recorta', () => {
     let p = applyAttempt(undefined, 'ej', at(60, true))
     for (let i = 0; i < HISTORY_LIMIT + 10; i++) p = applyAttempt(p, 'ej', at(60, true))
-    expect(p.box).toBe(5)
+    expect(p.box).toBe(1)
     expect(p.history).toHaveLength(HISTORY_LIMIT)
+  })
+
+  it('sube de caja al repasar en días distintos (Leitner)', () => {
+    let p = applyAttempt(undefined, 'ej', at(60, true, 1))
+    p = applyAttempt(p, 'ej', at(60, true, 2))
+    p = applyAttempt(p, 'ej', at(60, true, 5))
+    expect(p.box).toBe(3)
   })
 })
 
@@ -73,6 +80,16 @@ describe('parseProgressExport', () => {
     expect(parseProgressExport(valid).exercises).toHaveLength(1)
   })
 
+  it('acepta copias v1 (sin tarjetas del quiz) y v2 con tarjetas', () => {
+    expect(parseProgressExport(valid).cards).toEqual([])
+    const cards = [{ cardId: 'nombrar:E1:5', history: [{ date: '2026-10-01T00:00:00.000Z', ok: true, ms: 1200 }] }]
+    expect(parseProgressExport({ ...valid, version: 2, cards }).cards).toEqual(cards)
+    expect(() => parseProgressExport({ ...valid, version: 2 })).toThrow('quiz dañados')
+    expect(() => parseProgressExport({ ...valid, version: 2, cards: [{ cardId: 'x', history: [{ ok: 1 }] }] })).toThrow(
+      'quiz dañados',
+    )
+  })
+
   it('rechaza otros ficheros, versiones o datos dañados con mensajes claros', () => {
     expect(() => parseProgressExport({ foo: 1 })).toThrow('no es una copia de progreso')
     expect(() => parseProgressExport({ ...valid, version: 99 })).toThrow('Versión de copia no compatible')
@@ -96,6 +113,12 @@ describe('ProgressDb (IndexedDB simulado)', () => {
     expect((await database.exercises.get('ej'))?.history).toHaveLength(2)
   })
 
+  it('guarda las respuestas del quiz por tarjeta', async () => {
+    await recordCardAnswer('nombrar:E1:5', { date: '2026-10-01T10:00:00.000Z', ok: false, ms: 3000 }, database)
+    const card = await recordCardAnswer('nombrar:E1:5', { date: '2026-10-01T10:01:00.000Z', ok: true, ms: 1500 }, database)
+    expect(card.history.map((a) => a.ok)).toEqual([false, true])
+  })
+
   it('completar una lección conserva la primera fecha y el último paso', async () => {
     await saveLastStep('lec', 3, database)
     const first = await completeLesson('lec', database)
@@ -107,6 +130,7 @@ describe('ProgressDb (IndexedDB simulado)', () => {
   it('exportar e importar reproduce el progreso y valida antes de borrar', async () => {
     await recordAttempt('ej', at(70, true), database)
     await completeLesson('lec', database)
+    await recordCardAnswer('nombrar:E1:5', { date: '2026-10-01T10:00:00.000Z', ok: true, ms: 900 }, database)
     const copy = await exportProgress(database)
 
     const other = new ProgressDb(`test-${Math.random()}`)
@@ -116,6 +140,7 @@ describe('ProgressDb (IndexedDB simulado)', () => {
     await importProgress(JSON.parse(JSON.stringify(copy)), other)
     expect((await other.exercises.toArray()).map((e) => e.exerciseId)).toEqual(['ej'])
     expect((await other.lessons.get('lec'))?.completedAt).toBeTruthy()
+    expect(await other.cards.count()).toBe(1)
     await other.delete()
   })
 })

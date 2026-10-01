@@ -6,6 +6,14 @@ import type { Tuning } from '../../theory/tunings'
 import { computeLayout, INLAYS, STRING_SPACING } from './layout'
 import './Fretboard.css'
 
+/** Casilla marcada en modo quiz: la pregunta ("?") o el resultado de una respuesta. */
+export interface FretMark {
+  string: number
+  fret: number
+  label: string
+  tone: 'ask' | 'ok' | 'wrong'
+}
+
 export interface FretboardProps {
   tuning: Tuning
   view: FretboardView
@@ -16,6 +24,11 @@ export interface FretboardProps {
   /** Descripción legible de lo que se muestra ("La · Pentatónica menor"), para lectores de pantalla. */
   description?: string
   onNoteClick?: (position: FretPosition) => void
+  /**
+   * Modo quiz: solo se dibujan estas casillas y todas las demás siguen siendo pulsables.
+   * Los nombres accesibles no dicen la nota, para no dar la respuesta.
+   */
+  marks?: readonly FretMark[]
 }
 
 const NOTE_RADIUS = 15
@@ -35,6 +48,7 @@ export function Fretboard({
   sound = true,
   description,
   onNoteClick,
+  marks,
 }: FretboardProps) {
   const positions = useMemo(() => buildFretboard(tuning, view), [tuning, view])
   const layout = useMemo(
@@ -140,12 +154,16 @@ export function Fretboard({
           const cx = layout.noteX(p.fret)
           const cy = layout.stringY(p.string)
           const w = layout.cellWidth(p.fret)
-          const label = labelFor(p, view, notation)
-          const name = `${formatNote(p.note, notation, true)}, cuerda ${stringCount - p.string}, traste ${p.fret}`
+          const mark = marks?.find((m) => m.string === p.string && m.fret === p.fret)
+          const shown = marks ? mark !== undefined : p.inSet
+          const label = mark ? mark.label : labelFor(p, view, notation)
+          const where = `cuerda ${stringCount - p.string}, traste ${p.fret}`
+          const name = marks ? where : `${formatNote(p.note, notation, true)}, ${where}`
           const classes = [
             'fb-note',
-            p.inSet ? 'fb-note--in' : 'fb-note--out',
-            p.isRoot && view.mode !== 'notes' ? 'fb-note--root' : '',
+            shown ? 'fb-note--in' : 'fb-note--out',
+            !marks && p.isRoot && view.mode !== 'notes' ? 'fb-note--root' : '',
+            mark ? `fb-note--${mark.tone}` : '',
             lastPlayed === key ? 'fb-note--played' : '',
           ].join(' ')
           return (
@@ -153,7 +171,7 @@ export function Fretboard({
               key={key}
               className={classes}
               role="button"
-              tabIndex={p.inSet ? 0 : -1}
+              tabIndex={marks || p.inSet ? 0 : -1}
               aria-label={name}
               data-note={p.note}
               data-fret={p.fret}
@@ -169,7 +187,7 @@ export function Fretboard({
                 width={w}
                 height={STRING_SPACING}
               />
-              {p.inSet && (
+              {shown && (
                 <>
                   <circle cx={cx} cy={cy} r={NOTE_RADIUS} />
                   <text x={cx} y={cy} className={label.length > 2 ? 'fb-label fb-label--small' : 'fb-label'}>

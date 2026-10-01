@@ -30,7 +30,8 @@
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
 /src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder (puros) + metronome.ts, notePlayer.ts
 /src/App.tsx, useHashRoute.ts  navegación por hash (#/curso, #/curso/<id>, #/mastil…)
-/src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Tab/ (TabView diferido), SettingsBar
+/src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Practice/ (repaso, rutinas, quiz), Tab/ (TabView diferido), SettingsBar
+/src/practice/                 leitner.ts, queue.ts, routine.ts, quiz.ts: lógica pura de la práctica inteligente (Fase 4)
 /src/content/                  schema.ts (Zod), validate.ts + mdx.ts + frontmatter.ts (puros), course.ts (acceso tipado);
                                modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
 /scripts/                      course-source.ts (lee disco + alphaTex en Node), content-check.ts, vite-plugin-course.ts,
@@ -102,15 +103,30 @@
 
 ### Progreso y persistencia (`src/state/progress/`)
 
-- `model.ts` (puro): `applyAttempt` (mejor tempo limpio, caja de Leitner 1–5, historial ≤ 200), `suggestTempo`
+- `model.ts` (puro): `applyAttempt` (mejor tempo limpio, caja de Leitner informativa, historial ≤ 200), `suggestTempo`
   (mejor limpio + paso, sin pasar del objetivo), `canCompleteLesson` (≥ 1 intento por ejercicio) y la validación de
   la copia exportada (`parseProgressExport`, sin Zod para no cargarlo en el navegador).
-- `db.ts` (Dexie, BD `bass-tutor`): tablas `exercises` y `lessons`; `recordAttempt`, `completeLesson`,
+- `db.ts` (Dexie, BD `bass-tutor`, versión 2): tablas `exercises`, `lessons` y `cards` (quiz); `recordAttempt`,
+  `recordCardAnswer`, `completeLesson`,
   `saveLastStep`, `exportProgress`/`importProgress` (valida antes de borrar) y `requestPersistence` (Storage API).
 - `hooks.ts`: `useLiveQuery` de dexie-react-hooks; la UI se actualiza sola al guardar.
 - UI: `ExerciseCard` (registrar intento; pase limpio = todos los criterios marcados), `LessonCompletion`,
   `CourseIndex` (✓, n/m por módulo, "Sigue en el paso N") y `ProgressPanel` (exportar/importar JSON).
 - Ajustes y configuración del metrónomo: `persist` de Zustand en localStorage, saneados al recuperar.
+- Copia exportable v2 (añade `cards`); se siguen importando copias v1.
+
+### Práctica inteligente (`src/practice/` + `src/components/Practice/`)
+
+- `leitner.ts`: caja y fecha de repaso **calculadas del historial** agrupado por día local (el último resultado del
+  día cuenta); intervalos de `review.afterDays` de la lección (por defecto 1, 3, 7, 21). Nada de esto se guarda.
+- `queue.ts`: cola del día (vencidos; más atrasados y caja más baja primero) y próximo día con repasos.
+- `routine.ts`: plantillas de 15/30/45 min que alternan tipos de tarea; tipo de ejercicio por etiquetas; elige
+  primero lo que toca repasar y no repite ejercicio.
+- `quiz.ts`: tarjetas "nombrar" (casilla → nota) y "encontrar" (nota + cuerda → casilla), con el mismo Leitner;
+  ronda de 10 (vencidas, nuevas, resto). Las notas salen de `src/theory/fretboard.ts` (`fretPitch`, `chromaNames`).
+- UI en `#/practica`: `DailyQueue` (cola + tarjetas pendientes), `RoutinePlayer` (`#/practica/rutina/30`, bloques con
+  temporizador visual y Wake Lock) y `FretboardQuiz` (`#/practica/quiz`; `Fretboard` con `marks`). `PracticeReminder`
+  avisa en el índice del curso.
 
 ### PWA y despliegue
 
@@ -121,7 +137,7 @@
 
 ### Navegación
 
-- `useHashRoute` + pestañas en la cabecera (Curso · Mástil · Diccionario · Metrónomo), con parámetros
+- `useHashRoute` + pestañas en la cabecera (Curso · Práctica · Mástil · Diccionario · Metrónomo), con parámetros
   (`#/curso/<lección>/<paso>`). `MetronomePanel` siempre montado (oculto) para seguir sonando; el resto se monta al activarse.
 
 ### alphaTab (`src/components/Tab/TabView.tsx`)

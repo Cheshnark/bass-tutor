@@ -70,7 +70,7 @@ test.describe('progreso', () => {
     const path = testInfo.outputPath('copia.json')
     await download.saveAs(path)
     const copy = JSON.parse(readFileSync(path, 'utf8'))
-    expect(copy).toMatchObject({ app: 'bass-tutor', version: 1 })
+    expect(copy).toMatchObject({ app: 'bass-tutor', version: 2 })
     expect(copy.exercises[0]).toMatchObject({ exerciseId: 'cuerdas-al-aire-negras', bestCleanBpm: 60 })
 
     // Importar un fichero inválido no borra nada

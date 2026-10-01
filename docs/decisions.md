@@ -252,3 +252,26 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   170 desde una partitura a 120). `TabView` recibe `bpm` (el sugerido o el escrito en la tarjeta) y ajusta
   `playbackSpeed = bpm / tempo de la partitura`. El selector muestra BPM y el alumno puede elegir otro; si cambia el
   tempo de práctica, manda el nuevo. La velocidad se vuelve a aplicar si alphaTab se recrea.
+
+## 2026-10-01 · Leitner calculado del historial, por día
+- **Motivo:** la caja que se guardaba subía con cada pase limpio, así que tres pases el mismo día (subiendo el tempo)
+  mandaban el siguiente repaso a 21 días. Ahora caja y fecha se **derivan del historial** agrupado por día local:
+  primer día → caja 1; día suspendido (último intento del día no limpio) → caja 1; día aprobado en la fecha o
+  después → sube una caja; práctica extra antes de la fecha → no cambia nada. Sin migraciones: cambiar las reglas o
+  los intervalos de una lección recalcula todo. El campo `box` se mantiene como copia informativa.
+- Intervalos: `review.afterDays` de la lección del ejercicio (por defecto 1, 3, 7, 21 días; la última se repite en la
+  caja 5). research.md §1.1: espaciado de días, no de minutos, y sin prometer milagros.
+
+## 2026-10-01 · Rutinas: plantillas fijas que alternan tipos de tarea
+- **Motivo:** research.md §4 (calentamiento → técnica → mástil → groove) y §1.1 (alternancia: Carter y Grahn 2016,
+  evidencia limitada). Nunca hay dos bloques seguidos del mismo tipo. Solo se usan ejercicios ya practicados (no se
+  mete material nuevo en una rutina), empezando por los que toca repasar. El tipo de un ejercicio sale de sus
+  etiquetas (`exerciseKind`). Temporizador solo visual (no suena): la regla de audio sobre `currentTime` no aplica.
+
+## 2026-10-01 · Quiz de mástil sin puntuación ni cuenta atrás
+- **Motivo:** research.md pide una app tranquila, "sin juegos ni puntuaciones", pero también "encontrar notas contra
+  reloj". Término medio: se mide el tiempo de respuesta y se guarda (Leitner por tarjeta), y al final de la ronda se
+  muestran aciertos, tiempo medio y las notas que más cuestan; no hay marcador ni límite de tiempo.
+- Las tarjetas se identifican por la cuerda al aire con octava (`nombrar:E1:5`), no por el índice: con otra afinación
+  (drop D, 5 cuerdas) son tarjetas distintas, como en el instrumento.
+- En la casilla preguntada, el nombre accesible no incluye la nota (no se revela la respuesta con lector de pantalla).
