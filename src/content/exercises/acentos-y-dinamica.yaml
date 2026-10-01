@@ -1,0 +1,39 @@
+title: Suave, fuerte y con acentos
+status: borrador
+instructions: >-
+  Corcheas en la fundamental: un compás suave (p) y otro fuerte (f); después, a volumen medio, acentos (>) en el
+  1, la "y" del 2 y el 3, donde suele ir el bombo. Para acentuar, pulsa un poco más fuerte esas notas y relaja
+  las demás; el tempo no cambia.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, D, D, E, D, A, A]
+passCriteria:
+  - Se oye la diferencia entre el compás suave y el fuerte
+  - Los acentos destacan sin que el resto desaparezca
+  - Al tocar fuerte no aceleras
+tags:
+  - groove
+  - dinamica
+  - acentos
+alphaTex: |
+  \title "Suave, fuerte y con acentos"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.3 {dy p ch "A"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :8 0.3 {dy f ch "A"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :8 0.2 {dy p ch "D"} 0.2 0.2 0.2 0.2 0.2 0.2 0.2 |
+  :8 0.2 {dy f ch "D"} 0.2 0.2 0.2 0.2 0.2 0.2 0.2 |
+  :8 0.4{ac} {dy mf ch "E"} 0.4 0.4 0.4{ac} 0.4{ac} 0.4 0.4 0.4 |
+  :8 0.2{ac} {dy mf ch "D"} 0.2 0.2 0.2{ac} 0.2{ac} 0.2 0.2 0.2 |
+  :8 0.3{ac} {dy mf ch "A"} 0.3 0.3 0.3{ac} 0.3{ac} 0.3 0.3 0.3 |
+  :1 0.3

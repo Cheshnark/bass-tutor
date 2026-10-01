@@ -1,0 +1,40 @@
+title: Notas muertas entre fundamentales
+status: borrador
+instructions: >-
+  Corcheas en la fundamental con notas muertas (x en la partitura) entre medias. Para la nota muerta, apoya los
+  dedos de la mano izquierda sobre la cuerda sin pisarla y pulsa normal: suena un golpe sin altura. La cuerda al
+  aire suena cuando levantas la mano.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, D, D, E, D, A, A]
+passCriteria:
+  - "Las notas muertas no tienen altura: son un golpe"
+  - Las fundamentales suenan limpias y largas
+  - El ritmo de notas y notas muertas es regular
+tags:
+  - groove
+  - notas-muertas
+  - apagado
+  - mano-izquierda
+alphaTex: |
+  \title "Notas muertas entre fundamentales"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.3 {ch "A"} 0.3{x} 0.3{x} 0.3 0.3{x} 0.3 0.3{x} 0.3 |
+  :8 0.3 {ch "A"} 0.3{x} 0.3{x} 0.3 0.3{x} 0.3 0.3{x} 0.3 |
+  :8 0.2 {ch "D"} 0.2{x} 0.2{x} 0.2 0.2{x} 0.2 0.2{x} 0.2 |
+  :8 0.2 {ch "D"} 0.2{x} 0.2{x} 0.2 0.2{x} 0.2 0.2{x} 0.2 |
+  :8 0.4 {ch "E"} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 |
+  :8 0.2 {ch "D"} 0.2{x} 0.2{x} 0.2 0.2{x} 0.2 0.2{x} 0.2 |
+  :8 0.3 {ch "A"} 0.3{x} 0.3{x} 0.3 0.3{x} 0.3 0.3{x} 0.3 |
+  :1 0.3

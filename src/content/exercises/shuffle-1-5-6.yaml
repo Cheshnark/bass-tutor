@@ -1,0 +1,41 @@
+title: Shuffle con fundamental, quinta y sexta
+status: borrador
+instructions: >-
+  Una línea de shuffle típica del blues con fundamental, quinta y sexta, cada nota dos veces (largo-corto).
+  Fundamental al aire; quinta en el traste 2 con el dedo 2 y sexta en el traste 4 con el meñique, en la cuerda
+  siguiente. Sobre A7, D7 y E7, con batería en shuffle.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, A7, D7, A7, E7, D7, A7, A7]
+passCriteria:
+  - Cada pulso suena largo-corto, siempre igual
+  - Los cambios de acorde caen en el 1
+  - La batería y tú suenan con el mismo balanceo
+tags:
+  - ritmo
+  - shuffle
+  - blues
+  - linea
+  - groove
+alphaTex: |
+  \title "Shuffle con fundamental, quinta y sexta"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.3 {tu 3 ch "A7"} :8 0.3 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} :4 4.2 {tu 3} :8 4.2 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} |
+  :4 0.3 {tu 3 ch "A7"} :8 0.3 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} :4 4.2 {tu 3} :8 4.2 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} |
+  :4 0.2 {tu 3 ch "D7"} :8 0.2 {tu 3} :4 2.1 {tu 3} :8 2.1 {tu 3} :4 4.1 {tu 3} :8 4.1 {tu 3} :4 2.1 {tu 3} :8 2.1 {tu 3} |
+  :4 0.3 {tu 3 ch "A7"} :8 0.3 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} :4 4.2 {tu 3} :8 4.2 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} |
+  :4 0.4 {tu 3 ch "E7"} :8 0.4 {tu 3} :4 2.3 {tu 3} :8 2.3 {tu 3} :4 4.3 {tu 3} :8 4.3 {tu 3} :4 2.3 {tu 3} :8 2.3 {tu 3} |
+  :4 0.2 {tu 3 ch "D7"} :8 0.2 {tu 3} :4 2.1 {tu 3} :8 2.1 {tu 3} :4 4.1 {tu 3} :8 4.1 {tu 3} :4 2.1 {tu 3} :8 2.1 {tu 3} |
+  :4 0.3 {tu 3 ch "A7"} :8 0.3 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} :4 4.2 {tu 3} :8 4.2 {tu 3} :4 2.2 {tu 3} :8 2.2 {tu 3} |
+  :1 0.3

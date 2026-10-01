@@ -1,0 +1,40 @@
+title: A tiempo y a contratiempo
+status: borrador
+instructions: >-
+  Un compás en los tiempos (1, 2, 3, 4) y otro solo en las "y", con un silencio en cada tiempo. Cuerdas al aire:
+  A, D y E. Cuenta "1 y 2 y" en voz alta y toca solo en la "y" cuando toque. Truco: pie abajo en el tiempo, pie
+  arriba en la "y".
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, D, D, E, E, A, A]
+passCriteria:
+  - Las notas a contratiempo caen justo en medio de los clics
+  - No se te escapa ninguna nota en el tiempo en los compases de contratiempo
+  - Vuelves a los tiempos sin perder el pulso
+tags:
+  - ritmo
+  - contratiempo
+  - sincopa
+  - groove
+alphaTex: |
+  \title "A tiempo y a contratiempo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.3 {ch "A"} 0.3 0.3 0.3 |
+  :8 r 0.3 r 0.3 r 0.3 r 0.3 |
+  :4 0.2 {ch "D"} 0.2 0.2 0.2 |
+  :8 r 0.2 r 0.2 r 0.2 r 0.2 |
+  :4 0.4 {ch "E"} 0.4 0.4 0.4 |
+  :8 r 0.4 r 0.4 r 0.4 r 0.4 |
+  :4 0.3 {ch "A"} 0.3 0.3 0.3 |
+  :1 0.3

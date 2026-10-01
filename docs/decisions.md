@@ -327,3 +327,9 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Ejercicios generados con verificación nota a nota contra Tonal (grado y pertenencia al acorde/escala) y con la
   **digitación en la partitura** (`{lf}`). La verificación detectó un error en una línea escrita a mano (G en vez de
   G# en La mayor); otro (una nota fuera del acorde en un tiempo fuerte) lo vi al releerla, y ahora también se comprueba.
+
+## 2026-10-01 · Shuffle escrito en tresillos
+- **Motivo:** alphaTab reproduce las corcheas rectas tal cual (no aplica swing), y el ejercicio tiene que sonar con su
+  balanceo. Lo habitual en partitura es escribir corcheas con la indicación "shuffle"; la lección lo explica. Con
+  `feel: shuffle` la batería generada va en tresillos y coincide con el bajo.
+- Groove sobre cuerdas al aire (A, D, E): toda la atención al ritmo, sin carga de mano izquierda.

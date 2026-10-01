@@ -11,7 +11,8 @@
 ## Fase 7: en curso
 
 - [x] Ampliación común: Arpegios (3 lecciones) y Escalas (3 lecciones), en borrador.
-- [ ] Ampliación común: Groove y feels (síncopa, shuffle/swing, notas muertas y dinámica).
+- [x] Ampliación común: Groove y feels (síncopa, shuffle/swing, notas muertas y dinámica), en borrador.
+- [ ] alphaTab dibuja una "f" de dinámica por defecto al principio de cada ejercicio; valorar ocultarla.
 - [ ] Ampliación común: Leer partitura (clave de Fa, ritmo leído, una línea entera).
 - [ ] Itinerario rock/pop · blues/jazz (blues de 12 compases, walking) · funk/soul (octavas, notas muertas, slap).
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.

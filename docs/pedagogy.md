@@ -46,7 +46,7 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
   |---|---|
   | 1 · Arpegios ✍️ | Tríadas: mayor y menor · Arpegios sobre una progresión · Cuatriadas: maj7, 7 y m7 |
   | 2 · Escalas ✍️ | La escala mayor · Menor natural y pentatónica menor · De la escala a la línea |
-  | 3 · Groove y feels | Síncopa · Shuffle y swing · Notas muertas y dinámica |
+  | 3 · Groove y feels ✍️ | Síncopa: tocar entre los tiempos · Shuffle y swing · Notas muertas y dinámica |
   | 4 · Leer partitura | La clave de Fa · Ritmo leído · Leer una línea entera |
 
 - **Itinerarios por estilo** (tras el tronco común): Rock/pop · Funk/soul/Motown · Blues/jazz · Metal/punk.
@@ -114,6 +114,11 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Menor natural | Dedo 1 en la raíz; 1-3-4 / 1-3-4 / 1-3 | StudyBass (One-Octave Natural Minor Scale) |
 | Practicar escalas | Subir y bajar, empezar por arriba, secuencias de 3 y saltos de tercera; no solo de grave a agudo | StudyBass (How to Practice Scales); vídeo de BassBuzz (escalas sin ser un robot) |
 | Notas de paso | Notas del acorde en los tiempos fuertes; las de la escala en los débiles, por grados | StudyBass (Scale Tones in Basslines) |
+| Contratiempo | Contar "1 y 2 y" y tocar en la "y"; pie abajo en el tiempo y arriba en la "y"; alternar compases a tiempo y a contratiempo | TalkingBass ("2 Killer Riffs For Developing Rhythmic Accuracy"); StudyBass (The Eighth Note Subdivision) |
+| Síncopa y anticipación | Acento fuera del tiempo o nota que cruza el tiempo; anticipación = el acorde siguiente entra antes (p. ej., en la "y" del 4), ligado | Wikipedia (Syncopation: incluye el bajo anticipado); TalkingBass (ligaduras sobre la barra para anticipar) |
+| Shuffle y swing | Shuffle = tresillo con las dos primeras unidas (largo-corto), rígido; swing = más libre, no se escribe exacto; se escribe en corcheas con indicación | StudyBass (Shuffle and Swing Rhythms; The Eighth Note Triplet Subdivision); vídeo de SBL |
+| Notas muertas | Dedos de la izquierda apoyados sin pisar; pulsar normal; más claras cerca del puente; se marcan con x; rellenan entre notas | TalkingBass (How To Play Funky Ghost Note Basslines); Bass Musician Magazine (Kevin Guin, "Dead Notes": los ejercicios de acentos ayudan) |
+| Acentos y dinámica | Acentuar el 1 y los golpes de bombo; tocar más fuerte las acentuadas y relajar las demás | No Treble (Ryan Madora, "Keep It Groovy: Adding Accents To Your Pulsing Bass Line"); vídeo de SBL (dinámica) |
 | Semicorcheas | Contar "1 e y a"; púa alterna: abajo en el número y en la "y", arriba en la "e" y en la "a" | LibreTexts (Counting, sixteenth notes); vídeo de TalkingBass. Contar en voz alta: ver la fila "Contar" |
 | Galope | Corchea + dos semicorcheas (1 · y · a); la mano sigue en semicorcheas con un **golpe al aire** en la "e" (abajo-(arriba)-abajo-arriba). Inverso: dos semicorcheas + corchea | Ritmo: Wikipedia (Heavy metal gallop). Púa: Fundamental Changes (Rob Thorpe, Metal Picking Riffs: "Down-Down-Up" manteniendo el movimiento de semicorcheas); Riffhard (alternar y estar relajado). **Solo una fuente detalla el golpe al aire** |
 | Resistencia | Mínimo esfuerzo, sin tensión; practicar casi a diario; alargar la práctica poco a poco; subir 5 BPM cuando sale **fácil** varias veces; dolor = parar | No Treble (Donovan Stokes, "Developing Stamina" y "Playing Bass… Fast": subir 5 BPM tras diez pases fáciles; "tocar rápido bien se siente fácil"); No Treble ("Avoiding Injury") |
@@ -164,6 +169,13 @@ Escritas (base del texto):
   [Natural Minor Scale](https://www.studybass.com/lessons/bass-scales/one-octave-natural-minor-scale/) ·
   [How to Practice Scales](https://www.studybass.com/lessons/bass-scales/how-to-practice-scales/) ·
   [Scale Tones in Basslines](https://www.studybass.com/lessons/harmony/scale-tones-in-basslines/)
+- StudyBass — [Shuffle and Swing Rhythms](https://www.studybass.com/lessons/rhythm/shuffle-and-swing-rhythms/) ·
+  [The Eighth Note Triplet Subdivision](https://www.studybass.com/lessons/rhythm/the-eighth-note-triplet-subdivision/)
+- TalkingBass — [2 Killer Riffs For Developing Rhythmic Accuracy](https://www.talkingbass.net/?p=7401) ·
+  [How To Play Funky Ghost Note Basslines](https://www.talkingbass.net/bass-technique-ghost-notes/)
+- Wikipedia — [Syncopation](https://en.wikipedia.org/wiki/Syncopation)
+- Bass Musician Magazine (Kevin Guin) — [Dead Notes: Put Some Life Into Your Bass Playing](https://bassmusicianmagazine.com/2020/10/dead-notes-put-some-life-into-your-bass-playing/)
+- No Treble (Ryan Madora) — [Keep It Groovy: Adding Accents To Your Pulsing Bass Line](https://www.notreble.com/?p=85066)
 - TalkingBass — [Easy Bass Arpeggios For Beginners](https://www.talkingbass.net/easy-bass-arpeggios-for-beginners/)
 - Wikipedia — [Punk rock](https://en.wikipedia.org/wiki/Punk_rock) · [Extended-range bass](https://en.wikipedia.org/wiki/Extended-range_bass)
 - Worship Artistry (Daniel Ornellas) — [The Relationship Between Bass and Drums](https://worshipartistry.com/greenroom/bass/the-relationship-between-bass-and-drums)
@@ -206,6 +218,10 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Escala mayor | [Major Scale For Bass Guitar](https://www.youtube.com/watch?v=uYf7RN_PHkk) | TalkingBass |
 | Pentatónica menor | [The Minor Pentatonic Scale For Bass Guitar](https://www.youtube.com/watch?v=hhnf8nVUgDM) | TalkingBass |
 | Practicar escalas | [How to Learn Bass Scales (Become a Better Bassist, Not a Robot)](https://www.youtube.com/watch?v=2PzUVcDkjX8) | BassBuzz |
+| Síncopa | [The Ultimate Syncopation Exercise for Bassists](https://www.youtube.com/watch?v=mjDp-s3uBVo) | Scott's Bass Lessons |
+| Shuffle | [2 Exercises To Develop a Great Shuffle Feel!](https://www.youtube.com/watch?v=xWfRxy9zEmE) | Scott's Bass Lessons |
+| Notas muertas | [How To Play Funky Ghost Note Basslines](https://www.youtube.com/watch?v=s72wZ87tTxk) | TalkingBass |
+| Dinámica | [Groove Harder With These 3 Deadly Dynamics Exercises](https://www.youtube.com/watch?v=fa9jA08bYr4) | Scott's Bass Lessons |
 | Bombo | [Creating Bass Lines #1 - Locking With The Bass Drum](https://www.youtube.com/watch?v=4Ty2gkdW8xw) | TalkingBass |
 | Con batería | [How to Play Bass with a Drummer (Foolproof Beginner Blueprint)](https://www.youtube.com/watch?v=PSw5uqkTPzs) | BassBuzz |
 | 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |

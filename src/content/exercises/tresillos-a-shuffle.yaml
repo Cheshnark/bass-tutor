@@ -1,0 +1,41 @@
+title: De tresillos a shuffle
+status: borrador
+instructions: >-
+  Primero tresillos de corchea (tres notas por clic: "1 tri le"). Después el shuffle: las dos primeras notas del
+  tresillo se funden en una larga y queda una corta ("1 . le"). En la partitura el shuffle está escrito en
+  tresillos para que la reproducción suene así; en las partituras normales se escribe en corcheas con la
+  indicación "shuffle".
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A, A, D, D, E, D, A, A]
+passCriteria:
+  - Los tresillos son tres notas iguales por clic
+  - En el shuffle se oye largo-corto, no dos corcheas iguales
+  - El paso de tresillos a shuffle no mueve el clic
+tags:
+  - ritmo
+  - shuffle
+  - tresillos
+  - groove
+alphaTex: |
+  \title "De tresillos a shuffle"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.3 {tu 3 ch "A"} 0.3 {tu 3} 0.3 {tu 3} :8 0.3 {tu 3} 0.3 {tu 3} 0.3 {tu 3} :8 0.3 {tu 3} 0.3 {tu 3} 0.3 {tu 3} :8 0.3 {tu 3} 0.3 {tu 3} 0.3 {tu 3} |
+  :4 0.3 {tu 3 ch "A"} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} |
+  :8 0.2 {tu 3 ch "D"} 0.2 {tu 3} 0.2 {tu 3} :8 0.2 {tu 3} 0.2 {tu 3} 0.2 {tu 3} :8 0.2 {tu 3} 0.2 {tu 3} 0.2 {tu 3} :8 0.2 {tu 3} 0.2 {tu 3} 0.2 {tu 3} |
+  :4 0.2 {tu 3 ch "D"} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} |
+  :4 0.4 {tu 3 ch "E"} :8 0.4 {tu 3} :4 0.4 {tu 3} :8 0.4 {tu 3} :4 0.4 {tu 3} :8 0.4 {tu 3} :4 0.4 {tu 3} :8 0.4 {tu 3} |
+  :4 0.2 {tu 3 ch "D"} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} :4 0.2 {tu 3} :8 0.2 {tu 3} |
+  :4 0.3 {tu 3 ch "A"} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} :4 0.3 {tu 3} :8 0.3 {tu 3} |
+  :1 0.3

@@ -10,8 +10,10 @@ _Última actualización: 2026-10-01_
 - **Ampliación común** (nuevo apartado del índice, para cualquier estilo):
   - **Arpegios**: tríadas mayor y menor, arpegios sobre una progresión, cuatriadas maj7/7/m7 (3 lecciones, 5 ejercicios).
   - **Escalas**: mayor, menor natural y pentatónica menor, secuencias y notas de paso (3 lecciones, 5 ejercicios).
+  - **Groove y feels**: contratiempo y anticipaciones, tresillos y shuffle, notas muertas, dinámica y acentos
+    (3 lecciones, 6 ejercicios; el shuffle suena con batería en shuffle).
   - Ejercicios con la digitación en la partitura y acompañamiento generado.
-- Pendiente: ampliación (groove y feels, leer partitura) e itinerarios rock/pop, blues/jazz y funk/soul.
+- Pendiente: ampliación (leer partitura) e itinerarios rock/pop, blues/jazz y funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -89,5 +91,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: ampliación común (groove y feels; leer partitura) y después rock/pop.
+2. Seguir la Fase 7: ampliación común (leer partitura) y después rock/pop.
 3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).
