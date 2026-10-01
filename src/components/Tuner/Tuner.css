@@ -44,42 +44,77 @@
   color: var(--ok);
 }
 
-.tuner-meter {
-  position: relative;
+/* VU analógico */
+.vu {
   width: min(100%, 420px);
-  height: 40px;
-  border-bottom: 2px solid var(--border);
 }
 
-/* Zona "afinado": ±5 cents de ±50 → 10 % del ancho */
-.tuner-meter__zone {
-  position: absolute;
-  inset: 0 45%;
-  background: rgb(111 207 138 / 0.2);
+.vu svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.tuner-meter__center {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: var(--text-muted);
+.vu-face {
+  fill: var(--vu-face);
+  stroke: var(--border);
+  stroke-width: 2;
 }
 
-.tuner-meter__needle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  margin-left: -2px;
-  border-radius: 2px;
-  background: var(--accent-strong);
-  transition: left 80ms linear;
+.vu-scale {
+  fill: none;
+  stroke: var(--vu-ink);
+  stroke-width: 2;
 }
 
-.tuner-display.is-in-tune .tuner-meter__needle {
-  background: var(--ok);
+.vu-zone {
+  fill: none;
+  stroke: var(--vu-zone);
+  stroke-width: 14;
+}
+
+.vu-tick {
+  stroke: var(--vu-ink);
+}
+
+.vu-label,
+.vu-unit {
+  fill: var(--vu-ink);
+  font-family: var(--label);
+  font-size: 15px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.vu-unit {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.vu-needle {
+  stroke: var(--vu-needle);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: transform 90ms linear;
+}
+
+.tuner-display.is-in-tune .vu-needle {
+  stroke: var(--ok);
+}
+
+:root:not([data-theme='alto-contraste']) .tuner-display.is-in-tune .vu-needle {
+  stroke: #2e7d32;
+}
+
+.vu-pivot {
+  fill: var(--vu-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vu-needle {
+    transition: none;
+  }
 }
 
 .tuner-cents,

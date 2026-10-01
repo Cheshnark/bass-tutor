@@ -101,15 +101,18 @@
 
 .lesson-objectives {
   margin-top: 12px;
-  padding: 12px 16px;
+  padding: 4px 16px 12px;
   border-left: 4px solid var(--accent);
   border-radius: 4px;
   background: var(--surface-2);
 }
 
-.lesson-objectives h3 {
-  margin: 0 0 4px;
-  font-size: 1rem;
+.lesson-objectives summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch);
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .lesson-objectives ul {
@@ -229,9 +232,38 @@
 }
 
 /* ── Modo "siguiendo la clase": un paso por pantalla, texto grande ── */
-.lesson-mode {
-  justify-self: start;
+.lesson-actions {
   margin-top: 8px;
+  gap: 8px;
+}
+
+/* Modo atril: la cabecera de la lección se reduce al título (en horizontal la altura es poca);
+   para salir está la barra superior. */
+:root[data-stand='on'] .lesson-kicker,
+:root[data-stand='on'] .lesson-meta,
+:root[data-stand='on'] .lesson-actions,
+:root[data-stand='on'] .lesson-objectives {
+  display: none;
+}
+
+:root[data-stand='on'] .lesson-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* En el atril cada línea cuenta: fuera el estado de la pantalla encendida, y "Paso N de M" se oculta solo a la
+   vista (los lectores de pantalla lo siguen anunciando). */
+:root[data-stand='on'] .lesson-stepper__wake {
+  display: none;
+}
+
+:root[data-stand='on'] .lesson-progress__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .lesson--follow .lesson-body {

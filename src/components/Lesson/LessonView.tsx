@@ -45,7 +45,7 @@ interface LessonViewProps {
 
 export function LessonView({ lessonId, stepParam }: LessonViewProps) {
   const lesson = getLesson(lessonId)
-  const { lessonMode, setLessonMode } = useSettings()
+  const { lessonMode, setLessonMode, standMode, setStandMode } = useSettings()
   const [loaded, setLoaded] = useState<{ id: string; Body: ComponentType<MDXProps> } | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -127,23 +127,29 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
           {LEVEL[lesson.level]} · {lesson.durationMin} min · {total} pasos
           {lesson.status === 'borrador' && <span className="badge">Borrador</span>}
         </p>
-        <button
-          type="button"
-          className="btn lesson-mode"
-          aria-pressed={follow}
-          onClick={() => setLessonMode(follow ? 'full' : 'follow')}
-        >
-          {follow ? 'Ver la lección completa' : 'Seguir la clase paso a paso'}
-        </button>
+        <div className="row lesson-actions">
+          <button
+            type="button"
+            className="btn lesson-mode"
+            aria-pressed={follow}
+            onClick={() => setLessonMode(follow ? 'full' : 'follow')}
+          >
+            {follow ? 'Ver la lección completa' : 'Seguir la clase paso a paso'}
+          </button>
+          <button type="button" className="btn lesson-stand" aria-pressed={standMode} onClick={() => setStandMode(!standMode)}>
+            {standMode ? 'Salir del modo atril' : 'Modo atril'}
+          </button>
+        </div>
         {(!follow || current === 0) && (
-          <div className="lesson-objectives">
-            <h3>Al terminar sabrás</h3>
+          // Paso a paso, los objetivos van plegados: en el móvil ocupaban casi toda la pantalla del primer paso.
+          <details className="lesson-objectives" open={!follow}>
+            <summary>Al terminar sabrás ({lesson.objectives.length})</summary>
             <ul>
               {lesson.objectives.map((o) => (
                 <li key={o}>{o}</li>
               ))}
             </ul>
-          </div>
+          </details>
         )}
       </header>
 

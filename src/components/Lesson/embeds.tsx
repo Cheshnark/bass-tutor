@@ -2,14 +2,15 @@
  * Componentes que se pueden usar dentro de una lección MDX. Sus props se validan en build
  * (EMBED_SCHEMAS en src/content/schema.ts), así que aquí se confía en ellas.
  */
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { getExercise, playableTex } from '../../content/course'
 import type { FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
-import { metronomeEngine, useMetronome } from '../../state/metronome'
+import { useMetronome } from '../../state/metronome'
 import { useSettings } from '../../state/settings'
 import type { FretboardView } from '../../theory/fretboard'
 import { getTuning } from '../../theory/tunings'
 import { Fretboard } from '../Fretboard/Fretboard'
+import { useBeatPulse } from '../Metronome/useBeatPulse'
 import { LazyTabView } from '../Tab/LazyTabView'
 
 export function LessonFretboard({ mode, root, type, frets = [0, 12], labels = 'note', tuning: fixedTuning }: FretboardEmbed) {
@@ -43,23 +44,7 @@ export function LessonTab({ exercise: id }: TabEmbed) {
 /** Botón para el metrónomo global a un tempo concreto, con piloto de pulso. */
 export function LessonMetronome({ bpm, beatsPerBar }: MetronomeEmbed) {
   const { running, ladderActive, bpm: current, setBpm, setBeatsPerBar, start, stop } = useMetronome()
-  const [pulse, setPulse] = useState(0)
-
-  useEffect(() => {
-    if (!running) return
-    let frame = 0
-    let last: number | undefined
-    const loop = () => {
-      const tick = metronomeEngine.currentTick()
-      if (tick && tick.subInBeat === 0 && tick.time !== last) {
-        last = tick.time
-        setPulse((p) => p + 1)
-      }
-      frame = requestAnimationFrame(loop)
-    }
-    frame = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(frame)
-  }, [running])
+  const pulse = useBeatPulse(running)
 
   const toggle = async () => {
     if (running) {

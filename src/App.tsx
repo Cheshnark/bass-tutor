@@ -1,12 +1,16 @@
 import { Dictionary } from './components/Dictionary/Dictionary'
 import { FretboardExplorer } from './components/FretboardExplorer'
+import { HeaderPilot } from './components/HeaderPilot'
 import { CourseIndex } from './components/Lesson/CourseIndex'
 import { LessonView } from './components/Lesson/LessonView'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { PracticeView } from './components/Practice/PracticeView'
 import { Tuner } from './components/Tuner/Tuner'
 import { SettingsBar } from './components/SettingsBar'
+import { SettingsView } from './components/SettingsView'
 import { UpdatePrompt } from './components/UpdatePrompt'
+import { useSettings } from './state/settings'
+import { useAppearance } from './useAppearance'
 import { useHashRoute } from './useHashRoute'
 
 const VIEWS = [
@@ -18,25 +22,49 @@ const VIEWS = [
   { id: 'afinador', label: 'Afinador' },
 ] as const
 
-type ViewId = (typeof VIEWS)[number]['id']
-const VIEW_IDS: readonly ViewId[] = VIEWS.map((v) => v.id)
+type ViewId = (typeof VIEWS)[number]['id'] | 'ajustes'
+/** "ajustes" no es una pestaña: se llega desde el botón de la cabecera. */
+const VIEW_IDS: readonly ViewId[] = [...VIEWS.map((v) => v.id), 'ajustes']
 
 function App() {
   const { view, params } = useHashRoute<ViewId>(VIEW_IDS, 'curso')
   const [lessonId, step] = params
+  const { standMode } = useAppearance()
+  const setStandMode = useSettings((s) => s.setStandMode)
 
   return (
     <>
-      <header className="app-header">
-        <h1>Bass Tutor</h1>
-        <nav className="app-nav" aria-label="Herramientas">
-          {VIEWS.map((v) => (
-            <a key={v.id} href={`#/${v.id}`} aria-current={view === v.id ? 'page' : undefined}>
-              {v.label}
-            </a>
-          ))}
-        </nav>
-      </header>
+      {standMode ? (
+        // Modo atril: solo una barra mínima para volver y salir; el resto de la pantalla, para la lección.
+        <header className="stand-bar">
+          <a href="#/curso">Curso</a>
+          <HeaderPilot />
+          <button type="button" className="btn" onClick={() => setStandMode(false)}>
+            Salir del atril
+          </button>
+        </header>
+      ) : (
+        <>
+          <header className="app-header">
+            <div className="app-header__top">
+              <h1 className="nameplate">Bass Tutor</h1>
+              <HeaderPilot />
+              <a className="header-settings" href="#/ajustes" aria-current={view === 'ajustes' ? 'page' : undefined}>
+                Ajustes
+              </a>
+            </div>
+            <nav className="app-nav" aria-label="Herramientas">
+              {VIEWS.map((v) => (
+                <a key={v.id} href={`#/${v.id}`} aria-current={view === v.id ? 'page' : undefined}>
+                  {v.label}
+                </a>
+              ))}
+            </nav>
+          </header>
+          {/* Rejilla de altavoz: solo decoración, nunca detrás de texto. */}
+          <div className="grill" aria-hidden="true" />
+        </>
+      )}
       <main className="app-main">
         <UpdatePrompt />
         {view === 'curso' &&
@@ -46,6 +74,7 @@ function App() {
         {view === 'mastil' && <FretboardExplorer />}
         {view === 'diccionario' && <Dictionary />}
         {view === 'afinador' && <Tuner />}
+        {view === 'ajustes' && <SettingsView />}
         {/* Siempre montado: el metrónomo sigue sonando mientras navegas por otras vistas. */}
         <div hidden={view !== 'metronomo'}>
           <MetronomePanel />

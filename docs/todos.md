@@ -8,6 +8,17 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 6: hecha
+
+- [x] Tema cabezal, alto contraste (y automático), Ajustes en página propia, modo atril, piloto en cabecera, VU.
+- [x] axe WCAG 2.2 AA en todas las vistas y temas; controles principales ≥ 48 px.
+- [ ] **Tú**: ¿te gusta la paleta crema y negro? (decisión tomada por Claude; los colores son tokens y se cambian fácil).
+- [ ] Revisión manual de accesibilidad: teclado, zoom 400 %, foco no tapado por la barra fija, lector de pantalla
+      (lista en `docs/accesibilidad.md`).
+- [ ] Potes e interruptores de palanca (research.md §6.2): no se han hecho; los botones actuales cumplen y son más
+      fáciles en móvil. Valorar solo como decoración del metrónomo.
+- [ ] El tema solo cambia los colores del visor de partituras por fuera (alphaTab dibuja sobre fondo claro).
+
 ## Fase 5: hecha (falta la prueba en bajo real)
 
 - [x] Afinador experimental (YIN, < 0,7 cents con tono sintético), tono de referencia, backing tracks generados,
@@ -73,15 +84,14 @@
 
 - [ ] **Wake Lock en tu móvil**: en el navegador integrado de desarrollo se deniega; comprobar en Chrome Android y
       Safari iOS (también instalada como app). **[Hipótesis: debería funcionar en ambos; verificar]**
-- [ ] En el paso 1 del móvil, la cabecera (título, objetivos) ocupa casi toda la pantalla; valorar plegar los
-      objetivos o moverlos al primer paso.
+- [x] En el paso 1 del móvil, la cabecera ocupaba casi toda la pantalla: los objetivos van plegados (Fase 6).
 - [ ] Al recargar, el navegador restaura el scroll antiguo en vez de empezar arriba del paso.
 - [x] Recordar el modo (paso a paso / completa) entre sesiones.
 
 - [ ] "Practicar con escalera" desde la tarjeta de ejercicio (usar su `tempo.start/target/step` en la escalera).
 - [x] Guardar la autoevaluación y el tempo limpio (intentos en IndexedDB).
-- [ ] Acceso a los ajustes (afinación, zurdo, nombres) desde la lección; hoy solo desde Mástil/Diccionario.
-- [ ] Indicador en la cabecera de que el metrónomo suena (útil ahora que se arranca desde las lecciones).
+- [x] Acceso a los ajustes desde cualquier vista (botón Ajustes de la cabecera, Fase 6).
+- [x] Indicador en la cabecera de que el metrónomo suena: piloto con el pulso y BPM (Fase 6).
 - [ ] Vite avisa de que la carga "nativa" de la config (futuro por defecto) exigirá extensiones en los imports de
       `vite.config` → `scripts/` → `src/`. Hoy es solo un aviso.
 
@@ -105,7 +115,7 @@
 
 - [ ] Resaltar en el mástil la nota que suena al pulsar "Escuchar".
 - [ ] Más entradas: modos restantes (frigia, lidia, locria), menor melódica, acordes 6, sus2/sus4, 9.
-- [ ] Indicador en la cabecera de que el metrónomo está sonando (con BPM) cuando estás en otra vista.
+- [x] Indicador en la cabecera de que el metrónomo está sonando (con BPM): piloto (Fase 6).
 - [ ] Enlazar desde el diccionario al explorador del mástil con la misma selección.
 
 ## Mástil: mejoras anotadas
@@ -143,6 +153,8 @@
 - Fase 7: módulos 4–12.
 
 ## Decisiones abiertas (tuyas)
+
+(La 2, paleta, la tomó Claude en la Fase 6 a falta de tu revisión.)
 
 1. ~~¿Currículo propio o compañero de un método existente?~~ → Propio, con vídeos enlazados (pedagogy.md).
 2. Paleta: crema/negro, verde quirófano, burdeos, o naranja solo como acento. (Provisional: oscuro + ámbar.)

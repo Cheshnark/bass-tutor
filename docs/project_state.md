@@ -2,7 +2,17 @@
 
 _Última actualización: 2026-10-01_
 
-## Fases 0–5 cerradas (falta probar el afinador en bajo real); contenido: tronco común y metal/punk (borrador)
+## Fases 0–6 cerradas (falta probar el afinador en bajo real); contenido: tronco común y metal/punk (borrador)
+
+### Fase 6 (diseño "cabezal" y pulido): hecha
+
+- **Tema "cabezal"**: tolex negro, placa crema con el nombre, rejilla, piloto ámbar que luce con el pulso del
+  metrónomo en cualquier vista (y lleva a él) y afinador con **VU analógico**. Rótulos en Oswald.
+- **Alto contraste** (negro, blanco, amarillo) y tema automático según el sistema.
+- **Ajustes** en una página propia, accesible desde la cabecera en todas las vistas.
+- **Modo atril**: sin cabecera, letra grande y todo el ancho; pensado para el móvil o la tableta en horizontal.
+- **WCAG 2.2 AA**: axe sin infracciones en las 11 vistas, con los dos temas y en modo atril; controles principales
+  ≥ 48 px comprobados. Lo que no se puede automatizar está en [accesibilidad.md](accesibilidad.md).
 
 ### Fase 5 (audio avanzado): hecha
 
@@ -37,7 +47,7 @@ _Última actualización: 2026-10-01_
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
 - **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
-- Tests: 216 unitarios y 104 e2e.
+- Tests: 216 unitarios y 162 e2e.
 
 ### Contenido
 
@@ -70,5 +80,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Fase 6 (diseño "cabezal" y pulido: tema, modo atril, alto contraste, WCAG 2.2 AA).
-3. Otro itinerario (rock/pop es el más cercano a lo ya escrito).
+2. Revisión manual de accesibilidad (teclado, zoom, lector de pantalla): lista en [accesibilidad.md](accesibilidad.md).
+3. Fase 7 (contenido restante) u otro itinerario (rock/pop es el más cercano a lo ya escrito).

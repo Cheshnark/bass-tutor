@@ -8,6 +8,7 @@ import { midiName } from '../../theory/notation'
 import { getTuning } from '../../theory/tunings'
 import { useWakeLock } from '../../useWakeLock'
 import './Tuner.css'
+import { VuMeter } from './VuMeter'
 
 /** Margen para dar la cuerda por afinada (cents). */
 const IN_TUNE = 5
@@ -123,7 +124,6 @@ export function Tuner() {
         : cents < 0
           ? 'Bajo: sube (tensa la cuerda)'
           : 'Alto: baja (afloja la cuerda)'
-  const needle = cents === null ? 50 : 50 + Math.max(-50, Math.min(50, cents))
 
   return (
     <section className="panel tuner" aria-labelledby="tuner-title">
@@ -168,18 +168,7 @@ export function Tuner() {
         <p className="tuner-note" data-testid="tuner-note">
           {noteLabel}
         </p>
-        <div
-          className="tuner-meter"
-          role="meter"
-          aria-label="Desviación en cents"
-          aria-valuemin={-50}
-          aria-valuemax={50}
-          aria-valuenow={cents === null ? 0 : Math.round(Math.max(-50, Math.min(50, cents)))}
-        >
-          <span className="tuner-meter__zone" />
-          <span className="tuner-meter__center" />
-          <span className="tuner-meter__needle" style={{ left: `${needle}%` }} hidden={cents === null} />
-        </div>
+        <VuMeter cents={cents} inTune={IN_TUNE} />
         <p className="tuner-cents" data-testid="tuner-cents">
           {cents === null ? '' : `${cents > 0 ? '+' : ''}${Math.round(cents)} cents · ${frequency!.toFixed(1)} Hz`}
         </p>

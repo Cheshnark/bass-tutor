@@ -36,7 +36,8 @@ Ver [research.md §7](research.md). Resumen: `Module` → `Lesson` (con `steps` 
 
 "Cabezal de ampli" genérico **sin combinar** los rasgos de Orange (naranja dominante + marco "picture frame"
 + pictogramas + rotulación redondeada + escudo). Skeuomorfismo solo en el marco; contenido plano y legible.
-Paleta por decidir (ver [todos.md](todos.md)). Provisional: tolex oscuro con acento ámbar.
+Paleta: **crema y negro con acento ámbar** (tolex negro, placa crema, pilotos ámbar) y tema de alto contraste.
+Rótulos en Oswald (condensada), texto en la sans del sistema. Ver [decisions.md](decisions.md) y [accesibilidad.md](accesibilidad.md).
 
 ## Restricciones
 

@@ -153,6 +153,19 @@
 - **Grábate** (`components/Lesson/Recorder.tsx`): MediaRecorder en la tarjeta de ejercicio; se escucha ahí mismo y
   no se guarda.
 
+### Tema y accesibilidad (Fase 6)
+
+- Tokens CSS en `src/index.css` (`:root`); `[data-theme='alto-contraste']` los redefine y `[data-stand='on']` aplica
+  el modo atril. `useAppearance` (src/useAppearance.ts) pone `data-theme` y `data-stand` en `<html>`: tema elegido o,
+  en "auto", alto contraste si `prefers-contrast: more`.
+- Ajustes en `#/ajustes` (`SettingsView`): instrumento, tema, modo atril y paso a paso. `useSettings` guarda `theme` y
+  `standMode` (validados al recuperar).
+- Cabecera "cabezal": placa crema con nombre, `HeaderPilot` (piloto que luce con el pulso, vía `useBeatPulse`, y
+  enlaza al metrónomo) y enlace a Ajustes; debajo, rejilla decorativa. En modo atril, una barra mínima.
+- Afinador con `VuMeter` (SVG, `role=meter`). Fuente Oswald autoalojada (`@fontsource/oswald`, OFL).
+- Pruebas: `e2e/a11y.spec.ts` (axe, WCAG 2.2 AA, ambos temas) y `e2e/design.spec.ts` (≥ 48 px, tema, atril, piloto).
+  Guía: [accesibilidad.md](accesibilidad.md).
+
 ### Navegación
 
 - `useHashRoute` + pestañas en la cabecera (Curso · Práctica · Mástil · Diccionario · Metrónomo · Afinador), con parámetros

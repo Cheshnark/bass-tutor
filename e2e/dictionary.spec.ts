@@ -52,7 +52,7 @@ test('el metrónomo sigue sonando al cambiar de vista', async ({ page }) => {
   await page.getByRole('link', { name: 'Mástil' }).click()
   await expect(page.getByTestId('fretboard')).toBeVisible()
   await page.waitForTimeout(500)
-  await page.getByRole('link', { name: 'Metrónomo' }).click()
+  await page.getByRole('link', { name: 'Metrónomo', exact: true }).click()
   await expect(page.locator('.met-start')).toHaveText('Parar')
   await expect(page.getByText(/Compás \d+/)).toBeVisible()
 })

@@ -54,7 +54,7 @@ test('el metrónomo de la lección es el mismo que el del panel', async ({ page 
   await page.goto(`${LESSON}/4`)
   await page.getByRole('button', { name: 'Metrónomo a 60 BPM' }).click()
   await expect(page.getByRole('button', { name: 'Parar metrónomo (60 BPM)' })).toBeVisible()
-  await page.getByRole('link', { name: 'Metrónomo' }).click()
+  await page.getByRole('link', { name: 'Metrónomo', exact: true }).click()
   await expect(page.getByTestId('bpm-display')).toHaveText('60')
   await expect(page.locator('.met-start')).toHaveText('Parar')
   await expect(page.locator('.met-beat--on')).toHaveCount(1, { timeout: 5_000 })

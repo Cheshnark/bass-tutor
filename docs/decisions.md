@@ -296,3 +296,23 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** research.md (módulo "Oído": intervalos, identificar fundamentales). Se empieza por 4P, 5P y 8P porque son
   los saltos de las primeras líneas del curso. Mismo Leitner que el quiz (tabla `cards`). Dictado rítmico e
   identificar fundamentales quedan pendientes.
+
+## 2026-10-01 · Paleta "crema y negro" con acento ámbar (decisión abierta n.º 2, tomada por Claude)
+- **Motivo:** el autor pidió seguir con la opción recomendada. Es la primera propuesta de research.md §6.2, la más
+  cercana a la provisional (oscuro + ámbar) y evita el naranja dominante. Revisable: los colores son tokens CSS.
+- Sin combinar los rasgos de Orange: ni naranja dominante, ni marco *picture frame* (la placa es un rótulo simple), ni
+  pictogramas (todo con texto en español), ni escudo, ni rotulación redondeada.
+- Skeuomorfismo solo en el marco: placa crema "cepillada", rejilla, tolex sutil fuera de los paneles, piloto y VU. El
+  contenido (lecciones, mástil, tablatura) sigue plano.
+
+## 2026-10-01 · Rótulos en Oswald autoalojada; texto en la sans del sistema
+- **Motivo:** research.md §6.2 pide una sans condensada industrial para rótulos y una muy legible para el texto. Oswald
+  (OFL 1.1) va empaquetada con `@fontsource/oswald` (2 pesos, solo latín): funciona sin conexión y no llama a CDN.
+  Solo en rótulos (nombre, pestañas, títulos de panel, escala del VU); los títulos de lección y el texto, en la sans.
+
+## 2026-10-01 · Tema automático + alto contraste; modo atril
+- Tema "auto" por defecto: alto contraste si el sistema lo pide (`prefers-contrast: more`). Ambos temas pasan axe
+  WCAG 2.2 AA en todas las vistas.
+- Modo atril (ajuste persistente): sin cabecera ni pestañas, letra a 21 px, todo el ancho y la cabecera de la lección
+  reducida al título (en horizontal la altura es poca). Se activa desde la lección o desde Ajustes.
+- Los objetivos de la lección van plegados en el modo paso a paso (en el móvil ocupaban el primer paso entero).

@@ -1,18 +1,28 @@
 /*
- * Tokens de diseño provisionales (Fase 0). El tema "cabezal de ampli"
- * completo llega en la Fase 6; aquí solo lo mínimo para usarlo en el móvil.
+ * Tema "cabezal de bajo" (Fase 6; research.md §6.2, decisions.md): tolex negro, placa crema y pilotos ámbar.
+ * Skeuomorfismo solo en el marco (cabecera, rejilla, pilotos); el contenido es plano y legible.
+ * Sin combinar los rasgos de Orange: nada de naranja dominante, marco "picture frame", pictogramas ni escudo.
  */
+@import '@fontsource/oswald/latin-500.css';
+@import '@fontsource/oswald/latin-600.css';
+
 :root {
-  --bg: #16171a;
-  --surface: #202227;
-  --surface-2: #2b2e35;
-  --text: #ecebe6;
-  --text-muted: #a9a8a2;
+  --bg: #121110; /* tolex */
+  --surface: #1e1c1a;
+  --surface-2: #2a2724;
+  --text: #f2ede1;
+  --text-muted: #b8b0a1;
   --accent: #e0a526; /* ámbar: piloto / estado activo */
   --accent-strong: #f5c04a;
   --danger: #ff6b5e;
   --ok: #6fcf8a;
-  --border: #3a3d45;
+  --border: #44403a;
+
+  /* Placa crema de la cabecera */
+  --plate: #e8dec6;
+  --plate-ink: #1d1b17;
+  --plate-ink-muted: #574f42;
+  --plate-current: #1d1b17;
 
   /* Mástil */
   --fb-wood: #3b2a20;
@@ -24,10 +34,19 @@
   --fb-note-border: #16171a;
   --fb-note-text: #16171a;
 
+  /* VU del afinador */
+  --vu-face: #efe6cf;
+  --vu-ink: #1d1b17;
+  --vu-needle: #8e1d12;
+  --vu-zone: rgb(46 125 50 / 0.28);
+
   --radius: 10px;
   --touch: 48px; /* objetivo táctil mínimo en controles principales */
+  --border-width: 1px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* Rótulos de panel: sans condensada industrial (Oswald, OFL, empaquetada: funciona sin conexión). */
+  --label: 'Oswald', 'Arial Narrow', var(--sans);
   font: 18px/1.5 var(--sans);
   color: var(--text);
   background: var(--bg);
@@ -35,39 +54,181 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* Alto contraste: negro, blanco y amarillo; bordes de 2 px y sin texturas. */
+:root[data-theme='alto-contraste'] {
+  --bg: #000;
+  --surface: #000;
+  --surface-2: #121212;
+  --text: #fff;
+  --text-muted: #e8e8e8;
+  --accent: #ffd400;
+  --accent-strong: #ffe94d;
+  --danger: #ff8a80;
+  --ok: #7dff9a;
+  --border: #fff;
+  --plate: #000;
+  --plate-ink: #fff;
+  --plate-ink-muted: #e8e8e8;
+  --plate-current: #ffd400;
+  --fb-wood: #000;
+  --fb-inlay: #8a8a8a;
+  --fb-wire: #fff;
+  --fb-nut: #fff;
+  --fb-string: #fff;
+  --fb-note-bg: #fff;
+  --fb-note-border: #000;
+  --fb-note-text: #000;
+  --vu-face: #000;
+  --vu-ink: #fff;
+  --vu-needle: #ffd400;
+  --vu-zone: rgb(125 255 154 / 0.35);
+  --border-width: 2px;
+}
+
+/* Modo atril: letra más grande y todo el ancho para la lección. */
+:root[data-stand='on'] {
+  font-size: 21px;
+}
+
 * {
   box-sizing: border-box;
+}
+
+/* Casillas y botones de radio con el color del tema (no el azul del navegador) */
+input[type='radio'],
+input[type='checkbox'],
+input[type='range'] {
+  accent-color: var(--accent);
 }
 
 body {
   margin: 0;
   min-height: 100dvh;
-  background: var(--bg);
+  background-color: var(--bg);
+  /* Textura de tolex muy sutil: solo se ve en el marco, alrededor de los paneles (opacos). */
+  background-image:
+    radial-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1.2px),
+    radial-gradient(rgb(0 0 0 / 0.35) 1px, transparent 1.2px);
+  background-size:
+    5px 5px,
+    7px 7px;
+  background-position:
+    0 0,
+    2px 3px;
 }
 
+:root[data-theme='alto-contraste'] body {
+  background-image: none;
+}
+
+/* ── Cabecera: placa crema del cabezal ── */
 .app-header {
-  padding: 16px;
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  display: grid;
+  gap: 4px;
+  padding: 12px 16px 0;
+  border-bottom: 3px solid #0b0a09; /* ribete */
+  color: var(--plate-ink);
+  background-color: var(--plate);
+  /* Metal cepillado muy suave */
+  background-image:
+    repeating-linear-gradient(90deg, rgb(0 0 0 / 0.018) 0 1px, transparent 1px 3px),
+    linear-gradient(180deg, rgb(255 255 255 / 0.35), rgb(0 0 0 / 0.06));
 }
 
-.app-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  letter-spacing: 0.04em;
+:root[data-theme='alto-contraste'] .app-header {
+  background-image: none;
+  border-bottom-color: #fff;
+}
+
+.app-header__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nameplate {
+  margin: 0 auto 0 0;
+  padding: 2px 12px;
+  border: 2px solid var(--plate-ink);
+  border-radius: 4px;
+  font-family: var(--label);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
   text-transform: uppercase;
 }
 
-.app-header {
-  display: grid;
-  gap: 8px;
+.header-settings {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  padding: 0 14px;
+  border: 2px solid var(--plate-ink);
+  border-radius: var(--radius);
+  color: var(--plate-ink);
+  font-family: var(--label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header-settings[aria-current='page'] {
+  background: var(--plate-ink);
+  color: var(--plate);
+}
+
+/* Piloto (jewel light): luce con el pulso del metrónomo */
+.header-pilot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--touch);
+  padding: 0 8px;
+  color: var(--plate-ink);
+  font-family: var(--label);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-pilot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #7a3a1c, #3d1a0c 70%);
+  box-shadow:
+    0 0 0 3px #9b927e,
+    0 0 0 4px #3b362d;
+}
+
+.header-pilot--on {
+  animation: header-pilot 200ms ease-out;
+}
+
+@keyframes header-pilot {
+  0% {
+    background: radial-gradient(circle at 35% 35%, #fff2c4, #ffb21f 60%);
+    box-shadow:
+      0 0 0 3px #9b927e,
+      0 0 0 4px #3b362d,
+      0 0 18px 6px rgb(255 178 31 / 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-pilot--on {
+    animation: none;
+    background: radial-gradient(circle at 35% 35%, #ffd76a, #e0a526 60%);
+  }
 }
 
 .app-nav {
   display: flex;
   gap: 4px;
   overflow-x: auto;
-  margin: 0 -16px -16px;
+  margin: 0 -16px;
   padding: 0 16px;
 }
 
@@ -76,16 +237,62 @@ body {
   display: flex;
   align-items: center;
   min-height: 48px;
-  padding: 0 14px;
-  border-bottom: 3px solid transparent;
-  color: var(--text-muted);
-  font-weight: 700;
+  padding: 0 12px;
+  border-bottom: 4px solid transparent;
+  color: var(--plate-ink-muted);
+  font-family: var(--label);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .app-nav a[aria-current='page'] {
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--plate-current);
+  color: var(--plate-ink);
+  font-weight: 600;
+}
+
+/* Rejilla de altavoz (decoración: nunca detrás de texto) */
+.grill {
+  height: 14px;
+  border-bottom: 1px solid #000;
+  background-color: #1b1814;
+  background-image:
+    repeating-linear-gradient(45deg, rgb(201 184 150 / 0.16) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, rgb(201 184 150 / 0.16) 0 1px, transparent 1px 4px);
+}
+
+:root[data-theme='alto-contraste'] .grill {
+  display: none;
+}
+
+/* Barra mínima del modo atril */
+.stand-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 16px;
+  border-bottom: var(--border-width) solid var(--border);
+  background: var(--surface);
+}
+
+.stand-bar > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  margin-right: auto;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.stand-bar .header-pilot-link {
   color: var(--text);
+}
+
+:root[data-stand='on'] .app-main {
+  max-width: none;
 }
 
 .settings-bar {
@@ -110,14 +317,19 @@ body {
   grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   padding: 16px;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
 }
 
-.panel h2 {
+/* Rótulo del panel, como en el frontal de un ampli (solo el título del panel: el contenido sigue en la sans) */
+.panel > h2 {
   margin: 0;
-  font-size: 1.1rem;
+  font-family: var(--label);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .row {
@@ -133,7 +345,7 @@ input[type='number'] {
   min-height: var(--touch);
   min-width: var(--touch);
   padding: 0 16px;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   border-radius: var(--radius);
   background: var(--surface-2);
   color: var(--text);
@@ -222,4 +434,51 @@ input[type='number'] {
 
 .update-prompt p {
   margin: 0;
+}
+
+/* Ajustes */
+.settings > section {
+  display: grid;
+  gap: 8px;
+}
+
+.settings h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.settings-options {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 8px 12px;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--touch);
+}
+
+.settings-option input {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.settings-toggles {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+
+.btn[aria-pressed='true'] {
+  border-color: var(--accent);
+}
+
+.settings .controls {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }

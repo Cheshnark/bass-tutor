@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@coderline/alphatab": "^1.8.4",
+    "@fontsource/oswald": "^5.3.0",
     "dexie": "^4.4.6",
     "dexie-react-hooks": "^4.4.0",
     "react": "^19.2.8",
@@ -26,6 +27,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@coderline/alphatab-vite": "^1.8.4",
     "@mdx-js/rollup": "^3.1.1",
     "@playwright/test": "^1.63.0",

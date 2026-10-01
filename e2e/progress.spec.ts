@@ -91,7 +91,7 @@ test.describe('progreso', () => {
 test('los ajustes y el metrónomo se recuerdan al recargar', async ({ page }) => {
   await page.goto('/#/mastil')
   await page.getByLabel(/^Nombres/).selectOption('latina')
-  await page.getByRole('link', { name: 'Metrónomo' }).click()
+  await page.getByRole('link', { name: 'Metrónomo', exact: true }).click()
   await page.getByRole('button', { name: 'Subir 5 BPM' }).click()
   await expect(page.getByTestId('bpm-display')).toHaveText('85')
 
