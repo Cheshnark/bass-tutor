@@ -1,0 +1,41 @@
+title: I–V–vi–IV en Sol
+status: borrador
+instructions: >-
+  La progresión I–V–vi–IV en Sol (G, D, Em, C). Primero negras en la fundamental; después el 1-5-8-5 del tronco
+  común en cada acorde (Em con las cuerdas al aire).
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, D, Em, C, G, D, Em, C, G]
+passCriteria:
+  - Sabes qué grado es cada acorde (I, V, vi, IV)
+  - Los cambios caen en el 1
+  - La forma 1-5-8 se mueve sin cambiar
+tags:
+  - pop
+  - progresion
+  - fundamental
+  - quinta
+  - octava
+alphaTex: |
+  \title "I–V–vi–IV en Sol"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 {ch "G"} 3.4 3.4 3.4 |
+  :4 5.3 {ch "D"} 5.3 5.3 5.3 |
+  :4 0.4 {ch "Em"} 0.4 0.4 0.4 |
+  :4 3.3 {ch "C"} 3.3 3.3 3.3 |
+  :4 3.4 {ch "G"} 5.3 5.2 5.3 |
+  :4 5.3 {ch "D"} 7.2 7.1 7.2 |
+  :4 0.4 {ch "Em"} 2.3 2.2 2.3 |
+  :4 3.3 {ch "C"} 5.2 5.1 5.2 |
+  :1 3.4 {ch "G"}

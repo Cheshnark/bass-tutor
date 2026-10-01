@@ -338,3 +338,11 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** con la tablatura delante no se aprende a leer. `\staff { score }` oculta la tablatura solo en esos
   ejercicios. Primera posición con 1-2-4 (mano quieta, como recomienda StudyBass para leer sin mirar las manos).
   El ritmo se practica primero sobre una sola nota.
+
+## 2026-10-01 · Rock/pop: temario de 4 módulos, dedos por defecto
+- **Motivo:** el itinerario se apoya en lo ya escrito (corcheas, 1-5-8, arpegios y escalas de la ampliación) y añade
+  lo propio del estilo: longitud de nota por secciones, aproximaciones, progresiones de cuatro acordes, acordes con
+  barra, riffs y la estructura de canción. Las lecciones usan prerrequisitos de la ampliación común (escala mayor,
+  tríadas), que el esquema permite.
+- La aproximación por la quinta se enseña sobre I–vi–IV–V y no sobre I–IV–V: en I–IV–V la quinta del acorde siguiente
+  casi siempre es la fundamental del actual y el ejercicio no enseñaría nada.

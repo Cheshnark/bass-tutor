@@ -1,0 +1,41 @@
+title: Aproximación por la escala
+status: borrador
+instructions: >-
+  Negras en la fundamental y, en la cuarta, una nota de la escala de La mayor a un paso del acorde siguiente
+  (por debajo o por encima). Mano en cuarta posición (índice en el traste 4): A y D con el dedo medio en el
+  traste 5, E con el meñique en el 7.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, D, E, A, A, D, E, A, A]
+passCriteria:
+  - La última negra lleva a la fundamental siguiente por grado conjunto
+  - Todas las notas son de la escala de La mayor
+  - El cambio de acorde no se retrasa
+tags:
+  - rock
+  - aproximacion
+  - escala-mayor
+  - cambio-de-acorde
+alphaTex: |
+  \title "Aproximación por la escala"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4 {ch "A"} 5.4 5.4 4.3 |
+  :4 5.3 {ch "D"} 5.3 5.3 4.2 |
+  :4 7.3 {ch "E"} 7.3 7.3 7.4 |
+  :4 5.4 {ch "A"} 5.4 5.4 4.4 |
+  :4 5.4 {ch "A"} 5.4 5.4 7.3 |
+  :4 5.3 {ch "D"} 5.3 5.3 4.2 |
+  :4 7.3 {ch "E"} 7.3 7.3 4.4 |
+  :4 5.4 {ch "A"} 5.4 5.4 7.4 |
+  :1 5.4 {ch "A"}

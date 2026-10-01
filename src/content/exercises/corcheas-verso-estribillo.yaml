@@ -1,0 +1,42 @@
+title: 'Corcheas: verso corto, estribillo largo'
+status: borrador
+instructions: >-
+  Corcheas constantes en la fundamental. En el "verso" (4 primeros compases), notas cortas (staccato, el punto
+  sobre la nota): afloja la presión de la mano izquierda justo después de cada nota. En el "estribillo", notas
+  largas que se tocan entre sí. Mano en cuarta posición (índice en el traste 4): A y D con el dedo medio en el
+  traste 5, E con el meñique en el 7.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, D, E, D, E, A, A, A]
+passCriteria:
+  - Las corcheas son regulares en todo el ejercicio
+  - Se oye la diferencia entre el verso corto y el estribillo largo
+  - Las notas cortas se cortan con la izquierda, sin dejar de pulsar a tiempo
+tags:
+  - rock
+  - corcheas
+  - fundamental
+  - articulacion
+alphaTex: |
+  \title "Corcheas: verso corto, estribillo largo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{st} {ch "A"} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} |
+  :8 5.4{st} {ch "A"} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} 5.4{st} |
+  :8 5.3{st} {ch "D"} 5.3{st} 5.3{st} 5.3{st} 5.3{st} 5.3{st} 5.3{st} 5.3{st} |
+  :8 7.3{st} {ch "E"} 7.3{st} 7.3{st} 7.3{st} 7.3{st} 7.3{st} 7.3{st} 7.3{st} |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 7.3 {ch "E"} 7.3 7.3 7.3 7.3 7.3 7.3 7.3 |
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 5.4 |
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 5.4 |
+  :1 5.4 {ch "A"}

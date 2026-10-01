@@ -1,0 +1,40 @@
+title: 'Un bajo que baja: acordes con barra'
+status: borrador
+instructions: >-
+  Acordes con barra: el bajo toca la nota de después de la barra (G/B → B). Así la línea baja por grados: C, B,
+  A, G, F, E y D, y cierra en G y C. Blancas, primera posición.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, G/B, Am, Am/G, F, C/E, Dm, G, C]
+passCriteria:
+  - En cada acorde con barra tocas la nota de después de la barra
+  - Oyes la línea que baja por grados
+  - Las blancas duran dos tiempos completos
+tags:
+  - pop
+  - acordes-con-barra
+  - inversiones
+  - linea
+alphaTex: |
+  \title "Un bajo que baja: acordes con barra"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :2 3.3 {ch "C"} 3.3 |
+  :2 2.3 {ch "G/B"} 2.3 |
+  :2 0.3 {ch "Am"} 0.3 |
+  :2 3.4 {ch "Am/G"} 3.4 |
+  :2 1.4 {ch "F"} 1.4 |
+  :2 0.4 {ch "C/E"} 0.4 |
+  :2 0.2 {ch "Dm"} 0.2 |
+  :2 3.4 {ch "G"} 3.4 |
+  :1 3.3 {ch "C"}

@@ -1,0 +1,40 @@
+title: 'Llegar por la quinta: I–vi–IV–V'
+status: borrador
+instructions: >-
+  La misma progresión en negras sobre la fundamental, y en la cuarta negra, la quinta del acorde siguiente: E
+  antes de Am, C antes de F, D antes de G y G antes de C.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, Am, F, G, C, Am, F, G, C]
+passCriteria:
+  - La quinta del acorde siguiente cae en la última negra
+  - Oyes cómo la quinta "empuja" hacia el acorde nuevo
+  - Encuentras la quinta de cada acorde sin dudar
+tags:
+  - pop
+  - aproximacion
+  - quinta
+  - cambio-de-acorde
+alphaTex: |
+  \title "Llegar por la quinta: I–vi–IV–V"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "C"} 3.3 3.3 0.4 |
+  :4 0.3 {ch "Am"} 0.3 0.3 3.3 |
+  :4 1.4 {ch "F"} 1.4 1.4 0.2 |
+  :4 3.4 {ch "G"} 3.4 3.4 3.4 |
+  :4 3.3 {ch "C"} 3.3 3.3 0.4 |
+  :4 0.3 {ch "Am"} 0.3 0.3 3.3 |
+  :4 1.4 {ch "F"} 1.4 1.4 0.2 |
+  :4 3.4 {ch "G"} 3.4 3.4 3.4 |
+  :1 3.3 {ch "C"}

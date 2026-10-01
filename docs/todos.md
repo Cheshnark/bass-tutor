@@ -15,7 +15,9 @@
 - [ ] alphaTab dibuja una "f" de dinámica por defecto al principio de cada ejercicio; valorar ocultarla.
 - [x] Ampliación común: Leer partitura (clave de Fa, ritmo leído, una línea entera), en borrador. **Ampliación completa.**
 - [ ] Lectura: opción de ocultar la tablatura en cualquier ejercicio (hoy solo en los de lectura).
-- [ ] Itinerario rock/pop · blues/jazz (blues de 12 compases, walking) · funk/soul (octavas, notas muertas, slap).
+- [x] Rock/pop: temario y módulos 1 (El pulso del rock) y 2 (Progresiones pop), en borrador.
+- [ ] Rock/pop: módulos 3 (riffs) y 4 (la canción entera).
+- [ ] Itinerarios blues/jazz (blues de 12 compases, walking) y funk/soul (octavas, notas muertas, slap).
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 
 ## Fase 6: hecha

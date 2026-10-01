@@ -1,0 +1,42 @@
+title: Aproximación cromática
+status: borrador
+instructions: >-
+  Siete corcheas en la fundamental y la octava, medio tono por debajo (cuatro primeros compases) o por encima
+  (cuatro siguientes) de la fundamental del acorde siguiente. Mano en cuarta posición (índice en el traste 4): A
+  y D con el dedo medio en el traste 5, E con el meñique en el 7. La F del compás 6 está en el traste 8:
+  desplaza la mano un traste hacia arriba para tocarla con el meñique y vuelve.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, D, E, A, A, D, E, A, A]
+passCriteria:
+  - La nota de aproximación cae en la última corchea, no antes
+  - El acorde siguiente entra en el 1, justo después
+  - Distingues de oído la aproximación por debajo y por encima
+tags:
+  - rock
+  - aproximacion
+  - cromatico
+  - cambio-de-acorde
+alphaTex: |
+  \title "Aproximación cromática"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 4.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 6.3 |
+  :8 7.3 {ch "E"} 7.3 7.3 7.3 7.3 7.3 7.3 4.4 |
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 4.3 |
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 6.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 8.3 |
+  :8 7.3 {ch "E"} 7.3 7.3 7.3 7.3 7.3 7.3 6.4 |
+  :8 5.4 {ch "A"} 5.4 5.4 5.4 5.4 5.4 5.4 6.4 |
+  :1 5.4 {ch "A"}

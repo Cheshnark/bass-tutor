@@ -1,0 +1,38 @@
+title: 'Un bajo que sube: G, G/B, C'
+status: borrador
+instructions: >-
+  G, G/B y C: el bajo sube G–B–C por medio de la tercera de G. Corcheas en la nota del bajo de cada acorde.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, G/B, C, D, G, G/B, C, D, G]
+passCriteria:
+  - Sobre G/B tocas B, no G
+  - Oyes cómo B lleva a C
+  - Las corcheas son regulares
+tags:
+  - pop
+  - acordes-con-barra
+  - inversiones
+alphaTex: |
+  \title "Un bajo que sube: G, G/B, C"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 3.4 {ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 2.3 {ch "G/B"} 2.3 2.3 2.3 2.3 2.3 2.3 2.3 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 0.2 {ch "D"} 0.2 0.2 0.2 0.2 0.2 0.2 0.2 |
+  :8 3.4 {ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 2.3 {ch "G/B"} 2.3 2.3 2.3 2.3 2.3 2.3 2.3 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 0.2 {ch "D"} 0.2 0.2 0.2 0.2 0.2 0.2 0.2 |
+  :1 3.4 {ch "G"}

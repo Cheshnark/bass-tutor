@@ -1,0 +1,40 @@
+title: Un relleno al final de la frase
+status: borrador
+instructions: >-
+  Frases de cuatro compases: tres compases de corcheas en la fundamental y, en el cuarto, un relleno corto con
+  la pentatónica mayor de Sol (G A B D E) que vuelve a la fundamental en el 1 siguiente.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, C, D, G, G, C, D, G, G]
+passCriteria:
+  - El relleno ocupa solo el final de la frase
+  - Vuelves a la fundamental justo en el 1
+  - El relleno no acelera
+tags:
+  - rock
+  - relleno
+  - pentatonica
+  - frase
+alphaTex: |
+  \title "Un relleno al final de la frase"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 3.4 {ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :4 3.4 {ch "G"} :8 0.3 2.3 0.2 2.2 0.2 2.3 |
+  :8 3.4 {ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :4 3.4 {ch "G"} :8 0.3 2.3 0.2 2.2 0.2 2.3 |
+  :1 3.4 {ch "G"}

@@ -1,0 +1,39 @@
+title: Octavas en corcheas
+status: borrador
+instructions: >-
+  Corcheas alternando fundamental y octava (la forma del tronco común: dos cuerdas más arriba, dos trastes más).
+  Sobre G, C y D. El índice apoyado calla la cuerda del medio.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, G, C, C, D, D, G, G, G]
+passCriteria:
+  - La fundamental y la octava suenan igual de fuertes
+  - La cuerda del medio no suena
+  - El salto de cuerda no rompe la regularidad de las corcheas
+tags:
+  - rock
+  - octava
+  - corcheas
+alphaTex: |
+  \title "Octavas en corcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 5.3 {ch "D"} 7.1 5.3 7.1 5.3 7.1 5.3 7.1 |
+  :8 5.3 {ch "D"} 7.1 5.3 7.1 5.3 7.1 5.3 7.1 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :1 3.4 {ch "G"}

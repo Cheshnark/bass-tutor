@@ -61,6 +61,17 @@ lectura de partitura (4) van a la **ampliación común**; blues y walking (10) a
 funk y slap (12) al itinerario **funk/soul**; la púa (12) ya está en **metal/punk**; el oído (11) está en la app
 (Práctica → Oído). Orden de escritura: ampliación común → rock/pop → blues/jazz → funk/soul.
 
+### Itinerario rock/pop (temario, borrador)
+
+Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también vale aquí.
+
+| Módulo | Lecciones |
+|---|---|
+| 1 · El pulso del rock ✍️ | La corchea de rock · Llegar al acorde siguiente · Octavas y rellenos |
+| 2 · Progresiones pop ✍️ | La progresión I–V–vi–IV · I–vi–IV–V y la quinta del acorde siguiente · Acordes con barra |
+| 3 · Riffs de rock | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
+| 4 · La canción entera | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
+
 ### Itinerario metal/punk (temario, borrador)
 
 Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
@@ -119,6 +130,12 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Shuffle y swing | Shuffle = tresillo con las dos primeras unidas (largo-corto), rígido; swing = más libre, no se escribe exacto; se escribe en corcheas con indicación | StudyBass (Shuffle and Swing Rhythms; The Eighth Note Triplet Subdivision); vídeo de SBL |
 | Notas muertas | Dedos de la izquierda apoyados sin pisar; pulsar normal; más claras cerca del puente; se marcan con x; rellenan entre notas | TalkingBass (How To Play Funky Ghost Note Basslines); Bass Musician Magazine (Kevin Guin, "Dead Notes": los ejercicios de acentos ayudan) |
 | Acentos y dinámica | Acentuar el 1 y los golpes de bombo; tocar más fuerte las acentuadas y relajar las demás | No Treble (Ryan Madora, "Keep It Groovy: Adding Accents To Your Pulsing Bass Line"); vídeo de SBL (dinámica) |
+| Corchea de rock | Corcheas regulares en la fundamental; notas cortas (staccato) en versos y largas en estribillos como recurso de arreglo | Premier Guitar (Victor Brodén, "Tools of the Trade for Bassists: Eighth-Notes"); No Treble (Ryan Madora, corcheas con algo de espacio y acentos) |
+| Notas de aproximación | Al final del compás, antes del cambio; cromática (medio tono, por debajo o por encima) o diatónica (de la escala) | TalkingBass (Using Approach Notes To Improve Your Bass Lines); StudyBass (Chromatic Tones in Basslines: en partes débiles, antes de una nota fuerte) |
+| Aproximación por la quinta | La quinta del acorde siguiente en la última parte del compás; funciona como V→I | StudyBass (The Fifth Approach) |
+| Rellenos | Cortos, al final de la frase, con la pentatónica; volver al 1; sin abusar | StudyBass (Scale Tones in Basslines: rellenos con pentatónica, sin competir con la voz); vídeo de TalkingBass |
+| I–V–vi–IV e I–vi–IV–V | Progresiones de cuatro acordes muy comunes en pop y rock; pensar en grados | StudyBass (The I-V-vi-IV / The I-vi-IV-V Chord Progression); vídeos de Ryan Madora |
+| Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
 | Practicar lectura | 50–60 BPM, contar en voz alta, decir los nombres, no parar, poco y a menudo, mano en posición fija | StudyBass (How to Practice Reading Music); research.md §1.1 (práctica distribuida) |
@@ -173,6 +190,13 @@ Escritas (base del texto):
   [Natural Minor Scale](https://www.studybass.com/lessons/bass-scales/one-octave-natural-minor-scale/) ·
   [How to Practice Scales](https://www.studybass.com/lessons/bass-scales/how-to-practice-scales/) ·
   [Scale Tones in Basslines](https://www.studybass.com/lessons/harmony/scale-tones-in-basslines/)
+- StudyBass — [The Fifth Approach](https://www.studybass.com/lessons/harmony/the-fifth-approach/) ·
+  [Chromatic Tones in Basslines](https://www.studybass.com/lessons/harmony/chromatic-tones-in-basslines/) ·
+  [The I-V-vi-IV Chord Progression](https://www.studybass.com/lessons/harmony/the-I-V-vi-IV-chord-progression/) ·
+  [The I-vi-IV-V Chord Progression](https://www.studybass.com/lessons/harmony/the-I-vi-IV-V-chord-progression/) ·
+  [Slash Chords](https://www.studybass.com/lessons/reading-music/slash-chords/)
+- TalkingBass — [Using Approach Notes To Improve Your Bass Lines](https://www.talkingbass.net/approach-notes/)
+- Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
 - StudyBass — [Pitch Notation](https://www.studybass.com/lessons/reading-music/pitch-notation/) ·
   [Key Signatures](https://www.studybass.com/lessons/reading-music/key-signatures/) ·
   [How to Practice Reading Music](https://www.studybass.com/lessons/reading-music/how-to-practice-reading-music/)
@@ -231,6 +255,11 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Shuffle | [2 Exercises To Develop a Great Shuffle Feel!](https://www.youtube.com/watch?v=xWfRxy9zEmE) | Scott's Bass Lessons |
 | Notas muertas | [How To Play Funky Ghost Note Basslines](https://www.youtube.com/watch?v=s72wZ87tTxk) | TalkingBass |
 | Dinámica | [Groove Harder With These 3 Deadly Dynamics Exercises](https://www.youtube.com/watch?v=fa9jA08bYr4) | Scott's Bass Lessons |
+| Aproximaciones | [Using Approach Notes To Improve Your Bass Lines](https://www.youtube.com/watch?v=9PKpY-48lY4) | TalkingBass |
+| Rellenos | [Easy Bass Fills For Beginners](https://www.youtube.com/watch?v=Cw04DRXhJic) | TalkingBass |
+| I–V–vi–IV | [Beginner Improvisation For Bass Players Vol. II: How To Play Through I-V-vi-IV Chord Progression](https://www.youtube.com/watch?v=3Levh-mS0jI) | Ryan Madora |
+| I–vi–IV–V | [Beginner Improvisation For Bass Players: How To Play The I-vi-IV-V Chord Progression On Bass](https://www.youtube.com/watch?v=YVIhzIhzf3Y) | Ryan Madora |
+| Acordes con barra | [Music Theory For Bass Guitar - Slash Chords & Inversions](https://www.youtube.com/watch?v=emJTSEoWUhE) | TalkingBass |
 | Leer partitura | [How To Read Music On Bass Guitar - Lesson 1](https://www.youtube.com/watch?v=1GAEv__HYwo) | TalkingBass |
 | Leer ritmo | [How To Read Music On Bass Guitar - Basic Rhythms](https://www.youtube.com/watch?v=6tyHYup8muM) | TalkingBass |
 | Leer con acompañamiento | [Reading Music on Bass Guitar [With Play Along]](https://www.youtube.com/watch?v=OsEhzv72V0w) | Dan Hawkins Bass Lessons |
@@ -249,6 +278,9 @@ atribuido a un bajista conocido, porque no pude confirmar que el canal fuera ofi
 
 Módulo 3 (verificados el 2026-10-01): **sin vídeo de drop D**; los que aparecen son de canales que no están entre
 las fuentes reconocidas del curso o enseñan canciones.
+
+Rock/pop, módulo 1 (verificados el 2026-10-01): **sin vídeo de la corchea de rock**; no encontré uno de una fuente
+reconocida centrado en eso (los que hay enseñan canciones).
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.

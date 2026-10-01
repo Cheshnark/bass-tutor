@@ -28,7 +28,7 @@ export const TRACKS: Track[] = [
   {
     id: 'rock-pop',
     label: 'Rock / pop',
-    summary: 'Corcheas firmes en la fundamental, 1-5-8, apagado y, si quieres, púa.',
+    summary: 'Corcheas en la fundamental, aproximaciones, octavas, progresiones pop, riffs y la canción entera.',
   },
   {
     id: 'funk-soul',

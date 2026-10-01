@@ -1,0 +1,40 @@
+title: I–vi–IV–V en Do
+status: borrador
+instructions: >-
+  La progresión I–vi–IV–V en Do (C, Am, F, G) con el arpegio 1-3-5-3 en negras, en primera posición con cuerdas
+  al aire (digitación 1-2-4).
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, Am, F, G, C, Am, F, G, C]
+passCriteria:
+  - Cambias de mayor (C, F, G) a menor (Am) sin pararte
+  - Las notas suenan parejas
+  - Los cambios caen en el 1
+tags:
+  - pop
+  - progresion
+  - arpegios
+  - triadas
+alphaTex: |
+  \title "I–vi–IV–V en Do"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "C"} 2.2 0.1 2.2 |
+  :4 0.3 {ch "Am"} 3.3 2.2 3.3 |
+  :4 1.4 {ch "F"} 0.3 3.3 0.3 |
+  :4 3.4 {ch "G"} 2.3 0.2 2.3 |
+  :4 3.3 {ch "C"} 2.2 0.1 2.2 |
+  :4 0.3 {ch "Am"} 3.3 2.2 3.3 |
+  :4 1.4 {ch "F"} 0.3 3.3 0.3 |
+  :4 3.4 {ch "G"} 2.3 0.2 2.3 |
+  :1 3.3 {ch "C"}
