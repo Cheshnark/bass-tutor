@@ -2,7 +2,16 @@
 
 _Última actualización: 2026-10-01_
 
-## Fases 0–6 cerradas (falta probar el afinador en bajo real); contenido: tronco común y metal/punk (borrador)
+## Fases 0–6 cerradas; Fase 7 (contenido) en curso
+
+### Fase 7 (contenido restante): en curso
+
+- Reparto del currículo original entre la nueva **ampliación común** y los itinerarios: [pedagogy.md](pedagogy.md).
+- **Ampliación común** (nuevo apartado del índice, para cualquier estilo):
+  - **Arpegios**: tríadas mayor y menor, arpegios sobre una progresión, cuatriadas maj7/7/m7 (3 lecciones, 5 ejercicios).
+  - **Escalas**: mayor, menor natural y pentatónica menor, secuencias y notas de paso (3 lecciones, 5 ejercicios).
+  - Ejercicios con la digitación en la partitura y acompañamiento generado.
+- Pendiente: ampliación (groove y feels, leer partitura) e itinerarios rock/pop, blues/jazz y funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -47,7 +56,7 @@ _Última actualización: 2026-10-01_
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
 - **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
-- Tests: 216 unitarios y 162 e2e.
+- Tests: 217 unitarios y 164 e2e.
 
 ### Contenido
 
@@ -80,5 +89,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Revisión manual de accesibilidad (teclado, zoom, lector de pantalla): lista en [accesibilidad.md](accesibilidad.md).
-3. Fase 7 (contenido restante) u otro itinerario (rock/pop es el más cercano a lo ya escrito).
+2. Seguir la Fase 7: ampliación común (groove y feels; leer partitura) y después rock/pop.
+3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

@@ -1,0 +1,42 @@
+title: Tríadas de La mayor y La menor
+status: borrador
+instructions: >-
+  La mayor y La menor en quinta posición, un dedo por traste; el número junto a cada nota es el dedo. Mayor:
+  dedo 2 en la fundamental (traste 5 de la E), 1 en la tercera, 4 en la quinta y la octava. Menor: dedo 1 en la
+  fundamental, 4 en la tercera menor (misma cuerda), 3 en la quinta y la octava. Primero negras, después
+  corcheas subiendo y bajando. Suena con batería y acordes.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, Am, Am, A, Am, A, A]
+passCriteria:
+  - Cambias de forma (mayor/menor) sin pararte en el cambio de compás
+  - El meñique llega al traste de la tercera menor sin trastear
+  - Oyes la diferencia entre la tercera mayor y la menor
+tags:
+  - arpegios
+  - triadas
+  - mayor
+  - menor
+  - quinta-posicion
+alphaTex: |
+  \title "Tríadas de La mayor y La menor"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 7.2{lf 5} |
+  :4 7.2{lf 5} 7.3{lf 5} 4.3{lf 2} 5.4{lf 3} |
+  :4 5.4{lf 2} {ch "Am"} 8.4{lf 5} 7.3{lf 4} 7.2{lf 4} |
+  :4 7.2{lf 4} 7.3{lf 4} 8.4{lf 5} 5.4{lf 2} |
+  :8 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 7.2{lf 5} 7.2{lf 5} 7.3{lf 5} 4.3{lf 2} 5.4{lf 3} |
+  :8 5.4{lf 2} {ch "Am"} 8.4{lf 5} 7.3{lf 4} 7.2{lf 4} 7.2{lf 4} 7.3{lf 4} 8.4{lf 5} 5.4{lf 2} |
+  :4 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 7.2{lf 5} |
+  :1 5.4{lf 3}

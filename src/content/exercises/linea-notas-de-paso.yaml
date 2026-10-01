@@ -1,0 +1,36 @@
+title: Notas de paso entre notas del acorde
+status: borrador
+instructions: >-
+  Notas del acorde en los tiempos 1 y 3 y notas de la escala de La mayor en el 2 y el 4, por grados conjuntos.
+  Sobre A, D, E y A. Fíjate en que en los tiempos fuertes siempre hay una nota del acorde.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, D, E, A, A]
+passCriteria:
+  - En los tiempos 1 y 3 tocas notas del acorde
+  - Las notas de paso suenan igual de fuertes y a tiempo
+  - Sabes qué notas son de paso en cada compás
+tags:
+  - escalas
+  - linea
+  - notas-de-paso
+  - i-iv-v
+alphaTex: |
+  \title "Notas de paso entre notas del acorde"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {ch "A"} 7.4{lf 5} 4.3{lf 2} 7.3{lf 5} |
+  :4 5.3{lf 3} {ch "D"} 7.3{lf 5} 4.2{lf 2} 6.2{lf 4} |
+  :4 7.3{lf 5} {ch "E"} 4.2{lf 2} 6.2{lf 4} 4.2{lf 2} |
+  :4 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 4.3{lf 2} |
+  :1 5.4{lf 3}

@@ -18,7 +18,7 @@ import {
   type Lesson,
   type Module,
 } from './schema'
-import { TRACK_IDS, type TrackId } from './tracks'
+import { SHARED_TRACKS, TRACK_IDS, type TrackId } from './tracks'
 import { withBacking } from './backing'
 
 export interface RawModule {
@@ -249,7 +249,7 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
     if (lessonFile.has(id) && !position.has(id)) position.set(id, position.size)
   }
 
-  // ── Prerrequisitos: deben existir, ir antes y ser del tronco común o del mismo itinerario ──
+  // ── Prerrequisitos: deben existir, ir antes y ser del tronco común, de la ampliación o del mismo itinerario ──
   for (const lesson of lessons) {
     const path = lessonFile.get(lesson.id) ?? lesson.id
     const track = trackOfLesson.get(lesson.id) ?? 'comun'
@@ -257,8 +257,11 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
       const at = position.get(prerequisite)
       const prerequisiteTrack = trackOfLesson.get(prerequisite)
       if (at === undefined) error(path, `prerrequisito "${prerequisite}" no existe`)
-      else if (prerequisiteTrack !== 'comun' && prerequisiteTrack !== track) {
-        error(path, `prerrequisito "${prerequisite}" es del itinerario "${prerequisiteTrack}": solo vale el tronco común o "${track}"`)
+      else if (prerequisiteTrack && !SHARED_TRACKS.includes(prerequisiteTrack) && prerequisiteTrack !== track) {
+        error(
+          path,
+          `prerrequisito "${prerequisite}" es del itinerario "${prerequisiteTrack}": solo vale el tronco común, la ampliación o "${track}"`,
+        )
       } else if (at >= (position.get(lesson.id) ?? 0)) {
         error(path, `prerrequisito "${prerequisite}" va después (o es la misma lección) en el orden del curso`)
       }

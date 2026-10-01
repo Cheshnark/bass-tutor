@@ -1,6 +1,6 @@
 import { lessonsOf, moduleNumber, modulesOf } from '../../content/course'
 import type { Module } from '../../content/schema'
-import { TRACKS } from '../../content/tracks'
+import { getTrack, STYLE_TRACKS } from '../../content/tracks'
 import { PracticeReminder } from '../Practice/PracticeReminder'
 import { useLessonsProgress } from '../../state/progress/hooks'
 import type { LessonProgress } from '../../state/progress/model'
@@ -60,8 +60,10 @@ function ModuleBlock({ module, progress, headingLevel }: ModuleBlockProps) {
 
 /** Índice del curso: tronco común, itinerarios por estilo y tu progreso. */
 export function CourseIndex() {
-  const [common, ...styles] = TRACKS
+  const common = getTrack('comun')
   const commonModules = modulesOf(common.id)
+  const extra = getTrack('ampliacion')
+  const extraModules = modulesOf(extra.id)
   const progress = useLessonsProgress()
 
   return (
@@ -78,10 +80,20 @@ export function CourseIndex() {
         ))}
       </section>
 
+      {extraModules.length > 0 && (
+        <section className="course-track" aria-labelledby="track-ampliacion">
+          <h3 id="track-ampliacion">{extra.label}</h3>
+          <p className="hint">{extra.summary}</p>
+          {extraModules.map((m) => (
+            <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
+          ))}
+        </section>
+      )}
+
       <section className="course-track" aria-labelledby="track-styles">
         <h3 id="track-styles">Itinerarios por estilo</h3>
         <p className="hint">Cuando termines el tronco común, elige uno (o varios).</p>
-        {styles.map((track) => {
+        {STYLE_TRACKS.map((track) => {
           const modules = modulesOf(track.id)
           return (
             <section key={track.id} className="course-style" aria-labelledby={`track-${track.id}`}>

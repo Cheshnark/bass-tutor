@@ -1,0 +1,39 @@
+title: "Séptimas de dominante: A7, D7 y E7"
+status: borrador
+instructions: >-
+  Arpegios de séptima de dominante (R 3 5 b7) sobre A7, D7 y E7, como en un blues. A7 con la raíz en la E
+  (traste 5); D7 y E7 con la raíz en la A (trastes 5 y 7).
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A7, D7, A7, A7, E7, D7, A7, A7]
+passCriteria:
+  - La séptima menor (b7) suena con el dedo 2
+  - Los cambios caen en el 1
+  - Reconoces el sonido "blues" de la séptima de dominante
+tags:
+  - arpegios
+  - cuatriadas
+  - septimas
+  - i-iv-v
+alphaTex: |
+  \title "Séptimas de dominante: A7, D7 y E7"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {ch "A7"} 4.3{lf 2} 7.3{lf 5} 5.2{lf 3} |
+  :4 5.3{lf 3} {ch "D7"} 4.2{lf 2} 7.2{lf 5} 5.1{lf 3} |
+  :4 5.4{lf 3} {ch "A7"} 4.3{lf 2} 7.3{lf 5} 5.2{lf 3} |
+  :4 7.2{lf 5} 5.2{lf 3} 7.3{lf 5} 4.3{lf 2} |
+  :4 7.3{lf 3} {ch "E7"} 6.2{lf 2} 9.2{lf 5} 7.1{lf 3} |
+  :4 5.3{lf 3} {ch "D7"} 4.2{lf 2} 7.2{lf 5} 5.1{lf 3} |
+  :4 5.4{lf 3} {ch "A7"} 4.3{lf 2} 7.3{lf 5} 5.2{lf 3} |
+  :1 5.4{lf 3}

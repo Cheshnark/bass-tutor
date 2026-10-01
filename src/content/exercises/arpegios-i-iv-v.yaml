@@ -1,0 +1,39 @@
+title: Arpegios sobre A, D y E
+status: borrador
+instructions: >-
+  La tríada mayor sobre A (raíz en la E, traste 5), D (raíz en la A, traste 5) y E (raíz en la A, traste 7). La
+  forma es la misma en los tres acordes; solo cambia de sitio. Primero negras y luego corcheas.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, D, E, A, A, D, E, A]
+passCriteria:
+  - Mantienes la misma forma de mano en los tres acordes
+  - Los cambios de acorde caen en el 1 sin huecos
+  - Las notas suenan parejas y apagadas al cambiar de cuerda
+tags:
+  - arpegios
+  - triadas
+  - i-iv-v
+  - acordes
+alphaTex: |
+  \title "Arpegios sobre A, D y E"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 7.2{lf 5} |
+  :4 5.3{lf 3} {ch "D"} 4.2{lf 2} 7.2{lf 5} 7.1{lf 5} |
+  :4 7.3{lf 3} {ch "E"} 6.2{lf 2} 9.2{lf 5} 9.1{lf 5} |
+  :4 7.2{lf 5} {ch "A"} 7.3{lf 5} 4.3{lf 2} 5.4{lf 3} |
+  :8 5.4{lf 3} {ch "A"} 4.3{lf 2} 7.3{lf 5} 7.2{lf 5} 7.2{lf 5} 7.3{lf 5} 4.3{lf 2} 5.4{lf 3} |
+  :8 5.3{lf 3} {ch "D"} 4.2{lf 2} 7.2{lf 5} 7.1{lf 5} 7.1{lf 5} 7.2{lf 5} 4.2{lf 2} 5.3{lf 3} |
+  :8 7.3{lf 3} {ch "E"} 6.2{lf 2} 9.2{lf 5} 9.1{lf 5} 9.1{lf 5} 9.2{lf 5} 6.2{lf 2} 7.3{lf 3} |
+  :1 5.4{lf 3} {ch "A"}

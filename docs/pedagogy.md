@@ -39,9 +39,27 @@ Complementa [research.md](research.md) (§1–2, §10) y [content-guide.md](cont
   | 4 · Ubicarse | Tablatura · Las 12 notas en E y A · La forma de octava |
   | 5 · Primeras líneas | Seguir la fundamental · Fundamental y quinta · 1-5-8 sobre I–IV–V |
 
+- **Ampliación común** (tras el tronco común, en paralelo a cualquier itinerario): lo que vale para todos los estilos.
+  Sus lecciones pueden ser prerrequisito de cualquier itinerario.
+
+  | Módulo | Lecciones |
+  |---|---|
+  | 1 · Arpegios ✍️ | Tríadas: mayor y menor · Arpegios sobre una progresión · Cuatriadas: maj7, 7 y m7 |
+  | 2 · Escalas ✍️ | La escala mayor · Menor natural y pentatónica menor · De la escala a la línea |
+  | 3 · Groove y feels | Síncopa · Shuffle y swing · Notas muertas y dinámica |
+  | 4 · Leer partitura | La clave de Fa · Ritmo leído · Leer una línea entera |
+
 - **Itinerarios por estilo** (tras el tronco común): Rock/pop · Funk/soul/Motown · Blues/jazz · Metal/punk.
   Cada uno enseña el *feel* de su estilo y la teoría que ese estilo necesita. Una lección de un itinerario solo puede
   depender del tronco común o de su propio itinerario (lo comprueba `content:check`).
+
+### Fase 7: de dónde sale el contenido restante
+
+El currículo original (research.md §2, módulos 0–12) se reparte así: 0–3 y la parte básica de 4–6 (tablatura, notas
+del mástil, fundamental-quinta-octava) ya están en el **tronco común**; arpegios (7), escalas (8), groove (9) y
+lectura de partitura (4) van a la **ampliación común**; blues y walking (10) al itinerario **blues/jazz**; octavas
+funk y slap (12) al itinerario **funk/soul**; la púa (12) ya está en **metal/punk**; el oído (11) está en la app
+(Práctica → Oído). Orden de escritura: ampliación común → rock/pop → blues/jazz → funk/soul.
 
 ### Itinerario metal/punk (temario, borrador)
 
@@ -89,6 +107,13 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Grosor de la púa | Media-gruesa (0,8–1,2 mm) para empezar; probar varias | StudyBass (Pick vs Fingers: experimentar); comentarios al vídeo de BassBuzz (~1 mm). **Fuente débil: es un punto de partida, no una regla** |
 | Dónde y cómo pulsar con púa | Cerca del puente; talón de la mano callando las graves; movimiento pequeño de muñeca | TalkingBass (Beginner Guide…: puente = sonido más ajustado; talón de la mano calla las cuerdas). Muñeca: Wikipedia (Downpicking) y foros (TalkBass). **Fuente débil para la muñeca; contrastar con los vídeos** |
 | Solo abajo vs alterna | Abajo = sonido más pesado y uniforme, pero cansa; alterna para tempos altos y semicorcheas | Wikipedia (Downpicking: más "pesado", exige resistencia; Ramones a 180–200 BPM); foro TalkBass/BassBuzz (corcheas hacia abajo como base del rock/punk) |
+| Notas del acorde primero | En el bajo, las notas del acorde son lo principal y las de la escala, secundarias: arpegios antes que escalas | StudyBass (Chord Tones Are Primary; Chord Tones in Basslines); TalkingBass (Easy Bass Arpeggios: el arpegio "dibuja" la progresión) |
+| Formas de arpegio | Mayor: dedo 2 en la raíz, 1 en la 3.ª (cuerda siguiente, un traste atrás), 4 en la 5.ª y la octava. Menor: 1 en la raíz, 4 en la ♭3 (misma cuerda), 3 en la 5.ª y la octava. maj7: 7.ª con el 3; 7: ♭7 con el 2; m7: ♭7 con el 1 | StudyBass (One-Octave Major/Minor Triad, Major 7th, Dominant 7th, Minor 7th); TalkingBass (Easy Bass Arpeggios). **Son de un dedo por traste**: se enseñan en 5.ª posición para no contradecir el 1-2-4 de los trastes bajos |
+| Orden de las notas | Las notas del acorde no tienen que ir en orden; la fundamental en el 1 | StudyBass (One-Octave Major Triad); TalkingBass (Easy Bass Arpeggios: no hace falta tocar el arpegio entero) |
+| Escala mayor | T T S T T T S; una octava con el dedo 2 en la raíz y la mano quieta | StudyBass (One-Octave Major Scale); vídeo de TalkingBass. Las posiciones dedo a dedo se dedujeron de la regla de un dedo por traste y se verificaron con Tonal (el resumen automático de la página daba una digitación incoherente) |
+| Menor natural | Dedo 1 en la raíz; 1-3-4 / 1-3-4 / 1-3 | StudyBass (One-Octave Natural Minor Scale) |
+| Practicar escalas | Subir y bajar, empezar por arriba, secuencias de 3 y saltos de tercera; no solo de grave a agudo | StudyBass (How to Practice Scales); vídeo de BassBuzz (escalas sin ser un robot) |
+| Notas de paso | Notas del acorde en los tiempos fuertes; las de la escala en los débiles, por grados | StudyBass (Scale Tones in Basslines) |
 | Semicorcheas | Contar "1 e y a"; púa alterna: abajo en el número y en la "y", arriba en la "e" y en la "a" | LibreTexts (Counting, sixteenth notes); vídeo de TalkingBass. Contar en voz alta: ver la fila "Contar" |
 | Galope | Corchea + dos semicorcheas (1 · y · a); la mano sigue en semicorcheas con un **golpe al aire** en la "e" (abajo-(arriba)-abajo-arriba). Inverso: dos semicorcheas + corchea | Ritmo: Wikipedia (Heavy metal gallop). Púa: Fundamental Changes (Rob Thorpe, Metal Picking Riffs: "Down-Down-Up" manteniendo el movimiento de semicorcheas); Riffhard (alternar y estar relajado). **Solo una fuente detalla el golpe al aire** |
 | Resistencia | Mínimo esfuerzo, sin tensión; practicar casi a diario; alargar la práctica poco a poco; subir 5 BPM cuando sale **fácil** varias veces; dolor = parar | No Treble (Donovan Stokes, "Developing Stamina" y "Playing Bass… Fast": subir 5 BPM tras diez pases fáciles; "tocar rápido bien se siente fácil"); No Treble ("Avoiding Injury") |
@@ -129,6 +154,17 @@ Escritas (base del texto):
 - Wikipedia — [Drop D tuning](https://en.wikipedia.org/wiki/Drop_D_tuning) · [Power chord](https://en.wikipedia.org/wiki/Power_chord) ·
   [Heavy metal bass](https://en.wikipedia.org/wiki/Heavy_metal_bass) · [Phrygian mode](https://en.wikipedia.org/wiki/Phrygian_mode) ·
   [Tritone](https://en.wikipedia.org/wiki/Tritone)
+- StudyBass — [Chord Tones Are Primary](https://www.studybass.com/lessons/bass-chord-patterns/chord-tones-are-primary/) ·
+  [One-Octave Major Triad](https://www.studybass.com/lessons/bass-chord-patterns/one-octave-major-triad/) ·
+  [Minor Triad](https://www.studybass.com/lessons/bass-chord-patterns/one-octave-minor-triad/) ·
+  [Major 7th](https://www.studybass.com/lessons/bass-chord-patterns/one-octave-major-7th/) ·
+  [Dominant 7th](https://www.studybass.com/lessons/bass-chord-patterns/one-octave-dominant-7th/) ·
+  [Minor 7th](https://www.studybass.com/lessons/bass-chord-patterns/one-octave-minor-7th/) ·
+  [One-Octave Major Scale](https://www.studybass.com/lessons/bass-scales/one-octave-major-scale/) ·
+  [Natural Minor Scale](https://www.studybass.com/lessons/bass-scales/one-octave-natural-minor-scale/) ·
+  [How to Practice Scales](https://www.studybass.com/lessons/bass-scales/how-to-practice-scales/) ·
+  [Scale Tones in Basslines](https://www.studybass.com/lessons/harmony/scale-tones-in-basslines/)
+- TalkingBass — [Easy Bass Arpeggios For Beginners](https://www.talkingbass.net/easy-bass-arpeggios-for-beginners/)
 - Wikipedia — [Punk rock](https://en.wikipedia.org/wiki/Punk_rock) · [Extended-range bass](https://en.wikipedia.org/wiki/Extended-range_bass)
 - Worship Artistry (Daniel Ornellas) — [The Relationship Between Bass and Drums](https://worshipartistry.com/greenroom/bass/the-relationship-between-bass-and-drums)
 - Wikiversity (Joseph Patrick Moore) — [How to lock in with a drummer](https://en.wikiversity.org/wiki/Learning_bass_guitar_with_Joseph_Patrick_Moore/How_to_lock_in_with_a_drummer)
@@ -165,6 +201,11 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Resistencia | [Build Speed, Stamina, Strength & Excellent Bass Technique](https://www.youtube.com/watch?v=YKjO-0Y2MzA) | Dan Hawkins Bass Lessons |
 | Riffs | [Rock Bass - Learn How To Make Riffs](https://www.youtube.com/watch?v=pQCf47_kK5c) | Dan Hawkins Bass Lessons |
 | Modos (frigio) | [Modes For Bass Explained..In Record Time!](https://www.youtube.com/watch?v=x6mnPBMJWOc) | TalkingBass |
+| Arpegios | [Easy Bass Arpeggios For Beginners](https://www.youtube.com/watch?v=7vF_lcAc-L8) | TalkingBass |
+| Practicar arpegios | ['How to practice Arpeggios' Pt 1 - BASS LESSON (L#12)](https://www.youtube.com/watch?v=DChylf5mNNg) | Scott's Bass Lessons |
+| Escala mayor | [Major Scale For Bass Guitar](https://www.youtube.com/watch?v=uYf7RN_PHkk) | TalkingBass |
+| Pentatónica menor | [The Minor Pentatonic Scale For Bass Guitar](https://www.youtube.com/watch?v=hhnf8nVUgDM) | TalkingBass |
+| Practicar escalas | [How to Learn Bass Scales (Become a Better Bassist, Not a Robot)](https://www.youtube.com/watch?v=2PzUVcDkjX8) | BassBuzz |
 | Bombo | [Creating Bass Lines #1 - Locking With The Bass Drum](https://www.youtube.com/watch?v=4Ty2gkdW8xw) | TalkingBass |
 | Con batería | [How to Play Bass with a Drummer (Foolproof Beginner Blueprint)](https://www.youtube.com/watch?v=PSw5uqkTPzs) | BassBuzz |
 | 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |

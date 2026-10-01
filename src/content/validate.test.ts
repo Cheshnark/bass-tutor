@@ -264,7 +264,30 @@ describe('validateCourse', () => {
     expect(result.course.modules.map((m) => m.id)).toEqual(['base', 'rock-1', 'funk-1'])
     expect(result.course.lessons.map((l) => l.id)).toEqual(['base-a', 'rock-a', 'funk-a'])
     expect(errors(raw)).toEqual([
-      'modules/10-funk-1/funk-a.mdx: prerrequisito "rock-a" es del itinerario "rock-pop": solo vale el tronco común o "funk-soul"',
+      'modules/10-funk-1/funk-a.mdx: prerrequisito "rock-a" es del itinerario "rock-pop": solo vale el tronco común, la ampliación o "funk-soul"',
+    ])
+  })
+
+  it('ampliación común: va tras el tronco común y vale como prerrequisito de cualquier estilo', () => {
+    const module = (dir: string, track: string, lessons: string[]) => ({
+      dir,
+      data: { title: dir, summary: 'x', track, lessons },
+      lessons: lessons.map((id) => ({ file: `${id}.mdx`, source: lesson() })),
+    })
+    const raw = course({
+      modules: [
+        module('20-funk-1', 'funk-soul', ['funk-a']),
+        module('50-arpegios', 'ampliacion', ['arp-a']),
+        module('00-base', 'comun', ['base-a']),
+      ],
+    })
+    raw.modules[0].lessons[0].source = lesson({ prerequisites: ['base-a', 'arp-a'] })
+    raw.modules[2].lessons[0].source = lesson({ prerequisites: ['arp-a'] })
+    const result = validateCourse(raw)
+    expect(result.course.modules.map((m) => m.id)).toEqual(['base', 'arpegios', 'funk-1'])
+    // El tronco común no puede depender de la ampliación (va antes en el curso).
+    expect(errors(raw)).toEqual([
+      'modules/00-base/base-a.mdx: prerrequisito "arp-a" va después (o es la misma lección) en el orden del curso',
     ])
   })
 

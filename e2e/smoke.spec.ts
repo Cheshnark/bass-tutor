@@ -101,3 +101,11 @@ test('los ejercicios con armonía suenan con batería y acordes, y se puede sile
   // Un ejercicio sin armonía no tiene acompañamiento.
   await expect(page.getByTestId('exercise-fundamental-quinta').getByRole('button', { name: /^Bajo:/ })).toHaveCount(0)
 })
+
+test('el índice muestra la ampliación común tras el tronco común', async ({ page }) => {
+  await page.goto('/')
+  const extra = page.getByRole('region', { name: 'Ampliación común' })
+  await expect(extra.getByRole('heading', { name: /^1 Arpegios/, level: 4 })).toBeVisible()
+  await extra.getByRole('link', { name: /Tríadas: mayor y menor/ }).click()
+  await expect(page.getByText('Ampliación común · Módulo 1 · Arpegios')).toBeVisible()
+})

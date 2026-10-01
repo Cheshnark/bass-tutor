@@ -1,0 +1,38 @@
+title: Amaj7, A7 y Am7
+status: borrador
+instructions: >-
+  Tres cuatriadas sobre La, en quinta posición: Amaj7 (la séptima mayor con el dedo 3), A7 (la séptima menor con
+  el dedo 2) y Am7 (forma menor con la séptima con el dedo 1). Sube y baja cada una.
+tempo:
+  start: 60
+  target: 90
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Amaj7, Amaj7, A7, A7, Am7, Am7, A7, A7]
+passCriteria:
+  - Sabes qué dedo toca la séptima en cada acorde
+  - Oyes la diferencia entre maj7, 7 y m7
+  - "La mano no se mueve: todo en quinta posición"
+tags:
+  - arpegios
+  - cuatriadas
+  - septimas
+alphaTex: |
+  \title "Amaj7, A7 y Am7"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {ch "Amaj7"} 4.3{lf 2} 7.3{lf 5} 6.2{lf 4} |
+  :4 7.2{lf 5} 6.2{lf 4} 7.3{lf 5} 4.3{lf 2} |
+  :4 5.4{lf 3} {ch "A7"} 4.3{lf 2} 7.3{lf 5} 5.2{lf 3} |
+  :4 7.2{lf 5} 5.2{lf 3} 7.3{lf 5} 4.3{lf 2} |
+  :4 5.4{lf 2} {ch "Am7"} 8.4{lf 5} 7.3{lf 4} 5.2{lf 2} |
+  :4 7.2{lf 4} 5.2{lf 2} 7.3{lf 4} 8.4{lf 5} |
+  :4 5.4{lf 3} {ch "A7"} 4.3{lf 2} 7.3{lf 5} 5.2{lf 3} |
+  :1 5.4{lf 3}

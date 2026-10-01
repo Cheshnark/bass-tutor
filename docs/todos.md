@@ -8,6 +8,14 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Fase 7: en curso
+
+- [x] Ampliación común: Arpegios (3 lecciones) y Escalas (3 lecciones), en borrador.
+- [ ] Ampliación común: Groove y feels (síncopa, shuffle/swing, notas muertas y dinámica).
+- [ ] Ampliación común: Leer partitura (clave de Fa, ritmo leído, una línea entera).
+- [ ] Itinerario rock/pop · blues/jazz (blues de 12 compases, walking) · funk/soul (octavas, notas muertas, slap).
+- [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
+
 ## Fase 6: hecha
 
 - [x] Tema cabezal, alto contraste (y automático), Ajustes en página propia, modo atril, piloto en cabecera, VU.

@@ -1,0 +1,40 @@
+title: Una línea con las notas del acorde
+status: borrador
+instructions: >-
+  Una línea hecha solo con notas del acorde, pero sin tocarlas en orden: fundamental, fundamental, quinta…
+  octava, tercera, quinta. Es el mismo ritmo en cada acorde (A, D y E). Escucha cómo suena a línea de bajo y no
+  a ejercicio.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A, A, D, D, E, D, A, A]
+passCriteria:
+  - La fundamental cae siempre en el 1
+  - El ritmo es el mismo en todos los compases
+  - Los saltos de cuerda no cortan la nota anterior antes de tiempo
+tags:
+  - arpegios
+  - linea
+  - fundamental
+  - acordes
+alphaTex: |
+  \title "Una línea con las notas del acorde"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{lf 3} {ch "A"} 5.4{lf 3} :4 7.3{lf 5} :8 7.2{lf 5} 4.3{lf 2} :4 7.3{lf 5} |
+  :8 5.4{lf 3} {ch "A"} 5.4{lf 3} :4 7.3{lf 5} :8 7.2{lf 5} 4.3{lf 2} :4 7.3{lf 5} |
+  :8 5.3{lf 3} {ch "D"} 5.3{lf 3} :4 7.2{lf 5} :8 7.1{lf 5} 4.2{lf 2} :4 7.2{lf 5} |
+  :8 5.3{lf 3} {ch "D"} 5.3{lf 3} :4 7.2{lf 5} :8 7.1{lf 5} 4.2{lf 2} :4 7.2{lf 5} |
+  :8 7.3{lf 3} {ch "E"} 7.3{lf 3} :4 9.2{lf 5} :8 9.1{lf 5} 6.2{lf 2} :4 9.2{lf 5} |
+  :8 5.3{lf 3} {ch "D"} 5.3{lf 3} :4 7.2{lf 5} :8 7.1{lf 5} 4.2{lf 2} :4 7.2{lf 5} |
+  :8 5.4{lf 3} {ch "A"} 5.4{lf 3} :4 7.3{lf 5} :8 7.2{lf 5} 4.3{lf 2} :4 7.3{lf 5} |
+  :1 5.4{lf 3} {ch "A"}

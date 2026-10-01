@@ -316,3 +316,14 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Modo atril (ajuste persistente): sin cabecera ni pestañas, letra a 21 px, todo el ancho y la cabecera de la lección
   reducida al título (en horizontal la altura es poca). Se activa desde la lección o desde Ajustes.
 - Los objetivos de la lección van plegados en el modo paso a paso (en el móvil ocupaban el primer paso entero).
+
+## 2026-10-01 · Fase 7: "Ampliación común" como itinerario compartido
+- **Motivo:** los módulos 4–12 del currículo original ya no encajan tal cual: lo básico está en el tronco común y lo de
+  cada estilo, en su itinerario. Arpegios, escalas, groove y lectura valen para todos: van a un itinerario nuevo,
+  `ampliacion` (carpetas 50–59), que se muestra tras el tronco común y cuyas lecciones pueden ser prerrequisito de
+  cualquier estilo (`SHARED_TRACKS`). No se metió en el tronco común para no alargar el camino hasta elegir estilo.
+- Arpegios y escalas en **quinta posición** (La en el traste 5): las formas de StudyBass son de un dedo por traste y
+  así no contradicen la digitación 1-2-4 de los trastes bajos.
+- Ejercicios generados con verificación nota a nota contra Tonal (grado y pertenencia al acorde/escala) y con la
+  **digitación en la partitura** (`{lf}`). La verificación detectó un error en una línea escrita a mano (G en vez de
+  G# en La mayor); otro (una nota fuera del acorde en un tiempo fuerte) lo vi al releerla, y ahora también se comprueba.

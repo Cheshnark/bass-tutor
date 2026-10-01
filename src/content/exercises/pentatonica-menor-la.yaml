@@ -1,0 +1,38 @@
+title: Pentatónica menor de La
+status: borrador
+instructions: >-
+  La pentatónica menor de La (R b3 4 5 b7): la menor natural sin la segunda ni la sexta. Primero la escala y
+  después una línea original con ella sobre Am.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Am, Am, Am, Am, Am, Am, Am, Am]
+passCriteria:
+  - Sabes qué dos notas de la menor natural faltan
+  - La línea suena igual en los dos compases que se repiten
+  - La fundamental cae en el 1
+tags:
+  - escalas
+  - pentatonica
+  - linea
+alphaTex: |
+  \title "Pentatónica menor de La"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 2} {ch "Am"} 8.4{lf 5} 5.3{lf 2} 7.3{lf 4} |
+  :4 5.2{lf 2} 7.2{lf 4} 5.2{lf 2} 7.3{lf 4} |
+  :4 5.3{lf 2} 8.4{lf 5} 5.4{lf 2} 8.4{lf 5} |
+  :1 5.4{lf 2} |
+  :8 5.4{lf 2} {ch "Am"} 5.4{lf 2} 8.4{lf 5} 5.3{lf 2} :4 7.3{lf 4} :8 5.2{lf 2} 7.3{lf 4} |
+  :8 7.2{lf 4} 5.2{lf 2} 7.3{lf 4} 5.3{lf 2} :4 8.4{lf 5} :4 5.4{lf 2} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.3{lf 2} :4 7.3{lf 4} :8 5.2{lf 2} 7.3{lf 4} |
+  :1 5.4{lf 2}

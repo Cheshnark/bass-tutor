@@ -30,7 +30,7 @@ src/content/
 ```yaml
 title: Arranque
 summary: Partes del bajo, afinación, postura y primeras notas con metrónomo.
-track: comun        # comun | rock-pop | funk-soul | blues-jazz | metal-punk (por defecto, comun)
+track: comun        # comun | ampliacion | rock-pop | funk-soul | blues-jazz | metal-punk (por defecto, comun)
 lessons:            # orden de estudio; única fuente del orden
   - cuerdas-al-aire
 ```
@@ -42,6 +42,7 @@ Toda lección `.mdx` de la carpeta tiene que estar en `lessons`, y todo lo lista
 | Itinerario | Carpetas |
 |---|---|
 | Tronco común | `00`–`09` |
+| Ampliación común | `50`–`59` |
 | Rock/pop | `10`–`19` |
 | Funk/soul | `20`–`29` |
 | Blues/jazz | `30`–`39` |
@@ -144,6 +145,9 @@ alphaTex: |
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.
 - **Cifrado sobre la partitura**: pon `{ch "G"}` detrás de la primera nota del acorde (`3.4 {ch "G"} 3.4 3.4 3.4`).
   Si el ejercicio tiene acordes, añade también `backing.harmony` (un acorde por compás).
+- **Digitación** (dedos de la mano izquierda): `{lf N}` pegado a la nota, con N = dedo + 1 (`lf 2` índice … `lf 5`
+  meñique; `lf 1` es el pulgar). alphaTab dibuja el número del dedo junto a la nota: `5.4{lf 3}` = traste 5 con el
+  dedo 2.
 - **Púa** (itinerario metal/punk): `instrument "Electric Bass Pick"`. Dirección de cada golpe como efecto del pulso,
   `{sd}` hacia abajo (⊓) y `{su}` hacia arriba (V). **Palm mute** como efecto de la nota, pegado a ella: `0.4{pm}`.
   Se combinan así: `0.4{pm} {sd ch "E5"}`. Acordes de quinta (*power chords*): `E5`, `C5`…
