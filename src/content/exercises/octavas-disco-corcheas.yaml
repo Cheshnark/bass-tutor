@@ -1,0 +1,39 @@
+title: Octavas de disco
+status: borrador
+instructions: >-
+  La línea de octavas del disco: fundamental (dedo 1) y octava (dedo 4) en corcheas, abajo en el pulso y arriba en
+  la "y". Am7, Dm7 y Em7: la misma forma, dos cuerdas por encima y dos trastes más. Apaga la cuerda del medio.
+tempo:
+  start: 90
+  target: 124
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Am7, Am7, Dm7, Em7, Am7, Am7, Dm7, Em7, Am7]
+passCriteria:
+  - La octava suena igual de fuerte que la fundamental
+  - No suena la cuerda del medio al saltar
+  - Los cambios de acorde no interrumpen las corcheas
+tags:
+  - funk
+  - disco
+  - octavas
+alphaTex: |
+  \title "Octavas de disco"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 90
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{lf 2} {ch "Am7"} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} |
+  :8 5.3{lf 2} {ch "Dm7"} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} |
+  :8 7.3{lf 2} {ch "Em7"} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} 5.4{lf 2} 7.2{lf 5} |
+  :8 5.3{lf 2} {ch "Dm7"} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} 5.3{lf 2} 7.1{lf 5} |
+  :8 7.3{lf 2} {ch "Em7"} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} 7.3{lf 2} 9.1{lf 5} |
+  :1 5.4{lf 2} {ch "Am7"}

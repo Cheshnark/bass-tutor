@@ -1,0 +1,41 @@
+title: El vamp Em7 – A7
+status: borrador
+instructions: >-
+  Dos acordes, dos compases cada uno, durante todo el ejercicio: así son muchos temas de funk. Un groove original con
+  fundamental, octava, séptima, quinta y tercera de cada acorde (G sobre Em7, C♯ sobre A7). Las notas cambian con el
+  acorde, el ritmo no.
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, A7, A7, Em7, Em7, A7, A7, Em7]
+passCriteria:
+  - Oyes la diferencia entre la tercera menor (G) y la mayor (C♯)
+  - El ritmo es idéntico en los dos acordes
+  - Los silencios y las notas muertas están en su sitio
+tags:
+  - funk
+  - vamp
+  - dorico
+  - semicorcheas
+alphaTex: |
+  \title "El vamp Em7 – A7"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {ch "Em7"} 0.4{x} r 2.2 r 0.2 2.3 0.4{x} 3.4 r 0.4{x} 0.4 :8 r :16 0.2 2.2 |
+  :16 0.4 {ch "Em7"} 0.4{x} r 2.2 r 0.2 2.3 0.4{x} 3.4 r 0.4{x} 0.4 :8 r :16 0.2 2.2 |
+  :16 0.3 {ch "A7"} 0.3{x} r 2.1 r 0.1 2.2 0.3{x} 4.3 r 0.3{x} 0.3 :8 r :16 0.1 2.1 |
+  :16 0.3 {ch "A7"} 0.3{x} r 2.1 r 0.1 2.2 0.3{x} 4.3 r 0.3{x} 0.3 :8 r :16 0.1 2.1 |
+  :16 0.4 {ch "Em7"} 0.4{x} r 2.2 r 0.2 2.3 0.4{x} 3.4 r 0.4{x} 0.4 :8 r :16 0.2 2.2 |
+  :16 0.4 {ch "Em7"} 0.4{x} r 2.2 r 0.2 2.3 0.4{x} 3.4 r 0.4{x} 0.4 :8 r :16 0.2 2.2 |
+  :16 0.3 {ch "A7"} 0.3{x} r 2.1 r 0.1 2.2 0.3{x} 4.3 r 0.3{x} 0.3 :8 r :16 0.1 2.1 |
+  :16 0.3 {ch "A7"} 0.3{x} r 2.1 r 0.1 2.2 0.3{x} 4.3 r 0.3{x} 0.3 :8 r :16 0.1 2.1 |
+  :1 0.4 {ch "Em7"}

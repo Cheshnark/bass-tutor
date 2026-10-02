@@ -1,0 +1,39 @@
+title: Semicorcheas con cambio de acorde
+status: borrador
+instructions: >-
+  Semicorcheas en la fundamental sobre un vamp típico del funk: Em7 y A7, dos compases cada uno (E y A al aire). Al
+  cambiar de cuerda, la alternancia de dedos sigue sin cortarse.
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, A7, A7, Em7, Em7, A7, A7, Em7]
+passCriteria:
+  - El cambio de cuerda no rompe la alternancia ni el pulso
+  - Las semicorcheas suenan iguales de fuertes y de largas
+  - Aguantas los ocho compases sin tensión en la mano
+tags:
+  - funk
+  - semicorcheas
+  - cambio-de-acorde
+alphaTex: |
+  \title "Semicorcheas con cambio de acorde"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.3 {ch "A7"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :16 0.3 {ch "A7"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.3 {ch "A7"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :16 0.3 {ch "A7"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :1 0.4 {ch "Em7"}

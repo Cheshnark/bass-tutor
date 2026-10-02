@@ -1,0 +1,40 @@
+title: Notas cortas y espacio
+status: borrador
+instructions: >-
+  Muy pocas notas y muy cortas: la fundamental en el 1 y en la "y" del 2, y la quinta en el 4. El resto, silencio.
+  Corta cada nota aflojando el dedo de la mano izquierda (o apoyando la derecha). En el soul, lo que no tocas deja
+  sitio a la voz.
+tempo:
+  start: 70
+  target: 100
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, Am, F, G, C, Am, F, G, C]
+passCriteria:
+  - Las notas son cortas y del mismo largo
+  - Los silencios suenan limpios, sin cuerdas al aire
+  - El tempo no se acelera aunque haya poco que tocar
+tags:
+  - soul
+  - staccato
+  - espacio
+alphaTex: |
+  \title "Notas cortas y espacio"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 3.3{st} {ch "C"} r r 3.3{st} :4 r :8 5.2{st} r |
+  :8 0.3{st} {ch "Am"} r r 0.3{st} :4 r :8 2.2{st} r |
+  :8 1.4{st} {ch "F"} r r 1.4{st} :4 r :8 3.3{st} r |
+  :8 3.4{st} {ch "G"} r r 3.4{st} :4 r :8 0.2{st} r |
+  :8 3.3{st} {ch "C"} r r 3.3{st} :4 r :8 5.2{st} r |
+  :8 0.3{st} {ch "Am"} r r 0.3{st} :4 r :8 2.2{st} r |
+  :8 1.4{st} {ch "F"} r r 1.4{st} :4 r :8 3.3{st} r |
+  :8 3.4{st} {ch "G"} r r 3.4{st} :4 r :8 0.2{st} r |
+  :1 3.3 {ch "C"}

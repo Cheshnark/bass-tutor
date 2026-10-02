@@ -391,3 +391,20 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   Los ejercicios de arpegios del II–V–I sí la llevan.
 - Forma AABA y tema **originales** en Fa, con progresiones genéricas (I–vi–ii–V, II–V hacia el IV), sin copiar los
   cambios de ningún tema conocido.
+
+## 2026-10-02 · Funk/soul: temario, tonalidades y slap
+- **Motivo:** el itinerario empieza por el ritmo (semicorcheas, síncopa, notas muertas), que es lo que define el
+  funk, sigue con el lenguaje (octavas, el uno, vamps), después el soul/Motown (notas del acorde y cromatismo, que
+  enlazan con la ampliación y el walking) y deja el **slap para el final**: es una técnica nueva de la mano derecha y
+  se apoya en todo lo anterior (octavas, muertas, el uno).
+- Mi como tonalidad del funk (cuerdas al aire: E, A, D, G son fundamental, octava y séptimas de Em7/A7/E7) y Do para
+  Motown/soul (I–vi–IV–V en primera posición).
+- Motown: **ninguna línea de Jamerson ni de ninguna grabación**; ejercicios originales con sus rasgos documentados.
+- Slap: el cifrado se escribe como `txt` porque alphaTab lo dibuja en la misma banda que la S/P y lo tapa (mismo
+  fallo que con `\section`). El acompañamiento sigue saliendo de `backing.harmony`, así que no cambia nada al sonar.
+- Ejercicios generados con un script de usar y tirar (como en blues/jazz), con un modelo de compás en semicorcheas
+  que comprueba que cada compás suma lo que debe.
+
+## 2026-10-02 · Fase 7: contenido escrito
+- Los cuatro itinerarios y la ampliación común están escritos (26 módulos, 78 lecciones, 121 ejercicios), todo en
+  borrador. El criterio de la fase (revisión pedagógica por módulo) depende del autor: tocarlo y pasar a `revisada`.

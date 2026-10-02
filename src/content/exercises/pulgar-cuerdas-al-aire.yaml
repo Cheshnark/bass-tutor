@@ -1,0 +1,39 @@
+title: El golpe de pulgar en cuerdas al aire
+status: borrador
+instructions: >-
+  Solo el pulgar (S), en E, A y D al aire: dos compases de negras en cada cuerda y dos de corcheas cortas (golpe y
+  silencio). El pulgar rebota en la cuerda, al final del mástil, girando la muñeca. Ni demasiado fuerte ni rozando
+  la cuerda de al lado.
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E7, E7, A7, A7, D7, D7, E7, A7, E7]
+passCriteria:
+  - Cada golpe suena limpio, sin tocar las cuerdas vecinas
+  - "El pulgar rebota: no se queda pegado a la cuerda"
+  - En las corcheas cortas, el silencio se oye
+tags:
+  - funk
+  - slap
+alphaTex: |
+  \title "El golpe de pulgar en cuerdas al aire"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Slap Bass 1" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 {s txt "E7"} 0.4 {s} 0.4 {s} 0.4 {s} |
+  :4 0.4 {s txt "E7"} 0.4 {s} 0.4 {s} 0.4 {s} |
+  :4 0.3 {s txt "A7"} 0.3 {s} 0.3 {s} 0.3 {s} |
+  :4 0.3 {s txt "A7"} 0.3 {s} 0.3 {s} 0.3 {s} |
+  :4 0.2 {s txt "D7"} 0.2 {s} 0.2 {s} 0.2 {s} |
+  :4 0.2 {s txt "D7"} 0.2 {s} 0.2 {s} 0.2 {s} |
+  :8 0.4 {s txt "E7"} r 0.4 {s} r 0.4 {s} r 0.4 {s} r |
+  :8 0.3 {s txt "A7"} r 0.3 {s} r 0.3 {s} r 0.3 {s} r |
+  :1 0.4 {s txt "E7"}

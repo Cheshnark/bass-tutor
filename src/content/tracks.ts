@@ -33,7 +33,7 @@ export const TRACKS: Track[] = [
   {
     id: 'funk-soul',
     label: 'Funk / soul / Motown',
-    summary: 'Semicorcheas, síncopa, notas muertas y octavas; slap más adelante.',
+    summary: 'Semicorcheas, síncopa, notas muertas, octavas, el uno, Motown y slap.',
   },
   {
     id: 'blues-jazz',

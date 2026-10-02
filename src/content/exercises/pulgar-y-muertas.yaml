@@ -1,0 +1,38 @@
+title: Pulgar y notas muertas
+status: borrador
+instructions: >-
+  Con el pulgar: nota en el pulso, nota muerta en la "y" (la mano izquierda apoyada, sin pisar) y nota en la "a".
+  La muerta es un golpe de percusión, sin altura. Sobre E7 y A7, cuerdas al aire.
+tempo:
+  start: 56
+  target: 88
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E7, E7, A7, A7, E7, E7, A7, A7, E7]
+passCriteria:
+  - La nota muerta no tiene altura
+  - Las notas con altura suenan más fuertes que las muertas
+  - La mano izquierda pasa de apagar a soltar sin retrasar el golpe
+tags:
+  - funk
+  - slap
+alphaTex: |
+  \title "Pulgar y notas muertas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 56
+  \track "Bajo" { instrument "Slap Bass 1" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {s txt "E7"} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} |
+  :8 0.4 {s txt "E7"} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} |
+  :8 0.3 {s txt "A7"} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} |
+  :8 0.3 {s txt "A7"} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} |
+  :8 0.4 {s txt "E7"} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} |
+  :8 0.4 {s txt "E7"} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} :8 0.4 {s} :16 0.4{x} {s} 0.4 {s} |
+  :8 0.3 {s txt "A7"} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} |
+  :8 0.3 {s txt "A7"} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} :8 0.3 {s} :16 0.3{x} {s} 0.3 {s} |
+  :1 0.4 {s txt "E7"}

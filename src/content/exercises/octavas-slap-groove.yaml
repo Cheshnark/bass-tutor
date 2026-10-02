@@ -1,0 +1,38 @@
+title: Octavas en semicorcheas con slap
+status: borrador
+instructions: >-
+  Pulgar, muerta, pop, muerta en cada pulso: fundamental con el pulgar, octava con el pop y notas muertas con el
+  pulgar entre medias. Es la base de muchas líneas de funk y disco. Empieza muy despacio.
+tempo:
+  start: 50
+  target: 90
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, A7, A7, Em7, Em7, A7, A7, Em7]
+passCriteria:
+  - Las cuatro semicorcheas de cada pulso están igual de separadas
+  - Las muertas suenan más suaves que la fundamental y la octava
+  - Mantienes el tempo sin tensión en la muñeca
+tags:
+  - funk
+  - slap
+alphaTex: |
+  \title "Octavas en semicorcheas con slap"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 50
+  \track "Bajo" { instrument "Slap Bass 1" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {s txt "Em7"} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} |
+  :16 0.4 {s txt "Em7"} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} |
+  :16 0.3 {s txt "A7"} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} |
+  :16 0.3 {s txt "A7"} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} |
+  :16 0.4 {s txt "Em7"} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} |
+  :16 0.4 {s txt "Em7"} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 0.4{x} {s} 2.2 {p} 0.4{x} {s} |
+  :16 0.3 {s txt "A7"} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} |
+  :16 0.3 {s txt "A7"} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} 0.3 {s} 0.3{x} {s} 2.1 {p} 0.3{x} {s} |
+  :1 0.4 {s txt "Em7"}

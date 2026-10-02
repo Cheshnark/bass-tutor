@@ -2,9 +2,13 @@
 
 _Última actualización: 2026-10-02_
 
-## Fases 0–6 cerradas; Fase 7 (contenido) en curso
+## Fases 0–6 cerradas; Fase 7 (contenido) escrita, pendiente de tu revisión
 
-### Fase 7 (contenido restante): en curso
+### Fase 7 (contenido restante): escrita
+
+Todo el contenido está escrito: tronco común, ampliación común y los cuatro itinerarios (26 módulos, 78 lecciones,
+121 ejercicios), todo en `borrador`. **Falta el criterio de la fase: tu revisión pedagógica por módulo.**
+
 
 - Reparto del currículo original entre la nueva **ampliación común** y los itinerarios: [pedagogy.md](pedagogy.md).
 - **Ampliación común** (nuevo apartado del índice, para cualquier estilo):
@@ -36,7 +40,15 @@ _Última actualización: 2026-10-02_
   - **Tocar jazz**: de two-feel a walking, la forma AABA de 32 compases (two-feel y caminada) y un tema original
     completo de 73 compases con intro, tema, solos y final (3 lecciones, 4 ejercicios).
   - El acompañamiento admite **dos acordes por compás** (`"Cm7 F7"`).
-- Pendiente: itinerario funk/soul (el último).
+- **Itinerario funk/soul** (borrador, completo: 4 módulos, 12 lecciones): temario en [pedagogy.md](pedagogy.md).
+  - **Semicorcheas y síncopa**: de negras a semicorcheas con alternancia, tocar en la "e", la "y" o la "a", el ritmo
+    empujado (3+3+2) y notas muertas en el groove (3 lecciones, 6 ejercicios).
+  - **Octavas y el uno**: octavas de disco y en la "a", el uno (acento y espacio) y los vamps Em7–A7 y E7
+    (3 lecciones, 5 ejercicios).
+  - **Motown y soul**: línea al estilo Motown (síncopa y cromatismo), dos pasos cromáticos entre acordes, notas
+    cortas y espacio, balada en 12/8 y una canción soul completa (3 lecciones, 5 ejercicios).
+  - **Slap**: pulgar en cuerdas al aire y con muertas, pop en octavas, octavas en semicorcheas y un groove con ligados
+    (3 lecciones, 5 ejercicios; sonido de slap en la reproducción).
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -108,6 +120,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 - Probar el tronco común como alumno y en tu móvil (instalada como app).
 - Probar el itinerario rock/pop, sobre todo la canción completa del módulo 4.
 - Probar el itinerario blues/jazz, sobre todo el tema completo del módulo 4.
+- Probar el itinerario funk/soul; el slap, con cuidado de la muñeca (poca fuerza).
 - Probar el itinerario metal/punk y decir si prefieres púa o dedos, y metal o punk como foco (se eligió púa y una
   mezcla de ambos sin poder preguntarte).
 
@@ -116,5 +129,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: itinerario funk/soul (semicorcheas, notas muertas, octavas, slap), el último.
-3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).
+2. **Tú**: revisión pedagógica de la Fase 7, módulo a módulo (tocarlo, corregir y pasar a `revisada`). Puedo
+   ayudarte con lo que encuentres.
+3. Opcional: II–V–I menor (blues/jazz), buscar los vídeos que faltan, o la Fase 8 (multiusuario) si decides publicar.
+4. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

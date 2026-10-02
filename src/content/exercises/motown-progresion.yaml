@@ -1,0 +1,41 @@
+title: Una línea al estilo Motown
+status: borrador
+instructions: >-
+  I–vi–IV–V en Do (C, Am, F, G). En cada compás: la fundamental larga en el 1, la tercera en la "y" del 2 (síncopa),
+  quinta y octava, y en la "y" del 4 una nota a medio tono de la fundamental siguiente. Notas del acorde, síncopa y
+  cromatismo: los ingredientes del bajo de Motown.
+tempo:
+  start: 80
+  target: 116
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, Am, F, G, C, Am, F, G, C]
+passCriteria:
+  - La tercera de la "y" del 2 suena a tiempo, sin adelantarse
+  - La nota cromática del final lleva al acorde siguiente
+  - Las notas suenan con su duración, sin cortarlas
+tags:
+  - soul
+  - motown
+  - aproximacion
+  - sincopa
+alphaTex: |
+  \title "Una línea al estilo Motown"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "C"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 2.3 |
+  :4 3.3 {ch "C"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 2.3 |
+  :1 3.3 {ch "C"}

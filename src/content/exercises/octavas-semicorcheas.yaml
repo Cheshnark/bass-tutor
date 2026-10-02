@@ -1,0 +1,40 @@
+title: Octavas en la "a"
+status: borrador
+instructions: >-
+  La fundamental en cada pulso y la octava en la "a", la última semicorchea antes del pulso siguiente. Es la octava
+  "empujada" del funk. Sobre Am7 y D7, el vamp de acorde menor y su dominante.
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Am7, Am7, D7, D7, Am7, Am7, D7, D7, Am7]
+passCriteria:
+  - La octava cae en la "a", pegada al pulso siguiente pero antes de él
+  - Hay un silencio claro entre la fundamental y la octava
+  - El vamp suena igual de firme en los dos acordes
+tags:
+  - funk
+  - octavas
+  - semicorcheas
+  - sincopa
+alphaTex: |
+  \title "Octavas en la “a”"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{lf 2} {ch "Am7"} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} |
+  :8 5.3{lf 2} {ch "D7"} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} |
+  :8 5.3{lf 2} {ch "D7"} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} |
+  :8 5.4{lf 2} {ch "Am7"} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} :8 5.4{lf 2} :16 r 7.2{lf 5} |
+  :8 5.3{lf 2} {ch "D7"} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} |
+  :8 5.3{lf 2} {ch "D7"} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} :8 5.3{lf 2} :16 r 7.1{lf 5} |
+  :1 5.4{lf 2} {ch "Am7"}

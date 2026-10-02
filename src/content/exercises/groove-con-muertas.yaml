@@ -1,0 +1,41 @@
+title: Un groove de funk con notas muertas
+status: borrador
+instructions: >-
+  Un groove original en semicorcheas sobre Em7 y A7: fundamental, octava, séptima y quinta, con notas muertas en los
+  huecos. La misma figura en los dos acordes; solo cambia de cuerda. Empieza muy despacio: si la mano se tensa, baja
+  el tempo.
+tempo:
+  start: 56
+  target: 92
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, A7, A7, Em7, Em7, A7, A7, Em7]
+passCriteria:
+  - Las notas con altura destacan sobre las muertas
+  - El groove suena igual en Em7 y en A7
+  - Mantienes la alternancia de dedos todo el rato
+tags:
+  - funk
+  - semicorcheas
+  - notas-muertas
+  - groove
+alphaTex: |
+  \title "Un groove de funk con notas muertas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 56
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 2.2 0.4{x} 0.4{x} 0.2 0.4{x} 0.4 0.4{x} 0.4{x} 0.4 2.3 0.4{x} 2.2 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 2.2 0.4{x} 0.4{x} 0.2 0.4{x} 0.4 0.4{x} 0.4{x} 0.4 2.3 0.4{x} 2.2 0.4{x} |
+  :16 0.3 {ch "A7"} 0.3{x} 0.3{x} 2.1 0.3{x} 0.3{x} 0.1 0.3{x} 0.3 0.3{x} 0.3{x} 0.3 2.2 0.3{x} 2.1 0.3{x} |
+  :16 0.3 {ch "A7"} 0.3{x} 0.3{x} 2.1 0.3{x} 0.3{x} 0.1 0.3{x} 0.3 0.3{x} 0.3{x} 0.3 2.2 0.3{x} 2.1 0.3{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 2.2 0.4{x} 0.4{x} 0.2 0.4{x} 0.4 0.4{x} 0.4{x} 0.4 2.3 0.4{x} 2.2 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 2.2 0.4{x} 0.4{x} 0.2 0.4{x} 0.4 0.4{x} 0.4{x} 0.4 2.3 0.4{x} 2.2 0.4{x} |
+  :16 0.3 {ch "A7"} 0.3{x} 0.3{x} 2.1 0.3{x} 0.3{x} 0.1 0.3{x} 0.3 0.3{x} 0.3{x} 0.3 2.2 0.3{x} 2.1 0.3{x} |
+  :16 0.3 {ch "A7"} 0.3{x} 0.3{x} 2.1 0.3{x} 0.3{x} 0.1 0.3{x} 0.3 0.3{x} 0.3{x} 0.3 2.2 0.3{x} 2.1 0.3{x} |
+  :1 0.4 {ch "Em7"}

@@ -23,7 +23,11 @@
 - [x] Blues/jazz: temario y módulos 1 (El blues) y 2 (Walking bass), en borrador.
 - [x] Blues/jazz: módulos 3 (armonía de jazz) y 4 (tocar jazz), en borrador. **Itinerario completo.**
 - [ ] Blues/jazz: el II–V–I menor (m7♭5–7–m7) no está en el temario; valorar una lección.
-- [ ] Itinerario funk/soul (octavas, notas muertas, slap).
+- [x] Itinerario funk/soul: 4 módulos (semicorcheas y síncopa; octavas y el uno; Motown y soul; slap), en borrador.
+  **Todo el contenido de la Fase 7 está escrito.**
+- [ ] alphaTab dibuja la S/P del slap encima del cifrado; hoy el acorde va como `txt`. Revisar con una versión nueva.
+- [ ] Vídeos que faltan (sin fuente reconocida verificable): patrón de rock and roll, forma del blues, escala de blues,
+  II–V–I, AABA, el uno, Motown, 12/8.
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 
 ## Fase 6: hecha

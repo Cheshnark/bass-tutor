@@ -1,0 +1,66 @@
+title: Una canción soul completa
+status: borrador
+instructions: >-
+  Una canción original de principio a fin: intro de dos compases en blancas, verso con la línea de Motown (I–vi–IV–V)
+  y estribillo con octavas en corcheas (F G C Am F G C C), dos veces. Las secciones están rotuladas en la partitura.
+tempo:
+  start: 80
+  target: 112
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, C, C, Am, F, G, C, Am, F, G, F, G, C, Am, F, G, C, C, C, Am, F, G, C, Am, F, G, F, G, C, Am, F, G, C, C, C]
+passCriteria:
+  - Llegas al final sin parar
+  - El estribillo sube de energía respecto al verso
+  - Las aproximaciones del verso siguen llevando al acorde siguiente
+tags:
+  - soul
+  - motown
+  - cancion
+  - octavas
+alphaTex: |
+  \title "Una canción soul completa"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :2 3.3 {ch "C" txt "Intro"} 5.2 |
+  :2 3.3 {ch "C"} 5.2 |
+  :4 3.3 {ch "C" txt "Verso"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 2.3 |
+  :4 3.3 {ch "C"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 0.4 |
+  :8 1.4 {ch "F" txt "Estribillo"} 3.2 1.4 3.2 1.4 3.2 1.4 3.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 0.3 {ch "Am"} 2.1 0.3 2.1 0.3 2.1 0.3 2.1 |
+  :8 1.4 {ch "F"} 3.2 1.4 3.2 1.4 3.2 1.4 3.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :4 3.3 {ch "C" txt "Verso"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 2.3 |
+  :4 3.3 {ch "C"} :8 r 2.2 5.2 5.1 r 4.4 |
+  :4 0.3 {ch "Am"} :8 r 3.3 2.2 2.1 r 0.4 |
+  :4 1.4 {ch "F"} :8 r 0.3 3.3 3.2 r 2.4 |
+  :4 3.4 {ch "G"} :8 r 2.3 0.2 0.1 r 0.4 |
+  :8 1.4 {ch "F" txt "Estribillo"} 3.2 1.4 3.2 1.4 3.2 1.4 3.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 0.3 {ch "Am"} 2.1 0.3 2.1 0.3 2.1 0.3 2.1 |
+  :8 1.4 {ch "F"} 3.2 1.4 3.2 1.4 3.2 1.4 3.2 |
+  :8 3.4 {ch "G"} 5.2 3.4 5.2 3.4 5.2 3.4 5.2 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :8 3.3 {ch "C"} 5.1 3.3 5.1 3.3 5.1 3.3 5.1 |
+  :1 3.3 {ch "C"}

@@ -1,0 +1,39 @@
+title: De negras a semicorcheas
+status: borrador
+instructions: >-
+  En la cuerda E al aire: un compás de negras, uno de corcheas y dos de semicorcheas, dos veces. Cuenta en voz alta
+  "1 e y a, 2 e y a…" y alterna índice y medio en todas las notas. El pulso no cambia: solo caben más notas en él.
+tempo:
+  start: 60
+  target: 92
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7]
+passCriteria:
+  - Las cuatro semicorcheas de cada pulso son iguales (ninguna se adelanta)
+  - Alternas los dedos sin repetir ninguno
+  - El cambio de corcheas a semicorcheas no acelera el pulso
+tags:
+  - funk
+  - semicorcheas
+  - mano-derecha
+alphaTex: |
+  \title "De negras a semicorcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.4 {ch "Em7"} 0.4 0.4 0.4 |
+  :8 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :4 0.4 {ch "Em7"} 0.4 0.4 0.4 |
+  :8 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :1 0.4 {ch "Em7"}

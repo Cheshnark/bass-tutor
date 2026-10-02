@@ -1,0 +1,39 @@
+title: Pulgar y pop en octavas
+status: borrador
+instructions: >-
+  La figura más clásica del slap: fundamental con el pulgar (S) y octava con el pop (P), en corcheas. En E7, E al aire
+  y E en la cuerda D, traste 2; en A7, A al aire y A en la cuerda G, traste 2. El pop: el lado del índice bajo la
+  cuerda, un tirón corto y soltar.
+tempo:
+  start: 60
+  target: 100
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E7, E7, A7, A7, E7, E7, A7, A7, E7]
+passCriteria:
+  - El pop suena con la misma fuerza que el pulgar, sin "chasquido" excesivo
+  - No enganchas la cuerda con el dedo
+  - El paso de E7 a A7 no rompe el ritmo
+tags:
+  - funk
+  - slap
+alphaTex: |
+  \title "Pulgar y pop en octavas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Slap Bass 1" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {s txt "E7"} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} |
+  :8 0.4 {s txt "E7"} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} |
+  :8 0.3 {s txt "A7"} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} |
+  :8 0.3 {s txt "A7"} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} |
+  :8 0.4 {s txt "E7"} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} |
+  :8 0.4 {s txt "E7"} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} 0.4 {s} 2.2 {p} |
+  :8 0.3 {s txt "A7"} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} |
+  :8 0.3 {s txt "A7"} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} 0.3 {s} 2.1 {p} |
+  :1 0.4 {s txt "E7"}

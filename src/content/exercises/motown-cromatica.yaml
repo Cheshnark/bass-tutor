@@ -1,0 +1,40 @@
+title: Pasos cromáticos entre acordes
+status: borrador
+instructions: >-
+  La misma progresión, ahora con dos pasos cromáticos al final de cada compás: las dos notas que llevan, de medio en
+  medio tono, a la fundamental siguiente (B B♭ → A, G G♭ → F, F F♯ → G, A♯ B → C). Bajan cuando el acorde siguiente
+  está más abajo y suben cuando está más arriba.
+tempo:
+  start: 80
+  target: 116
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [C, Am, F, G, C, Am, F, G, C]
+passCriteria:
+  - Los dos pasos cromáticos suenan como un camino hacia el acorde siguiente
+  - Llegas a cada fundamental justo en el 1
+  - Sabes de antemano si el camino sube o baja
+tags:
+  - soul
+  - motown
+  - cromatismo
+alphaTex: |
+  \title "Pasos cromáticos entre acordes"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "C"} :8 r 5.2 3.3 5.1 2.3 1.3{acc b} |
+  :4 0.3 {ch "Am"} :8 r 2.2 0.3 2.1 3.4 2.4{acc b} |
+  :4 1.4 {ch "F"} :8 r 3.3 1.4 3.2 1.4 2.4 |
+  :4 3.4 {ch "G"} :8 r 0.2 3.4 0.1 1.3 2.3 |
+  :4 3.3 {ch "C"} :8 r 5.2 3.3 5.1 2.3 1.3{acc b} |
+  :4 0.3 {ch "Am"} :8 r 2.2 0.3 2.1 3.4 2.4{acc b} |
+  :4 1.4 {ch "F"} :8 r 3.3 1.4 3.2 1.4 2.4 |
+  :4 3.4 {ch "G"} :8 r 0.2 3.4 0.1 1.3 2.3 |
+  :1 3.3 {ch "C"}

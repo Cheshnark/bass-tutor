@@ -1,0 +1,41 @@
+title: El ritmo empujado (3 + 3 + 2)
+status: borrador
+instructions: >-
+  Un ritmo de funk muy habitual: nota en el 1, otra en la "a" del 1 (una semicorchea antes del 2) y otra en la "y"
+  del 2; y lo mismo en el 3 y el 4. En semicorcheas, 3 + 3 + 2. Notas: fundamental, octava y séptima menor de Em7
+  (E, E, D) y de A7 (A, A, G).
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, A7, A7, Em7, Em7, A7, A7, Em7]
+passCriteria:
+  - La segunda nota cae antes del 2, no en el 2
+  - Las notas duran hasta la siguiente (corchea con puntillo)
+  - Puedes contar "1 e y a" en voz alta mientras lo tocas
+tags:
+  - funk
+  - semicorcheas
+  - sincopa
+  - octavas
+alphaTex: |
+  \title "El ritmo empujado (3 + 3 + 2)"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4 {d ch "Em7"} 2.2 {d} 0.2 0.4 {d} 2.2 {d} 0.2 |
+  :8 0.4 {d ch "Em7"} 2.2 {d} 0.2 0.4 {d} 2.2 {d} 0.2 |
+  :8 0.3 {d ch "A7"} 2.1 {d} 0.1 0.3 {d} 2.1 {d} 0.1 |
+  :8 0.3 {d ch "A7"} 2.1 {d} 0.1 0.3 {d} 2.1 {d} 0.1 |
+  :8 0.4 {d ch "Em7"} 2.2 {d} 0.2 0.4 {d} 2.2 {d} 0.2 |
+  :8 0.4 {d ch "Em7"} 2.2 {d} 0.2 0.4 {d} 2.2 {d} 0.2 |
+  :8 0.3 {d ch "A7"} 2.1 {d} 0.1 0.3 {d} 2.1 {d} 0.1 |
+  :8 0.3 {d ch "A7"} 2.1 {d} 0.1 0.3 {d} 2.1 {d} 0.1 |
+  :1 0.4 {ch "Em7"}

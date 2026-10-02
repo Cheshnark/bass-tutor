@@ -1,0 +1,40 @@
+title: Un vamp sobre E7
+status: borrador
+instructions: >-
+  Un solo acorde, E7, durante ocho compases. La línea usa las notas del acorde de séptima: fundamental, tercera mayor
+  (G♯), quinta, séptima menor y octava. El 1, acentuado. Un vamp de un acorde no aburre si el ritmo está vivo.
+tempo:
+  start: 60
+  target: 96
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E7, E7, E7, E7, E7, E7, E7, E7, E7]
+passCriteria:
+  - La tercera mayor (G♯) suena afinada y limpia
+  - Los ocho compases suenan iguales
+  - El 1 de cada compás sigue siendo el más fuerte
+tags:
+  - funk
+  - vamp
+  - dominante
+  - semicorcheas
+alphaTex: |
+  \title "Un vamp sobre E7"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :8 0.4{ac} {d ch "E7"} :16 4.4 :8 2.3 :16 r 0.2 2.2 r 0.4{x} 0.2 :8 r :16 2.3 4.4 |
+  :1 0.4 {ch "E7"}

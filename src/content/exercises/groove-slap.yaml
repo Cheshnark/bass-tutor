@@ -1,0 +1,39 @@
+title: Un groove de slap completo
+status: borrador
+instructions: >-
+  Un groove original de dos compases sobre Em7 que junta todo: pulgar, pop, notas muertas y ligado (H): golpe de
+  pulgar en E al aire y, sin volver a pulsar, el dedo 3 cae en el traste 3 (G). Practica cada mitad del compás por
+  separado antes de juntarlas.
+tempo:
+  start: 50
+  target: 92
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7]
+passCriteria:
+  - El ligado suena casi tan fuerte como el golpe de pulgar
+  - Pulgar y pop se alternan sin huecos
+  - Puedes tocar los ocho compases sin parar y sin tensión
+tags:
+  - funk
+  - slap
+alphaTex: |
+  \title "Un groove de slap completo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 50
+  \track "Bajo" { instrument "Slap Bass 1" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 0.4{x} {s} 0.1 {p} 0.4{x} {s} 0.3 {s} 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 2.2 {p} 0.1 {p} 0.3{h} {s} 2.3 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 0.4{x} {s} 0.1 {p} 0.4{x} {s} 0.3 {s} 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 2.2 {p} 0.1 {p} 0.3{h} {s} 2.3 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 0.4{x} {s} 0.1 {p} 0.4{x} {s} 0.3 {s} 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 2.2 {p} 0.1 {p} 0.3{h} {s} 2.3 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 0.4{x} {s} 0.1 {p} 0.4{x} {s} 0.3 {s} 2.2 {p} r |
+  :16 0.4{h} {s txt "Em7"} 3.4 0.4{x} {s} 2.2 {p} 0.4{x} {s} 0.4 {s} 2.2 {p} 0.4{x} {s} :8 0.4 {s} :16 2.2 {p} 0.1 {p} 0.3{h} {s} 2.3 2.2 {p} r |
+  :1 0.4 {s txt "Em7"}

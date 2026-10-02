@@ -1,0 +1,42 @@
+title: En la "e", en la "y" y en la "a"
+status: borrador
+instructions: >-
+  Una nota por pulso, cada vez en una semicorchea distinta: dos compases en el pulso, dos en la "e", dos en la "y",
+  dos en la "a" y dos mezclando. Cuenta las cuatro semicorcheas en voz alta y toca solo en la que toca; el resto,
+  silencio (apaga la cuerda).
+tempo:
+  start: 60
+  target: 90
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7]
+passCriteria:
+  - Cada nota cae exactamente en su semicorchea
+  - "Los silencios son silencios: la cuerda no sigue sonando"
+  - En los compases de mezcla no te pierdes
+tags:
+  - funk
+  - semicorcheas
+  - sincopa
+alphaTex: |
+  \title "En la “e”, en la “y” y en la “a”"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {ch "Em7" txt "pulso"} :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} |
+  :16 0.4 {ch "Em7"} :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} |
+  :16 r {ch "Em7" txt "e"} 0.4 :8 r :16 r 0.4 :8 r :16 r 0.4 :8 r :16 r 0.4 :8 r |
+  :16 r {ch "Em7"} 0.4 :8 r :16 r 0.4 :8 r :16 r 0.4 :8 r :16 r 0.4 :8 r |
+  :8 r {ch "Em7" txt "y"} 0.4 r 0.4 r 0.4 r 0.4 |
+  :8 r {ch "Em7"} 0.4 r 0.4 r 0.4 r 0.4 |
+  :8 r {d ch "Em7" txt "a"} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 |
+  :8 r {d ch "Em7"} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 :8 r {d} :16 0.4 |
+  :16 0.4 {ch "Em7" txt "mezcla"} :8 r {d} r {d} :16 0.4 :8 r 0.4 :16 r 0.4 :8 r |
+  :16 0.4 {ch "Em7"} :8 r {d} r {d} :16 0.4 :8 r 0.4 :16 r 0.4 :8 r |
+  :1 0.4 {ch "Em7"}

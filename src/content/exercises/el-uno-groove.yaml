@@ -1,0 +1,40 @@
+title: Todo hacia el uno
+status: borrador
+instructions: >-
+  Un vamp de un solo acorde (E7). El 1 de cada compás, acentuado y largo; después, pocas notas y mucho espacio, y el
+  silencio del final del compás deja que el 1 siguiente pese aún más. En el segundo compás de cada pareja, una nota
+  en la "a" del 4 anuncia el 1.
+tempo:
+  start: 80
+  target: 108
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [E7, E7, E7, E7, E7, E7, E7, E7, E7]
+passCriteria:
+  - El 1 suena claramente más fuerte que el resto
+  - Los silencios del final del compás se respetan
+  - Aunque toques poco, el groove no se para
+tags:
+  - funk
+  - el-uno
+  - sincopa
+alphaTex: |
+  \title "Todo hacia el uno"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 r 0.2 r 2.2 :4 r |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 4.4 r 2.3 r :8 r :16 r 0.4 |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 r 0.2 r 2.2 :4 r |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 4.4 r 2.3 r :8 r :16 r 0.4 |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 r 0.2 r 2.2 :4 r |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 4.4 r 2.3 r :8 r :16 r 0.4 |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 r 0.2 r 2.2 :4 r |
+  :8 0.4{ac} {d ch "E7"} :16 0.4{x} :8 r 2.2 :16 4.4 r 2.3 r :8 r :16 r 0.4 |
+  :1 0.4 {ch "E7"}

@@ -147,6 +147,7 @@ alphaTex: |
   Si el ejercicio tiene acordes, añade también `backing.harmony` (una entrada por compás). Para dos acordes en un
   compás (II–V del jazz), pon los dos en la misma entrada (`'Dm7 G7'`) y un `{ch}` sobre la primera nota de cada
   uno: el acompañamiento reparte los pulsos a partes iguales. Solo en compases de negra (4/4, 2/4…).
+- **Títulos**: sin comillas rectas dentro de `\title` (rompen el alphaTex); usa “ ”.
 - **Bemoles**: alphaTab escribe la alteración según la altura (D♯ por defecto). Si la armonía pide E♭, B♭ o A♭,
   añade `acc b` a la nota: `1.3{acc b}` o `6.3{lf 3 acc b}`.
 - **Digitación** (dedos de la mano izquierda): `{lf N}` pegado a la nota, con N = dedo + 1 (`lf 2` índice … `lf 5`
@@ -158,6 +159,10 @@ alphaTex: |
   `dy`); ligadura con la nota anterior `0.2{t}` (no se vuelve a pulsar); tresillo `:8 0.3 {tu 3} 0.3 {tu 3} 0.3 {tu 3}`.
 - **Shuffle**: escríbelo en tresillos (`:4 R {tu 3} :8 R {tu 3}` por pulso) y pon `feel: shuffle`: la reproducción
   de alphaTab no "swinguea" corcheas rectas, y así la batería generada también va en shuffle.
+- **Slap** (itinerario funk/soul): `instrument "Slap Bass 1"`; golpe de pulgar `{s}` y pop `{p}` como efectos del
+  pulso (`0.4 {s}`, `2.2 {p}`); nota muerta con pulgar `0.4{x} {s}`; ligado `0.4{h} {s} 3.4` (la nota siguiente no
+  se pulsa). **Ojo**: alphaTab dibuja la S/P en la misma banda que el cifrado y lo tapa; en estos ejercicios el
+  acorde va como texto (`{s txt "Em7"}`) en lugar de `ch`.
 - **Púa** (itinerario metal/punk): `instrument "Electric Bass Pick"`. Dirección de cada golpe como efecto del pulso,
   `{sd}` hacia abajo (⊓) y `{su}` hacia arriba (V). **Palm mute** como efecto de la nota, pegado a ella: `0.4{pm}`.
   Se combinan así: `0.4{pm} {sd ch "E5"}`. Acordes de quinta (*power chords*): `E5`, `C5`…

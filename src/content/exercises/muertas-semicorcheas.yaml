@@ -1,0 +1,40 @@
+title: Notas muertas en semicorcheas
+status: borrador
+instructions: >-
+  Todas las semicorcheas suenan: las notas, en E al aire; el resto, notas muertas (la mano izquierda apoyada en las
+  cuerdas, sin pisar). Dos compases con nota solo en el pulso, dos en el pulso y la "a", dos en el pulso y la "y" y
+  dos en el pulso, la "y" y la "a". Las muertas, más suaves que las notas.
+tempo:
+  start: 60
+  target: 92
+  step: 4
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7, Em7]
+passCriteria:
+  - Las notas muertas no tienen altura (no suena ninguna nota)
+  - Se oye claramente la diferencia entre notas y muertas
+  - "La mano derecha no se para nunca: alternancia constante"
+tags:
+  - funk
+  - semicorcheas
+  - notas-muertas
+alphaTex: |
+  \title "Notas muertas en semicorcheas"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} 0.4 0.4{x} 0.4{x} 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 0.4 0.4{x} 0.4{x} 0.4 |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} 0.4 0.4{x} |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 |
+  :16 0.4 {ch "Em7"} 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 0.4 0.4{x} 0.4 0.4 |
+  :1 0.4 {ch "Em7"}

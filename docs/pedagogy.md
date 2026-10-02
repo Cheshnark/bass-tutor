@@ -73,6 +73,18 @@ Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también 
 | 3 · Riffs de rock ✍️ | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
 | 4 · La canción entera ✍️ | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
 
+### Itinerario funk/soul (temario, borrador)
+
+Con dedos (alternancia índice-medio) y, en el último módulo, slap. **Itinerario completo** (4 módulos, 12 lecciones),
+todo en borrador. Tonalidad base: Mi (vamps Em7–A7 y E7 con cuerdas al aire); Do para Motown y soul.
+
+| Módulo | Lecciones |
+|---|---|
+| 1 · Semicorcheas y síncopa ✍️ | Semicorcheas con dedos · Síncopa en semicorcheas (ritmo empujado 3+3+2) · Notas muertas en el groove |
+| 2 · Octavas y el uno ✍️ | Octavas de disco y funk · El uno · El vamp de funk (Em7–A7; E7) |
+| 3 · Motown y soul ✍️ | Líneas al estilo Motown · Soul: notas cortas, espacio y 12/8 · Una canción soul completa |
+| 4 · Slap ✍️ | El golpe de pulgar · El pop · Un groove de slap |
+
 ### Itinerario blues/jazz (temario, borrador)
 
 Con dedos. **Itinerario completo** (4 módulos, 12 lecciones), todo en borrador. Se apoya en el shuffle y las
@@ -166,6 +178,18 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Two-feel | Blancas en 1 y 3, fundamental y quinta; más abierto y relajado que el walking; buen paso previo para aprender cambios | TalkingBass (Jazz Blues Bass in a 2 Feel); TalkingBass (7 Things You Need To Work On… walking) |
 | Forma AABA | 32 compases: A, A, B (puente, contraste), A; "chorus" = una vuelta entera a la forma | Wikipedia (Thirty-two-bar form); StudyBass (I-vi-ii-V: giros de dos compases al final de las secciones) |
 | Final con *tag* | Repetir el último giro antes del acorde final | **Sin fuente verificada**: práctica común; se presenta como "una forma de acabar", no como regla |
+| Semicorcheas en el funk | 16 posiciones por compás; contar "1 e y a"; alternancia de dedos constante | Wikipedia (Funk: "16 posibles posiciones" en un 4/4; semicorcheas y síncopa); LibreTexts (Counting); vídeo de TalkingBass (semicorcheas) |
+| Ritmo empujado | Nota en el 1, en la "a" del 1 (antes del 2) y en la "y" del 2 (3+3+2) | TalkingBass (The Most Important Funky Rhythm You'll Ever Learn: el 2 "empujado"; combinarlo con octavas); No Treble (Rich Brown, "Fonk! And the Power of 'a'": aislar semicorcheas concretas) |
+| Notas muertas en el funk | Rellenan las semicorcheas sin nota; sonido percusivo | Wikipedia (Funk: las notas muertas dan un sonido "percusivo"); fila "Notas muertas" de la ampliación común |
+| Octavas (disco y funk) | Fundamental y octava en corcheas o con la octava en la "a" | StudyBass (Octaves: el sitio más evidente para oírlas es el disco y el slap); Wikipedia (Funk: saltos de octava) |
+| El uno | El primer tiempo, acentuado y claro; lo demás puede moverse | Wikipedia (Funk: James Brown, énfasis en el primer tiempo, "On the one!"); Bootsy Collins en entrevistas (Louder, Open Culture; solo vistas en resultados de búsqueda) |
+| Vamp menor–dominante | Uno o dos acordes todo el tema; a menudo m7 y el 7 una cuarta por encima | Wikipedia (Funk: vamp de uno o dos acordes, "alternando un acorde menor con séptima y un dominante relacionado"). Dórico: las dos escalas comparten notas (teoría estándar, comprobada con Tonal) |
+| Motown | Notas del acorde, síncopa, cromatismo y notas muertas; Jamerson tocaba con un dedo | Wikipedia (James Jamerson: cromatismos, síncopa, notas muertas, inversiones; "The Hook"); Bass Musician Magazine y MusicRadar (resúmenes del estilo; no se pudo leer el texto completo) |
+| Notas cortas y espacio | La duración de las notas y los silencios dejan sitio a la voz | Premier Guitar (Brodén, duración de las notas); Yamaha Hub (Bradman: empezar con poco, dejar espacio) |
+| 12/8 | Cuatro pulsos divididos en tres corcheas | Teoría estándar (como el tresillo de StudyBass, Eighth Note Triplet Subdivision). **Que sea "el compás de muchas baladas soul" no tiene fuente verificada** |
+| Slap: pulgar | Lateral huesudo del pulgar, al final del mástil, giro de muñeca, el pulgar rebota; golpe limpio en cuerdas al aire primero | Guitar World (How to play slap bass: final del diapasón, giro de muñeca "como un pomo", rebote); Premier Guitar (Victor Brodén, Slap Bass Fundamentals: hueso del pulgar, golpe limpio en cuerdas al aire); Wikipedia (Slapping: Larry Graham, "thumpin' and pluckin'") |
+| Slap: pop | Lateral del índice bajo la cuerda, tirón corto, la cuerda choca con los trastes | Premier Guitar (Brodén: el lateral del índice, no la yema entera); Guitar World (tirar y soltar contra los trastes); TalkingBass (How To Play Slap Bass: octavas, la aplicación más común del pop) |
+| Slap: gusto | Sencillez, al servicio de la canción | Premier Guitar (Brodén) |
 | Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
@@ -247,6 +271,14 @@ Escritas (base del texto):
 - TalkingBass — [Jazz Blues Bass in a 2 Feel](https://www.talkingbass.net/jazz-blues-bass-in-a-2-feel/) ·
   [7 Things You Need To Work On If You Want To Learn Walking Bass](https://www.talkingbass.net/7-things-you-need-to-work-on-if-you-want-to-learn-walking-bass/)
 - Wikipedia — [Thirty-two-bar form](https://en.wikipedia.org/wiki/Thirty-two-bar_form)
+- Wikipedia — [Funk](https://en.wikipedia.org/wiki/Funk) · [James Jamerson](https://en.wikipedia.org/wiki/James_Jamerson) ·
+  [Slapping (music)](https://en.wikipedia.org/wiki/Slapping_(music))
+- TalkingBass — [The Most Important Funky Rhythm You'll Ever Learn](https://www.talkingbass.net/the-most-important-funky-rhythm-youll-ever-learn/) ·
+  [How To Play Slap Bass – Getting Started](https://www.talkingbass.net/how-to-play-slap-bass/) ·
+  [The Perfect Beginner Slap Riff](https://www.talkingbass.net/the-perfect-beginner-slap-riff/)
+- No Treble (Rich Brown) — [The Brown'stone: Fonk! And the Power of "a"](https://www.notreble.com/?p=83954)
+- Premier Guitar (Victor Brodén) — [On Bass: Slap Bass — Getting to the Fundamentals](https://www.premierguitar.com/articles/22251-on-bass-slap-bass-getting-to-the-fundamentals)
+- Guitar World — [How to play slap bass: an essential guide to slapping and popping](https://www.guitarworld.com/lessons/techniques/how-to-play-slap-bass)
 - TalkingBass — [The Walking Bass Secret Every Beginner Needs To Know](https://www.talkingbass.net/the-walking-bass-secret-every-beginner-needs-to-know/) ·
   [The RIGHT Way To Start Walking Bass](https://www.talkingbass.net/the-right-way-to-start-walking-bass-no-theory-needed/)
 - Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
@@ -324,6 +356,9 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Walking: notas del acorde | [The Walking Bass Secret EVERY Beginner Needs To Know](https://www.youtube.com/watch?v=ZueIBKZtgWs) | TalkingBass |
 | Blues de jazz en two-feel | [Jazz Blues  Bass in a 2 Feel](https://www.youtube.com/watch?v=J8-H5ci3WDA) | TalkingBass |
 | Practicar walking | [7 Things You NEED To Work On If You Want To Learn Walking Bass](https://www.youtube.com/watch?v=8KM2Uqa69tU) | TalkingBass |
+| Ritmo de funk | [The Most Important Funky Rhythm You'll Ever Learn](https://www.youtube.com/watch?v=rtqmJ3Z5-Q0) | TalkingBass |
+| Slap (empezar) | [How To Play Slap Bass #1 - Getting Started](https://www.youtube.com/watch?v=tGilCW0_Jf0) | TalkingBass |
+| Slap (pop) | [The Perfect, Starter Slap Bass Riff For Beginners](https://www.youtube.com/watch?v=RkCyD-JgtV0) | TalkingBass |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
@@ -348,6 +383,11 @@ Blues/jazz (verificados el 2026-10-02, oEmbed): los dos de walking están incrus
 citadas. **Sin vídeo propio de la forma del blues ni de la escala de blues**; el shuffle reutiliza el de SBL.
 Módulos 3–4: dos vídeos más de TalkingBass (incrustados en sus páginas, verificados con oEmbed). **Sin vídeo del
 II–V–I ni de la forma AABA**.
+
+Funk/soul (verificados el 2026-10-02, oEmbed): tres vídeos de TalkingBass incrustados en sus páginas; el de
+semicorcheas ya estaba en la tabla. **Sin vídeo del uno, de Motown ni del 12/8** (los que hay enseñan canciones con
+copyright o no son de fuentes reconocidas). No se toca ninguna línea de Jamerson ni de ninguna grabación: solo
+ejercicios originales con sus "ingredientes".
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.
