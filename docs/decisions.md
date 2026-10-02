@@ -356,3 +356,11 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   pentatónica y los arpegios de la ampliación.
 - El mástil de la lección usa el acorde de Tonal `7add6` para mostrar exactamente 1-3-5-6-♭7.
 - Doblar el riff en rock: guitarra con `Overdriven Guitar` (menos saturada que la del metal) y bajo con dedos.
+
+## 2026-10-02 · Rock/pop, módulo 4: secciones rotuladas con `txt`, canción en Sol con progresiones ya vistas
+- **Motivo:** `\section` de alphaTex (1.8.4) se dibuja en la misma banda que el cifrado y lo tapa; el texto de pulso
+  (`{txt "Verso"}`) va en otra banda y deja ver los dos. Se pierde el estilo de rótulo en negrita, no la información.
+- La canción final usa I–vi–IV–V en el verso e I–V–vi–IV en el estribillo (módulo 2) en Sol, primera posición: toda
+  la atención va a la forma y la energía, no a la mano izquierda.
+- Los ejercicios del módulo se generan con un script de usar y tirar (no está en el repo): son muy repetitivos y así
+  se evitan errores de copia; el alphaTex resultante es el que se revisa y se versiona.

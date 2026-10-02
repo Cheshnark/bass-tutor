@@ -63,14 +63,15 @@ funk y slap (12) al itinerario **funk/soul**; la púa (12) ya está en **metal/p
 
 ### Itinerario rock/pop (temario, borrador)
 
-Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también vale aquí.
+Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también vale aquí. **Itinerario completo**
+(4 módulos, 12 lecciones), todo en borrador.
 
 | Módulo | Lecciones |
 |---|---|
 | 1 · El pulso del rock ✍️ | La corchea de rock · Llegar al acorde siguiente · Octavas y rellenos |
 | 2 · Progresiones pop ✍️ | La progresión I–V–vi–IV · I–vi–IV–V y la quinta del acorde siguiente · Acordes con barra |
 | 3 · Riffs de rock ✍️ | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
-| 4 · La canción entera | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
+| 4 · La canción entera ✍️ | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
 
 ### Itinerario metal/punk (temario, borrador)
 
@@ -138,6 +139,8 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Riff | Frase corta que se repite exacta; en el rock, a menudo con la pentatónica menor y empezando en la fundamental | Wikipedia (Riff: "short, repeated motif"; Rooksby: grave, centra la energía de la canción); TalkingBass (The Minor Pentatonic Scale: la escala más común del rock y base de riffs); vídeo de Dan Hawkins (riffs de rock) |
 | Patrón de rock and roll | 1-3-5-6-♭7-6-5-3 sobre acordes de séptima, en corcheas; la sexta suaviza el sonido | Fundamental Changes (Walking Bassline Part Two: "probablemente el patrón de dos compases más famoso"); Patrick Pfeiffer en Dummies (grooves de rock 'n' roll en corcheas; 1-3-5-6 y ♭7 en acordes dominantes). Digitación: la forma del arpegio mayor del curso + 6 y ♭7 en la cuerda siguiente (deducida y verificada con Tonal). **Sin vídeo verificado** |
 | Doblar o sostener (rock) | Doblar = las mismas notas y ritmo que la guitarra, una octava abajo; o sostener la fundamental; cambiar entre secciones | Mismas fuentes que "Papel del bajo en el metal" y "Encajar con el bombo"; el término medio (unirse al final del riff) es un recurso de arreglo propio, sin fuente específica |
+| Forma de canción | Intro, verso, (pre-estribillo), estribillo, puente, final; el estribillo, más intenso que el verso; secciones de 4–8 compases que hay que contar | Wikipedia (Song structure: definiciones y orden habitual verso–estribillo); LibreTexts (Hutchinson, Verse-Chorus Form: la forma más común del pop actual). Los 4–8 compases: práctica común, coherente con las frases de 4 compases de "Rellenos" |
+| Dinámica por secciones | Empezar con poco y dejar sitio para crecer; notas cortas en el verso y largas en el estribillo; volver a bajar en el verso; callar antes de una sección y volver con un relleno | E. E. Bradman (Yamaha Hub, "Dynamic Bass Playing"); Premier Guitar (Brodén: duración y ataque por secciones); vídeo de SBL (dinámica) |
 | Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
@@ -202,7 +205,9 @@ Escritas (base del texto):
 - TalkingBass — [The Minor Pentatonic Scale For Bass Guitar](https://www.talkingbass.net/minor-pentatonic-scale-for-bass-guitar/)
 - Fundamental Changes — [Learn a Walking Bassline Part Two: Dominant Chords](https://www.fundamental-changes.com/walking-bassline-lesson-2/)
 - Dummies (Patrick Pfeiffer) — [How to Play Rock 'n' Roll-Style Grooves on the Bass Guitar](https://www.dummies.com/article/academics-the-arts/music/instruments/bass-guitar/how-to-play-rock-n-roll-style-grooves-on-the-bass-guitar-154683/)
-- Wikipedia — [Riff](https://en.wikipedia.org/wiki/Riff)
+- Wikipedia — [Riff](https://en.wikipedia.org/wiki/Riff) · [Song structure](https://en.wikipedia.org/wiki/Song_structure)
+- LibreTexts (Hutchinson) — [Verse-Chorus Form](https://human.libretexts.org/Bookshelves/Music/Music_Theory/Music_Theory_for_the_21st-Century_Classroom_(Hutchinson)/12%3A_Form_in_Popular_Music/12.01%3A_Verse-Chorus_Form)
+- Yamaha Hub (E. E. Bradman) — [Dynamic Bass Playing](https://hub.yamaha.com/?p=57223)
 - Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
 - StudyBass — [Pitch Notation](https://www.studybass.com/lessons/reading-music/pitch-notation/) ·
   [Key Signatures](https://www.studybass.com/lessons/reading-music/key-signatures/) ·
@@ -291,6 +296,8 @@ reconocida centrado en eso (los que hay enseñan canciones).
 
 Rock/pop, módulo 3 (2026-10-02): se reutiliza el vídeo de riffs de Dan Hawkins. **Sin vídeo del patrón de rock and
 roll** ni de doblar el riff: no encontré uno de una fuente reconocida que no sea una canción con copyright.
+Módulo 4: se reutilizan los vídeos de dinámica (SBL) y de tocar con batería (BassBuzz); **sin vídeo de forma de
+canción** (los que hay analizan canciones con copyright).
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.

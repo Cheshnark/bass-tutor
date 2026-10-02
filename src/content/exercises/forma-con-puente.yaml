@@ -1,0 +1,49 @@
+title: Verso, estribillo y puente
+status: borrador
+instructions: >-
+  La forma completa más corta: verso, estribillo, puente y estribillo. El puente (C D Em D) empieza en otro acorde y
+  cambia de dibujo, fundamental y quinta en negras, para que suene distinto. Después vuelve el estribillo como
+  antes.
+tempo:
+  start: 80
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, Em, C, D, G, D, Em, C, C, D, Em, D, G, D, Em, C, G]
+passCriteria:
+  - Notas que el puente "sale" de la canción y que el último estribillo "vuelve a casa"
+  - Cada cambio de sección cae en el 1, sin dudas
+  - El último estribillo suena igual que el primero
+tags:
+  - rock
+  - pop
+  - forma
+  - puente
+alphaTex: |
+  \title "Verso, estribillo y puente"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 {txt "Verso" ch "G"} 3.4 3.4 3.4 |
+  :4 0.4 {ch "Em"} 0.4 0.4 0.4 |
+  :4 3.3 {ch "C"} 3.3 3.3 3.3 |
+  :4 5.3 {ch "D"} 5.3 5.3 5.3 |
+  :8 3.4 {txt "Estribillo" ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 0.4 {ch "Em"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :4 3.3 {txt "Puente" ch "C"} 3.3 5.2 3.3 |
+  :4 5.3 {ch "D"} 5.3 7.2 5.3 |
+  :4 0.4 {ch "Em"} 0.4 2.3 0.4 |
+  :4 5.3 {ch "D"} 5.3 7.2 5.3 |
+  :8 3.4 {txt "Estribillo" ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 0.4 {ch "Em"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :1 3.4 {ch "G"}

@@ -15,7 +15,7 @@ _Última actualización: 2026-10-02_
   - **Leer partitura**: clave de Fa, ritmo leído (puntillos, ligaduras), una línea entera con armadura (3 lecciones,
     6 ejercicios solo de partitura). **Ampliación común completa** (4 módulos, 12 lecciones).
   - Ejercicios con la digitación en la partitura y acompañamiento generado.
-- **Itinerario rock/pop** (borrador): temario de 4 módulos en [pedagogy.md](pedagogy.md). Escritos:
+- **Itinerario rock/pop** (borrador, completo: 4 módulos, 12 lecciones): temario en [pedagogy.md](pedagogy.md).
   - **El pulso del rock**: corchea de rock (corta/larga), aproximaciones cromáticas y diatónicas, octavas y rellenos
     (3 lecciones, 5 ejercicios).
   - **Progresiones pop**: I–V–vi–IV, I–vi–IV–V con aproximación por la quinta, acordes con barra (3 lecciones,
@@ -23,7 +23,10 @@ _Última actualización: 2026-10-02_
   - **Riffs de rock**: riffs con la pentatónica menor y moverlos de acorde, el patrón de rock and roll
     (1-3-5-6-♭7) sobre un blues de doce compases, doblar el riff de la guitarra o sostener (3 lecciones,
     6 ejercicios; los de doblar suenan con guitarra y batería). Sin vídeo del patrón de rock and roll.
-- Pendiente: rock/pop módulo 4 (la canción entera); itinerarios blues/jazz y funk/soul.
+  - **La canción entera**: forma (verso, estribillo, puente), dinámica por secciones (duración de las notas, piano/
+    forte, callar y volver con un relleno) y una canción original completa de 31 compases con batería y acordes
+    (3 lecciones, 5 ejercicios; secciones rotuladas en la partitura). **Itinerario rock/pop completo.**
+- Pendiente: itinerarios blues/jazz y funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -93,6 +96,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 
 - **Activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar el workflow "Publicar en GitHub Pages".
 - Probar el tronco común como alumno y en tu móvil (instalada como app).
+- Probar el itinerario rock/pop, sobre todo la canción completa del módulo 4.
 - Probar el itinerario metal/punk y decir si prefieres púa o dedos, y metal o punk como foco (se eligió púa y una
   mezcla de ambos sin poder preguntarte).
 
@@ -101,5 +105,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: rock/pop módulo 4 (la canción entera), después blues/jazz y funk/soul.
+2. Seguir la Fase 7: itinerario blues/jazz (shuffle, blues de 12 compases, walking), después funk/soul.
 3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

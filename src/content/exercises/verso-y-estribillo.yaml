@@ -1,0 +1,49 @@
+title: Verso y estribillo
+status: borrador
+instructions: >-
+  Una forma de canción original en Sol, sección a sección: el verso (G Em C D) en negras y el estribillo (G D Em C)
+  en corcheas, dos veces. Cada sección dura cuatro compases y su nombre está encima de la partitura. Cuenta los
+  compases en voz alta ("uno, dos, tres, cuatro") para saber siempre dónde estás.
+tempo:
+  start: 80
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, Em, C, D, G, D, Em, C, G, Em, C, D, G, D, Em, C, G]
+passCriteria:
+  - Cambias de negras a corcheas justo en el 1 del estribillo
+  - Sabes en qué sección y en qué compás de la sección estás sin mirar la partitura
+  - Llegas al final sin perderte
+tags:
+  - rock
+  - pop
+  - forma
+  - cancion
+alphaTex: |
+  \title "Verso y estribillo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4 {txt "Verso 1" ch "G"} 3.4 3.4 3.4 |
+  :4 0.4 {ch "Em"} 0.4 0.4 0.4 |
+  :4 3.3 {ch "C"} 3.3 3.3 3.3 |
+  :4 5.3 {ch "D"} 5.3 5.3 5.3 |
+  :8 3.4 {txt "Estribillo" ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 0.4 {ch "Em"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :4 3.4 {txt "Verso 2" ch "G"} 3.4 3.4 3.4 |
+  :4 0.4 {ch "Em"} 0.4 0.4 0.4 |
+  :4 3.3 {ch "C"} 3.3 3.3 3.3 |
+  :4 5.3 {ch "D"} 5.3 5.3 5.3 |
+  :8 3.4 {txt "Estribillo" ch "G"} 3.4 3.4 3.4 3.4 3.4 3.4 3.4 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 0.4 {ch "Em"} 0.4 0.4 0.4 0.4 0.4 0.4 0.4 |
+  :8 3.3 {ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :1 3.4 {ch "G"}

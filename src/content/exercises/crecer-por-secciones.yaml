@@ -1,0 +1,53 @@
+title: Crecer por secciones
+status: borrador
+instructions: >-
+  La misma armonía en tres niveles de energía. Verso, piano (suave) y negras cortas. Pre-estribillo, mezzoforte y
+  corcheas. Estribillo, forte, corcheas largas y fundamental-octava. Después del estribillo, el verso vuelve a bajar.
+  La fuerza cambia poco: la energía la dan sobre todo la duración de las notas y lo que tocas.
+tempo:
+  start: 80
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [G, Em, C, D, C, D, G, D, Em, C, G, Em, C, D, C, D, G, D, Em, C, G]
+passCriteria:
+  - Se oyen tres niveles distintos (verso, pre-estribillo y estribillo)
+  - Al volver al verso, bajas de verdad, sin quedarte en el nivel del estribillo
+  - El tempo no cambia con la dinámica (ni corres en el estribillo ni frenas en el verso)
+tags:
+  - rock
+  - pop
+  - dinamica
+  - forma
+alphaTex: |
+  \title "Crecer por secciones"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.4{st} {txt "Verso" dy p ch "G"} 3.4{st} 3.4{st} 3.4{st} |
+  :4 0.4{st} {ch "Em"} 0.4{st} 0.4{st} 0.4{st} |
+  :4 3.3{st} {ch "C"} 3.3{st} 3.3{st} 3.3{st} |
+  :4 5.3{st} {ch "D"} 5.3{st} 5.3{st} 5.3{st} |
+  :8 3.3 {txt "Pre-estribillo" dy mf ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 3.4 {txt "Estribillo" dy f ch "G"} 3.4 5.2 3.4 3.4 5.2 3.4 5.2 |
+  :8 5.3 {ch "D"} 5.3 7.1 5.3 5.3 7.1 5.3 7.1 |
+  :8 0.4 {ch "Em"} 0.4 2.2 0.4 0.4 2.2 0.4 2.2 |
+  :8 3.3 {ch "C"} 3.3 5.1 3.3 3.3 5.1 3.3 5.1 |
+  :4 3.4{st} {txt "Verso" dy p ch "G"} 3.4{st} 3.4{st} 3.4{st} |
+  :4 0.4{st} {ch "Em"} 0.4{st} 0.4{st} 0.4{st} |
+  :4 3.3{st} {ch "C"} 3.3{st} 3.3{st} 3.3{st} |
+  :4 5.3{st} {ch "D"} 5.3{st} 5.3{st} 5.3{st} |
+  :8 3.3 {txt "Pre-estribillo" dy mf ch "C"} 3.3 3.3 3.3 3.3 3.3 3.3 3.3 |
+  :8 5.3 {ch "D"} 5.3 5.3 5.3 5.3 5.3 5.3 5.3 |
+  :8 3.4 {txt "Estribillo" dy f ch "G"} 3.4 5.2 3.4 3.4 5.2 3.4 5.2 |
+  :8 5.3 {ch "D"} 5.3 7.1 5.3 5.3 7.1 5.3 7.1 |
+  :8 0.4 {ch "Em"} 0.4 2.2 0.4 0.4 2.2 0.4 2.2 |
+  :8 3.3 {ch "C"} 3.3 5.1 3.3 3.3 5.1 3.3 5.1 |
+  :1 3.4 {ch "G"}
