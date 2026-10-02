@@ -1,0 +1,44 @@
+title: Caminar con el arpegio de séptima
+status: borrador
+instructions: >-
+  Cuatro negras por compás con las notas de cada acorde de séptima: 1-3-5-♭7. Mismo blues en Fa, primera posición,
+  con cuerdas al aire. Deja que cada negra suene hasta la siguiente: en el walking las notas son largas.
+tempo:
+  start: 80
+  target: 140
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [F7, Bb7, F7, F7, Bb7, Bb7, F7, F7, C7, Bb7, F7, C7, F7]
+passCriteria:
+  - Las cuatro negras de cada compás suenan iguales de largas y de fuertes
+  - La fundamental cae siempre en el 1
+  - No aceleras al llegar a la séptima
+tags:
+  - jazz
+  - blues
+  - walking
+  - arpegio
+alphaTex: |
+  \title "Caminar con el arpegio de séptima"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 1.3{lf 2 acc b} {ch "Bb7"} 0.2 3.2{lf 5} 1.1{lf 2 acc b} |
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 1.3{lf 2 acc b} {ch "Bb7"} 0.2 3.2{lf 5} 1.1{lf 2 acc b} |
+  :4 1.3{lf 2 acc b} {ch "Bb7"} 0.2 3.2{lf 5} 1.1{lf 2 acc b} |
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 3.3{lf 5} {ch "C7"} 2.2{lf 3} 0.1 3.1{lf 5 acc b} |
+  :4 1.3{lf 2 acc b} {ch "Bb7"} 0.2 3.2{lf 5} 1.1{lf 2 acc b} |
+  :4 1.4{lf 2} {ch "F7"} 0.3 3.3{lf 5} 1.2{lf 2 acc b} |
+  :4 3.3{lf 5} {ch "C7"} 2.2{lf 3} 0.1 3.1{lf 5 acc b} |
+  :1 1.4{lf 2} {ch "F7"}

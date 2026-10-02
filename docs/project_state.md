@@ -26,7 +26,12 @@ _Última actualización: 2026-10-02_
   - **La canción entera**: forma (verso, estribillo, puente), dinámica por secciones (duración de las notas, piano/
     forte, callar y volver con un relleno) y una canción original completa de 31 compases con batería y acordes
     (3 lecciones, 5 ejercicios; secciones rotuladas en la partitura). **Itinerario rock/pop completo.**
-- Pendiente: itinerarios blues/jazz y funk/soul.
+- **Itinerario blues/jazz** (borrador): temario de 4 módulos en [pedagogy.md](pedagogy.md). Escritos:
+  - **El blues** (en La): forma de doce compases con cambio rápido y turnaround, 1-5-♭7-8, shuffle 1-5-6-♭7 por todo
+    el blues, escala de blues y rellenos en los compases 4 y 12 (3 lecciones, 6 ejercicios, batería en shuffle).
+  - **Walking bass** (en Fa): blancas, arpegio de séptima, aproximación cromática en el cuarto tiempo y un blues
+    caminado de dos vueltas (3 lecciones, 4 ejercicios, batería en swing). Vídeos de TalkingBass.
+- Pendiente: blues/jazz módulos 3–4 (II–V–I, blues de jazz, two-feel, AABA); itinerario funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -97,6 +102,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 - **Activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar el workflow "Publicar en GitHub Pages".
 - Probar el tronco común como alumno y en tu móvil (instalada como app).
 - Probar el itinerario rock/pop, sobre todo la canción completa del módulo 4.
+- Probar los módulos de blues y walking del itinerario blues/jazz.
 - Probar el itinerario metal/punk y decir si prefieres púa o dedos, y metal o punk como foco (se eligió púa y una
   mezcla de ambos sin poder preguntarte).
 
@@ -105,5 +111,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: itinerario blues/jazz (shuffle, blues de 12 compases, walking), después funk/soul.
+2. Seguir la Fase 7: blues/jazz módulos 3–4 (armonía de jazz; tocar jazz), después funk/soul.
 3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

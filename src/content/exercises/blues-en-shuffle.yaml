@@ -1,0 +1,44 @@
+title: Un blues entero en shuffle
+status: borrador
+instructions: >-
+  La línea 1-5-6-♭7 en shuffle por todo el blues, con cambio rápido y turnaround. Cuando un acorde dura dos
+  compases, el segundo baja (8-♭7-6-5); cuando cambia, vuelve a subir desde la fundamental nueva. La misma forma
+  en los tres acordes: A en la cuerda E (traste 5), D y E en la cuerda A (trastes 5 y 7).
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, D7, A7, A7, D7, D7, A7, A7, E7, D7, A7, E7, A7]
+passCriteria:
+  - Cambias de acorde a tiempo y llegas al final sin perderte
+  - El balanceo largo-corto no se pierde al cambiar de cuerda o de posición
+  - Al terminar los doce compases podrías empezar otra vuelta sin parar
+tags:
+  - blues
+  - shuffle
+  - forma
+alphaTex: |
+  \title "Un blues entero en shuffle"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 5.3{lf 3} {tu 3 ch "D7"} :8 5.3{lf 3} {tu 3} :4 7.2{lf 5} {tu 3} :8 7.2{lf 5} {tu 3} :4 4.1{lf 2} {tu 3} :8 4.1{lf 2} {tu 3} :4 5.1{lf 3} {tu 3} :8 5.1{lf 3} {tu 3} |
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 7.2{lf 5} {tu 3 ch "A7"} :8 7.2{lf 5} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} |
+  :4 5.3{lf 3} {tu 3 ch "D7"} :8 5.3{lf 3} {tu 3} :4 7.2{lf 5} {tu 3} :8 7.2{lf 5} {tu 3} :4 4.1{lf 2} {tu 3} :8 4.1{lf 2} {tu 3} :4 5.1{lf 3} {tu 3} :8 5.1{lf 3} {tu 3} |
+  :4 7.1{lf 5} {tu 3 ch "D7"} :8 7.1{lf 5} {tu 3} :4 5.1{lf 3} {tu 3} :8 5.1{lf 3} {tu 3} :4 4.1{lf 2} {tu 3} :8 4.1{lf 2} {tu 3} :4 7.2{lf 5} {tu 3} :8 7.2{lf 5} {tu 3} |
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 7.2{lf 5} {tu 3 ch "A7"} :8 7.2{lf 5} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} |
+  :4 7.3{lf 3} {tu 3 ch "E7"} :8 7.3{lf 3} {tu 3} :4 9.2{lf 5} {tu 3} :8 9.2{lf 5} {tu 3} :4 6.1{lf 2} {tu 3} :8 6.1{lf 2} {tu 3} :4 7.1{lf 3} {tu 3} :8 7.1{lf 3} {tu 3} |
+  :4 5.3{lf 3} {tu 3 ch "D7"} :8 5.3{lf 3} {tu 3} :4 7.2{lf 5} {tu 3} :8 7.2{lf 5} {tu 3} :4 4.1{lf 2} {tu 3} :8 4.1{lf 2} {tu 3} :4 5.1{lf 3} {tu 3} :8 5.1{lf 3} {tu 3} |
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 7.3{lf 3} {tu 3 ch "E7"} :8 7.3{lf 3} {tu 3} :4 9.2{lf 5} {tu 3} :8 9.2{lf 5} {tu 3} :4 6.1{lf 2} {tu 3} :8 6.1{lf 2} {tu 3} :4 7.1{lf 3} {tu 3} :8 7.1{lf 3} {tu 3} |
+  :1 5.4{lf 3} {ch "A7"}

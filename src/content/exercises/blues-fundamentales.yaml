@@ -1,0 +1,44 @@
+title: El blues de doce compases con fundamentales
+status: borrador
+instructions: >-
+  La forma básica del blues en La: cuatro compases de A7, dos de D7, dos de A7, y E7, D7, A7, E7. Solo la
+  fundamental, en negras: A en la cuerda E (traste 5), D y E en la cuerda A (trastes 5 y 7). Cuenta los compases
+  en voz alta; la batería va en shuffle, pero tus negras no cambian.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, A7, A7, A7, D7, D7, A7, A7, E7, D7, A7, E7, A7]
+passCriteria:
+  - Cambias de acorde a tiempo en los compases 5, 7, 9, 10, 11 y 12
+  - Sabes en qué compás de la forma estás sin mirar la partitura
+  - Las negras duran enteras y caen con el pulso, no con el balanceo del charles
+tags:
+  - blues
+  - forma
+  - fundamental
+alphaTex: |
+  \title "El blues de doce compases con fundamentales"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 5.3{lf 2} {ch "D7"} 5.3{lf 2} 5.3{lf 2} 5.3{lf 2} |
+  :4 5.3{lf 2} {ch "D7"} 5.3{lf 2} 5.3{lf 2} 5.3{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 7.3{lf 2} {ch "E7"} 7.3{lf 2} 7.3{lf 2} 7.3{lf 2} |
+  :4 5.3{lf 2} {ch "D7"} 5.3{lf 2} 5.3{lf 2} 5.3{lf 2} |
+  :4 5.4{lf 2} {ch "A7"} 5.4{lf 2} 5.4{lf 2} 5.4{lf 2} |
+  :4 7.3{lf 2} {ch "E7"} 7.3{lf 2} 7.3{lf 2} 7.3{lf 2} |
+  :1 5.4 {ch "A7"}

@@ -73,6 +73,18 @@ Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también 
 | 3 · Riffs de rock ✍️ | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
 | 4 · La canción entera ✍️ | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
 
+### Itinerario blues/jazz (temario, borrador)
+
+Con dedos. Se apoya en el shuffle y las cuatriadas de la ampliación común. Tonalidades: La para el blues (quinta
+posición, como el resto del curso) y Fa para el walking (primera posición, tonalidad habitual del jazz).
+
+| Módulo | Lecciones |
+|---|---|
+| 1 · El blues ✍️ | El blues de doce compases (cambio rápido, turnaround) · El shuffle de blues (1-5-6-♭7) · La escala de blues y los rellenos |
+| 2 · Walking bass ✍️ | Empezar a caminar (blancas; arpegio de séptima) · Notas de aproximación · Un blues caminado |
+| 3 · Armonía de jazz | El II–V–I mayor · Walking sobre II–V–I · El blues de jazz (con II–V) |
+| 4 · Tocar jazz | Two-feel y pasar a walking · La forma AABA de 32 compases · Un tema completo (original) |
+
 ### Itinerario metal/punk (temario, borrador)
 
 Con **púa** por defecto (el ataque típico de los dos estilos); quien prefiera dedos puede hacer los ejercicios con
@@ -137,10 +149,16 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Rellenos | Cortos, al final de la frase, con la pentatónica; volver al 1; sin abusar | StudyBass (Scale Tones in Basslines: rellenos con pentatónica, sin competir con la voz); vídeo de TalkingBass |
 | I–V–vi–IV e I–vi–IV–V | Progresiones de cuatro acordes muy comunes en pop y rock; pensar en grados | StudyBass (The I-V-vi-IV / The I-vi-IV-V Chord Progression); vídeos de Ryan Madora |
 | Riff | Frase corta que se repite exacta; en el rock, a menudo con la pentatónica menor y empezando en la fundamental | Wikipedia (Riff: "short, repeated motif"; Rooksby: grave, centra la energía de la canción); TalkingBass (The Minor Pentatonic Scale: la escala más común del rock y base de riffs); vídeo de Dan Hawkins (riffs de rock) |
-| Patrón de rock and roll | 1-3-5-6-♭7-6-5-3 sobre acordes de séptima, en corcheas; la sexta suaviza el sonido | Fundamental Changes (Walking Bassline Part Two: "probablemente el patrón de dos compases más famoso"); Patrick Pfeiffer en Dummies (grooves de rock 'n' roll en corcheas; 1-3-5-6 y ♭7 en acordes dominantes). Digitación: la forma del arpegio mayor del curso + 6 y ♭7 en la cuerda siguiente (deducida y verificada con Tonal). **Sin vídeo verificado** |
+| Patrón de rock and roll | 1-3-5-6-♭7-6-5-3 sobre acordes de séptima, en corcheas; la sexta suaviza el sonido | StudyBass (The Boogie-Woogie Blues Pattern: R-3-5-6 / ♭7-6-5-3; la sexta viene de la mixolidia); Fundamental Changes (Walking Bassline Part Two: "probablemente el patrón de dos compases más famoso"); Patrick Pfeiffer en Dummies (grooves de rock 'n' roll en corcheas; 1-3-5-6 y ♭7 en acordes dominantes). Digitación: la forma del arpegio mayor del curso + 6 y ♭7 en la cuerda siguiente (deducida y verificada con Tonal). **Sin vídeo verificado** |
 | Doblar o sostener (rock) | Doblar = las mismas notas y ritmo que la guitarra, una octava abajo; o sostener la fundamental; cambiar entre secciones | Mismas fuentes que "Papel del bajo en el metal" y "Encajar con el bombo"; el término medio (unirse al final del riff) es un recurso de arreglo propio, sin fuente específica |
 | Forma de canción | Intro, verso, (pre-estribillo), estribillo, puente, final; el estribillo, más intenso que el verso; secciones de 4–8 compases que hay que contar | Wikipedia (Song structure: definiciones y orden habitual verso–estribillo); LibreTexts (Hutchinson, Verse-Chorus Form: la forma más común del pop actual). Los 4–8 compases: práctica común, coherente con las frases de 4 compases de "Rellenos" |
 | Dinámica por secciones | Empezar con poco y dejar sitio para crecer; notas cortas en el verso y largas en el estribillo; volver a bajar en el verso; callar antes de una sección y volver con un relleno | E. E. Bradman (Yamaha Hub, "Dynamic Bass Playing"); Premier Guitar (Brodén: duración y ataque por secciones); vídeo de SBL (dinámica) |
+| Blues de doce compases | I7–IV7–V7 en 12 compases (I I I I · IV IV I I · V IV I V); cambio rápido (IV en el compás 2); turnaround (11–12, termina en V). Primero solo fundamentales; memorizar la forma y sentir el compás 1 | StudyBass (The 12-Bar Blues Form; Blues Form Variation 2: si empieza y acaba en el mismo acorde, es fácil perderse); Wikipedia (Twelve-bar blues: quick change, turnaround); Premier Guitar (Mike Cramer, Essential Blues Progressions) |
+| 1-5-♭7-8 en el blues | Subconjunto del acorde de séptima; la ♭7 es el sonido del blues; fundamental en el 1 | StudyBass (Applying Root, 5th, Flat 7th and 8 to the Blues) |
+| Shuffle de blues | 1-5-6-♭7 (y la octava), dos ataques por nota, largo-corto | No Treble (Ryan Madora, B.B. King Shuffle: R, 5, 6, ♭7 y octava, "dos ataques por nota"); StudyBass (Shuffle and Swing Rhythms). Digitación: la de la forma del rock and roll |
+| Escala de blues | Pentatónica menor + ♭5; la ♭5, de paso entre 4 y 5; para rellenos | No Treble (Ryan Madora, How to Use the Blues Scale…: la ♭5 como nota de paso disonante; rellenos); TalkingBass (The Minor Pentatonic Scale). Lo de la ♭3 sobre un acorde con tercera mayor es deducción propia, coherente con Wikipedia (Blue note) |
+| Walking bass | Negras constantes y largas; notas del acorde como base; construir por capas (1–2 notas por compás primero) | TalkingBass (The Walking Bass Secret…; The RIGHT Way To Start Walking Bass); Fundamental Changes (Walking Bassline Part Two) |
+| Aproximación en el walking | Notas del acorde en 1 y 3; cromáticas en los débiles (2 y 4); medio tono por encima o por debajo de la fundamental siguiente en el 4 | StudyBass (Chromatic Tones in Basslines: en partes débiles); TalkingBass (The Walking Bass Secret: aproximación por semitono, arriba o abajo) |
 | Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
@@ -208,6 +226,16 @@ Escritas (base del texto):
 - Wikipedia — [Riff](https://en.wikipedia.org/wiki/Riff) · [Song structure](https://en.wikipedia.org/wiki/Song_structure)
 - LibreTexts (Hutchinson) — [Verse-Chorus Form](https://human.libretexts.org/Bookshelves/Music/Music_Theory/Music_Theory_for_the_21st-Century_Classroom_(Hutchinson)/12%3A_Form_in_Popular_Music/12.01%3A_Verse-Chorus_Form)
 - Yamaha Hub (E. E. Bradman) — [Dynamic Bass Playing](https://hub.yamaha.com/?p=57223)
+- StudyBass — [The 12-Bar Blues Form](https://www.studybass.com/lessons/blues-bass/the-12-bar-blues-form/) ·
+  [Applying Root, 5th, Flat 7th and 8](https://www.studybass.com/lessons/blues-bass/applying-root-5-flat-7-8-to-the-blues/) ·
+  [Blues Form Variation 2](https://www.studybass.com/lessons/blues-bass/blues-form-variation-2/) ·
+  [The Boogie-Woogie Blues Pattern](https://www.studybass.com/lessons/blues-bass/the-boogie-woogie-blues-pattern/)
+- Wikipedia — [Twelve-bar blues](https://en.wikipedia.org/wiki/Twelve-bar_blues) · [Blue note](https://en.wikipedia.org/wiki/Blue_note)
+- Premier Guitar (Mike Cramer) — [Style Guide: Essential Blues Progressions](https://www.premierguitar.com/articles/19663-style-guide-essential-blues-progressions)
+- No Treble (Ryan Madora) — [Keep It Groovy: How to Play a B.B. King Shuffle](https://www.notreble.com/?p=87630) ·
+  [How to Use the Blues Scale to Level Up Your Bass Lines and Fills](https://www.notreble.com/?p=106868)
+- TalkingBass — [The Walking Bass Secret Every Beginner Needs To Know](https://www.talkingbass.net/the-walking-bass-secret-every-beginner-needs-to-know/) ·
+  [The RIGHT Way To Start Walking Bass](https://www.talkingbass.net/the-right-way-to-start-walking-bass-no-theory-needed/)
 - Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
 - StudyBass — [Pitch Notation](https://www.studybass.com/lessons/reading-music/pitch-notation/) ·
   [Key Signatures](https://www.studybass.com/lessons/reading-music/key-signatures/) ·
@@ -279,6 +307,8 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | Con batería | [How to Play Bass with a Drummer (Foolproof Beginner Blueprint)](https://www.youtube.com/watch?v=PSw5uqkTPzs) | BassBuzz |
 | 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |
 | 5 cuerdas | [How to SOUND AWESOME on the 5 STRING BASS… for 4 string players](https://www.youtube.com/watch?v=h3BGK3m7O_A) | Scott's Bass Lessons |
+| Empezar el walking | [The RIGHT Way To Start Walking Bass (NO Theory Needed)](https://www.youtube.com/watch?v=kNxOMOH7ioc) | TalkingBass |
+| Walking: notas del acorde | [The Walking Bass Secret EVERY Beginner Needs To Know](https://www.youtube.com/watch?v=ZueIBKZtgWs) | TalkingBass |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
@@ -298,6 +328,9 @@ Rock/pop, módulo 3 (2026-10-02): se reutiliza el vídeo de riffs de Dan Hawkins
 roll** ni de doblar el riff: no encontré uno de una fuente reconocida que no sea una canción con copyright.
 Módulo 4: se reutilizan los vídeos de dinámica (SBL) y de tocar con batería (BassBuzz); **sin vídeo de forma de
 canción** (los que hay analizan canciones con copyright).
+
+Blues/jazz (verificados el 2026-10-02, oEmbed): los dos de walking están incrustados en las páginas de TalkingBass
+citadas. **Sin vídeo propio de la forma del blues ni de la escala de blues**; el shuffle reutiliza el de SBL.
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.

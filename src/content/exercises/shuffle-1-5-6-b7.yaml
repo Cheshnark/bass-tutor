@@ -1,0 +1,36 @@
+title: Shuffle con 1-5-6-♭7
+status: borrador
+instructions: >-
+  La línea de shuffle de la ampliación común, ahora hasta la séptima menor y la octava: 1-5-6-♭7 al subir y
+  8-♭7-6-5 al bajar, cada nota dos veces (larga-corta). Forma del arpegio mayor: dedo 2 en la fundamental, 4 en la
+  quinta y la octava, 1 en la sexta y 2 en la séptima, en la cuerda D.
+tempo:
+  start: 60
+  target: 100
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, A7, A7, A7, A7]
+passCriteria:
+  - Cada par de notas suena largo-corto, igual que el charles
+  - La sexta (F#) y la séptima (G) suenan limpias
+  - La mano no se mueve en todo el ejercicio
+tags:
+  - blues
+  - shuffle
+  - septima
+alphaTex: |
+  \title "Shuffle con 1-5-6-♭7"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 60
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 7.2{lf 5} {tu 3 ch "A7"} :8 7.2{lf 5} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} |
+  :4 5.4{lf 3} {tu 3 ch "A7"} :8 5.4{lf 3} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} |
+  :4 7.2{lf 5} {tu 3 ch "A7"} :8 7.2{lf 5} {tu 3} :4 5.2{lf 3} {tu 3} :8 5.2{lf 3} {tu 3} :4 4.2{lf 2} {tu 3} :8 4.2{lf 2} {tu 3} :4 7.3{lf 5} {tu 3} :8 7.3{lf 5} {tu 3} |
+  :1 5.4{lf 3} {ch "A7"}

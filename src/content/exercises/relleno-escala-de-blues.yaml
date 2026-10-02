@@ -1,0 +1,45 @@
+title: Rellenos con la escala de blues
+status: borrador
+instructions: >-
+  El blues con 1-5-♭7-8 en negras y dos rellenos con la escala de blues: en el compás 4 (lleva a D7) y en el 12
+  (vuelve a A7). Es el mismo relleno las dos veces (G E · E♭ D · C), en shuffle, y termina un paso antes de la
+  fundamental nueva: C sube a D y baja a A.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, D7, A7, A7, D7, D7, A7, A7, E7, D7, A7, E7, A7]
+passCriteria:
+  - Los rellenos no aceleran y terminan a tiempo
+  - Después de cada relleno entras en el 1 con la fundamental
+  - El paso de negras a shuffle y de vuelta a negras no mueve el pulso
+tags:
+  - blues
+  - escala
+  - relleno
+  - shuffle
+alphaTex: |
+  \title "Rellenos con la escala de blues"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 7.2{lf 4} {ch "A7"} :4 5.2{lf 2} {tu 3} :8 7.3{lf 4} {tu 3} :4 6.3{lf 3 acc b} {tu 3} :8 5.3{lf 2} {tu 3} :4 8.4{lf 5} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 7.3{lf 2} {ch "E7"} 9.2{lf 4} 7.1{lf 2} 9.1{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 7.3{lf 4} {ch "E7"} :4 5.2{lf 2} {tu 3} :8 7.3{lf 4} {tu 3} :4 6.3{lf 3 acc b} {tu 3} :8 5.3{lf 2} {tu 3} :4 8.4{lf 5} |
+  :1 5.4{lf 2} {ch "A7"}

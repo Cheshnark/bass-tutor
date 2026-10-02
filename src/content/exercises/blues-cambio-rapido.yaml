@@ -1,0 +1,43 @@
+title: Cambio rápido y turnaround con 1-5-♭7-8
+status: borrador
+instructions: >-
+  Fundamental, quinta, séptima menor y octava en negras, con la forma de dos trastes (dedos 1 y 3). La forma
+  tiene cambio rápido (D7 en el compás 2) y turnaround (E7 en el 12, que te devuelve al principio).
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: shuffle
+backing:
+  harmony: [A7, D7, A7, A7, D7, D7, A7, A7, E7, D7, A7, E7, A7]
+passCriteria:
+  - No te saltas el D7 del compás 2 ni te quedas en él en el 3
+  - El E7 del compás 12 suena a "volver al principio"
+  - La mano se mueve solo para cambiar de acorde, nunca dentro del compás
+tags:
+  - blues
+  - forma
+  - septima
+alphaTex: |
+  \title "Cambio rápido y turnaround con 1-5-♭7-8"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 7.3{lf 2} {ch "E7"} 9.2{lf 4} 7.1{lf 2} 9.1{lf 4} |
+  :4 5.3{lf 2} {ch "D7"} 7.2{lf 4} 5.1{lf 2} 7.1{lf 4} |
+  :4 5.4{lf 2} {ch "A7"} 7.3{lf 4} 5.2{lf 2} 7.2{lf 4} |
+  :4 7.3{lf 2} {ch "E7"} 9.2{lf 4} 7.1{lf 2} 9.1{lf 4} |
+  :1 5.4 {ch "A7"}

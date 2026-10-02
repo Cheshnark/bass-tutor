@@ -20,7 +20,9 @@
 - [x] Rock/pop: módulo 4 (La canción entera: forma, dinámica por secciones, una canción completa). **Itinerario completo.**
 - [ ] alphaTab dibuja `\section` encima del cifrado del acorde; las secciones se rotulan con `txt` (texto pequeño en cursiva). Revisar si una versión nueva lo arregla.
 - [ ] Buscar un vídeo verificable del patrón de rock and roll (1-3-5-6-♭7); hoy la lección va sin vídeo.
-- [ ] Itinerarios blues/jazz (blues de 12 compases, walking) y funk/soul (octavas, notas muertas, slap).
+- [x] Blues/jazz: temario y módulos 1 (El blues) y 2 (Walking bass), en borrador.
+- [ ] Blues/jazz: módulos 3 (armonía de jazz: II–V–I) y 4 (two-feel, AABA, un tema completo).
+- [ ] Itinerario funk/soul (octavas, notas muertas, slap).
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 
 ## Fase 6: hecha

@@ -364,3 +364,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   la atención va a la forma y la energía, no a la mano izquierda.
 - Los ejercicios del módulo se generan con un script de usar y tirar (no está en el repo): son muy repetitivos y así
   se evitan errores de copia; el alphaTex resultante es el que se revisa y se versiona.
+
+## 2026-10-02 · Blues/jazz: temario, tonalidades y bemoles forzados
+- **Motivo:** el blues en La reutiliza las formas en quinta posición del resto del curso (pentatónica, 1-5-♭7-8,
+  forma del rock and roll); el walking va en Fa, tonalidad habitual del jazz, y cabe en primera posición con 1-2-4 y
+  cuerdas al aire, así que toda la atención va a la regla de los tiempos (acorde en 1 y 3, aproximación en 4).
+- Forma del blues: la de StudyBass (I I I I · IV IV I I · V IV I V) y, después, con cambio rápido. Las variantes se
+  mencionan sin practicarlas.
+- **Bemoles forzados** (`acc b` en la nota): alphaTab deduce la alteración por la altura y escribe D♯, A♯ o G♯ donde
+  la armonía pide E♭, B♭ o A♭. Se marca solo en esas notas, sin armadura, para no llenar de alteraciones el resto.
+- Walking con `feel: swing` (la batería generada va en tresillos); las negras del bajo no cambian.
