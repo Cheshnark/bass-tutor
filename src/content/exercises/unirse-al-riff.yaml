@@ -1,0 +1,67 @@
+title: 'Sostener y unirse al final del riff'
+status: borrador
+instructions: >-
+  Un arreglo en tres niveles sobre el mismo riff de guitarra. Compases 1–2, sostienes la fundamental en
+  corcheas. Compases 3–6, sostienes la primera mitad y te unes a la guitarra en la segunda (D E C). Compases
+  7–8, doblas el riff entero. Así el bajo va sumando peso poco a poco sin cambiar de tempo ni de fuerza.
+tempo:
+  start: 80
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  drums: Rock en corcheas
+  harmony: [A5, A5, A5, A5, A5, A5, A5, A5, A5]
+passCriteria:
+  - Te unes a la guitarra justo en el tercer tiempo, ni antes ni después
+  - Cada nivel suena más lleno que el anterior sin que toques más fuerte
+  - Sabes en qué compás estás sin mirar la partitura
+tags:
+  - rock
+  - banda
+  - riff
+  - arreglo
+alphaTex: |
+  \title "Sostener y unirse al final del riff"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 0.3 {ch "A5"} 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :8 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 |
+  :8 0.3 0.3 0.3 0.3 0.2 2.2 :4 3.3 |
+  :8 0.3 0.3 0.3 0.3 0.2 2.2 :4 3.3 |
+  :8 0.3 0.3 0.3 0.3 0.2 2.2 :4 3.3 |
+  :8 0.3 0.3 0.3 0.3 0.2 2.2 :4 3.3 |
+  :8 0.3 0.3 3.3 0.3 0.2 2.2 :4 3.3 |
+  :8 0.3 0.3 3.3 0.3 0.2 2.2 :4 3.3 |
+  :1 0.3
+  \track "Guitarra" { instrument "Overdriven Guitar" }
+  \staff { tabs }
+  \tuning (E4 B3 G3 D3 A2 E2)
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :8 0.5 0.5 3.5 0.5 0.4 2.4 :4 3.5 |
+  :1 (0.5 2.4 2.3)
+  \track "Batería"
+  \instrument percussion
+  \clef neutral
+  \articulation defaults
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit CrashMediumHit) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :8 (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed (KickHit HiHatClosed) HiHatClosed (SnareHit HiHatClosed) HiHatClosed |
+  :1 (KickHit CrashMediumHit)

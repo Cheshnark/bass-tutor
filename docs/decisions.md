@@ -346,3 +346,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   tríadas), que el esquema permite.
 - La aproximación por la quinta se enseña sobre I–vi–IV–V y no sobre I–IV–V: en I–IV–V la quinta del acorde siguiente
   casi siempre es la fundamental del actual y el ejercicio no enseñaría nada.
+
+## 2026-10-02 · Rock/pop, módulo 3: blues de doce compases y riffs que se mueven en bloque
+- **Motivo:** el patrón de rock and roll (1-3-5-6-♭7) se toca sobre un blues de doce compases porque es su forma
+  habitual; se presenta solo como cuenta de compases y el estudio a fondo queda para el itinerario blues/jazz (un
+  itinerario no puede depender de otro).
+- Riffs y patrón en **una sola forma que se mueve** (A en la cuerda E; D y E en la cuerda A): el alumno aprende un
+  dibujo y lo traslada, en vez de tres digitaciones. Quinta posición y un dedo por traste, coherente con la
+  pentatónica y los arpegios de la ampliación.
+- El mástil de la lección usa el acorde de Tonal `7add6` para mostrar exactamente 1-3-5-6-♭7.
+- Doblar el riff en rock: guitarra con `Overdriven Guitar` (menos saturada que la del metal) y bajo con dedos.

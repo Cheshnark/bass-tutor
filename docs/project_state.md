@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-_Última actualización: 2026-10-01_
+_Última actualización: 2026-10-02_
 
 ## Fases 0–6 cerradas; Fase 7 (contenido) en curso
 
@@ -20,7 +20,10 @@ _Última actualización: 2026-10-01_
     (3 lecciones, 5 ejercicios).
   - **Progresiones pop**: I–V–vi–IV, I–vi–IV–V con aproximación por la quinta, acordes con barra (3 lecciones,
     5 ejercicios).
-- Pendiente: rock/pop módulos 3–4; itinerarios blues/jazz y funk/soul.
+  - **Riffs de rock**: riffs con la pentatónica menor y moverlos de acorde, el patrón de rock and roll
+    (1-3-5-6-♭7) sobre un blues de doce compases, doblar el riff de la guitarra o sostener (3 lecciones,
+    6 ejercicios; los de doblar suenan con guitarra y batería). Sin vídeo del patrón de rock and roll.
+- Pendiente: rock/pop módulo 4 (la canción entera); itinerarios blues/jazz y funk/soul.
 
 ### Fase 6 (diseño "cabezal" y pulido): hecha
 
@@ -98,5 +101,5 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 Opciones, por orden de recomendación:
 1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
    el curso y la Práctica unos días.
-2. Seguir la Fase 7: rock/pop módulos 3–4 (riffs; la canción entera), después blues/jazz y funk/soul.
+2. Seguir la Fase 7: rock/pop módulo 4 (la canción entera), después blues/jazz y funk/soul.
 3. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).

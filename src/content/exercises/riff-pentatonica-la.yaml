@@ -1,0 +1,40 @@
+title: Un riff con la pentatónica de La
+status: borrador
+instructions: >-
+  Un riff original de dos compases con la pentatónica menor de La en quinta posición (dedos 1 y 4 en la cuerda E,
+  1 y 3 en la A). Repítelo cuatro veces igual: un riff funciona porque se repite exacto. Empieza siempre en la
+  fundamental, en el 1.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A5, A5, A5, A5, A5, A5, A5, A5, A5]
+passCriteria:
+  - Las cuatro repeticiones suenan idénticas
+  - La negra del segundo compás dura entera, sin adelantar las dos corcheas siguientes
+  - La mano no se mueve de la quinta posición
+tags:
+  - rock
+  - riff
+  - pentatonica
+alphaTex: |
+  \title "Un riff con la pentatónica de La"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{lf 2} {ch "A5"} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :1 5.4{lf 2}

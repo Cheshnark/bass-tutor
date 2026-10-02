@@ -16,7 +16,9 @@
 - [x] Ampliación común: Leer partitura (clave de Fa, ritmo leído, una línea entera), en borrador. **Ampliación completa.**
 - [ ] Lectura: opción de ocultar la tablatura en cualquier ejercicio (hoy solo en los de lectura).
 - [x] Rock/pop: temario y módulos 1 (El pulso del rock) y 2 (Progresiones pop), en borrador.
-- [ ] Rock/pop: módulos 3 (riffs) y 4 (la canción entera).
+- [x] Rock/pop: módulo 3 (Riffs de rock: pentatónica, patrón de rock and roll, doblar el riff), en borrador.
+- [ ] Rock/pop: módulo 4 (la canción entera).
+- [ ] Buscar un vídeo verificable del patrón de rock and roll (1-3-5-6-♭7); hoy la lección va sin vídeo.
 - [ ] Itinerarios blues/jazz (blues de 12 compases, walking) y funk/soul (octavas, notas muertas, slap).
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 

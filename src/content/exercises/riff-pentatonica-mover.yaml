@@ -1,0 +1,41 @@
+title: Mover el riff con los acordes
+status: borrador
+instructions: >-
+  El mismo riff sobre A5, D5 y E5. Como la forma de la pentatónica es la misma en cualquier sitio, solo hay que
+  mover la mano: para D5, la misma forma empezando en la cuerda A (traste 5); para E5, también
+  en la cuerda A, dos trastes más arriba (traste 7). Dos compases por acorde.
+tempo:
+  start: 70
+  target: 110
+  step: 5
+timeSignature: 4/4
+feel: straight
+backing:
+  harmony: [A5, A5, D5, D5, A5, A5, E5, E5, A5]
+passCriteria:
+  - El riff suena igual sobre los tres acordes, solo cambia la altura
+  - Llegas a la nueva fundamental justo en el 1 del cambio
+  - Al cambiar de cuerda no suena la cuerda que dejas
+tags:
+  - rock
+  - riff
+  - pentatonica
+  - cambio-de-acorde
+alphaTex: |
+  \title "Mover el riff con los acordes"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :8 5.4{lf 2} {ch "A5"} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :8 5.3{lf 2} {ch "D5"} 5.3{lf 2} 8.3{lf 5} 5.3{lf 2} 5.2{lf 2} 7.2{lf 4} 5.2{lf 2} 8.3{lf 5} |
+  :8 5.3{lf 2} 5.3{lf 2} 8.3{lf 5} 5.3{lf 2} :4 7.2{lf 4} :8 5.2{lf 2} 8.3{lf 5} |
+  :8 5.4{lf 2} {ch "A5"} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} 5.3{lf 2} 7.3{lf 4} 5.3{lf 2} 8.4{lf 5} |
+  :8 5.4{lf 2} 5.4{lf 2} 8.4{lf 5} 5.4{lf 2} :4 7.3{lf 4} :8 5.3{lf 2} 8.4{lf 5} |
+  :8 7.3{lf 2} {ch "E5"} 7.3{lf 2} 10.3{lf 5} 7.3{lf 2} 7.2{lf 2} 9.2{lf 4} 7.2{lf 2} 10.3{lf 5} |
+  :8 7.3{lf 2} 7.3{lf 2} 10.3{lf 5} 7.3{lf 2} :4 9.2{lf 4} :8 7.2{lf 2} 10.3{lf 5} |
+  :1 5.4{lf 2} {ch "A5"}

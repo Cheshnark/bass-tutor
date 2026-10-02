@@ -69,7 +69,7 @@ Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también 
 |---|---|
 | 1 · El pulso del rock ✍️ | La corchea de rock · Llegar al acorde siguiente · Octavas y rellenos |
 | 2 · Progresiones pop ✍️ | La progresión I–V–vi–IV · I–vi–IV–V y la quinta del acorde siguiente · Acordes con barra |
-| 3 · Riffs de rock | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
+| 3 · Riffs de rock ✍️ | Riffs con la pentatónica · El patrón de rock and roll (1-3-5-6-♭7) · Doblar el riff o sostener |
 | 4 · La canción entera | Estructura: verso, estribillo y puente · Dinámica por secciones · Una canción completa con la banda |
 
 ### Itinerario metal/punk (temario, borrador)
@@ -135,6 +135,9 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Aproximación por la quinta | La quinta del acorde siguiente en la última parte del compás; funciona como V→I | StudyBass (The Fifth Approach) |
 | Rellenos | Cortos, al final de la frase, con la pentatónica; volver al 1; sin abusar | StudyBass (Scale Tones in Basslines: rellenos con pentatónica, sin competir con la voz); vídeo de TalkingBass |
 | I–V–vi–IV e I–vi–IV–V | Progresiones de cuatro acordes muy comunes en pop y rock; pensar en grados | StudyBass (The I-V-vi-IV / The I-vi-IV-V Chord Progression); vídeos de Ryan Madora |
+| Riff | Frase corta que se repite exacta; en el rock, a menudo con la pentatónica menor y empezando en la fundamental | Wikipedia (Riff: "short, repeated motif"; Rooksby: grave, centra la energía de la canción); TalkingBass (The Minor Pentatonic Scale: la escala más común del rock y base de riffs); vídeo de Dan Hawkins (riffs de rock) |
+| Patrón de rock and roll | 1-3-5-6-♭7-6-5-3 sobre acordes de séptima, en corcheas; la sexta suaviza el sonido | Fundamental Changes (Walking Bassline Part Two: "probablemente el patrón de dos compases más famoso"); Patrick Pfeiffer en Dummies (grooves de rock 'n' roll en corcheas; 1-3-5-6 y ♭7 en acordes dominantes). Digitación: la forma del arpegio mayor del curso + 6 y ♭7 en la cuerda siguiente (deducida y verificada con Tonal). **Sin vídeo verificado** |
+| Doblar o sostener (rock) | Doblar = las mismas notas y ritmo que la guitarra, una octava abajo; o sostener la fundamental; cambiar entre secciones | Mismas fuentes que "Papel del bajo en el metal" y "Encajar con el bombo"; el término medio (unirse al final del riff) es un recurso de arreglo propio, sin fuente específica |
 | Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
@@ -196,6 +199,10 @@ Escritas (base del texto):
   [The I-vi-IV-V Chord Progression](https://www.studybass.com/lessons/harmony/the-I-vi-IV-V-chord-progression/) ·
   [Slash Chords](https://www.studybass.com/lessons/reading-music/slash-chords/)
 - TalkingBass — [Using Approach Notes To Improve Your Bass Lines](https://www.talkingbass.net/approach-notes/)
+- TalkingBass — [The Minor Pentatonic Scale For Bass Guitar](https://www.talkingbass.net/minor-pentatonic-scale-for-bass-guitar/)
+- Fundamental Changes — [Learn a Walking Bassline Part Two: Dominant Chords](https://www.fundamental-changes.com/walking-bassline-lesson-2/)
+- Dummies (Patrick Pfeiffer) — [How to Play Rock 'n' Roll-Style Grooves on the Bass Guitar](https://www.dummies.com/article/academics-the-arts/music/instruments/bass-guitar/how-to-play-rock-n-roll-style-grooves-on-the-bass-guitar-154683/)
+- Wikipedia — [Riff](https://en.wikipedia.org/wiki/Riff)
 - Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
 - StudyBass — [Pitch Notation](https://www.studybass.com/lessons/reading-music/pitch-notation/) ·
   [Key Signatures](https://www.studybass.com/lessons/reading-music/key-signatures/) ·
@@ -281,6 +288,9 @@ las fuentes reconocidas del curso o enseñan canciones.
 
 Rock/pop, módulo 1 (verificados el 2026-10-01): **sin vídeo de la corchea de rock**; no encontré uno de una fuente
 reconocida centrado en eso (los que hay enseñan canciones).
+
+Rock/pop, módulo 3 (2026-10-02): se reutiliza el vídeo de riffs de Dan Hawkins. **Sin vídeo del patrón de rock and
+roll** ni de doblar el riff: no encontré uno de una fuente reconocida que no sea una canción con copyright.
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.
