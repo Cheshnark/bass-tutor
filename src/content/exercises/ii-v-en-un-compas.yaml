@@ -1,0 +1,41 @@
+title: Dos acordes por compás (I–vi–ii–V)
+status: borrador
+instructions: >-
+  El giro I–vi–ii–V con dos acordes por compás (dos tiempos cada uno): fundamental y, en el tiempo siguiente,
+  medio tono hacia la fundamental que viene. C B♭ A E♭ D A♭ G B y vuelta a C: casi todo cromático y en primera
+  posición, con cuerdas al aire.
+tempo:
+  start: 80
+  target: 140
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [Cmaj7 Am7, Dm7 G7, Cmaj7 Am7, Dm7 G7, Cmaj7 Am7, Dm7 G7, Cmaj7 Am7, Dm7 G7, Cmaj7]
+passCriteria:
+  - Cada fundamental cae en el 1 o en el 3
+  - Las notas de aproximación suenan de paso, no como destino
+  - Puedes dar las cuatro vueltas sin perderte en el compás
+tags:
+  - jazz
+  - ii-v-i
+  - walking
+  - aproximacion
+alphaTex: |
+  \title "Dos acordes por compás (I–vi–ii–V)"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 3.3 {ch "Cmaj7"} 1.3{acc b} 0.3 {ch "Am7"} 1.2{acc b} |
+  :4 0.2 {ch "Dm7"} 1.1{acc b} 0.1 {ch "G7"} 2.3 |
+  :4 3.3 {ch "Cmaj7"} 1.3{acc b} 0.3 {ch "Am7"} 1.2{acc b} |
+  :4 0.2 {ch "Dm7"} 1.1{acc b} 0.1 {ch "G7"} 2.3 |
+  :4 3.3 {ch "Cmaj7"} 1.3{acc b} 0.3 {ch "Am7"} 1.2{acc b} |
+  :4 0.2 {ch "Dm7"} 1.1{acc b} 0.1 {ch "G7"} 2.3 |
+  :4 3.3 {ch "Cmaj7"} 1.3{acc b} 0.3 {ch "Am7"} 1.2{acc b} |
+  :4 0.2 {ch "Dm7"} 1.1{acc b} 0.1 {ch "G7"} 2.3 |
+  :1 3.3 {ch "Cmaj7"}

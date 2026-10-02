@@ -110,10 +110,10 @@ export function validateCourse(raw: RawCourse, options: ValidateOptions = {}): V
       else if (check.timeSignature && check.timeSignature !== exercise.timeSignature) {
         error(path, `timeSignature es "${exercise.timeSignature}" pero el alphaTex empieza en ${check.timeSignature}`)
       }
-      // Acompañamiento generado (backing.ts): un acorde por compás y el resultado tiene que parsear.
+      // Acompañamiento generado (backing.ts): una entrada por compás y el resultado tiene que parsear.
       const harmony = exercise.backing?.harmony
       if (!check.error && harmony && check.bars !== undefined && harmony.length !== check.bars) {
-        error(path, `backing.harmony tiene ${harmony.length} acordes pero el alphaTex tiene ${check.bars} compases (uno por compás)`)
+        error(path, `backing.harmony tiene ${harmony.length} compases pero el alphaTex tiene ${check.bars} (una entrada por compás)`)
       } else if (!check.error && harmony && check.tracks === 1) {
         const backed = options.checkAlphaTex(
           withBacking(exercise.alphaTex, { harmony, timeSignature: exercise.timeSignature, feel: exercise.feel }),

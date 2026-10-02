@@ -1,0 +1,39 @@
+title: El II–V–I en Do y en Fa
+status: borrador
+instructions: >-
+  El mismo II–V–I en dos tonalidades: en Do (Dm7 G7 Cmaj7) y en Fa (Gm7 C7 Fmaj7). Las formas son las mismas; solo
+  cambia dónde empiezan. En el jazz, muchos temas encadenan II–V–I en varias tonalidades.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [Dm7, G7, Cmaj7, Cmaj7, Gm7, C7, Fmaj7, Fmaj7, Fmaj7]
+passCriteria:
+  - Tocas las dos tonalidades con las mismas formas, sin pensar nota a nota
+  - Sabes decir cuál es el II, el V y el I en Fa
+  - El paso de Do a Fa (compás 5) no te frena
+tags:
+  - jazz
+  - ii-v-i
+  - arpegio
+alphaTex: |
+  \title "El II–V–I en Do y en Fa"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.3{lf 2} {ch "Dm7"} 8.3{lf 5} 7.2{lf 4} 5.1{lf 2} |
+  :4 3.4{lf 3} {ch "G7"} 2.3{lf 2} 5.3{lf 5} 3.2{lf 3} |
+  :4 3.3{lf 3} {ch "Cmaj7"} 2.2{lf 2} 5.2{lf 5} 4.1{lf 4} |
+  :2 3.3{lf 3} {ch "Cmaj7"} 5.2{lf 5} |
+  :4 3.4{lf 2} {ch "Gm7"} 6.4{lf 5 acc b} 5.3{lf 4} 3.2{lf 2} |
+  :4 3.3{lf 3} {ch "C7"} 2.2{lf 2} 5.2{lf 5} 3.1{lf 3 acc b} |
+  :4 1.4{lf 3} {ch "Fmaj7"} 0.3 3.3{lf 5} 2.2{lf 4} |
+  :2 1.4{lf 3} {ch "Fmaj7"} 3.3{lf 5} |
+  :1 1.4{lf 3} {ch "Fmaj7"}

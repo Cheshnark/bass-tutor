@@ -1,6 +1,7 @@
 import * as alphaTab from '@coderline/alphatab'
 import { describe, expect, it } from 'vitest'
-import { backingTracks, hasAccompaniment, withBacking, type BackingSpec } from './backing'
+import { barChords, backingTracks, chordsFitBar, hasAccompaniment, withBacking, type BackingSpec } from './backing'
+import { closeVoicing } from '../theory/voicing'
 
 const BS = '\\'
 const bass = (ts: string, bars: number, note = '3.4') => {
@@ -52,6 +53,15 @@ describe('withBacking', () => {
     for (const t of barTicks(tex)) expect(t.ticks).toEqual([3840, 3840])
   })
 
+  it('dos acordes en un compás de 4/4: dos pulsos cada uno y el compás completo', () => {
+    const tex = withBacking(bass('4/4', 2), spec('4/4', ['Cm7 F7', 'Bb7']))
+    for (const t of barTicks(tex)) expect(t.ticks).toEqual([3840, 3840])
+    const chordsBar = backingTracks(spec('4/4', ['Cm7 F7', 'Bb7'])).split('\n').find((l) => l.startsWith(':4 (C'))
+    const cm7 = closeVoicing('Cm7').join(' ')
+    const f7 = closeVoicing('F7').join(' ')
+    expect(chordsBar).toBe(`:4 (${cm7}) (${cm7}) (${f7}) (${f7}) |`)
+  })
+
   it('los acordes suenan en la disposición de voicing.ts', () => {
     expect(backingTracks(spec('4/4', ['G', 'E5']))).toContain('(G3 B3 D4)')
     expect(backingTracks(spec('4/4', ['G', 'E5']))).toContain('(E3 B3)')
@@ -64,5 +74,21 @@ describe('withBacking', () => {
     expect(hasAccompaniment(plain)).toBe(false)
     expect(hasAccompaniment(band)).toBe(true)
     expect(withBacking(band, spec('4/4', ['C', 'C']))).toBe(band)
+  })
+})
+
+describe('varios acordes por compás', () => {
+  it('barChords separa por espacios', () => {
+    expect(barChords('F7')).toEqual(['F7'])
+    expect(barChords(' Cm7   F7 ')).toEqual(['Cm7', 'F7'])
+  })
+
+  it('chordsFitBar: uno siempre; varios solo si reparten los pulsos de un compás de negra', () => {
+    expect(chordsFitBar(1, '6/8')).toBe(true)
+    expect(chordsFitBar(2, '4/4')).toBe(true)
+    expect(chordsFitBar(4, '4/4')).toBe(true)
+    expect(chordsFitBar(3, '4/4')).toBe(false)
+    expect(chordsFitBar(2, '3/4')).toBe(false)
+    expect(chordsFitBar(2, '6/8')).toBe(false)
   })
 })

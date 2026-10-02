@@ -75,15 +75,16 @@ Con dedos (alternancia) por defecto; la púa del itinerario metal/punk también 
 
 ### Itinerario blues/jazz (temario, borrador)
 
-Con dedos. Se apoya en el shuffle y las cuatriadas de la ampliación común. Tonalidades: La para el blues (quinta
+Con dedos. **Itinerario completo** (4 módulos, 12 lecciones), todo en borrador. Se apoya en el shuffle y las
+cuatriadas de la ampliación común. Tonalidades: La para el blues (quinta
 posición, como el resto del curso) y Fa para el walking (primera posición, tonalidad habitual del jazz).
 
 | Módulo | Lecciones |
 |---|---|
 | 1 · El blues ✍️ | El blues de doce compases (cambio rápido, turnaround) · El shuffle de blues (1-5-6-♭7) · La escala de blues y los rellenos |
 | 2 · Walking bass ✍️ | Empezar a caminar (blancas; arpegio de séptima) · Notas de aproximación · Un blues caminado |
-| 3 · Armonía de jazz | El II–V–I mayor · Walking sobre II–V–I · El blues de jazz (con II–V) |
-| 4 · Tocar jazz | Two-feel y pasar a walking · La forma AABA de 32 compases · Un tema completo (original) |
+| 3 · Armonía de jazz ✍️ | El II–V–I · Caminar sobre el II–V–I (dos acordes por compás) · El blues de jazz |
+| 4 · Tocar jazz ✍️ | Two-feel y pasar a walking · La forma AABA de 32 compases · Un tema de jazz completo |
 
 ### Itinerario metal/punk (temario, borrador)
 
@@ -159,6 +160,12 @@ en sí: el tempo objetivo de cada ejercicio es alcanzable sin tensión.
 | Escala de blues | Pentatónica menor + ♭5; la ♭5, de paso entre 4 y 5; para rellenos | No Treble (Ryan Madora, How to Use the Blues Scale…: la ♭5 como nota de paso disonante; rellenos); TalkingBass (The Minor Pentatonic Scale). Lo de la ♭3 sobre un acorde con tercera mayor es deducción propia, coherente con Wikipedia (Blue note) |
 | Walking bass | Negras constantes y largas; notas del acorde como base; construir por capas (1–2 notas por compás primero) | TalkingBass (The Walking Bass Secret…; The RIGHT Way To Start Walking Bass); Fundamental Changes (Walking Bassline Part Two) |
 | Aproximación en el walking | Notas del acorde en 1 y 3; cromáticas en los débiles (2 y 4); medio tono por encima o por debajo de la fundamental siguiente en el 4 | StudyBass (Chromatic Tones in Basslines: en partes débiles); TalkingBass (The Walking Bass Secret: aproximación por semitono, arriba o abajo) |
+| II–V–I | IIm7–V7–Imaj7; omnipresente en el jazz, a veces en varias tonalidades; aprender una progresión nueva tocando sus arpegios | StudyBass (The I-vi-ii-V Chord Progression: "si vas a tocar jazz, nunca escaparás de esta progresión"; tocar los arpegios primero); StudyBass (Minor Progression ii-V-i) |
+| Walking sobre II–V | El cuarto tiempo es el "pegamento": medio tono, tono o quinta hacia la fundamental siguiente | Bass Musician Magazine (Bill Harrison, Walking the ii/V); TalkingBass (The Walking Bass Secret). Con dos acordes por compás: fundamental en el tiempo fuerte y aproximación en el débil (aplicación de la misma regla; StudyBass, Chromatic Tones in Basslines) |
+| Blues de jazz | El blues con II–V añadidos (hacia el IV en el compás 4, Gm7–C7 en 9–10, giro en 11–12); hay muchas variantes | TalkingBass (Jazz Blues Bass in a 2 Feel: varias versiones); Premier Guitar (Mike Cramer: el II–V en el blues). La versión del curso es una simplificación propia de las que muestran |
+| Two-feel | Blancas en 1 y 3, fundamental y quinta; más abierto y relajado que el walking; buen paso previo para aprender cambios | TalkingBass (Jazz Blues Bass in a 2 Feel); TalkingBass (7 Things You Need To Work On… walking) |
+| Forma AABA | 32 compases: A, A, B (puente, contraste), A; "chorus" = una vuelta entera a la forma | Wikipedia (Thirty-two-bar form); StudyBass (I-vi-ii-V: giros de dos compases al final de las secciones) |
+| Final con *tag* | Repetir el último giro antes del acorde final | **Sin fuente verificada**: práctica común; se presenta como "una forma de acabar", no como regla |
 | Acordes con barra | El bajo toca la nota de después de la barra (a menudo, solo esa); sirven para líneas por grados | StudyBass (Slash Chords); vídeo de TalkingBass |
 | Clave de Fa | F en la 4.ª línea; líneas G B D F A y espacios A C E G (de abajo arriba); líneas adicionales | StudyBass (Pitch Notation); vídeo de TalkingBass (lección 1) |
 | Octava de transposición | El bajo suena una octava más grave de lo escrito | Wikipedia (Transposing instrument: "Double bass, bass guitar… sound an octave lower than written"); alphaTab aplica la misma convención (transposición de lectura −12) |
@@ -234,6 +241,12 @@ Escritas (base del texto):
 - Premier Guitar (Mike Cramer) — [Style Guide: Essential Blues Progressions](https://www.premierguitar.com/articles/19663-style-guide-essential-blues-progressions)
 - No Treble (Ryan Madora) — [Keep It Groovy: How to Play a B.B. King Shuffle](https://www.notreble.com/?p=87630) ·
   [How to Use the Blues Scale to Level Up Your Bass Lines and Fills](https://www.notreble.com/?p=106868)
+- StudyBass — [The I-vi-ii-V Chord Progression](https://www.studybass.com/lessons/harmony/the-I-vi-ii-V-chord-progression/) ·
+  [Minor Progression: ii - V - i](https://www.studybass.com/lessons/harmony/minor-progression-ii-V-i/)
+- Bass Musician Magazine (Bill Harrison) — [Walking the ii/V: Jazz Studies With Bill Harrison](https://bassmusicianmagazine.com/2009/10/play-along-tracks-lesson-2-walking-the-iiv-jazz-studies-with-bill-harrison/)
+- TalkingBass — [Jazz Blues Bass in a 2 Feel](https://www.talkingbass.net/jazz-blues-bass-in-a-2-feel/) ·
+  [7 Things You Need To Work On If You Want To Learn Walking Bass](https://www.talkingbass.net/7-things-you-need-to-work-on-if-you-want-to-learn-walking-bass/)
+- Wikipedia — [Thirty-two-bar form](https://en.wikipedia.org/wiki/Thirty-two-bar_form)
 - TalkingBass — [The Walking Bass Secret Every Beginner Needs To Know](https://www.talkingbass.net/the-walking-bass-secret-every-beginner-needs-to-know/) ·
   [The RIGHT Way To Start Walking Bass](https://www.talkingbass.net/the-right-way-to-start-walking-bass-no-theory-needed/)
 - Premier Guitar (Victor Brodén) — [Tools of the Trade for Bassists: Eighth-Notes](https://www.premierguitar.com/tools-of-the-trade-for-bassists-eighth-notes)
@@ -309,6 +322,8 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | 5 cuerdas | [How to SOUND AWESOME on the 5 STRING BASS… for 4 string players](https://www.youtube.com/watch?v=h3BGK3m7O_A) | Scott's Bass Lessons |
 | Empezar el walking | [The RIGHT Way To Start Walking Bass (NO Theory Needed)](https://www.youtube.com/watch?v=kNxOMOH7ioc) | TalkingBass |
 | Walking: notas del acorde | [The Walking Bass Secret EVERY Beginner Needs To Know](https://www.youtube.com/watch?v=ZueIBKZtgWs) | TalkingBass |
+| Blues de jazz en two-feel | [Jazz Blues  Bass in a 2 Feel](https://www.youtube.com/watch?v=J8-H5ci3WDA) | TalkingBass |
+| Practicar walking | [7 Things You NEED To Work On If You Want To Learn Walking Bass](https://www.youtube.com/watch?v=8KM2Uqa69tU) | TalkingBass |
 
 Los vídeos de púa y palm mute se verificaron el 2026-10-01. **Del de palm mute no sé si usa púa o pulgar**; la
 lección lo advierte (la posición de la mano en el puente es la misma). No encontré un vídeo de palm mute con púa
@@ -331,6 +346,8 @@ canción** (los que hay analizan canciones con copyright).
 
 Blues/jazz (verificados el 2026-10-02, oEmbed): los dos de walking están incrustados en las páginas de TalkingBass
 citadas. **Sin vídeo propio de la forma del blues ni de la escala de blues**; el shuffle reutiliza el de SBL.
+Módulos 3–4: dos vídeos más de TalkingBass (incrustados en sus páginas, verificados con oEmbed). **Sin vídeo del
+II–V–I ni de la forma AABA**.
 
 Módulo 4 (verificados el 2026-10-01): **sin vídeo de punk rápido**; los de fuentes reconocidas son repasos de
 canciones con copyright.

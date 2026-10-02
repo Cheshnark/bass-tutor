@@ -1,0 +1,40 @@
+title: El II–V–I en Do con arpegios
+status: borrador
+instructions: >-
+  Dm7, G7 y Cmaj7: el arpegio de cada acorde en negras (1-3-5-7) con las formas de la ampliación común. Dm7 en
+  quinta posición (dedo 1 en la fundamental); G7 y Cmaj7 en segunda (dedo 2 en la fundamental). Escucha cómo el G7
+  "pide" llegar al Cmaj7.
+tempo:
+  start: 70
+  target: 120
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [Dm7, G7, Cmaj7, Cmaj7, Dm7, G7, Cmaj7, Cmaj7, Cmaj7]
+passCriteria:
+  - Distingues de oído los tres tipos de acorde (menor, dominante, mayor con séptima)
+  - El cambio de posición de Dm7 a G7 llega a tiempo
+  - Las séptimas suenan limpias
+tags:
+  - jazz
+  - ii-v-i
+  - arpegio
+alphaTex: |
+  \title "El II–V–I en Do con arpegios"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 70
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 5.3{lf 2} {ch "Dm7"} 8.3{lf 5} 7.2{lf 4} 5.1{lf 2} |
+  :4 3.4{lf 3} {ch "G7"} 2.3{lf 2} 5.3{lf 5} 3.2{lf 3} |
+  :4 3.3{lf 3} {ch "Cmaj7"} 2.2{lf 2} 5.2{lf 5} 4.1{lf 4} |
+  :2 3.3{lf 3} {ch "Cmaj7"} 5.2{lf 5} |
+  :4 5.3{lf 2} {ch "Dm7"} 8.3{lf 5} 7.2{lf 4} 5.1{lf 2} |
+  :4 3.4{lf 3} {ch "G7"} 2.3{lf 2} 5.3{lf 5} 3.2{lf 3} |
+  :4 3.3{lf 3} {ch "Cmaj7"} 2.2{lf 2} 5.2{lf 5} 4.1{lf 4} |
+  :2 3.3{lf 3} {ch "Cmaj7"} 5.2{lf 5} |
+  :1 3.3{lf 3} {ch "Cmaj7"}

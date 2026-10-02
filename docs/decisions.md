@@ -374,3 +374,20 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Bemoles forzados** (`acc b` en la nota): alphaTab deduce la alteración por la altura y escribe D♯, A♯ o G♯ donde
   la armonía pide E♭, B♭ o A♭. Se marca solo en esas notas, sin armadura, para no llenar de alteraciones el resto.
 - Walking con `feel: swing` (la batería generada va en tresillos); las negras del bajo no cambian.
+
+## 2026-10-02 · Acompañamiento: varios acordes por compás
+- **Motivo:** el jazz necesita II–V en un solo compás (Cm7 F7, Dm7 G7). Una entrada de `backing.harmony` puede
+  llevar varios acordes separados por espacios; el piano reparte los pulsos a partes iguales. Solo en compases de
+  negra y si el reparto es exacto (lo valida el esquema). Se descartó un formato con duraciones explícitas: más
+  complejo y sin uso en el curso de momento.
+
+## 2026-10-02 · Blues/jazz, módulos 3–4: líneas de walking generadas con la regla del curso
+- **Motivo:** los ejercicios largos (blues de jazz a dos vueltas, AABA de 32 compases, un tema de 73) se generan con
+  un script de usar y tirar que aplica la regla de las lecciones: fundamental en el 1, notas del acorde en el 2 y el 3
+  (subiendo 1-3-5 o bajando 1-7-5, la que deje más cerca la aproximación), medio tono hacia la fundamental siguiente
+  en el 4, y posiciones cerca de la primera. Así cada línea es coherente con lo que se enseña; el alphaTex resultante
+  es el que se revisa y se versiona.
+- Sin digitación (`lf`) en esas líneas: la mano se mueve entre posiciones y la elige el alumno (nivel intermedio).
+  Los ejercicios de arpegios del II–V–I sí la llevan.
+- Forma AABA y tema **originales** en Fa, con progresiones genéricas (I–vi–ii–V, II–V hacia el IV), sin copiar los
+  cambios de ningún tema conocido.

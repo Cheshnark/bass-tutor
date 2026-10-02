@@ -1,0 +1,56 @@
+title: El blues de jazz caminado
+status: borrador
+instructions: >-
+  Dos vueltas de walking sobre el blues de jazz en Fa. Compases de un acorde: fundamental, dos notas del acorde y
+  aproximación; compases de dos acordes: fundamental y aproximación para cada uno. La tablatura propone dónde
+  tocar cada nota, cerca de la primera posición.
+tempo:
+  start: 80
+  target: 140
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [F7, Bb7, F7, Cm7 F7, Bb7, Bb7, F7, D7, Gm7, C7, F7 D7, Gm7 C7, F7, Bb7, F7, Cm7 F7, Bb7, Bb7, F7, D7, Gm7, C7, F7 D7, Gm7 C7, F7]
+passCriteria:
+  - Llegas al final de las dos vueltas sin parar
+  - En los compases de dos acordes no te adelantas ni te retrasas
+  - Puedes cambiar alguna nota del 2 o del 3 por otra del acorde sin perder la regla
+tags:
+  - jazz
+  - blues
+  - walking
+alphaTex: |
+  \title "El blues de jazz caminado"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 1.4 {ch "F7"} 0.3 3.3 2.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.4 |
+  :4 1.4 {ch "F7"} 0.3 3.3 2.3 |
+  :4 3.3 {ch "Cm7"} 2.4{acc b} 1.4 {ch "F7"} 0.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.4 |
+  :4 1.4 {ch "F7"} 0.3 3.3 4.3 |
+  :4 0.2 {ch "D7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 2.4{acc b} |
+  :4 1.4 {ch "F7"} 4.3 0.2 {ch "D7"} 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 2.3 3.3 {ch "C7"} 2.4{acc b} |
+  :4 1.4 {ch "F7"} 0.3 3.3 2.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.4 |
+  :4 1.4 {ch "F7"} 0.3 3.3 2.3 |
+  :4 3.3 {ch "Cm7"} 2.4{acc b} 1.4 {ch "F7"} 0.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.4 |
+  :4 1.4 {ch "F7"} 0.3 3.3 4.3 |
+  :4 0.2 {ch "D7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 2.4{acc b} |
+  :4 1.4 {ch "F7"} 4.3 0.2 {ch "D7"} 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 2.3 3.3 {ch "C7"} 2.4{acc b} |
+  :1 1.4 {ch "F7"}

@@ -14,6 +14,7 @@ import { MAX_BPM, MIN_BPM } from '../audio/beatClock'
 import { MAX_FRET, resolvePitchSet } from '../theory/fretboard'
 import { TUNINGS } from '../theory/tunings'
 import { DEFAULT_REVIEW_DAYS } from '../practice/leitner'
+import { barChords, chordsFitBar } from './backing'
 import { TRACK_IDS } from './tracks'
 
 // Mensajes de error de Zod en español (los propios de este esquema ya lo están).
@@ -84,10 +85,13 @@ export const ExerciseSchema = z.strictObject({
   backing: z
     .strictObject({
       drums: text.optional(),
-      /** Cifrado por compás, p. ej. ["F7", "Bb7", "F7", "F7"]. */
+      /** Cifrado por compás, p. ej. ["F7", "Bb7", "F7", "Cm7 F7"] (varios acordes en un compás, con espacios). */
       harmony: z
         .array(text)
-        .refine((chords) => chords.every((c) => !Chord.get(c).empty), 'hay un acorde que Tonal no reconoce')
+        .refine(
+          (bars) => bars.every((bar) => barChords(bar).every((c) => !Chord.get(c).empty)),
+          'hay un acorde que Tonal no reconoce',
+        )
         .optional(),
     })
     .optional(),
@@ -97,6 +101,16 @@ export const ExerciseSchema = z.strictObject({
   tags: z.array(slug).default([]),
   /** Notación (tab + partitura) en alphaTex. */
   alphaTex: text,
+}).superRefine((exercise, ctx) => {
+  exercise.backing?.harmony?.forEach((bar, i) => {
+    if (!chordsFitBar(barChords(bar).length, exercise.timeSignature)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['backing', 'harmony', i],
+        message: `"${bar}": en ${exercise.timeSignature} los acordes no se pueden repartir a partes iguales por pulsos`,
+      })
+    }
+  })
 })
 
 // ── Componentes incrustados en el MDX ───────────────────────────────────────

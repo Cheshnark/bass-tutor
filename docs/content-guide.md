@@ -124,7 +124,7 @@ tempo:
 timeSignature: 4/4          # tiene que coincidir con el \ts del alphaTex
 feel: straight              # straight | swing | shuffle (opcional)
 backing:                    # opcional
-  harmony: [F7, Bb7, F7, F7]   # cifrado que Tonal reconozca
+  harmony: [F7, Bb7, F7, 'Cm7 F7']   # cifrado que Tonal reconozca; dos acordes en un compás, con espacio
 passCriteria:               # autoevaluación (mínimo 1)
   - Cada nota cae con el clic
 tags: [cuerdas-al-aire, mano-derecha]
@@ -144,7 +144,11 @@ alphaTex: |
   (líneas contadas dentro del bloque de alphaTex, no del YAML).
 - Afinación en alphaTex: de la cuerda aguda a la grave (`G2 D2 A1 E1`); la cuerda 1 es G.
 - **Cifrado sobre la partitura**: pon `{ch "G"}` detrás de la primera nota del acorde (`3.4 {ch "G"} 3.4 3.4 3.4`).
-  Si el ejercicio tiene acordes, añade también `backing.harmony` (un acorde por compás).
+  Si el ejercicio tiene acordes, añade también `backing.harmony` (una entrada por compás). Para dos acordes en un
+  compás (II–V del jazz), pon los dos en la misma entrada (`'Dm7 G7'`) y un `{ch}` sobre la primera nota de cada
+  uno: el acompañamiento reparte los pulsos a partes iguales. Solo en compases de negra (4/4, 2/4…).
+- **Bemoles**: alphaTab escribe la alteración según la altura (D♯ por defecto). Si la armonía pide E♭, B♭ o A♭,
+  añade `acc b` a la nota: `1.3{acc b}` o `6.3{lf 3 acc b}`.
 - **Digitación** (dedos de la mano izquierda): `{lf N}` pegado a la nota, con N = dedo + 1 (`lf 2` índice … `lf 5`
   meñique; `lf 1` es el pulgar). alphaTab dibuja el número del dedo junto a la nota: `5.4{lf 3}` = traste 5 con el
   dedo 2.

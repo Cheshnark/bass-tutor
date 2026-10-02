@@ -69,10 +69,29 @@ function drumEnd(spec: BackingSpec): string {
   return `:${unit} ${hit([K, C])}${rests ? ` ${rests}` : ''}`
 }
 
+/** Acordes de una entrada de `backing.harmony`: uno ("F7") o varios separados por espacios ("Cm7 F7"). */
+export function barChords(entry: string): string[] {
+  return entry.trim().split(/\s+/)
+}
+
+/**
+ * ¿Caben `count` acordes en un compás? Uno siempre; varios solo en compases de negra (x/4) y repartiendo los
+ * pulsos a partes iguales ("Cm7 F7" en 4/4 = dos pulsos cada uno).
+ */
+export function chordsFitBar(count: number, timeSignature: string): boolean {
+  const { beats, unit } = parseTimeSignature(timeSignature)
+  return count === 1 || (unit !== 8 && count > 0 && beats % count === 0)
+}
+
 /** Acordes de un compás: un golpe por pulso (negra en x/4; negra con puntillo por grupo en x/8). */
 function chordBar(symbol: string, spec: BackingSpec, last: boolean): string {
   const { beats, unit } = parseTimeSignature(spec.timeSignature)
-  const chord = `(${closeVoicing(symbol).join(' ')})`
+  const chords = barChords(symbol).map((c) => `(${closeVoicing(c).join(' ')})`)
+  const chord = chords[0]
+  if (chords.length > 1) {
+    const perChord = beats / chords.length
+    return `:${unit} ${Array.from({ length: beats }, (_, i) => (last && i > 0 ? 'r' : chords[Math.floor(i / perChord)])).join(' ')}`
+  }
   if (unit === 8 && beats % 3 === 0) {
     const groups = beats / 3
     return last

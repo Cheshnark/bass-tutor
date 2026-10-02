@@ -1,0 +1,106 @@
+title: Un tema de jazz completo
+status: borrador
+instructions: >-
+  Un tema original de principio a fin, como se toca en una sesión: intro de cuatro compases (II–V), el tema en
+  two-feel (un chorus AABA), un chorus caminando (los solos) y un final repitiendo el giro III–VI–II–V antes del
+  último Fmaj7. Más de setenta compases: apréndete el mapa antes de tocar.
+tempo:
+  start: 80
+  target: 130
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [Gm7 C7, Gm7 C7, Gm7 C7, Gm7 C7, Fmaj7, Dm7, Gm7, C7, Am7, D7, Gm7, C7, Fmaj7, Dm7, Gm7, C7, Am7 D7, Gm7 C7, Fmaj7, Fmaj7, Cm7, F7, Bb7, Bb7, Gm7, C7, Gm7, C7, Fmaj7, Dm7, Gm7, C7, Am7 D7, Gm7 C7, Fmaj7, Fmaj7, Fmaj7, Dm7, Gm7, C7, Am7, D7, Gm7, C7, Fmaj7, Dm7, Gm7, C7, Am7 D7, Gm7 C7, Fmaj7, Fmaj7, Cm7, F7, Bb7, Bb7, Gm7, C7, Gm7, C7, Fmaj7, Dm7, Gm7, C7, Am7 D7, Gm7 C7, Fmaj7, Fmaj7, Am7 D7, Gm7 C7, Am7 D7, Gm7 C7, Fmaj7]
+passCriteria:
+  - Llegas al final sin parar
+  - El cambio de two-feel a walking (segundo chorus) se nota y no acelera
+  - Sabes en qué parte del tema estás en todo momento
+  - Paras exactamente en el último Fmaj7
+tags:
+  - jazz
+  - forma
+  - walking
+  - two-feel
+alphaTex: |
+  \title "Un tema de jazz completo"
+  \subtitle "Ejercicio original · Bass Tutor"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :2 3.4 {txt "Intro" ch "Gm7"} 3.3 {ch "C7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 1.4 {txt "A · tema" ch "Fmaj7"} 3.3 |
+  :2 0.2 {ch "Dm7"} 0.3 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 0.3 {ch "Am7"} 2.2 |
+  :2 0.2 {ch "D7"} 0.3 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 1.4 {txt "A · tema" ch "Fmaj7"} 3.3 |
+  :2 0.2 {ch "Dm7"} 0.3 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 0.3 {ch "Am7"} 0.2 {ch "D7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 1.4 {ch "Fmaj7"} 3.3 |
+  :2 1.4 {ch "Fmaj7"} 3.3 |
+  :2 3.3 {txt "B · tema" ch "Cm7"} 0.1 |
+  :2 1.4 {ch "F7"} 3.3 |
+  :2 1.3{acc b} {ch "Bb7"} 3.2 |
+  :2 1.3{acc b} {ch "Bb7"} 3.2 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 1.4 {txt "A · tema" ch "Fmaj7"} 3.3 |
+  :2 0.2 {ch "Dm7"} 0.3 |
+  :2 3.4 {ch "Gm7"} 0.2 |
+  :2 3.3 {ch "C7"} 0.1 |
+  :2 0.3 {ch "Am7"} 0.2 {ch "D7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 1.4 {ch "Fmaj7"} 3.3 |
+  :2 1.4 {ch "Fmaj7"} 3.3 |
+  :4 1.4 {txt "A · walking" ch "Fmaj7"} 0.3 3.3 4.3 |
+  :4 0.2 {ch "Dm7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 4.4 |
+  :4 0.3 {ch "Am7"} 3.3 2.2 1.2{acc b} |
+  :4 0.2 {ch "D7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 2.4{acc b} |
+  :4 1.4 {txt "A · walking" ch "Fmaj7"} 0.3 3.3 4.3 |
+  :4 0.2 {ch "Dm7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 4.4 |
+  :4 0.3 {ch "Am7"} 4.3 0.2 {ch "D7"} 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 2.3 3.3 {ch "C7"} 2.4{acc b} |
+  :4 1.4 {ch "Fmaj7"} 0.3 3.3 2.4{acc b} |
+  :4 1.4 {ch "Fmaj7"} 0.3 3.3 2.3 |
+  :4 3.3 {txt "B · walking" ch "Cm7"} 1.3{acc b} 3.4 2.4{acc b} |
+  :4 1.4 {ch "F7"} 0.3 3.3 2.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 0.3 |
+  :4 1.3{acc b} {ch "Bb7"} 4.4{acc b} 1.4 2.4 |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 2.4 |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 2.4{acc b} |
+  :4 1.4 {txt "A · walking" ch "Fmaj7"} 0.3 3.3 4.3 |
+  :4 0.2 {ch "Dm7"} 3.3 0.3 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 1.3{acc b} 0.2 4.3{acc b} |
+  :4 3.3 {ch "C7"} 1.3{acc b} 3.4 4.4 |
+  :4 0.3 {ch "Am7"} 4.3 0.2 {ch "D7"} 4.4{acc b} |
+  :4 3.4 {ch "Gm7"} 2.3 3.3 {ch "C7"} 2.4{acc b} |
+  :4 1.4 {ch "Fmaj7"} 0.3 3.3 2.4{acc b} |
+  :4 1.4 {ch "Fmaj7"} 0.3 3.3 1.3{acc b} |
+  :2 0.3 {txt "Final" ch "Am7"} 0.2 {ch "D7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :2 0.3 {ch "Am7"} 0.2 {ch "D7"} |
+  :2 3.4 {ch "Gm7"} 3.3 {ch "C7"} |
+  :1 1.4 {ch "Fmaj7"}

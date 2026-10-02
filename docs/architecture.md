@@ -144,8 +144,9 @@
   control de ganancia. Tono de referencia sostenido por cuerda. Pruebas: [afinador-pruebas.md](afinador-pruebas.md).
 - **Backing tracks** (`src/content/backing.ts`): para ejercicios con `backing.harmony` y una sola pista, se añaden al
   alphaTex una batería (según compás y *feel*; tresillos en swing/shuffle) y acordes en piano eléctrico
-  (`src/theory/voicing.ts`, disposición cerrada). `playableTex` (course.ts) lo memoriza. `content:check` exige un
-  acorde por compás y parsea el resultado con alphaTab. En `TabView`, botones para silenciar el bajo o el
+  (`src/theory/voicing.ts`, disposición cerrada). `playableTex` (course.ts) lo memoriza. `content:check` exige una
+  entrada por compás (con uno o varios acordes que repartan los pulsos: `"Cm7 F7"`, ver `barChords`/`chordsFitBar`)
+  y parsea el resultado con alphaTab. En `TabView`, botones para silenciar el bajo o el
   acompañamiento (`changeTrackMute`).
 - **Oído** (`src/practice/ear.ts` + `components/Practice/EarTraining.tsx`, `#/practica/oido`): intervalos melódicos
   en el registro del bajo (E1–C3), con Leitner por intervalo en la tabla `cards` (`oido:5P`); al responder, el

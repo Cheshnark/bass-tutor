@@ -21,7 +21,8 @@
 - [ ] alphaTab dibuja `\section` encima del cifrado del acorde; las secciones se rotulan con `txt` (texto pequeño en cursiva). Revisar si una versión nueva lo arregla.
 - [ ] Buscar un vídeo verificable del patrón de rock and roll (1-3-5-6-♭7); hoy la lección va sin vídeo.
 - [x] Blues/jazz: temario y módulos 1 (El blues) y 2 (Walking bass), en borrador.
-- [ ] Blues/jazz: módulos 3 (armonía de jazz: II–V–I) y 4 (two-feel, AABA, un tema completo).
+- [x] Blues/jazz: módulos 3 (armonía de jazz) y 4 (tocar jazz), en borrador. **Itinerario completo.**
+- [ ] Blues/jazz: el II–V–I menor (m7♭5–7–m7) no está en el temario; valorar una lección.
 - [ ] Itinerario funk/soul (octavas, notas muertas, slap).
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 

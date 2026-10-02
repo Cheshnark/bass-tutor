@@ -106,11 +106,12 @@ describe('validateCourse', () => {
     ])
   })
 
-  it('backing.harmony: un acorde por compás, y el acompañamiento generado se comprueba', () => {
+  it('backing.harmony: una entrada por compás, y el acompañamiento generado se comprueba', () => {
     const raw = course({
       exercises: [
-        { file: 'ej-a.yaml', data: exercise({ backing: { harmony: ['G', 'C'] } }) },
+        { file: 'ej-a.yaml', data: exercise({ backing: { harmony: ['G', 'Am7 D7'] } }) },
         { file: 'ej-b.yaml', data: exercise({ backing: { harmony: ['G', 'C', 'D'] } }) },
+        { file: 'ej-c.yaml', data: exercise({ backing: { harmony: ['G C D', 'Am7 Xq9'] } }) },
       ],
     })
     const checked: string[] = []
@@ -119,7 +120,9 @@ describe('validateCourse', () => {
       return { timeSignature: '4/4', bars: 2, tracks: tex.includes('Batería') ? 3 : 1 }
     }
     expect(errors(raw, { checkAlphaTex })).toEqual([
-      'exercises/ej-b.yaml: backing.harmony tiene 3 acordes pero el alphaTex tiene 2 compases (uno por compás)',
+      'exercises/ej-b.yaml: backing.harmony tiene 3 compases pero el alphaTex tiene 2 (una entrada por compás)',
+      'exercises/ej-c.yaml: backing.harmony: hay un acorde que Tonal no reconoce',
+      'exercises/ej-c.yaml: backing.harmony.0: "G C D": en 4/4 los acordes no se pueden repartir a partes iguales por pulsos',
     ])
     // ej-a: se comprueba también el alphaTex con batería y acordes añadidos.
     expect(checked.some((tex) => tex.includes('"Acordes"'))).toBe(true)
