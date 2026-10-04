@@ -104,7 +104,8 @@ Todo el contenido está escrito: tronco común, ampliación común y los cuatro 
 - **Sin conexión**: tras la primera visita funciona todo el curso, partitura y sonido incluidos (e2e en modo avión,
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
-- **Publicación** en GitHub Pages preparada (`.github/workflows/deploy.yml`); falta que la actives tú.
+- **Publicación** en GitHub Pages (`.github/workflows/deploy.yml`): activada y lanzada a mano por el autor el 2026-10-04
+  (Source: GitHub Actions); el workflow terminó bien. Sin la variable `PAGES_ENABLED` solo se publica a mano.
 - Tests: 217 unitarios y 164 e2e.
 
 ### Contenido
@@ -128,7 +129,8 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 
 ### Pendiente de ti
 
-- **Activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar el workflow "Publicar en GitHub Pages".
+- ~~Activar GitHub Pages~~ (hecho el 2026-10-04). Falta comprobar la versión publicada en el móvil: instalarla como app y
+  probar el modo sin conexión.
 - Probar el tronco común como alumno y en tu móvil (instalada como app).
 - Probar el itinerario rock/pop, sobre todo la canción completa del módulo 4.
 - Probar el itinerario blues/jazz, sobre todo el tema completo del módulo 4.

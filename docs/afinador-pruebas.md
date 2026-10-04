@@ -34,8 +34,11 @@ Protocolo, para cada dispositivo:
 - Nivel: con **ganancia 0 dB** en la app, el medidor llega a ~80 % con slap y volumen alto; no satura. La señal por la
   entrada de línea es suficiente: la ganancia por software no hizo falta.
 - Con la entrada de micrófono (rosa) la señal era demasiado baja; la línea lo resolvió (ver arriba).
-- **Sin cubrir:** móvil (Android o iOS), bajo de 5 cuerdas (B0), micrófono ambiente en vez de cable, errores de
-  octava en automático (no se anotaron fallos) y cents medidos por cuerda.
+- **Móvil (2026-10-04, micrófono del dispositivo):** funciona "lo suficientemente bien", pero **bastante menos
+  preciso** que por cable (testimonio del autor; sin modelo, SO ni cents anotados). Coincide con lo previsto: los micros
+  de móvil captan mal los graves. Para precisión, mejor cable o interfaz; el móvil sirve para una afinación aproximada.
+- **Sin cubrir:** bajo de 5 cuerdas (B0), errores de octava en automático (no se anotaron fallos) y cents medidos
+  por cuerda, tanto en el sobremesa como en el móvil.
 
 Conexión directa (Amplug u otro amplificador de auriculares) a un sobremesa: usa la **entrada de línea** (azul), no la
 de micrófono (rosa), y con un cable estéreo desde la salida de auriculares/AUX del Amplug. En Windows hay que poner la

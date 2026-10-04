@@ -51,7 +51,9 @@
 - [x] Afinador experimental (YIN, < 0,7 cents con tono sintético), tono de referencia, backing tracks generados,
       silenciar bajo/acompañamiento, oído (intervalos), grábate.
 - [x] Probar el afinador con el bajo real por cable (Windows, Chrome, línea): bien, ver `docs/afinador-pruebas.md`.
-- [ ] **Tú**: probar el afinador con el micrófono del móvil (Android o iOS) y rellenar otra fila de `docs/afinador-pruebas.md`.
+- [x] Probar el afinador con el micrófono del móvil: funciona, bastante menos preciso que por cable (ver `docs/afinador-pruebas.md`).
+- [ ] Afinador en móvil: anotar modelo, SO y cents por cuerda; valorar una advertencia en la app de que por micrófono es
+      aproximado.
 - [ ] **Tú**: escuchar la mezcla del acompañamiento (batería y piano eléctrico frente al bajo); ajustar volúmenes.
 - [ ] Oído: dictado rítmico e identificar la fundamental de un acorde; intervalos armónicos (a la vez).
 - [ ] Afinador: si la E grave falla en móviles, probar MPM o una ventana más larga; calibración de La (440 Hz fijo).
@@ -73,8 +75,9 @@
 
 - [x] Progreso en IndexedDB, completar lección con intentos, retomar, exportar/importar, `persist()`.
 - [x] Ajustes y metrónomo recordados. PWA offline (e2e en modo avión) y Lighthouse ≥ 90.
-- [ ] **Tú: activar GitHub Pages** (Settings → Pages → Source: GitHub Actions) y lanzar "Publicar en GitHub Pages"
-      desde Actions (o crear la variable `PAGES_ENABLED=true` para publicar en cada push).
+- [x] GitHub Pages activado y publicado a mano (2026-10-04). Opcional: variable `PAGES_ENABLED=true` para publicar en
+      cada push.
+- [ ] **Tú**: instalar la versión publicada en el móvil y probar el modo sin conexión (modo avión).
 - [ ] Probar la app instalada en el móvil (iOS: añadir a pantalla de inicio; comprobar que el progreso se conserva).
 - [ ] Avisos de build de alphaTab (`import.meta` en formato iife de sus workers): funcionan, pero vigilar al actualizar.
 
