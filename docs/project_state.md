@@ -2,6 +2,13 @@
 
 _Última actualización: 2026-10-04_
 
+## Índice del curso en acordeón (2026-10-04)
+
+El índice mostraba todo desplegado (26 módulos). Ahora cada **bloque** (tronco común, ampliación común y cada
+itinerario por estilo) es plegable, con su contador de lecciones completadas y la descripción siempre visible. Por
+defecto se abre el que tienes a medias; si no has empezado nada, el tronco común. Se recuerda lo que abres o cierras
+en el dispositivo. Los módulos dentro de un bloque no se pliegan. Un itinerario sin módulos no es plegable.
+
 ## Afinador: entrada, nivel y ganancia (2026-10-04)
 
 Al probar el afinador con un bajo real (Amplug 3 → entrada de línea de un sobremesa con Windows 10) la app no

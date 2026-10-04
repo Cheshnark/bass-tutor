@@ -68,6 +68,9 @@ test('una lección inexistente muestra un aviso', async ({ page }) => {
 test('el itinerario metal/punk numera sus módulos desde 1 y enlaza a sus lecciones', async ({ page }) => {
   await page.goto('/')
   const metal = page.getByRole('region', { name: /^Metal \/ punk/ })
+  // Los itinerarios están plegados hasta que se abren.
+  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 5 })).toBeHidden()
+  await metal.getByRole('button', { name: /^Metal \/ punk/ }).click()
   await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 5 })).toBeVisible()
   await metal.getByRole('link', { name: /Coger la púa y tocar hacia abajo/ }).click()
   await expect(page).toHaveURL(/#\/curso\/coger-la-pua$/)
@@ -104,7 +107,8 @@ test('los ejercicios con armonía suenan con batería y acordes, y se puede sile
 
 test('el índice muestra la ampliación común tras el tronco común', async ({ page }) => {
   await page.goto('/')
-  const extra = page.getByRole('region', { name: 'Ampliación común' })
+  const extra = page.getByRole('region', { name: /^Ampliación común/ })
+  await extra.getByRole('button', { name: /^Ampliación común/ }).click()
   await expect(extra.getByRole('heading', { name: /^1 Arpegios/, level: 4 })).toBeVisible()
   await extra.getByRole('link', { name: /Tríadas: mayor y menor/ }).click()
   await expect(page.getByText('Ampliación común · Módulo 1 · Arpegios')).toBeVisible()

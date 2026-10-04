@@ -1,6 +1,7 @@
+import { useState, type ReactNode } from 'react'
 import { lessonsOf, moduleNumber, modulesOf } from '../../content/course'
 import type { Module } from '../../content/schema'
-import { getTrack, STYLE_TRACKS } from '../../content/tracks'
+import { getTrack, STYLE_TRACKS, TRACK_IDS, type TrackId } from '../../content/tracks'
 import { PracticeReminder } from '../Practice/PracticeReminder'
 import { useLessonsProgress } from '../../state/progress/hooks'
 import type { LessonProgress } from '../../state/progress/model'
@@ -58,6 +59,76 @@ function ModuleBlock({ module, progress, headingLevel }: ModuleBlockProps) {
   )
 }
 
+const STORAGE_OPEN = 'bass-tutor.course.open'
+
+/** Qué bloques dejó el alumno abiertos o cerrados (id → abierto). Sin almacenamiento, se usan los valores por defecto. */
+function readOpen(): Record<string, boolean> {
+  try {
+    const parsed: unknown = JSON.parse(localStorage.getItem(STORAGE_OPEN) ?? '{}')
+    return parsed && typeof parsed === 'object' ? (parsed as Record<string, boolean>) : {}
+  } catch {
+    return {}
+  }
+}
+
+function writeOpen(open: Record<string, boolean>) {
+  try {
+    localStorage.setItem(STORAGE_OPEN, JSON.stringify(open))
+  } catch {
+    /* sin almacenamiento: no se recuerda */
+  }
+}
+
+interface TrackStats {
+  done: number
+  total: number
+  /** Alguna lección empezada o completada, pero no todas. */
+  inProgress: boolean
+}
+
+function statsOf(modules: readonly Module[], progress: ReadonlyMap<string, LessonProgress>): TrackStats {
+  const lessons = modules.flatMap((m) => lessonsOf(m))
+  const done = lessons.filter((l) => progress.get(l.id)?.completedAt).length
+  const started = lessons.some((l) => {
+    const p = progress.get(l.id)
+    return Boolean(p?.completedAt) || (p?.lastStep ?? 0) > 0
+  })
+  return { done, total: lessons.length, inProgress: started && done < lessons.length }
+}
+
+interface AccordionProps {
+  id: string
+  label: string
+  summary: string
+  headingLevel: 3 | 4
+  stats: TrackStats
+  open: boolean
+  onToggle: () => void
+  children: ReactNode
+}
+
+/** Bloque plegable (patrón de acordeón de WAI-ARIA): el botón va dentro del encabezado. */
+function Accordion({ id, label, summary, headingLevel, stats, open, onToggle, children }: AccordionProps) {
+  const Heading = headingLevel === 3 ? 'h3' : 'h4'
+  return (
+    <>
+      <Heading id={`track-${id}`} className="course-accordion__heading">
+        <button type="button" className="course-accordion__button" aria-expanded={open} aria-controls={`panel-${id}`} onClick={onToggle}>
+          <span className="course-accordion__chevron" aria-hidden="true" />
+          <span className="course-accordion__label">{label}</span>
+          <span className="course-module__done" aria-label={`${stats.done} de ${stats.total} lecciones completadas`}>
+            {stats.done}/{stats.total}
+          </span>
+        </button>
+      </Heading>
+      <p className="hint">{summary}</p>
+      <div id={`panel-${id}`} className="course-accordion__panel" hidden={!open}>
+        {children}
+      </div>
+    </>
+  )
+}
+
 /** Índice del curso: tronco común, itinerarios por estilo y tu progreso. */
 export function CourseIndex() {
   const common = getTrack('comun')
@@ -65,6 +136,18 @@ export function CourseIndex() {
   const extra = getTrack('ampliacion')
   const extraModules = modulesOf(extra.id)
   const progress = useLessonsProgress()
+  const [stored, setStored] = useState(readOpen)
+
+  // Por defecto se abre lo que tienes a medias; si no hay nada empezado, el tronco común.
+  const trackIds = TRACK_IDS
+  const stats = new Map(trackIds.map((id) => [id, statsOf(modulesOf(id), progress)]))
+  const anyInProgress = trackIds.some((id) => stats.get(id)!.inProgress)
+  const isOpen = (id: TrackId) => stored[id] ?? (anyInProgress ? stats.get(id)!.inProgress : id === 'comun')
+  const toggle = (id: TrackId) => {
+    const next = { ...stored, [id]: !isOpen(id) }
+    setStored(next)
+    writeOpen(next)
+  }
 
   return (
     <section className="panel course" aria-labelledby="course-title">
@@ -72,21 +155,37 @@ export function CourseIndex() {
       <PracticeReminder />
 
       <section className="course-track" aria-labelledby="track-comun">
-        <h3 id="track-comun">{common.label}</h3>
-        <p className="hint">{common.summary}</p>
-        {commonModules.length === 0 && <p className="hint">Todavía no hay lecciones.</p>}
-        {commonModules.map((m) => (
-          <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
-        ))}
+        <Accordion
+          id="comun"
+          label={common.label}
+          summary={common.summary}
+          headingLevel={3}
+          stats={stats.get('comun')!}
+          open={isOpen('comun')}
+          onToggle={() => toggle('comun')}
+        >
+          {commonModules.length === 0 && <p className="hint">Todavía no hay lecciones.</p>}
+          {commonModules.map((m) => (
+            <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
+          ))}
+        </Accordion>
       </section>
 
       {extraModules.length > 0 && (
         <section className="course-track" aria-labelledby="track-ampliacion">
-          <h3 id="track-ampliacion">{extra.label}</h3>
-          <p className="hint">{extra.summary}</p>
-          {extraModules.map((m) => (
-            <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
-          ))}
+          <Accordion
+            id="ampliacion"
+            label={extra.label}
+            summary={extra.summary}
+            headingLevel={3}
+            stats={stats.get('ampliacion')!}
+            open={isOpen('ampliacion')}
+            onToggle={() => toggle('ampliacion')}
+          >
+            {extraModules.map((m) => (
+              <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={4} />
+            ))}
+          </Accordion>
         </section>
       )}
 
@@ -97,14 +196,29 @@ export function CourseIndex() {
           const modules = modulesOf(track.id)
           return (
             <section key={track.id} className="course-style" aria-labelledby={`track-${track.id}`}>
-              <h4 id={`track-${track.id}`}>
-                {track.label}
-                {modules.length === 0 && <span className="badge badge--muted">En preparación</span>}
-              </h4>
-              <p className="hint">{track.summary}</p>
-              {modules.map((m) => (
-                <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={5} />
-              ))}
+              {modules.length === 0 ? (
+                <>
+                  <h4 id={`track-${track.id}`}>
+                    {track.label}
+                    <span className="badge badge--muted">En preparación</span>
+                  </h4>
+                  <p className="hint">{track.summary}</p>
+                </>
+              ) : (
+                <Accordion
+                  id={track.id}
+                  label={track.label}
+                  summary={track.summary}
+                  headingLevel={4}
+                  stats={stats.get(track.id)!}
+                  open={isOpen(track.id)}
+                  onToggle={() => toggle(track.id)}
+                >
+                  {modules.map((m) => (
+                    <ModuleBlock key={m.id} module={m} progress={progress} headingLevel={5} />
+                  ))}
+                </Accordion>
+              )}
             </section>
           )
         })}

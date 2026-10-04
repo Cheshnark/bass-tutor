@@ -405,6 +405,15 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Ejercicios generados con un script de usar y tirar (como en blues/jazz), con un modelo de compás en semicorcheas
   que comprueba que cada compás suma lo que debe.
 
+## 2026-10-04 · Índice del curso: acordeón por bloque
+- **Motivo:** con 6 bloques y 26 módulos desplegados, el índice era largo y tedioso, sobre todo en el móvil.
+- Se pliega por **bloque** (tronco, ampliación, cada itinerario), no por módulo: un clic muestra los 4 módulos de un
+  estilo y no se añaden clics por módulo.
+- Patrón de acordeón de WAI-ARIA (botón con `aria-expanded` dentro del `h3`/`h4`) en lugar de `<details>`: los
+  encabezados siguen siendo encabezados y el estado se puede guardar. Botón ≥ 48 px.
+- Apertura por defecto según el progreso (lo empezado y sin terminar; si no, el tronco común). La elección del
+  alumno manda y se guarda en `localStorage` (por dispositivo, con `try/catch`).
+
 ## 2026-10-04 · Afinador: selector de entrada, medidor y ganancia por software
 - **Motivo:** con un bajo real el micrófono de la app no recogía señal. Abrir solo el dispositivo predeterminado
   obliga a cambiarlo en Windows, y sin control automático de ganancia (desactivado a propósito: estropea los graves)
