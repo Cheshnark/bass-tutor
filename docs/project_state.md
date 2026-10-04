@@ -10,7 +10,9 @@ ganancia desactivado, una señal floja caía bajo el umbral de silencio sin avis
 - **Selector de entrada** (se rellena al activar el micrófono y se mantiene al día con `devicechange`). Se recuerda la
   elegida; si ya no existe, se vuelve a la predeterminada.
 - **Medidor de nivel** (−60 a 0 dBFS) y **ganancia por software** de 0 a +30 dB (se recuerda).
-- Pendiente de comprobar con el bajo real del autor si esto resuelve su caso.
+- **Probado con el bajo real** (4 cuerdas, Amplug 3 → línea, Windows 10, Chrome en `localhost`): notas bien detectadas
+  y afinación coincidente con un afinador Korg, con ganancia 0 dB y el medidor al ~80 % con slap. Resultado y límites
+  en [afinador-pruebas.md](afinador-pruebas.md).
 
 ## Fases 0–6 cerradas; Fase 7 (contenido) escrita, pendiente de tu revisión
 
@@ -73,8 +75,8 @@ Todo el contenido está escrito: tronco común, ampliación común y los cuatro 
 ### Fase 5 (audio avanzado): hecha
 
 - **Afinador (experimental)**, pestaña nueva: detección YIN por micrófono, automático o por cuerda, aguja de cents y
-  tono de referencia para afinar de oído. Error con tono sintético < 0,7 cents (criterio: < 3). **Falta la prueba en
-  bajo real** por dispositivo: protocolo y tabla en [afinador-pruebas.md](afinador-pruebas.md).
+  tono de referencia para afinar de oído. Error con tono sintético < 0,7 cents (criterio: < 3). **Probado en bajo real por
+  cable** (2026-10-04); falta el móvil con micrófono ambiente: protocolo y tabla en [afinador-pruebas.md](afinador-pruebas.md).
 - **Backing tracks**: los ejercicios con armonía suenan con batería y acordes generados; se puede silenciar el bajo
   (tocar tú con la banda) o el acompañamiento.
 - **Oído** (Práctica → Oído): reconocer intervalos en el registro del bajo, con repaso espaciado.

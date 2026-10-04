@@ -10,8 +10,8 @@
 
 ## Afinador
 
-- [ ] Probar con el bajo real (Amplug 3 → línea en el sobremesa): ¿llega la señal con el selector de entrada y qué
-      ganancia hace falta? Anotarlo en [afinador-pruebas.md](afinador-pruebas.md).
+- [x] Probar con el bajo real (Amplug 3 → línea en el sobremesa): funciona con ganancia 0 dB y el medidor al 80 %.
+      Anotado en [afinador-pruebas.md](afinador-pruebas.md).
 
 ## Fase 7: en curso
 
@@ -46,11 +46,12 @@
       fáciles en móvil. Valorar solo como decoración del metrónomo.
 - [ ] El tema solo cambia los colores del visor de partituras por fuera (alphaTab dibuja sobre fondo claro).
 
-## Fase 5: hecha (falta la prueba en bajo real)
+## Fase 5: hecha (probada en bajo real por cable; falta el móvil)
 
 - [x] Afinador experimental (YIN, < 0,7 cents con tono sintético), tono de referencia, backing tracks generados,
       silenciar bajo/acompañamiento, oído (intervalos), grábate.
-- [ ] **Tú**: probar el afinador con tu bajo en tu móvil (y en iOS si puedes) y rellenar `docs/afinador-pruebas.md`.
+- [x] Probar el afinador con el bajo real por cable (Windows, Chrome, línea): bien, ver `docs/afinador-pruebas.md`.
+- [ ] **Tú**: probar el afinador con el micrófono del móvil (Android o iOS) y rellenar otra fila de `docs/afinador-pruebas.md`.
 - [ ] **Tú**: escuchar la mezcla del acompañamiento (batería y piano eléctrico frente al bajo); ajustar volúmenes.
 - [ ] Oído: dictado rítmico e identificar la fundamental de un acorde; intervalos armónicos (a la vez).
 - [ ] Afinador: si la E grave falla en móviles, probar MPM o una ventana más larga; calibración de La (440 Hz fijo).

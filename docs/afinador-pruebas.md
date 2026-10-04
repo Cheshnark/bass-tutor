@@ -1,7 +1,8 @@
 # Afinador: pruebas en bajo real
 
 Criterio de la Fase 5 ([roadmap.md](roadmap.md)): error < ±3 cents con tono sintético (**cumplido**, ver abajo) y
-**prueba en bajo real documentada por dispositivo** (pendiente: solo la puede hacer el autor).
+**prueba en bajo real documentada por dispositivo** (**hecha** en un dispositivo, el 2026-10-04: sobremesa con
+Windows, por cable; faltan el móvil y el micrófono ambiente).
 
 ## Con tono sintético (automático)
 
@@ -26,10 +27,15 @@ Protocolo, para cada dispositivo:
 
 | Fecha | Dispositivo / SO | Navegador (¿instalada?) | Cuerda | Referencia (cents) | App (cents) | ¿Estable? | Notas |
 |---|---|---|---|---|---|---|---|
-| | | | E | | | | |
-| | | | A | | | | |
-| | | | D | | | | |
-| | | | G | | | | |
+| 2026-10-04 | Sobremesa con Windows 10, bajo de 4 cuerdas → Amplug 3 → entrada de línea | Chrome, servido desde `localhost` (sin instalar) | E, A, D, G | Afinador Korg | "Clavadísima" (sin cents anotados) | Sí | Notas bien detectadas en todas; más preciso que el Korg según el autor |
+
+**Resultado de la prueba del 2026-10-04** (testimonio del autor, sin lecturas en cents por cuerda):
+- Las cuatro cuerdas al aire se detectan con la nota correcta y la afinación coincide con el afinador de referencia.
+- Nivel: con **ganancia 0 dB** en la app, el medidor llega a ~80 % con slap y volumen alto; no satura. La señal por la
+  entrada de línea es suficiente: la ganancia por software no hizo falta.
+- Con la entrada de micrófono (rosa) la señal era demasiado baja; la línea lo resolvió (ver arriba).
+- **Sin cubrir:** móvil (Android o iOS), bajo de 5 cuerdas (B0), micrófono ambiente en vez de cable, errores de
+  octava en automático (no se anotaron fallos) y cents medidos por cuerda.
 
 Conexión directa (Amplug u otro amplificador de auriculares) a un sobremesa: usa la **entrada de línea** (azul), no la
 de micrófono (rosa), y con un cable estéreo desde la salida de auriculares/AUX del Amplug. En Windows hay que poner la
