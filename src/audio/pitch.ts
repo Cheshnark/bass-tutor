@@ -49,6 +49,17 @@ export function rms(samples: Float32Array): number {
   return Math.sqrt(sum / Math.max(samples.length, 1))
 }
 
+/** Ganancia lineal equivalente a unos decibelios. */
+export function dbToGain(db: number): number {
+  return Math.pow(10, db / 20)
+}
+
+/** Nivel RMS como fracción 0–1 de un medidor que va de −60 dBFS a 0 dBFS. */
+export function levelFraction(level: number): number {
+  if (level <= 0) return 0
+  return Math.min(1, Math.max(0, (20 * Math.log10(level) + 60) / 60))
+}
+
 /** Frecuencia fundamental con YIN, o null si no hay un tono claro en el rango. */
 export function detectPitch(samples: Float32Array, sampleRate: number, options: PitchOptions): PitchResult | null {
   const threshold = options.threshold ?? 0.15

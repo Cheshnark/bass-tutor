@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { cents, decimate, DEFAULT_RANGE, detectPitch, median, nearestMidi, rms } from './pitch'
+import { cents, dbToGain, decimate, DEFAULT_RANGE, detectPitch, levelFraction, median, nearestMidi, rms } from './pitch'
 
 /** Ruido pseudoaleatorio reproducible. */
 function noise(seed = 7) {
@@ -101,6 +101,17 @@ describe('utilidades', () => {
     expect(median([4, 1, 2, 3])).toBe(2.5)
     // Un error de octava aislado no mueve la mediana.
     expect(median([41.2, 41.3, 82.4, 41.1, 41.2])).toBe(41.2)
+  })
+
+  it('dbToGain y levelFraction', () => {
+    expect(dbToGain(0)).toBe(1)
+    expect(dbToGain(20)).toBeCloseTo(10)
+    expect(levelFraction(0)).toBe(0)
+    expect(levelFraction(1)).toBe(1)
+    expect(levelFraction(2)).toBe(1)
+    expect(levelFraction(0.001)).toBeCloseTo(0) // −60 dBFS es el suelo del medidor
+    expect(levelFraction(Math.pow(10, -30 / 20))).toBeCloseTo(0.5)
+    expect(levelFraction(0.0001)).toBe(0)
   })
 
   it('rms y decimate', () => {

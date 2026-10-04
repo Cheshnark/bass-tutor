@@ -1,7 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { midiToFrequency } from '../../audio/notePlayer'
-import { cents as centsOff, DEFAULT_RANGE, median, nearestMidi, type PitchOptions } from '../../audio/pitch'
-import { startReferenceTone, startTuner, tunerErrorOf, type TunerError } from '../../audio/tuner'
+import { cents as centsOff, dbToGain, DEFAULT_RANGE, levelFraction, median, nearestMidi, type PitchOptions } from '../../audio/pitch'
+import {
+  listAudioInputs,
+  startReferenceTone,
+  startTuner,
+  tunerErrorOf,
+  type AudioInput,
+  type TunerError,
+  type TunerHandle,
+} from '../../audio/tuner'
 import { useSettings } from '../../state/settings'
 import { fretPitch } from '../../theory/fretboard'
 import { midiName } from '../../theory/notation'
@@ -25,6 +33,32 @@ const ERROR_TEXT: Record<TunerError, string> = {
 
 type Target = 'auto' | number
 
+const MAX_GAIN_DB = 30
+const STORAGE_DEVICE = 'bass-tutor.tuner.device'
+const STORAGE_GAIN = 'bass-tutor.tuner.gain-db'
+
+/** Preferencias del afinador en este dispositivo; si el almacenamiento no está disponible, se ignoran. */
+function readStored(key: string): string | null {
+  try {
+    return localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function writeStored(key: string, value: string) {
+  try {
+    localStorage.setItem(key, value)
+  } catch {
+    /* sin almacenamiento: la preferencia no se recuerda */
+  }
+}
+
+function initialGainDb(): number {
+  const stored = Number(readStored(STORAGE_GAIN))
+  return Number.isFinite(stored) ? Math.min(MAX_GAIN_DB, Math.max(0, stored)) : 0
+}
+
 /** Afinador por micrófono (experimental) y tono de referencia para afinar de oído. */
 export function Tuner() {
   const { tuningId, notation } = useSettings()
@@ -35,9 +69,14 @@ export function Tuner() {
   const [target, setTarget] = useState<Target>('auto')
   const [frequency, setFrequency] = useState<number | null>(null)
   const [refString, setRefString] = useState<number | null>(null)
+  const [inputs, setInputs] = useState<AudioInput[]>([])
+  const [deviceId, setDeviceId] = useState(() => readStored(STORAGE_DEVICE) ?? '')
+  const [gainDb, setGainDb] = useState(initialGainDb)
+  const [level, setLevel] = useState(0)
   useWakeLock(listening)
 
-  const stopRef = useRef<(() => void) | null>(null)
+  const stopRef = useRef<TunerHandle | null>(null)
+  const gainDbRef = useRef(gainDb)
   const stopToneRef = useRef<(() => void) | null>(null)
   const history = useRef<number[]>([])
   const rangeRef = useRef<PitchOptions>(DEFAULT_RANGE)
@@ -56,27 +95,47 @@ export function Tuner() {
   // Al salir de la vista se libera el micrófono y se para el tono.
   useEffect(
     () => () => {
-      stopRef.current?.()
+      stopRef.current?.stop()
       stopToneRef.current?.()
     },
     [],
   )
 
-  const start = async () => {
+  // La lista de entradas se mantiene al día mientras se escucha (conectar o desconectar un cable o una interfaz).
+  useEffect(() => {
+    if (!listening) return
+    const refresh = () => void listAudioInputs().then(setInputs)
+    refresh()
+    navigator.mediaDevices.addEventListener('devicechange', refresh)
+    return () => navigator.mediaDevices.removeEventListener('devicechange', refresh)
+  }, [listening])
+
+  const open = (id: string) =>
+    startTuner(
+      (reading) => {
+        if (!reading) {
+          history.current = []
+          setFrequency(null)
+          return
+        }
+        history.current = [...history.current, reading.frequency].slice(-SMOOTHING)
+        setFrequency(history.current.length >= MIN_READINGS ? median(history.current) : null)
+      },
+      () => rangeRef.current,
+      { deviceId: id || undefined, gain: dbToGain(gainDbRef.current), onLevel: setLevel },
+    )
+
+  const start = async (id = deviceId) => {
     setError(null)
     try {
-      stopRef.current = await startTuner(
-        (reading) => {
-          if (!reading) {
-            history.current = []
-            setFrequency(null)
-            return
-          }
-          history.current = [...history.current, reading.frequency].slice(-SMOOTHING)
-          setFrequency(history.current.length >= MIN_READINGS ? median(history.current) : null)
-        },
-        () => rangeRef.current,
-      )
+      try {
+        stopRef.current = await open(id)
+      } catch (e) {
+        // La entrada recordada ya no existe (otro equipo, cable desconectado): se vuelve a la predeterminada.
+        if (!id || tunerErrorOf(e) !== 'sin-microfono') throw e
+        setDeviceId('')
+        stopRef.current = await open('')
+      }
       setListening(true)
     } catch (e) {
       setError((e as { name?: string })?.name === 'NotSupported' ? 'no-soportado' : tunerErrorOf(e))
@@ -84,10 +143,27 @@ export function Tuner() {
   }
 
   const stop = () => {
-    stopRef.current?.()
+    stopRef.current?.stop()
     stopRef.current = null
     setListening(false)
     setFrequency(null)
+    setLevel(0)
+  }
+
+  const changeDevice = (id: string) => {
+    setDeviceId(id)
+    writeStored(STORAGE_DEVICE, id)
+    if (listening) {
+      stop()
+      void start(id)
+    }
+  }
+
+  const changeGain = (db: number) => {
+    setGainDb(db)
+    gainDbRef.current = db
+    writeStored(STORAGE_GAIN, String(db))
+    stopRef.current?.setGain(dbToGain(db))
   }
 
   const toggleTone = async (string: number) => {
@@ -151,6 +227,45 @@ export function Tuner() {
           {ERROR_TEXT[error]}
         </p>
       )}
+
+      <section aria-labelledby="tuner-input" className="tuner-input">
+        <h3 id="tuner-input">Entrada</h3>
+        <label className="field">
+          Dispositivo
+          <select
+            value={inputs.some((i) => i.deviceId === deviceId) ? deviceId : ''}
+            onChange={(e) => changeDevice(e.target.value)}
+          >
+            <option value="">Predeterminado del sistema</option>
+            {inputs
+              .filter((i) => i.deviceId !== 'default')
+              .map((i) => (
+                <option key={i.deviceId} value={i.deviceId}>
+                  {i.label}
+                </option>
+              ))}
+          </select>
+        </label>
+        <label className="field">
+          Ganancia: +{gainDb} dB
+          <input
+            type="range"
+            min={0}
+            max={MAX_GAIN_DB}
+            step={3}
+            value={gainDb}
+            onChange={(e) => changeGain(Number(e.target.value))}
+          />
+        </label>
+        <label className="field">
+          Nivel de entrada
+          <meter min={0} max={1} low={0.15} high={0.9} optimum={0.6} value={listening ? levelFraction(level) : 0} />
+        </label>
+        <p className="hint">
+          Toca una cuerda: la barra debería llegar al menos a la mitad sin llenarse del todo. Si apenas se mueve, sube
+          la ganancia o elige otra entrada (la lista aparece al activar el micrófono).
+        </p>
+      </section>
 
       <fieldset className="tuner-strings">
         <legend>Cuerda</legend>

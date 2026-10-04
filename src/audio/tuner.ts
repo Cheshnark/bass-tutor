@@ -29,26 +29,62 @@ export function tunerErrorOf(error: unknown): TunerError {
   return 'otro'
 }
 
+export interface TunerOptions {
+  /** Entrada concreta (de `listAudioInputs`); sin ella, la predeterminada del sistema. */
+  deviceId?: string
+  /** Ganancia lineal por software, antes del análisis (por defecto 1). */
+  gain?: number
+  /** Nivel RMS de la señal que se analiza (ya con la ganancia aplicada), en cada análisis. */
+  onLevel?: (level: number) => void
+}
+
+export interface TunerHandle {
+  stop: () => void
+  setGain: (gain: number) => void
+}
+
+export interface AudioInput {
+  deviceId: string
+  label: string
+}
+
+/** Entradas de audio. Los nombres solo se ven una vez concedido el permiso del micrófono. */
+export async function listAudioInputs(): Promise<AudioInput[]> {
+  if (!navigator.mediaDevices?.enumerateDevices) return []
+  const devices = await navigator.mediaDevices.enumerateDevices()
+  return devices
+    .filter((d) => d.kind === 'audioinput')
+    .map((d, i) => ({ deviceId: d.deviceId, label: d.label || `Entrada ${i + 1}` }))
+}
+
 /**
  * Abre el micrófono y llama a `onReading` con cada lectura (o null si hay silencio o ruido).
  * `getRange` se consulta en cada análisis para poder cambiar de cuerda sin reabrir el micrófono.
- * Devuelve una función para parar y liberar todo.
+ * Devuelve el control para cambiar la ganancia y para parar y liberar todo.
  */
 export async function startTuner(
   onReading: (reading: TunerReading | null) => void,
   getRange: () => PitchOptions,
-): Promise<() => void> {
+  { deviceId, gain = 1, onLevel }: TunerOptions = {},
+): Promise<TunerHandle> {
   if (!navigator.mediaDevices?.getUserMedia) throw Object.assign(new Error('getUserMedia no disponible'), { name: 'NotSupported' })
   // Sin cancelación de eco ni supresión de ruido: estropean los graves. En iOS, quitar la cancelación de eco
   // quita también el control automático de ganancia (WebKit bug 179411).
   const stream = await navigator.mediaDevices.getUserMedia({
-    audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
+    audio: {
+      echoCancellation: false,
+      noiseSuppression: false,
+      autoGainControl: false,
+      ...(deviceId ? { deviceId: { exact: deviceId } } : {}),
+    },
   })
   const ctx = await getAudioContext()
   const source = ctx.createMediaStreamSource(stream)
+  const gainNode = ctx.createGain()
+  gainNode.gain.value = gain
   const analyser = ctx.createAnalyser()
   analyser.fftSize = FFT_SIZE
-  source.connect(analyser) // no se conecta a la salida: no hay realimentación
+  source.connect(gainNode).connect(analyser) // no se conecta a la salida: no hay realimentación
 
   const buffer = new Float32Array(analyser.fftSize)
   const factor = Math.max(1, Math.round(ctx.sampleRate / TARGET_RATE))
@@ -60,7 +96,9 @@ export async function startTuner(
     if (now - last < ANALYSIS_INTERVAL_MS) return
     last = now
     analyser.getFloatTimeDomainData(buffer)
-    if (rms(buffer) < MIN_LEVEL) {
+    const level = rms(buffer)
+    onLevel?.(level)
+    if (level < MIN_LEVEL) {
       onReading(null)
       return
     }
@@ -69,10 +107,16 @@ export async function startTuner(
   }
   frame = requestAnimationFrame(tick)
 
-  return () => {
-    cancelAnimationFrame(frame)
-    source.disconnect()
-    stream.getTracks().forEach((t) => t.stop())
+  return {
+    stop: () => {
+      cancelAnimationFrame(frame)
+      source.disconnect()
+      gainNode.disconnect()
+      stream.getTracks().forEach((t) => t.stop())
+    },
+    setGain: (value) => {
+      gainNode.gain.value = value
+    },
   }
 }
 

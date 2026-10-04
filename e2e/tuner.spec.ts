@@ -72,6 +72,34 @@ test('afinador: detecta una E1 sintética por el micrófono simulado', async ({ 
   await expect(page.getByTestId('tuner-note')).toHaveText('—')
 })
 
+test('afinador: lista las entradas, mide el nivel y la ganancia lo sube', async ({ page }) => {
+  await page.goto('/#/afinador')
+  const meter = page.getByRole('meter', { name: 'Nivel de entrada' })
+  const readLevel = async () => Number(await meter.getAttribute('value'))
+  await expect(meter).toHaveAttribute('value', '0')
+
+  await page.getByRole('button', { name: 'Activar micrófono' }).click()
+  await expect(page.getByRole('button', { name: 'Parar micrófono' })).toBeVisible()
+  // Con el micrófono abierto aparece la lista de entradas (la simulada, además de "Predeterminado").
+  await expect.poll(() => page.getByLabel('Dispositivo').locator('option').count()).toBeGreaterThan(1)
+  await expect.poll(readLevel, { timeout: 5_000 }).toBeGreaterThan(0)
+
+  // +12 dB (ganancia ×4): el nivel medido sube. El tono se repite en bucle, así que se compara el máximo de unas lecturas.
+  const peak = async () => {
+    let max = 0
+    for (let i = 0; i < 10; i++) {
+      max = Math.max(max, await readLevel())
+      await page.waitForTimeout(100)
+    }
+    return max
+  }
+  const before = await peak()
+  await page.getByLabel(/Ganancia/).fill('12')
+  await expect(page.getByLabel(/Ganancia/)).toHaveValue('12')
+  const after = await peak()
+  expect(after).toBeGreaterThan(before)
+})
+
 test('afinador: el tono de referencia se activa y se para', async ({ page }) => {
   await page.goto('/#/afinador')
   await page.getByRole('button', { name: 'Escuchar A1' }).click()

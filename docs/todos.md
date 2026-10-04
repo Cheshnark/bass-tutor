@@ -8,6 +8,11 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Afinador
+
+- [ ] Probar con el bajo real (Amplug 3 → línea en el sobremesa): ¿llega la señal con el selector de entrada y qué
+      ganancia hace falta? Anotarlo en [afinador-pruebas.md](afinador-pruebas.md).
+
 ## Fase 7: en curso
 
 - [x] Ampliación común: Arpegios (3 lecciones) y Escalas (3 lecciones), en borrador.

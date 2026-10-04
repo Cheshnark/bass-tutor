@@ -405,6 +405,17 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Ejercicios generados con un script de usar y tirar (como en blues/jazz), con un modelo de compás en semicorcheas
   que comprueba que cada compás suma lo que debe.
 
+## 2026-10-04 · Afinador: selector de entrada, medidor y ganancia por software
+- **Motivo:** con un bajo real el micrófono de la app no recogía señal. Abrir solo el dispositivo predeterminado
+  obliga a cambiarlo en Windows, y sin control automático de ganancia (desactivado a propósito: estropea los graves)
+  no había forma de ver ni subir un nivel bajo.
+- Ganancia con un `GainNode` entre la fuente y el analizador (0 a +30 dB, pasos de 3). No mejora la relación
+  señal/ruido de la entrada analógica; solo ayuda a superar el umbral de silencio (`MIN_LEVEL`) y a ver el nivel.
+  Si hay un refuerzo analógico disponible (entrada de línea, refuerzo de micrófono del driver, interfaz), es mejor.
+- El medidor muestra el nivel **tras** la ganancia, que es lo que analiza YIN.
+- `deviceId` con `exact`: se respeta la elección. Si falla (entrada recordada que ya no existe), se reintenta con la
+  predeterminada. Preferencias en `localStorage` (por dispositivo, no en los ajustes sincronizables).
+
 ## 2026-10-02 · Fase 7: contenido escrito
 - Los cuatro itinerarios y la ampliación común están escritos (26 módulos, 78 lecciones, 121 ejercicios), todo en
   borrador. El criterio de la fase (revisión pedagógica por módulo) depende del autor: tocarlo y pasar a `revisada`.

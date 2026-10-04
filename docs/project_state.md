@@ -1,6 +1,16 @@
 # Estado del proyecto
 
-_Última actualización: 2026-10-02_
+_Última actualización: 2026-10-04_
+
+## Afinador: entrada, nivel y ganancia (2026-10-04)
+
+Al probar el afinador con un bajo real (Amplug 3 → entrada de línea de un sobremesa con Windows 10) la app no
+recogía la señal. El código solo abría la entrada **predeterminada** del sistema y, con el control automático de
+ganancia desactivado, una señal floja caía bajo el umbral de silencio sin avisar. Ahora el afinador tiene:
+- **Selector de entrada** (se rellena al activar el micrófono y se mantiene al día con `devicechange`). Se recuerda la
+  elegida; si ya no existe, se vuelve a la predeterminada.
+- **Medidor de nivel** (−60 a 0 dBFS) y **ganancia por software** de 0 a +30 dB (se recuerda).
+- Pendiente de comprobar con el bajo real del autor si esto resuelve su caso.
 
 ## Fases 0–6 cerradas; Fase 7 (contenido) escrita, pendiente de tu revisión
 

@@ -8,6 +8,8 @@ Criterio de la Fase 5 ([roadmap.md](roadmap.md)): error < ±3 cents con tono sin
 - `src/audio/pitch.test.ts`: cuerdas al aire B0–C3 y G3, a 44,1 y 48 kHz, con seno puro y con una señal "tipo bajo"
   (2.º armónico más fuerte que la fundamental) y ruido. Error máximo medido: **0,69 cents** (B0, seno puro);
   con la señal tipo bajo, < 0,3 cents. Sin errores de octava.
+- Selector de entrada, medidor de nivel y ganancia por software: `src/audio/pitch.test.ts` (`dbToGain`,
+  `levelFraction`) y un e2e que comprueba que la ganancia sube el nivel medido.
 - `e2e/tuner.spec.ts`: Chromium con micrófono simulado (fichero WAV con una E1 desafinada +12 cents). La app muestra
   E1, "Alto: baja" y +12 cents, estable (± 3).
 
@@ -28,6 +30,11 @@ Protocolo, para cada dispositivo:
 | | | | A | | | | |
 | | | | D | | | | |
 | | | | G | | | | |
+
+Conexión directa (Amplug u otro amplificador de auriculares) a un sobremesa: usa la **entrada de línea** (azul), no la
+de micrófono (rosa), y con un cable estéreo desde la salida de auriculares/AUX del Amplug. En Windows hay que poner la
+línea como dispositivo de grabación, o elegirla en el selector de entrada del afinador. Anota el nivel que marca el
+medidor al tocar y la ganancia que hace falta.
 
 Cosas que conviene anotar (research.md: son los puntos débiles conocidos):
 - **iOS**: si con el interruptor de silencio activado se oye el tono de referencia; si la E grave se detecta (el
