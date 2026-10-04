@@ -105,7 +105,7 @@ Todo el contenido está escrito: tronco común, ampliación común y los cuatro 
   también bajo `/bass-tutor/`). Instalable como app (manifest + iconos propios). Aviso de versión nueva.
 - **Lighthouse (móvil)**: 98/100/100 portada, 97/100/100 lección (rendimiento/accesibilidad/buenas prácticas).
 - **Publicación** en GitHub Pages (`.github/workflows/deploy.yml`): activada y lanzada a mano por el autor el 2026-10-04
-  (Source: GitHub Actions); el workflow terminó bien. Sin la variable `PAGES_ENABLED` solo se publica a mano.
+  (Source: GitHub Actions); el workflow terminó bien. URL: https://cheshnark.github.io/bass-tutor/ Sin la variable `PAGES_ENABLED` solo se publica a mano.
 - Tests: 217 unitarios y 164 e2e.
 
 ### Contenido
