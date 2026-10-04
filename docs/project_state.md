@@ -7,6 +7,9 @@ _Última actualización: 2026-10-04_
 Al reproducir un ejercicio no se veía por dónde iba la reproducción. Era un olvido: alphaTab crea los cursores pero
 no los pinta. Ahora el **compás que suena** va sombreado, una **línea marca el pulso** y la **nota actual** se
 resalta; el bucle A-B se ve en azul. Un e2e lo comprueba (cursor visible, avanza y la nota se marca).
+En partituras largas la **vista sigue al cursor** (ya lo hacía alphaTab) y ahora lo deja con 80 px de margen por
+arriba en vez de pegado al borde. Se comprobó con la canción de 31 compases (e2e `playback-guide.spec.ts`), también en
+modo atril, donde los estilos del cursor ya aplican porque son globales al visor.
 
 ## Índice del curso en acordeón (2026-10-04)
 

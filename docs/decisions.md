@@ -412,7 +412,9 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Colores en `src/index.css`, fijos y no por tema, porque el visor tiene siempre fondo crema (`#fbfaf5`): compás en
   ámbar translúcido, pulso y nota actual en `#9a4a00` (contraste ≥ 3:1 con el fondo), bucle en azul translúcido.
 - El resaltado se aplica a los hijos del grupo (`.at-highlight *`), no al `<g>`.
-- Sin cambiar opciones del reproductor: `enableCursor` ya es `true` por defecto.
+- `enableCursor` ya es `true` por defecto. El scroll que sigue al cursor también viene de alphaTab
+  (`ScrollMode.Continuous`), que lo deja pegado al borde superior: se añade `player.scrollOffsetY = -80` para dejar
+  margen y ver algo de lo anterior. Solo la barra inferior de la lección es fija y no tapa el cursor.
 
 ## 2026-10-04 · Índice del curso: acordeón por bloque
 - **Motivo:** con 6 bloques y 26 módulos desplegados, el índice era largo y tedioso, sobre todo en el móvil.

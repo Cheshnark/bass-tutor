@@ -50,6 +50,9 @@ export default function TabView({ tex, title = 'Tablatura y partitura', bpm }: T
       player: {
         playerMode: PlayerMode.EnabledSynthesizer,
         soundFont: `${BASE}soundfont/sonivox.sf2`,
+        // alphaTab sigue el cursor con la vista y por defecto lo deja pegado al borde de arriba; con este margen se
+        // ve algo de lo anterior y el cursor no queda en el borde de la pantalla.
+        scrollOffsetY: -80,
       },
     })
     instance.scoreLoaded.on((score) => {
