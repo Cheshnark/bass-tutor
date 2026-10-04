@@ -2,6 +2,12 @@
 
 _Última actualización: 2026-10-04_
 
+## Guía visual en la partitura (2026-10-04)
+
+Al reproducir un ejercicio no se veía por dónde iba la reproducción. Era un olvido: alphaTab crea los cursores pero
+no los pinta. Ahora el **compás que suena** va sombreado, una **línea marca el pulso** y la **nota actual** se
+resalta; el bucle A-B se ve en azul. Un e2e lo comprueba (cursor visible, avanza y la nota se marca).
+
 ## Índice del curso en acordeón (2026-10-04)
 
 El índice mostraba todo desplegado (26 módulos). Ahora cada **bloque** (tronco común, ampliación común y cada

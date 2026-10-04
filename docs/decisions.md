@@ -405,6 +405,15 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - Ejercicios generados con un script de usar y tirar (como en blues/jazz), con un modelo de compás en semicorcheas
   que comprueba que cada compás suma lo que debe.
 
+## 2026-10-04 · Partitura: guía de reproducción con CSS propio
+- **Motivo:** al reproducir un ejercicio no se veía por dónde iba. Fue un fallo de omisión: alphaTab 1.8.4 crea el
+  cursor del compás (`.at-cursor-bar`), el del pulso (`.at-cursor-beat`), la selección del bucle (`.at-selection`) y
+  marca las notas que suenan (`.at-highlight`), pero **no trae estilos**; sin CSS son invisibles.
+- Colores en `src/index.css`, fijos y no por tema, porque el visor tiene siempre fondo crema (`#fbfaf5`): compás en
+  ámbar translúcido, pulso y nota actual en `#9a4a00` (contraste ≥ 3:1 con el fondo), bucle en azul translúcido.
+- El resaltado se aplica a los hijos del grupo (`.at-highlight *`), no al `<g>`.
+- Sin cambiar opciones del reproductor: `enableCursor` ya es `true` por defecto.
+
 ## 2026-10-04 · Índice del curso: acordeón por bloque
 - **Motivo:** con 6 bloques y 26 módulos desplegados, el índice era largo y tedioso, sobre todo en el móvil.
 - Se pliega por **bloque** (tronco, ampliación, cada itinerario), no por módulo: un clic muestra los 4 módulos de un

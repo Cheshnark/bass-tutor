@@ -50,6 +50,29 @@ test('alphaTab renderiza el ejercicio y carga el soundfont', async ({ page }) =>
   await expect(page.getByRole('button', { name: 'Reproducir' })).toBeEnabled({ timeout: 30_000 })
 })
 
+test('al reproducir la partitura se ve por dónde va (cursor del compás y del pulso, y la nota marcada)', async ({ page }) => {
+  await page.goto(`${LESSON}/4`)
+  const tab = page.getByTestId('alphatab')
+  await expect(page.getByRole('button', { name: 'Reproducir' })).toBeEnabled({ timeout: 30_000 })
+  await page.getByRole('button', { name: 'Reproducir' }).click()
+  await expect(page.getByRole('button', { name: 'Pausa' })).toBeVisible()
+
+  // alphaTab crea los cursores pero no los pinta: los colores son de la aplicación (src/index.css).
+  const beat = tab.locator('.at-cursor-beat')
+  await expect(beat).toBeVisible()
+  await expect(beat).toHaveCSS('background-color', 'rgb(154, 74, 0)')
+  await expect(tab.locator('.at-cursor-bar')).not.toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
+  await expect(tab.locator('.at-highlight').first()).toBeAttached()
+  // La regla pinta los elementos dentro del grupo marcado, no el grupo.
+  await expect(tab.locator('.at-highlight *').first()).toHaveCSS('fill', 'rgb(154, 74, 0)')
+
+  // El cursor del pulso avanza con la reproducción.
+  const x = async () => (await beat.boundingBox())?.x ?? 0
+  const first = await x()
+  await expect.poll(x, { timeout: 5_000 }).not.toBe(first)
+  await page.getByRole('button', { name: 'Parar', exact: true }).click()
+})
+
 test('el metrónomo de la lección es el mismo que el del panel', async ({ page }) => {
   await page.goto(`${LESSON}/4`)
   await page.getByRole('button', { name: 'Metrónomo a 60 BPM' }).click()

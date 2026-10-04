@@ -395,6 +395,29 @@ input[type='number'] {
   color: #111;
 }
 
+/*
+ * Guía de reproducción de alphaTab. La librería crea el cursor de compás, el del pulso y marca las notas que suenan,
+ * pero no les da estilo. Los colores se eligen sobre el fondo crema fijo del visor (no dependen del tema) y el
+ * cursor del pulso mantiene contraste ≥ 3:1 con él (WCAG 1.4.11).
+ */
+.tab-viewport .at-cursor-bar {
+  background: rgba(224, 165, 38, 0.28);
+}
+
+.tab-viewport .at-cursor-beat {
+  width: 3px;
+  background: #9a4a00;
+}
+
+.tab-viewport .at-selection div {
+  background: rgba(30, 90, 200, 0.14);
+}
+
+.tab-viewport .at-highlight * {
+  fill: #9a4a00;
+  stroke: #9a4a00;
+}
+
 .controls {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
