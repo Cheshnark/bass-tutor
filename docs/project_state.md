@@ -1,6 +1,15 @@
 # Estado del proyecto
 
-_Última actualización: 2026-10-04_
+_Última actualización: 2026-10-05_
+
+## Identidad: nombre nuevo y más carácter (en investigación, 2026-10-05)
+
+El autor quiere cambiar el nombre visible de la app por uno en español con gancho (las carpetas, el repo y la URL se
+quedan como están) y darle más carácter propio. Maquetas antes/después en
+[maquetas/identidad.html](maquetas/identidad.html) (abrir con `npm run dev` en `/docs/maquetas/identidad.html`):
+nombres candidatos (Retumba, Bajo Cero, Sube el Bajo, Grave) con logotipo sin caja; rótulo de panel con tira crema;
+ámbar solo para «encendido»; metrónomo como frontal (ventana de BPM, pilotos, pote, interruptor); Atkinson
+Hyperlegible Next para el texto; tolex por itinerario. **Pendiente: que el autor elija.** Nada implementado aún.
 
 ## Guía visual en la partitura (2026-10-04)
 
