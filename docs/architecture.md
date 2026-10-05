@@ -30,7 +30,7 @@
 /public/                       estáticos; font/ y soundfont/ los copia alphatab-vite (ignorados en git)
 /src/audio/                    context.ts (AudioContext compartido), beatClock/accents/tapTempo/tempoLadder/pitch (puros) + metronome.ts, notePlayer.ts, tuner.ts
 /src/App.tsx, useHashRoute.ts  navegación por hash (#/curso, #/curso/<id>, #/mastil…)
-/src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Lesson/ (índice, lección, embeds), Practice/ (repaso, rutinas, quiz), Tab/ (TabView diferido), SettingsBar
+/src/components/               Fretboard/, FretboardExplorer, Dictionary/, Metronome/, Knob/ (pote), PanelTitle, Lesson/ (índice, lección, embeds), Practice/ (repaso, rutinas, quiz), Tab/ (TabView diferido), SettingsBar
 /src/practice/                 leitner.ts, queue.ts, routine.ts, quiz.ts, ear.ts: lógica pura de la práctica (Fases 4–5)
 /src/content/                  schema.ts (Zod), validate.ts + mdx.ts + frontmatter.ts (puros), course.ts (acceso tipado);
                                modules/NN-id/ (module.yaml + *.mdx); exercises/*.yaml
@@ -161,9 +161,23 @@
   en "auto", alto contraste si `prefers-contrast: more`.
 - Ajustes en `#/ajustes` (`SettingsView`): instrumento, tema, modo atril y paso a paso. `useSettings` guarda `theme` y
   `standMode` (validados al recuperar).
-- Cabecera "cabezal": placa crema con nombre, `HeaderPilot` (piloto que luce con el pulso, vía `useBeatPulse`, y
-  enlaza al metrónomo) y enlace a Ajustes; debajo, rejilla decorativa. En modo atril, una barra mínima.
-- Afinador con `VuMeter` (SVG, `role=meter`). Fuente Oswald autoalojada (`@fontsource/oswald`, OFL).
+- Cabecera "cabezal": placa crema con el **logotipo** (nombre + cuatro cuerdas, enlace al curso; no es el `h1`),
+  `HeaderPilot` (piloto que luce con el pulso, vía `useBeatPulse`, y enlaza al metrónomo) y enlace a Ajustes; debajo,
+  rejilla decorativa. En modo atril, una barra mínima.
+- **Nombre visible** en `src/brand.ts` (`APP_NAME`): cabecera, `document.title`, manifest (vite.config.ts) y avisos.
+  Los identificadores internos (`bass-tutor` en rutas, copias de progreso y claves de almacenamiento) no dependen de él.
+- **Rótulo de panel** (`components/PanelTitle.tsx`): tira crema con tornillos; es el `h1` de cada vista (en la lección,
+  el `h1` es el título de la lección). Niveles: `h1` vista → `h2` secciones → `h3`… `document.title` por vista
+  (`App.tsx`; la lección pone el suyo).
+- **Pilotos** (`.pilot`, `.pilot--on`, `.pilot--flash`): cristal ámbar con bisel; el ámbar (`--accent`, `--lit-*`)
+  se reserva para lo encendido. Botón principal en crema (`--primary-*`); marcas de traste en `--inlay`.
+- **Pote** (`components/Knob/`): `role=slider` con teclado (flechas, RePág/AvPág, Inicio/Fin) y arrastre vertical;
+  lógica pura en `knobMath.ts` (con tests). Metrónomo: tempo (20–300) y volumen (0–10), siempre con ± y entrada.
+- **Tolex por itinerario**: `data-track` en los bloques del índice y en la lección; colores `--tolex` en index.css,
+  banda en Lesson.css. Sin banda en los bloques comunes ni en alto contraste.
+- Afinador con `VuMeter` (SVG, `role=meter`). Fuentes autoalojadas (OFL): Oswald para rótulos (`@fontsource/oswald`)
+  y Atkinson Hyperlegible Next para el texto (`@fontsource/atkinson-hyperlegible-next`, 400/400 cursiva/700, ~12 KB
+  cada peso).
 - Pruebas: `e2e/a11y.spec.ts` (axe, WCAG 2.2 AA, ambos temas) y `e2e/design.spec.ts` (≥ 48 px, tema, atril, piloto).
   Guía: [accesibilidad.md](accesibilidad.md).
 

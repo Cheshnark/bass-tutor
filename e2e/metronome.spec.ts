@@ -4,14 +4,48 @@ const panel = (page: Page) => page.getByRole('region', { name: 'Metrónomo' })
 const display = (page: Page) => page.getByTestId('bpm-display')
 
 test.describe('metrónomo', () => {
-  test('±1/±5 y el deslizador cambian el tempo', async ({ page }) => {
+  test('±1/±5 y la entrada numérica cambian el tempo', async ({ page }) => {
     await page.goto('/#/metronomo')
     await expect(display(page)).toHaveText('80')
     await page.getByRole('button', { name: 'Subir 5 BPM' }).click()
     await page.getByRole('button', { name: 'Bajar 1 BPM' }).click()
     await expect(display(page)).toHaveText('84')
-    await page.getByLabel('Tempo').fill('150')
+    await page.getByRole('spinbutton', { name: 'BPM' }).fill('150')
     await expect(display(page)).toHaveText('150')
+  })
+
+  test('el pote de tempo se gira con el teclado y arrastrando', async ({ page }) => {
+    await page.goto('/#/metronomo')
+    const knob = page.getByRole('slider', { name: 'Tempo' })
+    await expect(knob).toHaveAttribute('aria-valuenow', '80')
+    await expect(knob).toHaveAttribute('aria-valuetext', '80 BPM')
+    await knob.focus()
+    await page.keyboard.press('ArrowUp')
+    await expect(display(page)).toHaveText('81')
+    await page.keyboard.press('PageDown')
+    await expect(display(page)).toHaveText('71')
+    await page.keyboard.press('Home')
+    await expect(display(page)).toHaveText('20')
+    await expect(knob).toHaveAttribute('aria-valuenow', '20')
+    // Arrastrar hacia arriba sube: 280 px recorren el rango entero (20–300), así que 1 px ≈ 1 BPM.
+    const box = (await knob.boundingBox())!
+    const x = box.x + box.width / 2
+    const y = box.y + box.height / 2
+    await page.mouse.move(x, y)
+    await page.mouse.down()
+    await page.mouse.move(x, y - 40, { steps: 4 })
+    await page.mouse.up()
+    await expect(display(page)).toHaveText('60')
+  })
+
+  test('el volumen va en un pote de 0 a 10', async ({ page }) => {
+    await page.goto('/#/metronomo')
+    const knob = page.getByRole('slider', { name: 'Volumen' })
+    await knob.focus()
+    await page.keyboard.press('End')
+    await expect(knob).toHaveAttribute('aria-valuetext', '10 de 10')
+    await page.keyboard.press('ArrowDown')
+    await expect(knob).toHaveAttribute('aria-valuetext', '9,5 de 10')
   })
 
   test('tap tempo calcula el BPM a partir de las pulsaciones', async ({ page }) => {

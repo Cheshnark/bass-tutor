@@ -8,6 +8,15 @@
 - [ ] iOS: comprobar si el interruptor de silencio corta el audio de Web Audio y documentarlo. **[Hipótesis]**
 - [ ] Ver el primer run de CI en GitHub Actions en verde.
 
+## Identidad
+
+- [x] Logotipo, rótulos de panel (h1 por vista), ámbar solo para lo encendido, metrónomo como frontal, Atkinson
+      Hyperlegible Next y tolex por itinerario (2026-10-05).
+- [ ] **Tú**: elegir el nombre nuevo (en español, con gancho). Al decidir: `APP_NAME` en src/brand.ts, subtítulo
+      `\subtitle "Ejercicio original · …"` de los ejercicios, regla de .claude/rules/content.md,
+      y el texto del e2e de progreso. Ruta, carpetas e identificadores internos no cambian.
+- [ ] Probar el pote en el móvil: que arrastrarlo no moleste al desplazar la página.
+
 ## Afinador
 
 - [x] Probar con el bajo real (Amplug 3 → línea en el sobremesa): funciona con ganancia 0 dB y el medidor al 80 %.

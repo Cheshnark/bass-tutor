@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRegisterSW } from 'virtual:pwa-register/react'
+import { APP_NAME } from '../brand'
 
 const OFFLINE_READY_MS = 8000
 
@@ -26,7 +27,7 @@ export function UpdatePrompt() {
 
   return (
     <div className="update-prompt" role="status" data-testid="update-prompt">
-      <p>{needRefresh ? 'Hay una versión nueva de Bass Tutor.' : 'Listo: el curso ya funciona sin conexión.'}</p>
+      <p>{needRefresh ? `Hay una versión nueva de ${APP_NAME}.` : 'Listo: el curso ya funciona sin conexión.'}</p>
       {needRefresh && (
         <div className="row">
           <button type="button" className="btn btn--primary" onClick={() => void updateServiceWorker(true)}>

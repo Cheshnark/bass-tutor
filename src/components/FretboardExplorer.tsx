@@ -5,6 +5,7 @@ import { useSettings } from '../state/settings'
 import { formatNote } from '../theory/notation'
 import { getTuning } from '../theory/tunings'
 import { Fretboard } from './Fretboard/Fretboard'
+import { PanelTitle } from './PanelTitle'
 
 const MODES: { id: FretboardMode; label: string }[] = [
   { id: 'notes', label: 'Notas' },
@@ -52,7 +53,7 @@ export function FretboardExplorer() {
 
   return (
     <section className="panel" aria-labelledby="fretboard-title">
-      <h2 id="fretboard-title">Mástil</h2>
+      <PanelTitle id="fretboard-title">Mástil</PanelTitle>
 
       <div className="controls">
         <label>

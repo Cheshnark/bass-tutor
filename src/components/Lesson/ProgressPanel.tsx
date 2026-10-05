@@ -62,7 +62,7 @@ export function ProgressPanel() {
 
   return (
     <section className="course-progress" aria-labelledby="progress-title">
-      <h3 id="progress-title">Tu progreso</h3>
+      <h2 id="progress-title">Tu progreso</h2>
       <p className="hint">
         Se guarda solo en este dispositivo, sin cuenta. {stored ? STORAGE_TEXT[stored] : ''}
       </p>

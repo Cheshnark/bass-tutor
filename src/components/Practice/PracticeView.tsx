@@ -1,3 +1,4 @@
+import { PanelTitle } from '../PanelTitle'
 import { BLOCK_LABELS, ROUTINE_LENGTHS, TEMPLATES, type RoutineLength } from '../../practice/routine'
 import { DailyQueue } from './DailyQueue'
 import { EarTraining } from './EarTraining'
@@ -15,10 +16,10 @@ export function PracticeView({ params }: { params: string[] }) {
   if (section === 'quiz') {
     return (
       <section className="panel practice" aria-labelledby="practice-title">
+        <PanelTitle id="practice-title">Quiz de mástil</PanelTitle>
         <p className="lesson-kicker">
-          <a href="#/practica">Práctica</a>
+          <a href="#/practica">← Práctica</a>
         </p>
-        <h2 id="practice-title">Quiz de mástil</h2>
         <FretboardQuiz />
       </section>
     )
@@ -27,10 +28,10 @@ export function PracticeView({ params }: { params: string[] }) {
   if (section === 'oido') {
     return (
       <section className="panel practice" aria-labelledby="practice-title">
+        <PanelTitle id="practice-title">Oído: intervalos</PanelTitle>
         <p className="lesson-kicker">
-          <a href="#/practica">Práctica</a>
+          <a href="#/practica">← Práctica</a>
         </p>
-        <h2 id="practice-title">Oído: intervalos</h2>
         <EarTraining />
       </section>
     )
@@ -39,10 +40,10 @@ export function PracticeView({ params }: { params: string[] }) {
   if (section === 'rutina' && isLength(arg)) {
     return (
       <section className="panel practice" aria-labelledby="practice-title">
+        <PanelTitle id="practice-title">Rutina de {arg} minutos</PanelTitle>
         <p className="lesson-kicker">
-          <a href="#/practica">Práctica</a>
+          <a href="#/practica">← Práctica</a>
         </p>
-        <h2 id="practice-title">Rutina de {arg} minutos</h2>
         <RoutinePlayer length={Number(arg) as RoutineLength} />
       </section>
     )
@@ -50,15 +51,15 @@ export function PracticeView({ params }: { params: string[] }) {
 
   return (
     <section className="panel practice" aria-labelledby="practice-title">
-      <h2 id="practice-title">Práctica</h2>
+      <PanelTitle id="practice-title">Práctica</PanelTitle>
 
       <section aria-labelledby="practice-today">
-        <h3 id="practice-today">Repaso de hoy</h3>
+        <h2 id="practice-today">Repaso de hoy</h2>
         <DailyQueue />
       </section>
 
       <section aria-labelledby="practice-routines">
-        <h3 id="practice-routines">Rutinas</h3>
+        <h2 id="practice-routines">Rutinas</h2>
         <p className="hint">
           Con los ejercicios que ya has practicado, empezando por los que toca repasar. Las tareas se alternan
           (técnica, mástil, groove…) en vez de hacer cada una de un tirón.
@@ -76,7 +77,7 @@ export function PracticeView({ params }: { params: string[] }) {
       </section>
 
       <section aria-labelledby="practice-quiz">
-        <h3 id="practice-quiz">Quiz de mástil</h3>
+        <h2 id="practice-quiz">Quiz de mástil</h2>
         <p className="hint">Nombra y encuentra notas en el mástil. Las que te cuestan vuelven antes.</p>
         <a className="btn btn--big" href="#/practica/quiz">
           Abrir el quiz
@@ -84,7 +85,7 @@ export function PracticeView({ params }: { params: string[] }) {
       </section>
 
       <section aria-labelledby="practice-ear">
-        <h3 id="practice-ear">Oído</h3>
+        <h2 id="practice-ear">Oído</h2>
         <p className="hint">Reconoce intervalos en el registro del bajo, de la quinta y la octava a todos.</p>
         <a className="btn btn--big" href="#/practica/oido">
           Entrenar el oído

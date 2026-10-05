@@ -90,9 +90,9 @@ export function RoutinePlayer({ length }: { length: RoutineLength }) {
       </ol>
 
       <section className="routine-block" aria-labelledby="routine-block-title">
-        <h3 id="routine-block-title">
+        <h2 id="routine-block-title">
           Bloque {index + 1} de {blocks.length} · {BLOCK_LABELS[block.kind]}
-        </h3>
+        </h2>
         <div className="routine-timer">
           <span className={`routine-timer__time${remaining <= 0 ? ' is-over' : ''}`} data-testid="routine-time" aria-live="off">
             {remaining > 0 ? mmss(remaining) : '0:00'}

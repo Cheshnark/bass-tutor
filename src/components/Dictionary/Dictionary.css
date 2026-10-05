@@ -38,7 +38,7 @@
   background: var(--surface-2);
 }
 
-.dict-card h3 {
+.dict-card h2 {
   margin: 0;
   font-size: 1.4rem;
 }

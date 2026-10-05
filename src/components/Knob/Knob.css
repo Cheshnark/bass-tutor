@@ -1,0 +1,56 @@
+/* Pote: decoración de "marco" (el valor se lee en la ventana del metrónomo o en su etiqueta, no en el pote). */
+.knob {
+  width: 200px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: ns-resize;
+  /* Arrastrar el pote no debe desplazar la página. */
+  touch-action: none;
+  user-select: none;
+}
+
+.knob svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.knob__scale {
+  stroke: var(--text-muted);
+  fill: var(--text-muted);
+  font-family: var(--label);
+  font-size: 12px;
+}
+
+.knob__scale text {
+  stroke: none;
+}
+
+.knob__pointer {
+  stroke: var(--plate);
+}
+
+.knob:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.knob--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+:root[data-theme='alto-contraste'] .knob__scale {
+  stroke: var(--text);
+  fill: var(--text);
+}
+
+:root[data-theme='alto-contraste'] .knob__pointer {
+  stroke: var(--accent);
+}
+
+/* En un pote pequeño los números se escalan con él: se agrandan en el SVG para que sigan legibles. */
+.knob--small .knob__scale {
+  font-size: 20px;
+}

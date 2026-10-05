@@ -4,7 +4,7 @@ const LESSON = '/#/curso/cuerdas-al-aire'
 
 test('la portada es el índice del curso y enlaza a la lección', async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByRole('heading', { name: 'Curso', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Curso', level: 1 })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Tronco común' })).toBeVisible()
   // Los cuatro itinerarios aparecen aunque aún no tengan lecciones
   for (const style of ['Rock / pop', 'Funk / soul / Motown', 'Blues / jazz', 'Metal / punk']) {
@@ -12,7 +12,7 @@ test('la portada es el índice del curso y enlaza a la lección', async ({ page 
   }
   await page.getByRole('link', { name: /Cuerdas al aire con metrónomo/ }).click()
   await expect(page).toHaveURL(/#\/curso\/cuerdas-al-aire$/)
-  await expect(page.getByRole('heading', { name: 'Cuerdas al aire con metrónomo', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Cuerdas al aire con metrónomo', level: 1 })).toBeVisible()
 })
 
 test('la lección renderiza sus pasos y componentes sin errores', async ({ page }) => {
@@ -92,9 +92,9 @@ test('el itinerario metal/punk numera sus módulos desde 1 y enlaza a sus leccio
   await page.goto('/')
   const metal = page.getByRole('region', { name: /^Metal \/ punk/ })
   // Los itinerarios están plegados hasta que se abren.
-  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 5 })).toBeHidden()
+  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 4 })).toBeHidden()
   await metal.getByRole('button', { name: /^Metal \/ punk/ }).click()
-  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 5 })).toBeVisible()
+  await expect(metal.getByRole('heading', { name: /^1 Púa/, level: 4 })).toBeVisible()
   await metal.getByRole('link', { name: /Coger la púa y tocar hacia abajo/ }).click()
   await expect(page).toHaveURL(/#\/curso\/coger-la-pua$/)
   await expect(page.getByText('Metal / punk · Módulo 1 · Púa')).toBeVisible()
@@ -132,7 +132,7 @@ test('el índice muestra la ampliación común tras el tronco común', async ({ 
   await page.goto('/')
   const extra = page.getByRole('region', { name: /^Ampliación común/ })
   await extra.getByRole('button', { name: /^Ampliación común/ }).click()
-  await expect(extra.getByRole('heading', { name: /^1 Arpegios/, level: 4 })).toBeVisible()
+  await expect(extra.getByRole('heading', { name: /^1 Arpegios/, level: 3 })).toBeVisible()
   await extra.getByRole('link', { name: /Tríadas: mayor y menor/ }).click()
   await expect(page.getByText('Ampliación común · Módulo 1 · Arpegios')).toBeVisible()
 })

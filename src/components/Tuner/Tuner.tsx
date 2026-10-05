@@ -15,6 +15,7 @@ import { fretPitch } from '../../theory/fretboard'
 import { midiName } from '../../theory/notation'
 import { getTuning } from '../../theory/tunings'
 import { useWakeLock } from '../../useWakeLock'
+import { PanelTitle } from '../PanelTitle'
 import './Tuner.css'
 import { VuMeter } from './VuMeter'
 
@@ -203,9 +204,9 @@ export function Tuner() {
 
   return (
     <section className="panel tuner" aria-labelledby="tuner-title">
-      <h2 id="tuner-title">
+      <PanelTitle id="tuner-title">
         Afinador <span className="badge">Experimental</span>
-      </h2>
+      </PanelTitle>
       <p className="hint">
         Usa el micrófono del dispositivo. Los micros de móvil captan mal los graves y la lectura puede fallar, sobre
         todo en la E y la B. Si no es estable, usa un afinador de pinza o afina de oído con el tono de referencia.
@@ -229,7 +230,7 @@ export function Tuner() {
       )}
 
       <section aria-labelledby="tuner-input" className="tuner-input">
-        <h3 id="tuner-input">Entrada</h3>
+        <h2 id="tuner-input">Entrada</h2>
         <label className="field">
           Dispositivo
           <select
@@ -293,7 +294,7 @@ export function Tuner() {
       </div>
 
       <section aria-labelledby="tuner-reference" className="tuner-reference">
-        <h3 id="tuner-reference">Tono de referencia</h3>
+        <h2 id="tuner-reference">Tono de referencia</h2>
         <p className="hint">Para afinar de oído: escucha la nota y ajusta la cuerda hasta que suene igual.</p>
         <div className="row">
           {openMidis.map((midi, i) => (

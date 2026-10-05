@@ -4,6 +4,8 @@ import { MAX_BPM, MIN_BPM } from '../../audio/beatClock'
 import { TapTempo } from '../../audio/tapTempo'
 import { DEFAULT_LADDER, validateLadder, type LadderConfig, type LadderMode } from '../../audio/tempoLadder'
 import { metronomeEngine, useMetronome } from '../../state/metronome'
+import { Knob } from '../Knob/Knob'
+import { PanelTitle } from '../PanelTitle'
 import './Metronome.css'
 
 const SUBDIVISIONS = [
@@ -18,6 +20,11 @@ const ACCENT_LABEL: Record<AccentLevel, string> = {
   normal: 'normal',
   silent: 'silencio',
 }
+
+/** Escala del pote de tempo (20–300 BPM). */
+const TEMPO_SCALE = [20, 60, 100, 140, 180, 220, 260, 300].map((v) => ({ value: v, label: String(v) }))
+/** Escala del pote de volumen: 0–10, como en un ampli. */
+const VOLUME_SCALE = [0, 2, 4, 6, 8, 10].map((v) => ({ value: v / 10, label: String(v) }))
 
 interface LadderStatus {
   progress: number
@@ -135,89 +142,106 @@ export function MetronomePanel() {
 
   return (
     <section className="panel metronome" aria-labelledby="metronome-title">
-      <h2 id="metronome-title">Metrónomo</h2>
+      <PanelTitle id="metronome-title">Metrónomo</PanelTitle>
 
-      <div className="met-display" aria-live="off">
-        <span className={`met-pilot${beat !== null ? ' met-pilot--on' : ''}`} key={`${bar}-${beat}`} aria-hidden="true" />
-        <span className="met-bpm" data-testid="bpm-display">
-          {bpm}
-        </span>
-        <span className="met-unit">BPM</span>
-        {ladderOn && (
-          <span className="met-target">
-            → {ladderConfig.target}
+      {/* Frontal: ventana con el tempo, pilotos de pulso, pote de tempo e interruptor de marcha. */}
+      <div className="met-front">
+        <div className="met-window" aria-live="off">
+          <span className="met-bpm" data-testid="bpm-display">
+            {bpm}
           </span>
-        )}
-        {running && <span className="met-bar">Compás {bar + 1}</span>}
-      </div>
+          <span className="met-unit">BPM</span>
+          {ladderOn && <span className="met-target">→ {ladderConfig.target}</span>}
+          <span className="met-meta">
+            <span>
+              {beatsPerBar}/4 · {SUBDIVISIONS.find((s) => s.value === subdivision)?.label}
+            </span>
+            {running && <span className="met-bar">Compás {bar + 1}</span>}
+          </span>
+        </div>
 
-      <div className="met-beats" role="group" aria-label="Pulsos del compás: pulsa uno para cambiar su acento">
-        {accents.map((level, i) => (
-          <button
-            key={i}
-            type="button"
-            className={`met-beat met-beat--${level}${beat === i ? ' met-beat--on' : ''}`}
-            aria-label={`Pulso ${i + 1}: ${ACCENT_LABEL[level]}`}
-            onClick={() => cycleAccent(i)}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+        <div className="met-beats" role="group" aria-label="Pulsos del compás: pulsa uno para cambiar su acento">
+          {accents.map((level, i) => (
+            <button
+              key={i}
+              type="button"
+              className={`met-beat met-beat--${level}${beat === i ? ' met-beat--on' : ''}`}
+              aria-label={`Pulso ${i + 1}: ${ACCENT_LABEL[level]}`}
+              onClick={() => cycleAccent(i)}
+            >
+              <span className={`pilot${beat === i && level !== 'silent' ? ' pilot--on' : ''}`} aria-hidden="true" />
+              <span className="met-beat__label" aria-hidden="true">
+                {i + 1}
+                {level === 'accent' && <span className="met-beat__accent">&gt;</span>}
+              </span>
+            </button>
+          ))}
+        </div>
 
-      <div className="row met-tempo">
-        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 5)} aria-label="Bajar 5 BPM">
-          −5
-        </button>
-        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 1)} aria-label="Bajar 1 BPM">
-          −1
-        </button>
-        <input
-          className="met-bpm-input"
-          type="number"
-          inputMode="numeric"
-          min={MIN_BPM}
-          max={MAX_BPM}
-          value={bpm}
-          disabled={ladderOn}
-          onChange={(e) => changeBpm(e.target.valueAsNumber)}
-          aria-label="BPM"
-        />
-        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 1)} aria-label="Subir 1 BPM">
-          +1
-        </button>
-        <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 5)} aria-label="Subir 5 BPM">
-          +5
-        </button>
-      </div>
+        <div className="met-tempo-controls">
+          <Knob
+            label="Tempo"
+            min={MIN_BPM}
+            max={MAX_BPM}
+            step={1}
+            value={bpm}
+            onChange={changeBpm}
+            disabled={ladderOn}
+            scale={TEMPO_SCALE}
+            valueText={(v) => `${v} BPM`}
+            travelPx={280}
+            className="met-knob"
+          />
+          <div className="met-tempo">
+            <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 5)} aria-label="Bajar 5 BPM">
+              −5
+            </button>
+            <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm - 1)} aria-label="Bajar 1 BPM">
+              −1
+            </button>
+            <input
+              className="met-bpm-input"
+              type="number"
+              inputMode="numeric"
+              min={MIN_BPM}
+              max={MAX_BPM}
+              value={bpm}
+              disabled={ladderOn}
+              onChange={(e) => changeBpm(e.target.valueAsNumber)}
+              aria-label="BPM"
+            />
+            <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 1)} aria-label="Subir 1 BPM">
+              +1
+            </button>
+            <button type="button" className="btn" disabled={ladderOn} onClick={() => changeBpm(bpm + 5)} aria-label="Subir 5 BPM">
+              +5
+            </button>
+          </div>
+        </div>
 
-      <input
-        className="met-slider"
-        type="range"
-        min={MIN_BPM}
-        max={MAX_BPM}
-        value={bpm}
-        disabled={ladderOn}
-        onChange={(e) => changeBpm(e.target.valueAsNumber)}
-        aria-label="Tempo"
-      />
+        <button type="button" className="met-switch met-start" onClick={toggle} aria-pressed={running}>
+          {/* Interruptor de palanca: arriba = en marcha. */}
+          <svg className="met-switch__lever" viewBox="0 0 52 64" aria-hidden="true" focusable="false">
+            <circle cx="26" cy="32" r="16" fill="#8f8a80" />
+            <circle cx="26" cy="32" r="12" fill="#d9d4c8" />
+            <path
+              d="M22.5 32 L20.5 7 Q26 2.5 31.5 7 L29.5 32 Z"
+              fill="#ece8df"
+              stroke="#6b665d"
+              transform={running ? undefined : 'rotate(180 26 32)'}
+            />
+            <circle cx="26" cy="32" r="5" fill="#5a5650" />
+          </svg>
+          <span className="met-switch__label">{running ? 'Parar' : 'Iniciar'}</span>
+          <span className={`pilot${running ? ' pilot--on' : ''}`} aria-hidden="true" />
+        </button>
 
-      <div className="met-main-actions">
-        <button
-          type="button"
-          className="btn met-tap"
-          disabled={ladderOn}
-          onPointerDown={tap}
-          onKeyDown={onTapKey}
-        >
+        <button type="button" className="btn met-tap" disabled={ladderOn} onPointerDown={tap} onKeyDown={onTapKey}>
           Tap
         </button>
-        <button type="button" className="btn btn--primary met-start" onClick={toggle} aria-pressed={running}>
-          {running ? 'Parar' : 'Iniciar'}
-        </button>
       </div>
 
-      <div className="controls">
+      <div className="controls met-settings">
         <label>
           Compás
           <select value={beatsPerBar} onChange={(e) => changeBeats(Number(e.target.value))}>
@@ -238,17 +262,21 @@ export function MetronomePanel() {
             ))}
           </select>
         </label>
-        <label>
-          Volumen
-          <input
-            type="range"
+        <div className="met-volume">
+          <span aria-hidden="true">Volumen</span>
+          <Knob
+            label="Volumen"
             min={0}
             max={1}
             step={0.05}
             value={volume}
-            onChange={(e) => setVolume(e.target.valueAsNumber)}
+            onChange={setVolume}
+            scale={VOLUME_SCALE}
+            valueText={(v) => `${(v * 10).toLocaleString('es', { maximumFractionDigits: 1 })} de 10`}
+            travelPx={200}
+            className="met-knob met-knob--small knob--small"
           />
-        </label>
+        </div>
       </div>
 
       <details className="met-ladder" open={ladderOn || undefined}>

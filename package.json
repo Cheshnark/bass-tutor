@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@coderline/alphatab": "^1.8.4",
+    "@fontsource/atkinson-hyperlegible-next": "^5.3.0",
     "@fontsource/oswald": "^5.3.0",
     "dexie": "^4.4.6",
     "dexie-react-hooks": "^4.4.0",

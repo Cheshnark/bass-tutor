@@ -62,7 +62,7 @@ export function LessonMetronome({ bpm, beatsPerBar }: MetronomeEmbed) {
   const target = ladderActive || bpm === undefined ? current : bpm
   return (
     <div className="lesson-metronome">
-      <span className={`met-pilot${running ? ' met-pilot--on' : ''}`} key={pulse} aria-hidden="true" />
+      <span className={`pilot${running ? ' pilot--flash' : ''}`} key={pulse} aria-hidden="true" />
       <button type="button" className="btn btn--primary" onClick={toggle} aria-pressed={running}>
         {running ? `Parar metrónomo (${current} BPM)` : `Metrónomo a ${target} BPM`}
       </button>

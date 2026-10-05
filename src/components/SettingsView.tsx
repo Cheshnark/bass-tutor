@@ -1,3 +1,4 @@
+import { PanelTitle } from './PanelTitle'
 import { useSettings, type ThemeChoice } from '../state/settings'
 import { SettingsBar } from './SettingsBar'
 
@@ -13,15 +14,15 @@ export function SettingsView() {
 
   return (
     <section className="panel settings" aria-labelledby="settings-title">
-      <h2 id="settings-title">Ajustes</h2>
+      <PanelTitle id="settings-title">Ajustes</PanelTitle>
 
       <section aria-labelledby="settings-instrument">
-        <h3 id="settings-instrument">Instrumento</h3>
+        <h2 id="settings-instrument">Instrumento</h2>
         <SettingsBar />
       </section>
 
       <section aria-labelledby="settings-look">
-        <h3 id="settings-look">Aspecto</h3>
+        <h2 id="settings-look">Aspecto</h2>
         <fieldset className="settings-options">
           <legend>Tema</legend>
           {THEMES.map((t) => (
@@ -37,7 +38,7 @@ export function SettingsView() {
       </section>
 
       <section aria-labelledby="settings-lessons">
-        <h3 id="settings-lessons">Lecciones</h3>
+        <h2 id="settings-lessons">Lecciones</h2>
         <div className="settings-toggles">
           <button type="button" className="btn btn--big" aria-pressed={standMode} onClick={() => setStandMode(!standMode)}>
             Modo atril: {standMode ? 'sí' : 'no'}

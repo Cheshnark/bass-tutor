@@ -83,3 +83,17 @@ test('el piloto de la cabecera luce mientras suena el metrónomo', async ({ page
   await page.getByRole('link', { name: 'Curso' }).click()
   await expect(pilot).toBeVisible()
 })
+
+test('cada vista tiene su h1 en el rótulo y su título de pestaña; el nombre de la app es un enlace', async ({ page }) => {
+  await page.goto('/#/metronomo')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Metrónomo')
+  await expect(page).toHaveTitle(/^Metrónomo · /)
+  await page.goto('/#/curso/cuerdas-al-aire')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Cuerdas al aire con metrónomo')
+  await expect(page).toHaveTitle(/^Cuerdas al aire con metrónomo · /)
+  // El logotipo lleva al índice del curso.
+  await page.locator('.app-header .brand').click()
+  await expect(page).toHaveURL(/#\/curso$/)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Curso')
+  await expect(page).toHaveTitle(/^Curso · /)
+})

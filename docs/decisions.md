@@ -439,3 +439,24 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 ## 2026-10-02 · Fase 7: contenido escrito
 - Los cuatro itinerarios y la ampliación común están escritos (26 módulos, 78 lecciones, 121 ejercicios), todo en
   borrador. El criterio de la fase (revisión pedagógica por módulo) depende del autor: tocarlo y pasar a `revisada`.
+
+## 2026-10-05 · Identidad: más carácter de "cabezal" (maquetas en docs/maquetas/identidad.html)
+- **Motivo:** el autor veía la app genérica: el aire de cabezal solo estaba en la franja de la cabecera y el resto era
+  un panel oscuro estándar con el ámbar en todo. Eligió las cinco propuestas de las maquetas.
+- **Logotipo en vez de placa con caja:** la caja del nombre se confundía con el botón de Ajustes. Ahora es un enlace
+  al curso con cuatro cuerdas debajo (como el icono); Ajustes va relleno de tinta.
+- **El `h1` es el título de la vista** (rótulo de panel o título de la lección), no el nombre de la app; todos los
+  niveles bajan uno. `document.title` por vista. Motivo: cada vista tenía el mismo `h1` y la misma pestaña.
+- **Ámbar solo para lo encendido** (piloto, pulso, la lección por la que vas, foco, botón pulsado). El botón principal
+  pasa a crema con tinta; números de módulo, objetivos y tarjeta de ejercicio, en crema de traste (`--inlay`); el
+  "Borrador", en contorno neutro. El mástil y el diccionario no cambian (la fundamental en ámbar es contenido).
+- **Metrónomo como frontal:** ventana hundida con cifras ámbar, pilotos de pulso (con `>` en los acentos), pote de
+  tempo y de volumen (0–10) e interruptor de palanca. El pote nunca es el único control (±, entrada numérica,
+  teclado). Arrastrar el pote no desplaza la página (`touch-action: none`): en el móvil se desplaza fuera de él.
+  El texto del interruptor sigue siendo la acción ("Iniciar"/"Parar"), no el estado.
+- **Texto en Atkinson Hyperlegible Next** (OFL, Braille Institute), pensada para baja visión. Su cero lleva barra
+  (Ø) por diseño, para distinguirlo de la O; ninguna variante del subconjunto latino lo quita y se acepta.
+- **Tolex por itinerario:** banda de color en el borde (blanco roto rock/pop, verde funk/soul, burdeos blues/jazz,
+  acero metal/punk); nunca detrás del texto y el nombre del itinerario sigue escrito.
+- **Nombre:** se centraliza en `APP_NAME` (src/brand.ts). El cambio de nombre está pendiente de que el autor elija;
+  solo cambia el nombre visible (las carpetas, la ruta y los identificadores internos se quedan).

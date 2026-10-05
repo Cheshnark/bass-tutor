@@ -5,6 +5,10 @@
  */
 @import '@fontsource/oswald/latin-500.css';
 @import '@fontsource/oswald/latin-600.css';
+/* Texto: Atkinson Hyperlegible Next (OFL), pensada para baja visión; autoalojada, funciona sin conexión. */
+@import '@fontsource/atkinson-hyperlegible-next/latin-400.css';
+@import '@fontsource/atkinson-hyperlegible-next/latin-400-italic.css';
+@import '@fontsource/atkinson-hyperlegible-next/latin-700.css';
 
 :root {
   --bg: #121110; /* tolex */
@@ -12,8 +16,16 @@
   --surface-2: #2a2724;
   --text: #f2ede1;
   --text-muted: #b8b0a1;
-  --accent: #e0a526; /* ámbar: piloto / estado activo */
+  --accent: #e0a526; /* ámbar: SOLO lo encendido (piloto, estado activo, la lección por la que vas, foco) */
   --accent-strong: #f5c04a;
+  --lit-text: #f5c04a; /* texto "iluminado" (cifras del metrónomo) */
+  --lit-dim: #c99a3a; /* rótulos de la ventana del metrónomo */
+  --inlay: #d8cfb8; /* marcas de traste: números de módulo, bordes destacados que no están "encendidos" */
+  --badge-border: #6a6358;
+  /* Botón principal: placa crema con tinta, no ámbar */
+  --primary-bg: #e8dec6;
+  --primary-bg-hover: #f4ecd8;
+  --primary-ink: #1d1b17;
   --danger: #ff6b5e;
   --ok: #6fcf8a;
   --border: #44403a;
@@ -44,7 +56,7 @@
   --touch: 48px; /* objetivo táctil mínimo en controles principales */
   --border-width: 1px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Atkinson Hyperlegible Next', system-ui, 'Segoe UI', Roboto, sans-serif;
   /* Rótulos de panel: sans condensada industrial (Oswald, OFL, empaquetada: funciona sin conexión). */
   --label: 'Oswald', 'Arial Narrow', var(--sans);
   font: 18px/1.5 var(--sans);
@@ -63,6 +75,13 @@
   --text-muted: #e8e8e8;
   --accent: #ffd400;
   --accent-strong: #ffe94d;
+  --lit-text: #ffe94d;
+  --lit-dim: #ffe94d;
+  --inlay: #fff;
+  --badge-border: #fff;
+  --primary-bg: #ffd400;
+  --primary-bg-hover: #ffe94d;
+  --primary-ink: #000;
   --danger: #ff8a80;
   --ok: #7dff9a;
   --border: #fff;
@@ -88,6 +107,31 @@
 /* Modo atril: letra más grande y todo el ancho para la lección. */
 :root[data-stand='on'] {
   font-size: 21px;
+}
+
+/* Tolex por itinerario (banda en el borde; ver Lesson.css). Los bloques comunes no llevan. */
+[data-track='rock-pop'] {
+  --tolex: #d9d2c3; /* blanco roto */
+  --tolex-w: 10px;
+}
+
+[data-track='funk-soul'] {
+  --tolex: #2e6b62; /* verde quirófano */
+  --tolex-w: 10px;
+}
+
+[data-track='blues-jazz'] {
+  --tolex: #7a2a36; /* burdeos */
+  --tolex-w: 10px;
+}
+
+[data-track='metal-punk'] {
+  --tolex: #737981; /* acero */
+  --tolex-w: 10px;
+}
+
+:root[data-theme='alto-contraste'] [data-track] {
+  --tolex-w: 0px;
 }
 
 * {
@@ -146,17 +190,32 @@ body {
   gap: 12px;
 }
 
-.nameplate {
-  margin: 0 auto 0 0;
-  padding: 2px 12px;
-  border: 2px solid var(--plate-ink);
-  border-radius: 4px;
+/* Logotipo: el nombre sin caja (no parece un botón) y cuatro cuerdas de grosor creciente debajo, como en el icono. */
+.brand {
+  display: inline-grid;
+  gap: 5px;
+  margin-right: auto;
+  padding: 6px 0;
+  color: var(--plate-ink);
+  text-decoration: none;
+}
+
+.brand__name {
   font-family: var(--label);
-  font-size: 1.35rem;
+  font-size: 1.75rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  line-height: 1.3;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
   text-transform: uppercase;
+}
+
+.brand__strings {
+  height: 11px;
+  background:
+    linear-gradient(currentColor, currentColor) 0 0 / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 3px / 100% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 6px / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) 0 9px / 100% 2.5px no-repeat;
 }
 
 .header-settings {
@@ -174,16 +233,96 @@ body {
   text-transform: uppercase;
 }
 
-.header-settings[aria-current='page'] {
+/* Relleno de tinta: se distingue del logotipo. En Ajustes, se invierte. */
+.header-settings {
   background: var(--plate-ink);
   color: var(--plate);
 }
 
-/* Piloto (jewel light): luce con el pulso del metrónomo */
+.header-settings[aria-current='page'] {
+  background: transparent;
+  color: var(--plate-ink);
+}
+
+/* Piloto (jewel light): cristal ámbar con bisel cromado. Apagado se ve oscuro; encendido, luce. */
+.pilot {
+  display: inline-block;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #8a6a2a 0, #5a3f10 45%, #2b1d06 80%);
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.5),
+    0 0 0 3px #c9c3b4,
+    0 0 0 4px #6d675b,
+    0 0 0 5px #2b2823;
+}
+
+.pilot--sm {
+  width: 14px;
+  height: 14px;
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.5),
+    0 0 0 2px #c9c3b4,
+    0 0 0 3px #2b2823;
+}
+
+.pilot--on {
+  background: radial-gradient(circle at 38% 32%, #fff4cc 0, #ffc53a 40%, #c97a06 85%);
+  box-shadow:
+    inset 0 0 0 1px rgb(0 0 0 / 0.3),
+    0 0 0 3px #c9c3b4,
+    0 0 0 4px #6d675b,
+    0 0 0 5px #2b2823,
+    0 0 16px 5px rgb(255 178 31 / 0.55);
+}
+
+.pilot--sm.pilot--on {
+  box-shadow:
+    0 0 0 2px #c9c3b4,
+    0 0 0 3px #2b2823,
+    0 0 10px 3px rgb(255 178 31 / 0.5);
+}
+
+/* Destello en cada pulso (se reinicia con una `key` nueva). */
+.pilot--flash {
+  animation: pilot-flash 200ms ease-out;
+}
+
+@keyframes pilot-flash {
+  0% {
+    background: radial-gradient(circle at 38% 32%, #fff4cc 0, #ffc53a 40%, #c97a06 85%);
+    box-shadow:
+      0 0 0 3px #c9c3b4,
+      0 0 0 4px #6d675b,
+      0 0 0 5px #2b2823,
+      0 0 18px 6px rgb(255 178 31 / 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pilot--flash {
+    animation: none;
+    background: radial-gradient(circle at 38% 32%, #ffe08a, #e0a526 60%);
+  }
+}
+
+:root[data-theme='alto-contraste'] .pilot {
+  background: #000;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+:root[data-theme='alto-contraste'] .pilot--on {
+  background: #ffd400;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Piloto de la cabecera: luce con el pulso del metrónomo */
 .header-pilot-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   min-height: var(--touch);
   padding: 0 8px;
   color: var(--plate-ink);
@@ -193,35 +332,11 @@ body {
 }
 
 .header-pilot {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #7a3a1c, #3d1a0c 70%);
-  box-shadow:
-    0 0 0 3px #9b927e,
-    0 0 0 4px #3b362d;
+  margin: 0 8px;
 }
 
-.header-pilot--on {
-  animation: header-pilot 200ms ease-out;
-}
-
-@keyframes header-pilot {
-  0% {
-    background: radial-gradient(circle at 35% 35%, #fff2c4, #ffb21f 60%);
-    box-shadow:
-      0 0 0 3px #9b927e,
-      0 0 0 4px #3b362d,
-      0 0 18px 6px rgb(255 178 31 / 0.75);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .header-pilot--on {
-    animation: none;
-    background: radial-gradient(circle at 35% 35%, #ffd76a, #e0a526 60%);
-  }
+.header-pilot-link .header-pilot {
+  margin: 0;
 }
 
 .app-nav {
@@ -322,14 +437,75 @@ body {
   background: var(--surface);
 }
 
-/* Rótulo del panel, como en el frontal de un ampli (solo el título del panel: el contenido sigue en la sans) */
-.panel > h2 {
+/*
+ * Rótulo del panel (PanelTitle): tira crema de leyenda, como en el frontal de un ampli, con un tornillo en cada
+ * extremo. Ocupa todo el ancho del panel (márgenes negativos = su padding). Es el h1 de la vista.
+ */
+.panel > .legend {
+  margin: -16px -16px 0;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-bottom: 2px solid #0b0a09;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: var(--plate-ink);
+  background-color: var(--plate);
+  background-image: repeating-linear-gradient(90deg, rgb(0 0 0 / 0.018) 0 1px, transparent 1px 3px);
+}
+
+.legend h1 {
+  flex: 1;
   margin: 0;
   font-family: var(--label);
   font-size: 1.25rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
   text-transform: uppercase;
+}
+
+/* Las etiquetas dentro del rótulo ("Experimental") van en tinta sobre crema. */
+.legend .badge {
+  border-color: var(--plate-ink-muted);
+  color: var(--plate-ink-muted);
+  font-family: var(--sans);
+  letter-spacing: 0.04em;
+  vertical-align: 3px;
+}
+
+.screw {
+  position: relative;
+  flex: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #f4f1ea, #9d9686 70%);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35);
+}
+
+.screw::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  left: 2px;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: #4a453c;
+  transform: rotate(-30deg);
+}
+
+:root[data-theme='alto-contraste'] .legend {
+  border-bottom-color: #fff;
+  background-image: none;
+}
+
+:root[data-theme='alto-contraste'] .screw {
+  display: none;
 }
 
 .row {
@@ -366,15 +542,16 @@ input[type='number'] {
   font-size: 1.05rem;
 }
 
+/* Principal: placa crema con tinta. El ámbar queda para lo que está encendido. */
 .btn--primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #1a1305;
+  background: var(--primary-bg);
+  border-color: var(--primary-bg);
+  color: var(--primary-ink);
   font-weight: 700;
 }
 
 .btn--primary:not(:disabled):hover {
-  background: var(--accent-strong);
+  background: var(--primary-bg-hover);
 }
 
 :focus-visible {
@@ -465,7 +642,7 @@ input[type='number'] {
   gap: 8px;
 }
 
-.settings h3 {
+.settings h2 {
   margin: 0;
   font-size: 1.05rem;
 }

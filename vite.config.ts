@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { alphaTabAssets } from './scripts/vite-plugin-alphatab-assets'
+import { APP_NAME } from './src/brand'
 import { coursePlugin } from './scripts/vite-plugin-course'
 import remarkLessonSteps from './src/content/remarkLessonSteps'
 
@@ -29,8 +30,8 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: false,
       manifest: {
-        name: 'Bass Tutor',
-        short_name: 'Bass Tutor',
+        name: APP_NAME,
+        short_name: APP_NAME,
         description: 'Profesor de bajo eléctrico: lecciones paso a paso, mástil, metrónomo y tablatura.',
         lang: 'es',
         start_url: '.',

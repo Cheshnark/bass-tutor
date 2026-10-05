@@ -10,10 +10,10 @@ export function HeaderPilot() {
   const bpm = useMetronome((s) => s.bpm)
   const pulse = useBeatPulse(running)
 
-  if (!running) return <span className="header-pilot" aria-hidden="true" />
+  if (!running) return <span className="pilot header-pilot" aria-hidden="true" />
   return (
     <a className="header-pilot-link" href="#/metronomo" aria-label={`Metrónomo sonando a ${bpm} BPM`}>
-      <span className="header-pilot header-pilot--on" key={pulse} aria-hidden="true" />
+      <span className="pilot pilot--flash header-pilot" key={pulse} aria-hidden="true" />
       <span className="header-pilot-bpm">{bpm}</span>
     </a>
   )

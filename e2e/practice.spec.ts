@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test'
 /** Siembra historial de ejercicios en IndexedDB (días hacia atrás desde hoy) y recarga. */
 async function seedHistory(page: Page, rows: { id: string; daysAgo: number[]; passed?: boolean }[]) {
   await page.goto('/#/practica')
-  await expect(page.getByRole('heading', { name: 'Práctica', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Práctica', level: 1 })).toBeVisible()
   await page.evaluate(async (data) => {
     const iso = (n: number) => {
       const d = new Date()

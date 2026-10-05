@@ -5,7 +5,7 @@ test.use({ serviceWorkers: 'allow' })
 
 test('tras la primera visita, el curso funciona sin conexión (incluida la partitura con sonido)', async ({ page, context }) => {
   await page.goto('/')
-  await expect(page.getByRole('heading', { name: 'Curso', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Curso', level: 1 })).toBeVisible()
   // Esperar a que el service worker termine de precargar y controle la página.
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready
@@ -16,7 +16,7 @@ test('tras la primera visita, el curso funciona sin conexión (incluida la parti
   await context.setOffline(true)
 
   await page.goto('/#/curso/uno-cinco-ocho/4')
-  await expect(page.getByRole('heading', { name: 'Fundamental, quinta y octava (1-5-8)', level: 2 })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Fundamental, quinta y octava (1-5-8)', level: 1 })).toBeVisible()
   const tab = page.getByTestId('alphatab')
   await expect(tab).toHaveAttribute('data-status', 'listo', { timeout: 20_000 })
   await expect(page.getByRole('button', { name: 'Reproducir' })).toBeEnabled({ timeout: 30_000 })

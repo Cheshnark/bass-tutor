@@ -5,13 +5,15 @@
 }
 
 .course-module__number {
+  /* Marca de traste (contorno crema), no un piloto: el ámbar es solo para lo que está encendido. */
   display: inline-grid;
   place-items: center;
+  flex: none;
   width: 32px;
   height: 32px;
+  border: 2px solid var(--inlay);
   border-radius: 50%;
-  background: var(--accent);
-  color: #1a1305;
+  color: var(--inlay);
   font-size: 1rem;
 }
 
@@ -38,7 +40,20 @@
 }
 
 .course-lessons a:hover {
+  border-color: var(--inlay);
+}
+
+/* La lección por la que vas: lo único encendido del índice. */
+.course-lessons li.is-current a {
   border-color: var(--accent);
+}
+
+.course-lessons__resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lit-text);
+  font-weight: 700;
 }
 
 .course-lessons a {
@@ -63,10 +78,11 @@
 .badge {
   display: inline-block;
   margin-left: 8px;
-  padding: 2px 8px;
+  padding: 1px 8px;
+  border: 1px solid var(--badge-border);
   border-radius: 999px;
-  background: #4a3a14;
-  color: var(--accent-strong);
+  background: transparent;
+  color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -88,7 +104,7 @@
   font-size: 0.9rem;
 }
 
-.lesson-header h2 {
+.lesson-header h1 {
   margin: 4px 0;
   font-size: 1.8rem;
   line-height: 1.2;
@@ -102,7 +118,7 @@
 .lesson-objectives {
   margin-top: 12px;
   padding: 4px 16px 12px;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--inlay);
   border-radius: 4px;
   background: var(--surface-2);
 }
@@ -168,7 +184,7 @@
   gap: 12px;
   margin: 8px 0 16px;
   padding: 16px;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--inlay);
   border-radius: var(--radius);
   background: var(--surface-2);
 }
@@ -246,7 +262,7 @@
   display: none;
 }
 
-:root[data-stand='on'] .lesson-header h2 {
+:root[data-stand='on'] .lesson-header h1 {
   margin: 0;
   font-size: 1.1rem;
 }
@@ -322,8 +338,8 @@
 }
 
 .lesson-progress a.is-done::before {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--inlay);
+  border-color: var(--inlay);
   opacity: 0.6;
 }
 
@@ -380,7 +396,7 @@
 }
 
 .lesson a.btn--primary {
-  color: #1a1305;
+  color: var(--primary-ink);
 }
 
 /* Índice: itinerarios */
@@ -389,13 +405,13 @@
   gap: 12px;
 }
 
-.course-track > h3 {
+.course-track > h2 {
   margin: 8px 0 0;
   font-size: 1.3rem;
 }
 
 .course-module__heading,
-.course-style h4 {
+.course-style h3 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -436,7 +452,7 @@
 }
 
 .lesson a.lesson-video:hover {
-  border-color: var(--accent);
+  border-color: var(--inlay);
 }
 
 .lesson-video__icon {
@@ -478,7 +494,7 @@
   white-space: nowrap;
 }
 
-.course-style h4 {
+.course-style h3 {
   flex-wrap: wrap;
 }
 
@@ -539,6 +555,7 @@
 }
 
 .badge--ok {
+  border-color: #3d6b45;
   background: #1f3a24;
   color: #7fd896;
 }
@@ -551,7 +568,7 @@
   border-top: 1px solid var(--border);
 }
 
-.course-progress h3 {
+.course-progress h2 {
   margin: 0;
   font-size: 1.1rem;
 }
@@ -626,7 +643,7 @@
 .practice-reminder a.btn {
   display: inline-flex;
   align-items: center;
-  color: #1a1305;
+  color: var(--primary-ink);
   text-decoration: none;
 }
 
@@ -692,4 +709,33 @@
   .course-accordion__chevron {
     transition: none;
   }
+}
+
+/*
+ * Tolex por itinerario: cada estilo es "un cabezal distinto". Banda de color en el borde izquierdo del bloque
+ * del índice y de la lección; nunca detrás del texto, y el nombre del itinerario sigue escrito (el color no es la
+ * única pista). Colores en index.css (--tolex); los bloques comunes no llevan banda.
+ */
+.course-style[data-track],
+.panel.lesson[data-track] {
+  position: relative;
+  padding-left: calc(16px + var(--tolex-w, 0px));
+}
+
+.course-style[data-track]::before,
+.panel.lesson[data-track]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--tolex-w, 0px);
+  border-radius: var(--radius) 0 0 var(--radius);
+  background-color: var(--tolex, transparent);
+  background-image:
+    radial-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1.2px),
+    radial-gradient(rgb(0 0 0 / 0.35) 1px, transparent 1.2px);
+  background-size:
+    4px 4px,
+    5px 5px;
 }

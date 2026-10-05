@@ -2,14 +2,23 @@
 
 _Última actualización: 2026-10-05_
 
-## Identidad: nombre nuevo y más carácter (en investigación, 2026-10-05)
+## Identidad: más carácter (hecho, 2026-10-05) y nombre nuevo (pendiente)
 
-El autor quiere cambiar el nombre visible de la app por uno en español con gancho (las carpetas, el repo y la URL se
-quedan como están) y darle más carácter propio. Maquetas antes/después en
-[maquetas/identidad.html](maquetas/identidad.html) (abrir con `npm run dev` en `/docs/maquetas/identidad.html`):
-nombres candidatos (Retumba, Bajo Cero, Sube el Bajo, Grave) con logotipo sin caja; rótulo de panel con tira crema;
-ámbar solo para «encendido»; metrónomo como frontal (ventana de BPM, pilotos, pote, interruptor); Atkinson
-Hyperlegible Next para el texto; tolex por itinerario. **Pendiente: que el autor elija.** Nada implementado aún.
+Implementadas las cinco ideas de las maquetas ([maquetas/identidad.html](maquetas/identidad.html)):
+- **Logotipo** (nombre + cuatro cuerdas, enlace al curso) en lugar de la placa con caja; Ajustes relleno; piloto
+  apagado que parece un piloto.
+- **Rótulo de panel** con tira crema y tornillos; es el `h1` de cada vista. **Título de pestaña por vista.**
+- **Ámbar solo para lo encendido**: botón principal en crema; en el índice, solo brilla la lección por la que vas.
+- **Metrónomo como frontal**: ventana de BPM iluminada, pilotos de pulso, pote de tempo y de volumen (con teclado,
+  arrastre, ± y entrada numérica) e interruptor de palanca.
+- **Texto en Atkinson Hyperlegible Next** (autoalojada).
+- **Tolex por itinerario** en el índice y en las lecciones.
+
+Detalle y motivos en [decisions.md](decisions.md). Tests: 226 unitarios (5 nuevos del pote) y 184 e2e
+(nuevos: pote de tempo y de volumen, títulos por vista), axe sin infracciones en los dos temas.
+
+**Nombre:** el autor quiere uno en español con gancho; la primera tanda (Retumba, Bajo Cero, Sube el Bajo, Grave) no
+le convenció. Cambiarlo es una línea (`APP_NAME` en src/brand.ts) más el subtítulo de los ejercicios. Pendiente.
 
 ## Guía visual en la partitura (2026-10-04)
 

@@ -8,6 +8,8 @@ import { useWakeLock, type WakeLockStatus } from '../../useWakeLock'
 import { lessonComponents } from './lessonComponents'
 import { LessonCompletion } from './LessonCompletion'
 import { LessonStepContext } from './lessonStepContext'
+import { PanelTitle } from '../PanelTitle'
+import { documentTitle } from '../../brand'
 import './Lesson.css'
 
 type MdxModule = { default: ComponentType<MDXProps> }
@@ -57,6 +59,10 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
   const wakeLock = useWakeLock(follow && lesson !== undefined)
   const stepState = useMemo(() => ({ follow, current }), [follow, current])
 
+  useEffect(() => {
+    document.title = documentTitle(lesson?.title ?? 'Lección no encontrada')
+  }, [lesson])
+
   // Recordar el último paso visto para retomar la lección desde el índice.
   useEffect(() => {
     if (follow && lesson) void saveLastStep(lesson.id, current)
@@ -98,8 +104,8 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
 
   if (!lesson) {
     return (
-      <section className="panel">
-        <h2>Lección no encontrada</h2>
+      <section className="panel" aria-labelledby="lesson-title">
+        <PanelTitle id="lesson-title">Lección no encontrada</PanelTitle>
         <p>
           <a href="#/curso">Volver al curso</a>
         </p>
@@ -117,12 +123,12 @@ export function LessonView({ lessonId, stepParam }: LessonViewProps) {
   const wakeLockText = follow ? WAKE_LOCK_TEXT[wakeLock] : null
 
   return (
-    <article className={`panel lesson${follow ? ' lesson--follow' : ''}`} aria-labelledby="lesson-title">
+    <article className={`panel lesson${follow ? ' lesson--follow' : ''}`} data-track={track} aria-labelledby="lesson-title">
       <header className="lesson-header">
         <p className="lesson-kicker">
           <a href="#/curso">Curso</a> · {getTrack(track).label} · Módulo {module && moduleNumber(module)} · {module?.title}
         </p>
-        <h2 id="lesson-title">{lesson.title}</h2>
+        <h1 id="lesson-title">{lesson.title}</h1>
         <p className="lesson-meta">
           {LEVEL[lesson.level]} · {lesson.durationMin} min · {total} pasos
           {lesson.status === 'borrador' && <span className="badge">Borrador</span>}

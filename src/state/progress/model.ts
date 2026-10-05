@@ -2,6 +2,7 @@
  * Modelo del progreso del alumno (docs/research.md §7): lógica pura, sin IndexedDB.
  * La persistencia está en db.ts.
  */
+import { APP_NAME } from '../../brand'
 import { MAX_BOX, schedule } from '../../practice/leitner'
 
 export interface Attempt {
@@ -148,7 +149,7 @@ function isLessonProgress(v: unknown): v is LessonProgress {
 
 /** Valida un JSON importado. Lanza un Error con un mensaje legible si no es válido. */
 export function parseProgressExport(data: unknown): ProgressExport {
-  if (!isObject(data) || data.app !== 'bass-tutor') throw new Error('El fichero no es una copia de progreso de Bass Tutor.')
+  if (!isObject(data) || data.app !== 'bass-tutor') throw new Error(`El fichero no es una copia de progreso de ${APP_NAME}.`)
   if (data.version !== 1 && data.version !== EXPORT_VERSION) {
     throw new Error(`Versión de copia no compatible: ${String(data.version)}.`)
   }

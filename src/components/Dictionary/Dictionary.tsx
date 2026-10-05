@@ -7,6 +7,7 @@ import type { FretboardView, LabelMode } from '../../theory/fretboard'
 import { formatInterval, formatNote } from '../../theory/notation'
 import { getTuning } from '../../theory/tunings'
 import { Fretboard } from '../Fretboard/Fretboard'
+import { PanelTitle } from '../PanelTitle'
 import './Dictionary.css'
 
 const KINDS: { id: DictionaryKind; label: string }[] = [
@@ -49,7 +50,7 @@ export function Dictionary() {
 
   return (
     <section className="panel" aria-labelledby="dictionary-title">
-      <h2 id="dictionary-title">Diccionario</h2>
+      <PanelTitle id="dictionary-title">Diccionario</PanelTitle>
 
       <div className="dict-kinds" role="group" aria-label="Tipo">
         {KINDS.map((k) => (
@@ -103,7 +104,7 @@ export function Dictionary() {
       </div>
 
       <article className="dict-card" aria-labelledby="dict-entry-title">
-        <h3 id="dict-entry-title">{title}</h3>
+        <h2 id="dict-entry-title">{title}</h2>
         <p>{entry.summary}</p>
 
         <dl className="dict-facts">

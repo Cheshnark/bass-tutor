@@ -3,7 +3,7 @@
   color: var(--accent-strong);
 }
 
-.practice h3 {
+.practice h2 {
   margin: 8px 0 4px;
   font-size: 1.05rem;
 }
@@ -22,7 +22,7 @@
 }
 
 .practice a.btn--primary {
-  color: #1a1305;
+  color: var(--primary-ink);
 }
 
 /* Repaso de hoy */

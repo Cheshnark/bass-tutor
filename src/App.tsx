@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { APP_NAME, documentTitle } from './brand'
 import { Dictionary } from './components/Dictionary/Dictionary'
 import { FretboardExplorer } from './components/FretboardExplorer'
 import { HeaderPilot } from './components/HeaderPilot'
@@ -23,6 +25,11 @@ const VIEWS = [
 ] as const
 
 type ViewId = (typeof VIEWS)[number]['id'] | 'ajustes'
+/** Título de la pestaña por vista. Las lecciones ponen el suyo (LessonView). */
+const VIEW_TITLES: Record<ViewId, string> = {
+  ...(Object.fromEntries(VIEWS.map((v) => [v.id, v.label])) as Record<(typeof VIEWS)[number]['id'], string>),
+  ajustes: 'Ajustes',
+}
 /** "ajustes" no es una pestaña: se llega desde el botón de la cabecera. */
 const VIEW_IDS: readonly ViewId[] = [...VIEWS.map((v) => v.id), 'ajustes']
 
@@ -31,6 +38,11 @@ function App() {
   const [lessonId, step] = params
   const { standMode } = useAppearance()
   const setStandMode = useSettings((s) => s.setStandMode)
+  const inLesson = view === 'curso' && Boolean(lessonId)
+
+  useEffect(() => {
+    if (!inLesson) document.title = documentTitle(VIEW_TITLES[view])
+  }, [view, inLesson])
 
   return (
     <>
@@ -47,7 +59,11 @@ function App() {
         <>
           <header className="app-header">
             <div className="app-header__top">
-              <h1 className="nameplate">Bass Tutor</h1>
+              {/* Logotipo: el nombre con cuatro cuerdas debajo. No es el h1: cada vista tiene el suyo en su rótulo. */}
+              <a className="brand" href="#/curso">
+                <span className="brand__name">{APP_NAME}</span>
+                <span className="brand__strings" aria-hidden="true" />
+              </a>
               <HeaderPilot />
               <a className="header-settings" href="#/ajustes" aria-current={view === 'ajustes' ? 'page' : undefined}>
                 Ajustes

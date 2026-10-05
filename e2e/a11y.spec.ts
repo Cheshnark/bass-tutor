@@ -7,7 +7,7 @@ import { expect, test, type Page } from '@playwright/test'
  * sentido de los textos alternativos…) queda para revisión manual (docs/accesibilidad.md).
  */
 const VIEWS: { name: string; path: string; ready: (page: Page) => Promise<void> }[] = [
-  { name: 'índice del curso', path: '/#/curso', ready: (p) => expect(p.getByRole('heading', { name: 'Curso', level: 2 })).toBeVisible() },
+  { name: 'índice del curso', path: '/#/curso', ready: (p) => expect(p.getByRole('heading', { name: 'Curso', level: 1 })).toBeVisible() },
   {
     name: 'lección (paso a paso, con ejercicio)',
     path: '/#/curso/cuerdas-al-aire/4',
@@ -21,7 +21,7 @@ const VIEWS: { name: string; path: string; ready: (page: Page) => Promise<void> 
       await expect(p.getByRole('heading', { name: 'Autoevaluación', level: 2 })).toBeVisible()
     },
   },
-  { name: 'práctica', path: '/#/practica', ready: (p) => expect(p.getByRole('heading', { name: 'Práctica', level: 2 })).toBeVisible() },
+  { name: 'práctica', path: '/#/practica', ready: (p) => expect(p.getByRole('heading', { name: 'Práctica', level: 1 })).toBeVisible() },
   {
     name: 'quiz de mástil',
     path: '/#/practica/quiz',
@@ -35,7 +35,7 @@ const VIEWS: { name: string; path: string; ready: (page: Page) => Promise<void> 
   { name: 'diccionario', path: '/#/diccionario', ready: (p) => expect(p.getByTestId('fretboard')).toBeVisible() },
   { name: 'metrónomo', path: '/#/metronomo', ready: (p) => expect(p.getByTestId('bpm-display')).toBeVisible() },
   { name: 'afinador', path: '/#/afinador', ready: (p) => expect(p.getByRole('button', { name: 'Activar micrófono' })).toBeVisible() },
-  { name: 'ajustes', path: '/#/ajustes', ready: (p) => expect(p.getByRole('heading', { name: 'Ajustes', level: 2 })).toBeVisible() },
+  { name: 'ajustes', path: '/#/ajustes', ready: (p) => expect(p.getByRole('heading', { name: 'Ajustes', level: 1 })).toBeVisible() },
 ]
 
 const THEMES = ['cabezal', 'alto-contraste'] as const
