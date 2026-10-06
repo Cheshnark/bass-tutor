@@ -61,8 +61,8 @@
 - [x] Probar el afinador con el bajo real por cable (Windows, Chrome, línea): bien, ver `docs/afinador-pruebas.md`.
 - [x] Probar el afinador con el micrófono del móvil: funciona, bastante menos preciso que por cable (ver `docs/afinador-pruebas.md`).
 - [x] Afinador en el móvil probado (2026-10-06): "lo suficientemente bien".
-- [ ] Afinador en móvil (opcional): anotar modelo, SO y cents por cuerda; valorar una advertencia en la app de que por micrófono es
-      aproximado.
+- [x] Afinador en el móvil: **asunto cerrado** (2026-10-06). Sin más pruebas ni advertencia en la app: el autor da por
+      bueno el resultado (por cable supera, a su juicio, a un afinador físico de ~40 €).
 - [ ] **Tú**: escuchar la mezcla del acompañamiento (batería y piano eléctrico frente al bajo); ajustar volúmenes.
 - [ ] Oído: dictado rítmico e identificar la fundamental de un acorde; intervalos armónicos (a la vez).
 - [ ] Afinador: si la E grave falla en móviles, probar MPM o una ventana más larga; calibración de La (440 Hz fijo).

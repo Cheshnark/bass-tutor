@@ -37,6 +37,9 @@ Protocolo, para cada dispositivo:
 - **Móvil (micrófono del dispositivo; confirmado el 2026-10-06):** funciona "lo suficientemente bien", pero **bastante menos
   preciso** que por cable (testimonio del autor; sin modelo, SO ni cents anotados). Coincide con lo previsto: los micros
   de móvil captan mal los graves. Para precisión, mejor cable o interfaz; el móvil sirve para una afinación aproximada.
+- **Cierre (2026-10-06):** el autor da el afinador por validado y cierra las pruebas. Por cable, a su juicio, supera a un
+  afinador físico de ~40 € (testimonio; no se midió con instrumentos). Los puntos "sin cubrir" quedan como mejoras
+  opcionales, no como requisito.
 - **Sin cubrir:** bajo de 5 cuerdas (B0), errores de octava en automático (no se anotaron fallos) y cents medidos
   por cuerda, tanto en el sobremesa como en el móvil.
 
