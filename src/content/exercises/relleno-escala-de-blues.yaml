@@ -23,7 +23,7 @@ tags:
   - shuffle
 alphaTex: |
   \title "Rellenos con la escala de blues"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

@@ -24,7 +24,7 @@ tags:
   - articulacion
 alphaTex: |
   \title "Corcheas: verso corto, estribillo largo"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

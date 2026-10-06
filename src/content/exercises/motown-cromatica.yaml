@@ -22,7 +22,7 @@ tags:
   - cromatismo
 alphaTex: |
   \title "Pasos cromáticos entre acordes"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

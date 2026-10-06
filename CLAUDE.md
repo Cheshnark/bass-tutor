@@ -1,4 +1,4 @@
-# Bass Tutor: profesor de bajo (PWA)
+# Basscraft: profesor de bajo (PWA)
 
 Guía de práctica de bajo eléctrico, en español, offline y sin backend.
 Especificación: @docs/spec.md · Hoja de ruta: @docs/roadmap.md · Estado: @docs/project_state.md

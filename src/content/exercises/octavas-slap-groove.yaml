@@ -20,7 +20,7 @@ tags:
   - slap
 alphaTex: |
   \title "Octavas en semicorcheas con slap"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 50
   \track "Bajo" { instrument "Slap Bass 1" }
   \staff { score tabs }

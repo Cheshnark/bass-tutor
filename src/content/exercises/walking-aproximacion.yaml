@@ -22,7 +22,7 @@ tags:
   - aproximacion
 alphaTex: |
   \title "Llegar por medio tono"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

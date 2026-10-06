@@ -18,7 +18,7 @@ tags:
   - mano-izquierda
 alphaTex: |
   \title "Fundamental, quinta y octava"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

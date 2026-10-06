@@ -22,7 +22,7 @@ tags:
   - pentatonica
 alphaTex: |
   \title "Un riff con la pentatónica de La"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

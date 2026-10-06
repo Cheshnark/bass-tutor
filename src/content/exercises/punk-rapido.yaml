@@ -26,7 +26,7 @@ tags:
   - metal-punk
 alphaTex: |
   \title "Punk rápido"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 120
   \track "Bajo" { instrument "Electric Bass Pick" }
   \staff { score tabs }

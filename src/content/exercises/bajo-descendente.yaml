@@ -22,7 +22,7 @@ tags:
   - linea
 alphaTex: |
   \title "Un bajo que baja: acordes con barra"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

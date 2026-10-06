@@ -22,7 +22,7 @@ tags:
   - ii-v-i
 alphaTex: |
   \title "El blues de jazz en two-feel"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

@@ -22,7 +22,7 @@ tags:
   - fundamental
 alphaTex: |
   \title "El blues de doce compases con fundamentales"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

@@ -22,7 +22,7 @@ tags:
   - arpegio
 alphaTex: |
   \title "El II–V–I en Do con arpegios"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

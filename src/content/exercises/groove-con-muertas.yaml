@@ -23,7 +23,7 @@ tags:
   - groove
 alphaTex: |
   \title "Un groove de funk con notas muertas"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 56
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

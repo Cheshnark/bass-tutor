@@ -25,7 +25,7 @@ tags:
   - fundamental
 alphaTex: |
   \title "Doblar el riff de la guitarra o sostener"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

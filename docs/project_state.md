@@ -1,8 +1,17 @@
 # Estado del proyecto
 
-_Última actualización: 2026-10-05_
+_Última actualización: 2026-10-06_
 
-## Identidad: más carácter (hecho, 2026-10-05) y nombre nuevo (pendiente)
+## Nombre: Basscraft (hecho, 2026-10-06) y pruebas en el móvil
+
+- **La app se llama Basscraft.** Cambiado `APP_NAME` (src/brand.ts), `index.html`, README, CLAUDE.md, el subtítulo
+  `\subtitle "Ejercicio original · Basscraft"` de todos los ejercicios, la regla de `.claude/rules/content.md`, el
+  icono (comentario) y el e2e del progreso. Ruta `/bass-tutor/`, carpetas e identificadores internos no cambian
+  (ver [decisions.md](decisions.md)). Las maquetas de identidad conservan los nombres de la primera tanda.
+- **Afinador en el móvil: probado** (2026-10-06, testimonio del autor): funciona lo suficientemente bien.
+- **Modo sin conexión en el móvil: probado**, con la versión publicada: funciona.
+
+## Identidad: más carácter (hecho, 2026-10-05)
 
 Implementadas las cinco ideas de las maquetas ([maquetas/identidad.html](maquetas/identidad.html)):
 - **Logotipo** (nombre + cuatro cuerdas, enlace al curso) en lugar de la placa con caja; Ajustes relleno; piloto
@@ -16,9 +25,6 @@ Implementadas las cinco ideas de las maquetas ([maquetas/identidad.html](maqueta
 
 Detalle y motivos en [decisions.md](decisions.md). Tests: 226 unitarios (5 nuevos del pote) y 184 e2e
 (nuevos: pote de tempo y de volumen, títulos por vista), axe sin infracciones en los dos temas.
-
-**Nombre:** el autor quiere uno en español con gancho; la primera tanda (Retumba, Bajo Cero, Sube el Bajo, Grave) no
-le convenció. Cambiarlo es una línea (`APP_NAME` en src/brand.ts) más el subtítulo de los ejercicios. Pendiente.
 
 ## Guía visual en la partitura (2026-10-04)
 
@@ -110,7 +116,7 @@ Todo el contenido está escrito: tronco común, ampliación común y los cuatro 
 
 - **Afinador (experimental)**, pestaña nueva: detección YIN por micrófono, automático o por cuerda, aguja de cents y
   tono de referencia para afinar de oído. Error con tono sintético < 0,7 cents (criterio: < 3). **Probado en bajo real por
-  cable** (2026-10-04); falta el móvil con micrófono ambiente: protocolo y tabla en [afinador-pruebas.md](afinador-pruebas.md).
+  cable** (2026-10-04) y en el móvil (2026-10-06, bastante menos preciso que por cable): protocolo y tabla en [afinador-pruebas.md](afinador-pruebas.md).
 - **Backing tracks**: los ejercicios con armonía suenan con batería y acordes generados; se puede silenciar el bajo
   (tocar tú con la banda) o el acompañamiento.
 - **Oído** (Práctica → Oído): reconocer intervalos en el registro del bajo, con repaso espaciado.
@@ -163,8 +169,8 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 
 ### Pendiente de ti
 
-- ~~Activar GitHub Pages~~ (hecho el 2026-10-04). Falta comprobar la versión publicada en el móvil: instalarla como app y
-  probar el modo sin conexión.
+- ~~Activar GitHub Pages~~ (hecho el 2026-10-04). ~~Comprobar la versión publicada en el móvil: modo sin conexión~~
+  (hecho el 2026-10-06; falta confirmar el progreso al reabrir la app instalada en iOS, si usas iPhone).
 - Probar el tronco común como alumno y en tu móvil (instalada como app).
 - Probar el itinerario rock/pop, sobre todo la canción completa del módulo 4.
 - Probar el itinerario blues/jazz, sobre todo el tema completo del módulo 4.
@@ -175,8 +181,7 @@ En el índice, los módulos de un itinerario se numeran 1, 2, 3… (las carpetas
 ## Siguiente paso
 
 Opciones, por orden de recomendación:
-1. **Tú**: probar el afinador con tu bajo en tu móvil y rellenar [afinador-pruebas.md](afinador-pruebas.md); y usar
-   el curso y la Práctica unos días.
+1. **Tú**: usar el curso y la Práctica unos días (el afinador en el móvil ya está probado).
 2. **Tú**: revisión pedagógica de la Fase 7, módulo a módulo (tocarlo, corregir y pasar a `revisada`). Puedo
    ayudarte con lo que encuentres.
 3. Opcional: II–V–I menor (blues/jazz), buscar los vídeos que faltan, o la Fase 8 (multiusuario) si decides publicar.

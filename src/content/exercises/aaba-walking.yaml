@@ -21,7 +21,7 @@ tags:
   - walking
 alphaTex: |
   \title "La forma AABA caminada"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

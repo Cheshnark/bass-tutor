@@ -23,7 +23,7 @@ tags:
   - i-iv-v
 alphaTex: |
   \title "Fundamental y quinta en blancas"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

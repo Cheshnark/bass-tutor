@@ -23,7 +23,7 @@ tags:
   - octavas
 alphaTex: |
   \title "El ritmo empujado (3 + 3 + 2)"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

@@ -24,7 +24,7 @@ tags:
   - cambio-de-acorde
 alphaTex: |
   \title "Rock and roll sobre un blues de doce compases"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

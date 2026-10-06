@@ -23,7 +23,7 @@ tags:
   - corcheas
 alphaTex: |
   \title "El patrón de rock and roll en La"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

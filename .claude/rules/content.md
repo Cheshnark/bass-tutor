@@ -13,7 +13,7 @@ Guía completa: `docs/content-guide.md`. Método y fuentes: `docs/pedagogy.md`. 
   cada `## Título` del cuerpo es un paso. Ejercicios en `exercises/<id>.yaml` con el alphaTex en un bloque `|`.
 - Afinación de bajo en alphaTex: `\tuning (G2 D2 A1 E1)` (de aguda a grave). Usa `\staff { score tabs }` y `\clef bass`.
 - Cifrado de acordes en alphaTex: `{ch "G"}` tras la primera nota del acorde, y `backing.harmony` por compás.
-- Solo material original o de dominio público. Pon `\subtitle "Ejercicio original · Bass Tutor"`.
+- Solo material original o de dominio público. Pon `\subtitle "Ejercicio original · Basscraft"`.
 - Todo lo que generes va con `status: borrador`. Solo el autor lo pasa a `revisada` después de tocarlo.
 - Componentes en el MDX: solo `<Exercise id>`, `<Fretboard …>`, `<Tab exercise>`, `<Metronome bpm>` con props literales.
   Incrusta cada ejercicio de la lección con `<Exercise id="…" />` en el paso "Ejercicio".

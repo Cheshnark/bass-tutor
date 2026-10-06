@@ -12,9 +12,8 @@
 
 - [x] Logotipo, rótulos de panel (h1 por vista), ámbar solo para lo encendido, metrónomo como frontal, Atkinson
       Hyperlegible Next y tolex por itinerario (2026-10-05).
-- [ ] **Tú**: elegir el nombre nuevo (en español, con gancho). Al decidir: `APP_NAME` en src/brand.ts, subtítulo
-      `\subtitle "Ejercicio original · …"` de los ejercicios, regla de .claude/rules/content.md,
-      y el texto del e2e de progreso. Ruta, carpetas e identificadores internos no cambian.
+- [x] Nombre elegido: **Basscraft** (2026-10-06). Aplicado en `APP_NAME`, subtítulos de los ejercicios, regla de
+      contenido y e2e. Ruta, carpetas e identificadores internos no cambian.
 - [ ] Probar el pote en el móvil: que arrastrarlo no moleste al desplazar la página.
 
 ## Afinador
@@ -61,7 +60,8 @@
       silenciar bajo/acompañamiento, oído (intervalos), grábate.
 - [x] Probar el afinador con el bajo real por cable (Windows, Chrome, línea): bien, ver `docs/afinador-pruebas.md`.
 - [x] Probar el afinador con el micrófono del móvil: funciona, bastante menos preciso que por cable (ver `docs/afinador-pruebas.md`).
-- [ ] Afinador en móvil: anotar modelo, SO y cents por cuerda; valorar una advertencia en la app de que por micrófono es
+- [x] Afinador en el móvil probado (2026-10-06): "lo suficientemente bien".
+- [ ] Afinador en móvil (opcional): anotar modelo, SO y cents por cuerda; valorar una advertencia en la app de que por micrófono es
       aproximado.
 - [ ] **Tú**: escuchar la mezcla del acompañamiento (batería y piano eléctrico frente al bajo); ajustar volúmenes.
 - [ ] Oído: dictado rítmico e identificar la fundamental de un acorde; intervalos armónicos (a la vez).
@@ -86,8 +86,8 @@
 - [x] Ajustes y metrónomo recordados. PWA offline (e2e en modo avión) y Lighthouse ≥ 90.
 - [x] GitHub Pages activado y publicado a mano (2026-10-04). Opcional: variable `PAGES_ENABLED=true` para publicar en
       cada push.
-- [ ] **Tú**: instalar la versión publicada en el móvil y probar el modo sin conexión (modo avión).
-- [ ] Probar la app instalada en el móvil (iOS: añadir a pantalla de inicio; comprobar que el progreso se conserva).
+- [x] Versión publicada en el móvil: modo sin conexión probado y funciona (2026-10-06).
+- [ ] Probar la app instalada en el móvil, solo iOS si tienes iPhone (añadir a pantalla de inicio; comprobar que el progreso se conserva).
 - [ ] Avisos de build de alphaTab (`import.meta` en formato iife de sus workers): funcionan, pero vigilar al actualizar.
 
 ## Fase 2: entregables
@@ -200,4 +200,4 @@
 2. Paleta: crema/negro, verde quirófano, burdeos, o naranja solo como acento. (Provisional: oscuro + ámbar.)
 3. ~~¿Se publicará?~~ → Sí, para amigos bajistas (sin backend por ahora).
 4. ¿Grabas tú los audios de demostración o solo síntesis?
-5. Nombre definitivo de la app (en research.md aparece "Bajo·Lab" como borrador).
+5. ~~Nombre definitivo de la app~~ → Basscraft (2026-10-06).

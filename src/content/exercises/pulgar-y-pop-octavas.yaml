@@ -21,7 +21,7 @@ tags:
   - slap
 alphaTex: |
   \title "Pulgar y pop en octavas"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Slap Bass 1" }
   \staff { score tabs }

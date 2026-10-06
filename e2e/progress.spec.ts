@@ -79,7 +79,7 @@ test.describe('progreso', () => {
       mimeType: 'application/json',
       buffer: Buffer.from('{"foo": 1}'),
     })
-    await expect(page.getByTestId('progress-message')).toHaveText('El fichero no es una copia de progreso de Bass Tutor.')
+    await expect(page.getByTestId('progress-message')).toHaveText('El fichero no es una copia de progreso de Basscraft.')
 
     // Importar la copia (se acepta el aviso de sustitución)
     page.once('dialog', (dialog) => void dialog.accept())

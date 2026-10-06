@@ -21,7 +21,7 @@ tags:
   - slap
 alphaTex: |
   \title "Un groove de slap completo"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 50
   \track "Bajo" { instrument "Slap Bass 1" }
   \staff { score tabs }

@@ -19,7 +19,7 @@ tags:
   - apagado
 alphaTex: |
   \title "Solo suena la cuerda que tocas"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

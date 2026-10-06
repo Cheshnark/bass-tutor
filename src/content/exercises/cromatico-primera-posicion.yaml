@@ -20,7 +20,7 @@ tags:
   - digitacion-1-2-4
 alphaTex: |
   \title "Cromático en primera posición (1-2-4)"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

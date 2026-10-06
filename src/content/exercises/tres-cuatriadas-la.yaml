@@ -21,7 +21,7 @@ tags:
   - septimas
 alphaTex: |
   \title "Amaj7, A7 y Am7"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

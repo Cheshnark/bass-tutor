@@ -23,7 +23,7 @@ tags:
   - metal-punk
 alphaTex: |
   \title "Galope y galope inverso"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 60
   \track "Bajo" { instrument "Electric Bass Pick" }
   \staff { score tabs }

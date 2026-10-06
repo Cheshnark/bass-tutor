@@ -23,7 +23,7 @@ tags:
   - octava
 alphaTex: |
   \title "I–V–vi–IV en Sol"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

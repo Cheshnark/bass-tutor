@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Icono original de Bass Tutor: un trozo de mástil (4 cuerdas, 2 trastes) y un piloto ámbar. -->
+  <!-- Icono original de Basscraft: un trozo de mástil (4 cuerdas, 2 trastes) y un piloto ámbar. -->
   <rect width="512" height="512" rx="96" fill="#16171a"/>
   <rect x="64" y="136" width="384" height="240" rx="18" fill="#3b2a20"/>
   <rect x="176" y="136" width="10" height="240" fill="#b9bcc2"/>

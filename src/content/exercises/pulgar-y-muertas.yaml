@@ -20,7 +20,7 @@ tags:
   - slap
 alphaTex: |
   \title "Pulgar y notas muertas"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 56
   \track "Bajo" { instrument "Slap Bass 1" }
   \staff { score tabs }

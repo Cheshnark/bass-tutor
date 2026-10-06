@@ -22,7 +22,7 @@ tags:
   - metal-punk
 alphaTex: |
   \title "Palm mute, sí y no"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Pick" }
   \staff { score tabs }

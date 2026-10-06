@@ -1,4 +1,4 @@
-# Bass Tutor
+# Basscraft
 
 Profesor de bajo eléctrico en web/PWA: en español, offline y sin cuenta.
 Lecciones cortas que siempre terminan tocando con metrónomo, con mástil interactivo y tablatura reproducible.

@@ -23,7 +23,7 @@ tags:
   - sincopa
 alphaTex: |
   \title "Una línea al estilo Motown"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

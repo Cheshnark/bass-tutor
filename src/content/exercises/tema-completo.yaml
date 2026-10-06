@@ -24,7 +24,7 @@ tags:
   - two-feel
 alphaTex: |
   \title "Un tema de jazz completo"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 80
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

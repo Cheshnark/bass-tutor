@@ -1,8 +1,8 @@
 # Afinador: pruebas en bajo real
 
 Criterio de la Fase 5 ([roadmap.md](roadmap.md)): error < ±3 cents con tono sintético (**cumplido**, ver abajo) y
-**prueba en bajo real documentada por dispositivo** (**hecha** en un dispositivo, el 2026-10-04: sobremesa con
-Windows, por cable; faltan el móvil y el micrófono ambiente).
+**prueba en bajo real documentada por dispositivo** (**hecha**: sobremesa con Windows por cable, 2026-10-04, y
+móvil con micrófono del dispositivo, 2026-10-06 según el autor; sin modelo ni cents anotados).
 
 ## Con tono sintético (automático)
 
@@ -34,7 +34,7 @@ Protocolo, para cada dispositivo:
 - Nivel: con **ganancia 0 dB** en la app, el medidor llega a ~80 % con slap y volumen alto; no satura. La señal por la
   entrada de línea es suficiente: la ganancia por software no hizo falta.
 - Con la entrada de micrófono (rosa) la señal era demasiado baja; la línea lo resolvió (ver arriba).
-- **Móvil (2026-10-04, micrófono del dispositivo):** funciona "lo suficientemente bien", pero **bastante menos
+- **Móvil (micrófono del dispositivo; confirmado el 2026-10-06):** funciona "lo suficientemente bien", pero **bastante menos
   preciso** que por cable (testimonio del autor; sin modelo, SO ni cents anotados). Coincide con lo previsto: los micros
   de móvil captan mal los graves. Para precisión, mejor cable o interfaz; el móvil sirve para una afinación aproximada.
 - **Sin cubrir:** bajo de 5 cuerdas (B0), errores de octava en automático (no se anotaron fallos) y cents medidos

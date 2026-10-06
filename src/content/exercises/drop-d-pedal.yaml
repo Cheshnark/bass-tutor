@@ -26,7 +26,7 @@ tags:
   - metal-punk
 alphaTex: |
   \title "Nota pedal en drop D"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Pick" }
   \staff { score tabs }

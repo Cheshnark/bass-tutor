@@ -21,7 +21,7 @@ tags:
   - doce-octavos
 alphaTex: |
   \title "Balada soul en 12/8"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 50
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

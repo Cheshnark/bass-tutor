@@ -21,7 +21,7 @@ tags:
   - octavas
 alphaTex: |
   \title "Octavas de disco"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 90
   \track "Bajo" { instrument "Electric Bass Finger" }
   \staff { score tabs }

@@ -458,5 +458,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   (Ø) por diseño, para distinguirlo de la O; ninguna variante del subconjunto latino lo quita y se acepta.
 - **Tolex por itinerario:** banda de color en el borde (blanco roto rock/pop, verde funk/soul, burdeos blues/jazz,
   acero metal/punk); nunca detrás del texto y el nombre del itinerario sigue escrito.
-- **Nombre:** se centraliza en `APP_NAME` (src/brand.ts). El cambio de nombre está pendiente de que el autor elija;
-  solo cambia el nombre visible (las carpetas, la ruta y los identificadores internos se quedan).
+- **Nombre:** se centraliza en `APP_NAME` (src/brand.ts); solo cambia el nombre visible (las carpetas, la ruta y los
+  identificadores internos se quedan).
+
+## 2026-10-06 · Nombre: Basscraft
+
+- **Decisión del autor:** la app se llama **Basscraft** (descartados Retumba, Bajo Cero, Sube el Bajo y Grave).
+- **Alcance:** nombre visible (cabecera, título de pestaña, manifest, avisos, subtítulo de los ejercicios, README,
+  CLAUDE.md). **No cambian** la ruta `/bass-tutor/`, el repo, la BD `bass-tutor`, `app: 'bass-tutor'` de las copias
+  de progreso ni las claves de almacenamiento: cambiarlos rompería la app instalada, el progreso y las copias antiguas.
+  Consecuencia: el nombre de fichero de la copia de progreso sigue siendo `bass-tutor-progreso-…json`.

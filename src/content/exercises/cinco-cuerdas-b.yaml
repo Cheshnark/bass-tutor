@@ -25,7 +25,7 @@ tags:
   - metal-punk
 alphaTex: |
   \title "La cuerda B grave"
-  \subtitle "Ejercicio original · Bass Tutor"
+  \subtitle "Ejercicio original · Basscraft"
   \tempo 70
   \track "Bajo" { instrument "Electric Bass Pick" }
   \staff { score tabs }
