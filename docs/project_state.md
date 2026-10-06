@@ -8,6 +8,7 @@ _Última actualización: 2026-10-06_
   `\subtitle "Ejercicio original · Basscraft"` de todos los ejercicios, la regla de `.claude/rules/content.md`, el
   icono (comentario) y el e2e del progreso. Ruta `/bass-tutor/`, carpetas e identificadores internos no cambian
   (ver [decisions.md](decisions.md)). Las maquetas de identidad conservan los nombres de la primera tanda.
+- **Desplegado** en GitHub Pages con el nombre nuevo (2026-10-06, lanzado a mano por el autor).
 - **Afinador en el móvil: probado y cerrado** (2026-10-06, testimonio del autor): en el móvil funciona lo
   suficientemente bien y por cable supera a un afinador físico de ~40 €. Sin más pruebas pendientes.
 - **Modo sin conexión en el móvil: probado**, con la versión publicada: funciona.
