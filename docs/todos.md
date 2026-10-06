@@ -40,8 +40,10 @@
 - [x] Itinerario funk/soul: 4 módulos (semicorcheas y síncopa; octavas y el uno; Motown y soul; slap), en borrador.
   **Todo el contenido de la Fase 7 está escrito.**
 - [ ] alphaTab dibuja la S/P del slap encima del cifrado; hoy el acorde va como `txt`. Revisar con una versión nueva.
-- [ ] Vídeos que faltan (sin fuente reconocida verificable): patrón de rock and roll, forma del blues, escala de blues,
-  II–V–I, AABA, el uno, Motown, 12/8.
+- [x] Vídeos de la forma del blues y del blues caminado añadidos (TalkingBass, 2026-10-06).
+- [ ] Vídeos que siguen faltando (buscados el 2026-10-06 en TalkingBass sin resultado verificable): patrón de rock and
+  roll, escala de blues, II–V–I (mayor y menor), AABA, el uno, Motown, 12/8. Los resultados que hay son canciones con
+  copyright o cursos de pago; no se enlazan.
 - [ ] **Tú**: revisión pedagógica por módulo (criterio de la fase): tocarlo y pasar a `revisada` lo que esté bien.
 
 ## Fase 6: hecha

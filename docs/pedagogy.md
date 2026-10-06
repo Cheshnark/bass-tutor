@@ -353,6 +353,8 @@ Vídeos enlazados en las lecciones (verificados título y canal vía oEmbed de Y
 | 5 cuerdas | [5 String Bass For Beginners](https://www.youtube.com/watch?v=iP6YpObyWi4) | TalkingBass |
 | 5 cuerdas | [How to SOUND AWESOME on the 5 STRING BASS… for 4 string players](https://www.youtube.com/watch?v=h3BGK3m7O_A) | Scott's Bass Lessons |
 | Empezar el walking | [The RIGHT Way To Start Walking Bass (NO Theory Needed)](https://www.youtube.com/watch?v=kNxOMOH7ioc) | TalkingBass |
+| Forma del blues | [Beginner Blues Bass Lesson](https://www.youtube.com/watch?v=GdAeCWAkt80) | TalkingBass |
+| Blues caminado | [Walking Bass Through a 12 Bar Blues](https://www.youtube.com/watch?v=AragQ0JzD6s) | TalkingBass |
 | Walking: notas del acorde | [The Walking Bass Secret EVERY Beginner Needs To Know](https://www.youtube.com/watch?v=ZueIBKZtgWs) | TalkingBass |
 | Blues de jazz en two-feel | [Jazz Blues  Bass in a 2 Feel](https://www.youtube.com/watch?v=J8-H5ci3WDA) | TalkingBass |
 | Practicar walking | [7 Things You NEED To Work On If You Want To Learn Walking Bass](https://www.youtube.com/watch?v=8KM2Uqa69tU) | TalkingBass |
@@ -380,9 +382,10 @@ Módulo 4: se reutilizan los vídeos de dinámica (SBL) y de tocar con batería 
 canción** (los que hay analizan canciones con copyright).
 
 Blues/jazz (verificados el 2026-10-02, oEmbed): los dos de walking están incrustados en las páginas de TalkingBass
-citadas. **Sin vídeo propio de la forma del blues ni de la escala de blues**; el shuffle reutiliza el de SBL.
+citadas. **Sin vídeo propio de la escala de blues** (el de la forma del blues y el del blues caminado se añadieron el 2026-10-06: TalkingBass, verificados con oEmbed; el primero, por la página de la lección, explica la forma I–IV–V y no enseña una canción con copyright); el shuffle reutiliza el de SBL.
 Módulos 3–4: dos vídeos más de TalkingBass (incrustados en sus páginas, verificados con oEmbed). **Sin vídeo del
-II–V–I ni de la forma AABA**.
+II–V–I (ni del menor) ni de la forma AABA**. Búsqueda del 2026-10-06 en TalkingBass: solo "Simplifying Jazz
+Chords", que no es el II–V–I; no se enlaza.
 
 Funk/soul (verificados el 2026-10-02, oEmbed): tres vídeos de TalkingBass incrustados en sus páginas; el de
 semicorcheas ya estaba en la tabla. **Sin vídeo del uno, de Motown ni del 12/8** (los que hay enseñan canciones con

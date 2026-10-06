@@ -9,6 +9,8 @@ _Última actualización: 2026-10-06_
   icono (comentario) y el e2e del progreso. Ruta `/bass-tutor/`, carpetas e identificadores internos no cambian
   (ver [decisions.md](decisions.md)). Las maquetas de identidad conservan los nombres de la primera tanda.
 - **Desplegado** en GitHub Pages con el nombre nuevo (2026-10-06, lanzado a mano por el autor).
+- **Vídeos nuevos** (2026-10-06): forma del blues y blues caminado (TalkingBass, verificados con oEmbed). El resto de
+  los que faltaban no tiene una fuente verificable (detalle en [pedagogy.md](pedagogy.md)).
 - **Afinador en el móvil: probado y cerrado** (2026-10-06, testimonio del autor): en el móvil funciona lo
   suficientemente bien y por cable supera a un afinador físico de ~40 €. Sin más pruebas pendientes.
 - **Modo sin conexión en el móvil: probado**, con la versión publicada: funciona.
