@@ -1,9 +1,10 @@
 title: Armonía de jazz
 summary: >-
-  El II–V–I (m7, 7 y maj7), caminar sobre él con dos acordes por compás y el blues de jazz, que mete II–V dentro
+  El II–V–I (m7, 7 y maj7), caminar sobre él con dos acordes por compás, el II–V–I menor y el blues de jazz, que mete II–V dentro
   de la forma de doce compases.
 track: blues-jazz
 lessons:
   - ii-v-i
   - walking-ii-v-i
+  - ii-v-i-menor
   - blues-de-jazz

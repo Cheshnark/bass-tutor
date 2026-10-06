@@ -1,0 +1,41 @@
+title: Caminar sobre el II–V–I menor
+status: borrador
+instructions: >-
+  Walking sobre Dm7♭5, G7 y Cm7, dos veces. Misma regla de siempre: fundamental en el primer tiempo, notas del
+  acorde en medio y, en el cuarto, medio tono hacia la fundamental siguiente. Fíjate en D C F A♭ y G: baja y sube por
+  el acorde y llega al G7 desde arriba, por medio tono. Todo en primera posición, con cuerdas al aire.
+tempo:
+  start: 80
+  target: 140
+  step: 5
+timeSignature: 4/4
+feel: swing
+backing:
+  harmony: [Dm7b5, G7, Cm7, Cm7, Dm7b5, G7, Cm7, Cm7, Cm7]
+passCriteria:
+  - En cada cuarto tiempo sabes a qué nota vas
+  - Las negras suenan largas e iguales
+  - Llegas al Cm7 con sensación de "llegar a casa", aunque sea menor
+tags:
+  - jazz
+  - ii-v-i
+  - walking
+  - menor
+alphaTex: |
+  \title "Caminar sobre el II–V–I menor"
+  \subtitle "Ejercicio original · Basscraft"
+  \tempo 80
+  \track "Bajo" { instrument "Electric Bass Finger" }
+  \staff { score tabs }
+  \tuning (G2 D2 A1 E1)
+  \clef bass
+  \ts (4 4)
+  :4 0.2 {ch "Dm7b5"} 3.3 1.4 4.4{acc b} |
+  :4 3.4 {ch "G7"} 2.3 0.2 4.3{acc b} |
+  :4 3.3 {ch "Cm7"} 1.3{acc b} 3.4 1.3{acc b} |
+  :4 3.3 {ch "Cm7"} 0.1 3.1{acc b} 1.2{acc b} |
+  :4 0.2 {ch "Dm7b5"} 3.3 1.4 4.4{acc b} |
+  :4 3.4 {ch "G7"} 2.3 0.2 4.3{acc b} |
+  :4 3.3 {ch "Cm7"} 1.3{acc b} 3.4 1.3{acc b} |
+  :4 3.3 {ch "Cm7"} 1.3{acc b} 3.4 1.3{acc b} |
+  :1 3.3 {ch "Cm7"}

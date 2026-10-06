@@ -87,7 +87,7 @@ todo en borrador. Tonalidad base: Mi (vamps Em7–A7 y E7 con cuerdas al aire); 
 
 ### Itinerario blues/jazz (temario, borrador)
 
-Con dedos. **Itinerario completo** (4 módulos, 12 lecciones), todo en borrador. Se apoya en el shuffle y las
+Con dedos. **Itinerario completo** (4 módulos, 13 lecciones), todo en borrador. Se apoya en el shuffle y las
 cuatriadas de la ampliación común. Tonalidades: La para el blues (quinta
 posición, como el resto del curso) y Fa para el walking (primera posición, tonalidad habitual del jazz).
 
@@ -95,7 +95,7 @@ posición, como el resto del curso) y Fa para el walking (primera posición, ton
 |---|---|
 | 1 · El blues ✍️ | El blues de doce compases (cambio rápido, turnaround) · El shuffle de blues (1-5-6-♭7) · La escala de blues y los rellenos |
 | 2 · Walking bass ✍️ | Empezar a caminar (blancas; arpegio de séptima) · Notas de aproximación · Un blues caminado |
-| 3 · Armonía de jazz ✍️ | El II–V–I · Caminar sobre el II–V–I (dos acordes por compás) · El blues de jazz |
+| 3 · Armonía de jazz ✍️ | El II–V–I · Caminar sobre el II–V–I (dos acordes por compás) · El II–V–I menor · El blues de jazz |
 | 4 · Tocar jazz ✍️ | Two-feel y pasar a walking · La forma AABA de 32 compases · Un tema de jazz completo |
 
 ### Itinerario metal/punk (temario, borrador)

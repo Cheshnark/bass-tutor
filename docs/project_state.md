@@ -60,8 +60,8 @@ ganancia desactivado, una señal floja caía bajo el umbral de silencio sin avis
 
 ### Fase 7 (contenido restante): escrita
 
-Todo el contenido está escrito: tronco común, ampliación común y los cuatro itinerarios (26 módulos, 78 lecciones,
-121 ejercicios), todo en `borrador`. **Falta el criterio de la fase: tu revisión pedagógica por módulo.**
+Todo el contenido está escrito: tronco común, ampliación común y los cuatro itinerarios (26 módulos, 79 lecciones,
+123 ejercicios; con el II–V–I menor, 79 lecciones), todo en `borrador`. **Falta el criterio de la fase: tu revisión pedagógica por módulo.**
 
 
 - Reparto del currículo original entre la nueva **ampliación común** y los itinerarios: [pedagogy.md](pedagogy.md).
@@ -84,13 +84,14 @@ Todo el contenido está escrito: tronco común, ampliación común y los cuatro 
   - **La canción entera**: forma (verso, estribillo, puente), dinámica por secciones (duración de las notas, piano/
     forte, callar y volver con un relleno) y una canción original completa de 31 compases con batería y acordes
     (3 lecciones, 5 ejercicios; secciones rotuladas en la partitura). **Itinerario rock/pop completo.**
-- **Itinerario blues/jazz** (borrador, completo: 4 módulos, 12 lecciones): temario en [pedagogy.md](pedagogy.md).
+- **Itinerario blues/jazz** (borrador, completo: 4 módulos, 13 lecciones; 2026-10-06: nueva lección **El II–V–I menor**, Dm7♭5–G7–Cm7, con arpegios y walking): temario en [pedagogy.md](pedagogy.md).
   - **El blues** (en La): forma de doce compases con cambio rápido y turnaround, 1-5-♭7-8, shuffle 1-5-6-♭7 por todo
     el blues, escala de blues y rellenos en los compases 4 y 12 (3 lecciones, 6 ejercicios, batería en shuffle).
   - **Walking bass** (en Fa): blancas, arpegio de séptima, aproximación cromática en el cuarto tiempo y un blues
     caminado de dos vueltas (3 lecciones, 4 ejercicios, batería en swing). Vídeos de TalkingBass.
-  - **Armonía de jazz**: II–V–I con arpegios (Do y Fa), caminar sobre él, dos acordes por compás (I–vi–ii–V) y el
-    blues de jazz en two-feel y caminado (3 lecciones, 6 ejercicios).
+  - **Armonía de jazz**: II–V–I con arpegios (Do y Fa), caminar sobre él, dos acordes por compás (I–vi–ii–V), el
+    II–V–I menor (arpegios y walking en Do menor; el V se deja en G7, sin alteraciones) y el blues de jazz en
+    two-feel y caminado (4 lecciones, 8 ejercicios).
   - **Tocar jazz**: de two-feel a walking, la forma AABA de 32 compases (two-feel y caminada) y un tema original
     completo de 73 compases con intro, tema, solos y final (3 lecciones, 4 ejercicios).
   - El acompañamiento admite **dos acordes por compás** (`"Cm7 F7"`).
