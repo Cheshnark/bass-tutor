@@ -9,8 +9,9 @@ _Última actualización: 2026-10-07_
   ensanchaba la rejilla; ahora `minmax(0, 1fr)`) y, en la lección, el **foco quedaba bajo la barra fija**
   (`scroll-padding-bottom`). El espaciado de texto (1.4.12) no tenía infracciones. Detalle en
   [accesibilidad.md](accesibilidad.md).
-- **Rendimiento (hecho)**: el `alphaTex` de los ejercicios sale del chunk de arranque (715 → 607 kB; 193 → 182 gz) y
-  se descarga al abrir la primera partitura (110 kB, 11 gz; offline, precacheado). Zod y YAML nunca llegaron al
+- **Rendimiento (hecho)**: el detalle de los ejercicios (`alphaTex`, instrucciones y criterios) sale del chunk de
+  arranque (715 → 550 kB; 193 → 165 gz, -14 %) y se descarga al abrir el primer ejercicio (169 kB, 30 gz; offline,
+  precacheado). Zod y YAML nunca llegaron al
   navegador. Tonal medido: 10,6 kB gz, sin acción ([todos.md](todos.md)).
 - **Refactor (hecho)**: `Tuner` partido en vista + hook `useTuner` (309 → 156 líneas), `RadioGroup` compartido,
   `src/storage.ts` y `useNow`. Sin cambios de comportamiento: 233 unitarios y 232 e2e en verde. Lo único que queda

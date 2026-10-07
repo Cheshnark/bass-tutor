@@ -60,7 +60,8 @@ Rendimiento (medido en el build):
 - [x] Ejercicios fuera del chunk de arranque (2026-10-07): el JSON del curso ya no lleva el `alphaTex`; el chunk de
       arranque baja de 715 a 607 kB (193 → 182 kB gz) y los textos van en un chunk propio de 110 kB (11 kB gz).
       Ganancia menor de la estimada (-6 % gz): las instrucciones de los ejercicios siguen en el arranque.
-      Opción pendiente: partir también `instructions` y `passCriteria` (lo de cada ejercicio, no del índice).
+      Segunda parte (misma fecha): también `instructions` y `passCriteria` salen del arranque → 550 kB (165 kB gz);
+      el detalle va en `virtual:course-detail` (169 kB, 30 kB gz). En total, de 715 a 550 kB (193 → 165 kB gz, -14 %).
 - [x] Tonal medido (2026-10-07): con los imports reales (`Chord`, `Interval`, `Note`, `Scale`) pesa 30 kB minificado
       / 10,6 kB gz, un 5 % del chunk de arranque (607 kB). Importar `@tonaljs/*` sueltos lo dejaría en 24 kB / 8,6 kB
       gz: -2 kB gz a cambio de reescribir los imports y perder el espacio de nombres. **No compensa; sin acción.**

@@ -207,8 +207,11 @@ export interface Module extends ModuleData {
   order: number
 }
 
-/** Ejercicio sin su alphaTex: lo que el navegador carga al arrancar (el texto llega aparte, al abrir la partitura). */
-export type ExerciseMeta = Omit<Exercise, 'alphaTex'>
+/** Lo pesado de un ejercicio: llega aparte, al abrirlo (`virtual:course-detail`), no en el arranque. */
+export type ExerciseDetail = Pick<Exercise, 'alphaTex' | 'instructions' | 'passCriteria'>
+
+/** Ejercicio sin su detalle: lo que el navegador carga al arrancar (título, tempo, tags, armonía…). */
+export type ExerciseMeta = Omit<Exercise, keyof ExerciseDetail>
 
 export interface Course {
   modules: Module[]
@@ -216,7 +219,7 @@ export interface Course {
   exercises: Exercise[]
 }
 
-/** El curso tal como llega al navegador: los ejercicios, sin alphaTex. */
+/** El curso tal como llega al navegador: los ejercicios, sin su detalle. */
 export interface RuntimeCourse extends Omit<Course, 'exercises'> {
   exercises: ExerciseMeta[]
 }

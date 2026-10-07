@@ -1,6 +1,6 @@
 import data from 'virtual:course'
 import { withBacking } from './backing'
-import type { ExerciseMeta, Lesson, Module, RuntimeCourse } from './schema'
+import type { ExerciseDetail, ExerciseMeta, Lesson, Module, RuntimeCourse } from './schema'
 import type { TrackId } from './tracks'
 
 /** Curso completo, validado en build por el plugin `virtual:course` (no hace falta revalidar aquí). */
@@ -67,21 +67,38 @@ export function reviewDaysOf(exerciseId: string): number[] | undefined {
   return lessonByExercise.get(exerciseId)?.review.afterDays
 }
 
+// Detalle de los ejercicios (alphaTex, instrucciones y criterios): va en un chunk aparte (`virtual:course-detail`)
+// que se descarga al abrir el primer ejercicio y se guarda en memoria.
+let detailRequest: Promise<Record<string, ExerciseDetail>> | undefined
+
+function loadAllDetails(): Promise<Record<string, ExerciseDetail>> {
+  if (!detailRequest) {
+    detailRequest = import('virtual:course-detail').then((m) => m.default)
+    // Si la descarga falla (red caída antes de cachear), el siguiente intento vuelve a pedirlo.
+    detailRequest.catch(() => (detailRequest = undefined))
+  }
+  return detailRequest
+}
+
+export async function loadExerciseDetail(id: string): Promise<ExerciseDetail> {
+  const detail = (await loadAllDetails())[id]
+  if (!detail) throw new Error(`Ejercicio sin detalle: ${id}`)
+  return detail
+}
+
 // alphaTex que suena: el del ejercicio más batería y acordes si tiene armonía (src/content/backing.ts).
-// Los textos van en un chunk aparte (`virtual:course-tex`) que se descarga al abrir la primera partitura.
 const playable = new Map<string, Promise<string>>()
 
 export function playableTex(exercise: ExerciseMeta): Promise<string> {
   let tex = playable.get(exercise.id)
   if (tex === undefined) {
-    const request = import('virtual:course-tex').then(({ default: texById }) =>
-      withBacking(texById[exercise.id], {
+    const request = loadExerciseDetail(exercise.id).then((detail) =>
+      withBacking(detail.alphaTex, {
         harmony: exercise.backing?.harmony,
         timeSignature: exercise.timeSignature,
         feel: exercise.feel,
       }),
     )
-    // Si la descarga falla (red caída antes de cachear), el siguiente intento vuelve a pedirlo.
     request.catch(() => playable.delete(exercise.id))
     playable.set(exercise.id, request)
     tex = request

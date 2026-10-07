@@ -8,6 +8,7 @@ import { reachedTarget, suggestTempo } from '../../state/progress/model'
 import { ExerciseTab } from '../Tab/ExerciseTab'
 import { LessonMetronome } from './embeds'
 import { Recorder } from './Recorder'
+import { useExerciseDetail } from './useExerciseDetail'
 
 /** Fecha del intento: se toma al guardar, no al pintar. */
 const nowIso = () => new Date().toISOString()
@@ -18,6 +19,8 @@ const nowIso = () => new Date().toISOString()
  */
 export function LessonExercise({ id }: ExerciseEmbed) {
   const exercise = getExercise(id)
+  const loaded = useExerciseDetail(id)
+  const detail = loaded === 'error' ? undefined : loaded
   const progress = useExerciseProgress(id)
   const metronomeBpm = useMetronome((s) => s.bpm)
   const [checked, setChecked] = useState<boolean[]>([])
@@ -25,11 +28,13 @@ export function LessonExercise({ id }: ExerciseEmbed) {
   const [message, setMessage] = useState<string | null>(null)
   if (!exercise) return null
 
-  const { tempo, passCriteria } = exercise
+  const { tempo } = exercise
+  const passCriteria = detail?.passCriteria ?? []
   const [numerator, denominator] = exercise.timeSignature.split('/').map(Number)
   const suggestion = suggestTempo(exercise, progress)
   const bpm = bpmInput ?? suggestion
-  const passed = passCriteria.every((_, i) => checked[i])
+  // Sin los criterios cargados no hay pase limpio (con la lista vacía, `every` daría true).
+  const passed = detail !== undefined && passCriteria.every((_, i) => checked[i])
   const validBpm = Number.isFinite(bpm) && bpm >= 20 && bpm <= 300
   const attempts = progress?.history.length ?? 0
 
@@ -45,7 +50,13 @@ export function LessonExercise({ id }: ExerciseEmbed) {
   return (
     <article className="lesson-exercise" aria-labelledby={`exercise-${id}`} data-testid={`exercise-${id}`}>
       <h3 id={`exercise-${id}`}>Ejercicio · {exercise.title}</h3>
-      <p>{exercise.instructions}</p>
+      {loaded === 'error' ? (
+        <p role="alert" className="error">
+          No se han podido cargar las instrucciones. Comprueba la conexión y vuelve a abrir el ejercicio.
+        </p>
+      ) : (
+        <p>{detail?.instructions ?? 'Cargando instrucciones…'}</p>
+      )}
       <p className="lesson-exercise__tempo">
         Empieza a <strong>{tempo.start} BPM</strong> y sube {tempo.step} BPM cada vez que lo toques limpio,
         hasta <strong>{tempo.target} BPM</strong>. Compás {exercise.timeSignature}.
@@ -69,6 +80,7 @@ export function LessonExercise({ id }: ExerciseEmbed) {
 
       <fieldset className="lesson-exercise__criteria">
         <legend>Autoevaluación: ¿lo has tocado…?</legend>
+        {detail === undefined && <p className="hint">Cargando criterios…</p>}
         {passCriteria.map((criterion, i) => (
           <label key={criterion}>
             <input
@@ -99,7 +111,7 @@ export function LessonExercise({ id }: ExerciseEmbed) {
         <button type="button" className="btn" onClick={() => setBpmInput(metronomeBpm)}>
           Usar el del metrónomo ({metronomeBpm})
         </button>
-        <button type="button" className="btn btn--primary" onClick={save} disabled={!validBpm}>
+        <button type="button" className="btn btn--primary" onClick={save} disabled={!validBpm || detail === undefined}>
           {passed ? 'Guardar pase limpio' : 'Guardar intento'}
         </button>
         <p className="hint" aria-live="polite" data-testid="attempt-message">

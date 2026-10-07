@@ -499,3 +499,12 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Medido:** -108 kB sin comprimir y -11 kB gz en el arranque (menos de lo estimado: el resto del JSON, instrucciones
   incluidas, sigue ahí y comprime peor aislado).
 
+## 2026-10-07 · El detalle del ejercicio (alphaTex, instrucciones, criterios) en el chunk perezoso
+
+- **Decisión:** `virtual:course-tex` pasa a `virtual:course-detail` y lleva también `instructions` y `passCriteria`
+  (`ExerciseDetail`). `ExerciseMeta` queda con lo que usan el índice y la práctica (título, tempo, tags, armonía…).
+- **UX:** la tarjeta pinta al instante título, tempo, progreso y metrónomo; instrucciones y criterios llegan al abrir
+  el chunk ("Cargando…" breve, y aviso si falla). Hasta que cargan los criterios, **no hay pase limpio** y "Guardar
+  intento" está desactivado: con la lista vacía, `every` daría `true` y se guardaría un pase limpio sin evaluar.
+- **Medido:** arranque 607 → 550 kB (182 → 165 kB gz). El chunk del detalle: 169 kB (30 kB gz).
+

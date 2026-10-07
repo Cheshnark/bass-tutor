@@ -4,8 +4,8 @@ declare module 'virtual:course' {
   export default data
 }
 
-declare module 'virtual:course-tex' {
-  /** id de ejercicio → alphaTex. */
-  const tex: Record<string, string>
-  export default tex
+declare module 'virtual:course-detail' {
+  /** id de ejercicio → su alphaTex, instrucciones y criterios (ver `ExerciseDetail`). */
+  const detail: Record<string, { alphaTex: string; instructions: string; passCriteria: string[] }>
+  export default detail
 }
