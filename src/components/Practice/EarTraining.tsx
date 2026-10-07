@@ -8,6 +8,7 @@ import { chromaNames, type FretboardView } from '../../theory/fretboard'
 import { midiName } from '../../theory/notation'
 import { getTuning } from '../../theory/tunings'
 import { Fretboard } from '../Fretboard/Fretboard'
+import { RadioGroup } from './RadioGroup'
 import { useCardSchedules, useToday } from './usePractice'
 
 const ROUND_SIZE = 10
@@ -89,23 +90,23 @@ export function EarTraining() {
           Escucharás dos notas seguidas. Di qué intervalo hay entre ellas. Empieza por cuarta, quinta y octava: son los
           saltos que más usa el bajo.
         </p>
-        <fieldset className="quiz-options">
-          <legend>Intervalos</legend>
-          {(Object.keys(INTERVAL_SETS) as IntervalSetId[]).map((id) => (
-            <label key={id}>
-              <input type="radio" name="ear-set" checked={setId === id} onChange={() => setSetId(id)} /> {INTERVAL_SETS[id].label}
-            </label>
-          ))}
-        </fieldset>
-        <fieldset className="quiz-options">
-          <legend>Dirección</legend>
-          <label>
-            <input type="radio" name="ear-dir" checked={direction === 'asc'} onChange={() => setDirection('asc')} /> Hacia arriba
-          </label>
-          <label>
-            <input type="radio" name="ear-dir" checked={direction === 'desc'} onChange={() => setDirection('desc')} /> Hacia abajo
-          </label>
-        </fieldset>
+        <RadioGroup
+          legend="Intervalos"
+          name="ear-set"
+          options={(Object.keys(INTERVAL_SETS) as IntervalSetId[]).map((id) => ({ value: id, label: INTERVAL_SETS[id].label }))}
+          value={setId}
+          onChange={setSetId}
+        />
+        <RadioGroup
+          legend="Dirección"
+          name="ear-dir"
+          options={[
+            { value: 'asc', label: 'Hacia arriba' },
+            { value: 'desc', label: 'Hacia abajo' },
+          ]}
+          value={direction}
+          onChange={setDirection}
+        />
         <button type="button" className="btn btn--primary btn--big" onClick={start}>
           Empezar ronda de {ROUND_SIZE}
         </button>

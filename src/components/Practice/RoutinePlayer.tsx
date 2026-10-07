@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { course, getExercise, lessonOfExercise } from '../../content/course'
 import { BLOCK_LABELS, buildRoutine, type RoutineBlock, type RoutineLength } from '../../practice/routine'
+import { useNow } from '../../useNow'
 import { useWakeLock } from '../../useWakeLock'
 import { LessonExercise } from '../Lesson/ExerciseCard'
 import { FretboardQuiz } from './FretboardQuiz'
@@ -16,22 +17,16 @@ const mmss = (ms: number) => {
 /** Temporizador de un bloque. Solo pinta (no suena): se actualiza a partir del reloj, sin acumular deriva. */
 function useBlockTimer(blockKey: string) {
   const [state, setState] = useState({ key: blockKey, elapsed: 0, startedAt: null as number | null })
-  const [now, setNow] = useState(() => Date.now())
   // Al cambiar de bloque, el temporizador vuelve a cero.
   const current = state.key === blockKey ? state : { key: blockKey, elapsed: 0, startedAt: null }
   if (current !== state) setState(current)
 
   const running = current.startedAt !== null
-  useEffect(() => {
-    if (!running) return
-    const id = window.setInterval(() => setNow(Date.now()), 250)
-    return () => window.clearInterval(id)
-  }, [running])
+  const [now, syncNow] = useNow(running, 250)
 
   const elapsed = current.elapsed + (current.startedAt !== null ? now - current.startedAt : 0)
   const toggle = () => {
-    const t = Date.now()
-    setNow(t)
+    const t = syncNow()
     setState(
       current.startedAt === null
         ? { ...current, startedAt: t }

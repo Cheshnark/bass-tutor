@@ -142,6 +142,9 @@
   `requestAnimationFrame`. Rango 28–400 Hz en automático; con cuerda elegida, ± media octava (evita errores de
   octava). Mediana de 5 lecturas y mínimo de 3 antes de mostrar. Micro sin cancelación de eco, supresión de ruido ni
   control de ganancia. Tono de referencia sostenido por cuerda. Pruebas: [afinador-pruebas.md](afinador-pruebas.md).
+  El estado y el audio van en el hook `components/Tuner/useTuner.ts`; `Tuner.tsx` solo pinta.
+- **Utilidades compartidas** (`src/`): `storage.ts` (`localStorage` que no lanza), `useNow.ts` (hora para contadores) y
+  `components/Practice/RadioGroup.tsx` (opciones excluyentes del quiz y el oído).
 - **Backing tracks** (`src/content/backing.ts`): para ejercicios con `backing.harmony` y una sola pista, se añaden al
   alphaTex una batería (según compás y *feel*; tresillos en swing/shuffle) y acordes en piano eléctrico
   (`src/theory/voicing.ts`, disposición cerrada). `playableTex` (course.ts) lo memoriza. `content:check` exige una

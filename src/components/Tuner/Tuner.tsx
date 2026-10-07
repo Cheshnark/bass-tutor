@@ -1,29 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { midiToFrequency } from '../../audio/notePlayer'
-import { cents as centsOff, dbToGain, DEFAULT_RANGE, levelFraction, median, nearestMidi, type PitchOptions } from '../../audio/pitch'
-import {
-  listAudioInputs,
-  startReferenceTone,
-  startTuner,
-  tunerErrorOf,
-  type AudioInput,
-  type TunerError,
-  type TunerHandle,
-} from '../../audio/tuner'
+import { levelFraction } from '../../audio/pitch'
+import { type TunerError } from '../../audio/tuner'
 import { useSettings } from '../../state/settings'
-import { fretPitch } from '../../theory/fretboard'
 import { midiName } from '../../theory/notation'
-import { getTuning } from '../../theory/tunings'
-import { useWakeLock } from '../../useWakeLock'
 import { PanelTitle } from '../PanelTitle'
 import './Tuner.css'
+import { IN_TUNE, MAX_GAIN_DB, tunerReading, useTuner } from './useTuner'
 import { VuMeter } from './VuMeter'
-
-/** Margen para dar la cuerda por afinada (cents). */
-const IN_TUNE = 5
-const SMOOTHING = 5
-/** Lecturas seguidas necesarias antes de mostrar nada: las primeras, al arrancar o al pulsar, son inestables. */
-const MIN_READINGS = 3
 
 const ERROR_TEXT: Record<TunerError, string> = {
   'sin-permiso': 'No hay permiso para usar el micrófono. Actívalo en los ajustes del navegador para este sitio.',
@@ -32,165 +14,30 @@ const ERROR_TEXT: Record<TunerError, string> = {
   otro: 'No se ha podido abrir el micrófono.',
 }
 
-type Target = 'auto' | number
-
-const MAX_GAIN_DB = 30
-const STORAGE_DEVICE = 'bass-tutor.tuner.device'
-const STORAGE_GAIN = 'bass-tutor.tuner.gain-db'
-
-/** Preferencias del afinador en este dispositivo; si el almacenamiento no está disponible, se ignoran. */
-function readStored(key: string): string | null {
-  try {
-    return localStorage.getItem(key)
-  } catch {
-    return null
-  }
-}
-
-function writeStored(key: string, value: string) {
-  try {
-    localStorage.setItem(key, value)
-  } catch {
-    /* sin almacenamiento: la preferencia no se recuerda */
-  }
-}
-
-function initialGainDb(): number {
-  const stored = Number(readStored(STORAGE_GAIN))
-  return Number.isFinite(stored) ? Math.min(MAX_GAIN_DB, Math.max(0, stored)) : 0
-}
-
 /** Afinador por micrófono (experimental) y tono de referencia para afinar de oído. */
 export function Tuner() {
   const { tuningId, notation } = useSettings()
-  const openMidis = useMemo(() => getTuning(tuningId).strings.map((open) => fretPitch(open, 0).midi), [tuningId])
+  const {
+    openMidis,
+    listening,
+    error,
+    target,
+    setTarget,
+    frequency,
+    refString,
+    inputs,
+    deviceId,
+    gainDb,
+    level,
+    start,
+    stop,
+    changeDevice,
+    changeGain,
+    toggleTone,
+  } = useTuner(tuningId)
 
-  const [listening, setListening] = useState(false)
-  const [error, setError] = useState<TunerError | null>(null)
-  const [target, setTarget] = useState<Target>('auto')
-  const [frequency, setFrequency] = useState<number | null>(null)
-  const [refString, setRefString] = useState<number | null>(null)
-  const [inputs, setInputs] = useState<AudioInput[]>([])
-  const [deviceId, setDeviceId] = useState(() => readStored(STORAGE_DEVICE) ?? '')
-  const [gainDb, setGainDb] = useState(initialGainDb)
-  const [level, setLevel] = useState(0)
-  useWakeLock(listening)
-
-  const stopRef = useRef<TunerHandle | null>(null)
-  const gainDbRef = useRef(gainDb)
-  const stopToneRef = useRef<(() => void) | null>(null)
-  const history = useRef<number[]>([])
-  const rangeRef = useRef<PitchOptions>(DEFAULT_RANGE)
-
-  // Con una cuerda elegida, solo se busca cerca de ella (± media octava): evita errores de octava.
-  useEffect(() => {
-    if (target === 'auto') {
-      rangeRef.current = DEFAULT_RANGE
-    } else {
-      const f = midiToFrequency(openMidis[target])
-      rangeRef.current = { minFrequency: f / 1.42, maxFrequency: f * 1.42 }
-    }
-    history.current = []
-  }, [target, openMidis])
-
-  // Al salir de la vista se libera el micrófono y se para el tono.
-  useEffect(
-    () => () => {
-      stopRef.current?.stop()
-      stopToneRef.current?.()
-    },
-    [],
-  )
-
-  // La lista de entradas se mantiene al día mientras se escucha (conectar o desconectar un cable o una interfaz).
-  useEffect(() => {
-    if (!listening) return
-    const refresh = () => void listAudioInputs().then(setInputs)
-    refresh()
-    navigator.mediaDevices.addEventListener('devicechange', refresh)
-    return () => navigator.mediaDevices.removeEventListener('devicechange', refresh)
-  }, [listening])
-
-  const open = (id: string) =>
-    startTuner(
-      (reading) => {
-        if (!reading) {
-          history.current = []
-          setFrequency(null)
-          return
-        }
-        history.current = [...history.current, reading.frequency].slice(-SMOOTHING)
-        setFrequency(history.current.length >= MIN_READINGS ? median(history.current) : null)
-      },
-      () => rangeRef.current,
-      { deviceId: id || undefined, gain: dbToGain(gainDbRef.current), onLevel: setLevel },
-    )
-
-  const start = async (id = deviceId) => {
-    setError(null)
-    try {
-      try {
-        stopRef.current = await open(id)
-      } catch (e) {
-        // La entrada recordada ya no existe (otro equipo, cable desconectado): se vuelve a la predeterminada.
-        if (!id || tunerErrorOf(e) !== 'sin-microfono') throw e
-        setDeviceId('')
-        stopRef.current = await open('')
-      }
-      setListening(true)
-    } catch (e) {
-      setError((e as { name?: string })?.name === 'NotSupported' ? 'no-soportado' : tunerErrorOf(e))
-    }
-  }
-
-  const stop = () => {
-    stopRef.current?.stop()
-    stopRef.current = null
-    setListening(false)
-    setFrequency(null)
-    setLevel(0)
-  }
-
-  const changeDevice = (id: string) => {
-    setDeviceId(id)
-    writeStored(STORAGE_DEVICE, id)
-    if (listening) {
-      stop()
-      void start(id)
-    }
-  }
-
-  const changeGain = (db: number) => {
-    setGainDb(db)
-    gainDbRef.current = db
-    writeStored(STORAGE_GAIN, String(db))
-    stopRef.current?.setGain(dbToGain(db))
-  }
-
-  const toggleTone = async (string: number) => {
-    stopToneRef.current?.()
-    stopToneRef.current = null
-    if (refString === string) {
-      setRefString(null)
-      return
-    }
-    stopToneRef.current = await startReferenceTone(openMidis[string])
-    setRefString(string)
-  }
-
-  // Lectura: nota más cercana (automático) o desviación respecto a la cuerda elegida.
-  let noteLabel = '—'
-  let cents: number | null = null
-  if (frequency !== null) {
-    if (target === 'auto') {
-      const nearest = nearestMidi(frequency)
-      noteLabel = midiName(nearest.midi, notation)
-      cents = nearest.cents
-    } else {
-      noteLabel = midiName(openMidis[target], notation)
-      cents = centsOff(frequency, midiToFrequency(openMidis[target]))
-    }
-  }
+  const { midi, cents } = tunerReading(frequency, target, openMidis)
+  const noteLabel = midi === null ? '—' : midiName(midi, notation)
   const status =
     cents === null
       ? listening

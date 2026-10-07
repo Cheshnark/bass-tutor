@@ -11,8 +11,9 @@ _Última actualización: 2026-10-07_
   [accesibilidad.md](accesibilidad.md).
 - **Rendimiento**: sin urgencias. El chunk de arranque (715 kB, 193 gz) lleva 266 kB de JSON del curso, 205 de ellos
   ejercicios que el índice no usa. Zod y YAML no llegan al navegador. Propuestas medidas en [todos.md](todos.md).
-- **Refactor**: lint, tipos y 226 tests en verde; sin `any` ni TODO. Candidatos (duplicación de radios, acceso a
-  `localStorage`, `setInterval` de contadores y el `Tuner`) en [todos.md](todos.md); ninguno aplicado todavía.
+- **Refactor (hecho)**: `Tuner` partido en vista + hook `useTuner` (309 → 156 líneas), `RadioGroup` compartido,
+  `src/storage.ts` y `useNow`. Sin cambios de comportamiento: 233 unitarios y 232 e2e en verde. Lo único que queda
+  (el aviso de `configLoader` de Vite) y el chunk perezoso de ejercicios están en [todos.md](todos.md).
 
 ## Nombre: Basscraft (hecho, 2026-10-06) y pruebas en el móvil
 

@@ -8,6 +8,7 @@ import { chromaNames, fretPitch, type FretboardView, type FretPosition } from '.
 import { formatNote, type Notation } from '../../theory/notation'
 import { getTuning, type Tuning } from '../../theory/tunings'
 import { Fretboard, type FretMark } from '../Fretboard/Fretboard'
+import { RadioGroup } from './RadioGroup'
 import { useCardSchedules, useToday } from './usePractice'
 
 export const ROUND_SIZE = 10
@@ -119,57 +120,27 @@ export function FretboardQuiz({ embedded = false }: { embedded?: boolean }) {
           Dos tipos de pregunta: <strong>nombrar</strong> la nota de una casilla y <strong>encontrar</strong> una nota en
           una cuerda. Las notas que fallas o te cuestan vuelven antes (repaso espaciado).
         </p>
-        <fieldset className="quiz-options">
-          <legend>Cuerdas</legend>
-          <label>
-            <input
-              type="radio"
-              name="quiz-strings"
-              checked={options.strings.length === 2}
-              onChange={() => setOptions({ ...options, strings: lowTwo })}
-            />{' '}
-            {stringName(tuning, 0, notation)} y {stringName(tuning, 1, notation)}
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="quiz-strings"
-              checked={options.strings.length === all.length}
-              onChange={() => setOptions({ ...options, strings: all })}
-            />{' '}
-            Todas
-          </label>
-        </fieldset>
-        <fieldset className="quiz-options">
-          <legend>Preguntas</legend>
-          <label>
-            <input
-              type="radio"
-              name="quiz-kinds"
-              checked={options.kinds.length === 2}
-              onChange={() => setKinds(['nombrar', 'encontrar'])}
-            />{' '}
-            Las dos
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="quiz-kinds"
-              checked={options.kinds.length === 1 && options.kinds[0] === 'nombrar'}
-              onChange={() => setKinds(['nombrar'])}
-            />{' '}
-            Nombrar
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="quiz-kinds"
-              checked={options.kinds.length === 1 && options.kinds[0] === 'encontrar'}
-              onChange={() => setKinds(['encontrar'])}
-            />{' '}
-            Encontrar
-          </label>
-        </fieldset>
+        <RadioGroup
+          legend="Cuerdas"
+          name="quiz-strings"
+          options={[
+            { value: 'graves', label: `${stringName(tuning, 0, notation)} y ${stringName(tuning, 1, notation)}` },
+            { value: 'todas', label: 'Todas' },
+          ]}
+          value={options.strings.length === all.length ? 'todas' : 'graves'}
+          onChange={(v) => setOptions({ ...options, strings: v === 'graves' ? lowTwo : all })}
+        />
+        <RadioGroup
+          legend="Preguntas"
+          name="quiz-kinds"
+          options={[
+            { value: 'ambas', label: 'Las dos' },
+            { value: 'nombrar', label: 'Nombrar' },
+            { value: 'encontrar', label: 'Encontrar' },
+          ]}
+          value={options.kinds.length === 2 ? 'ambas' : options.kinds[0]}
+          onChange={(v) => setKinds(v === 'ambas' ? ['nombrar', 'encontrar'] : [v])}
+        />
         <label className="quiz-check">
           <input
             type="checkbox"

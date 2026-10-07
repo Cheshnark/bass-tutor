@@ -63,16 +63,14 @@ Rendimiento (medido en el build):
 - [ ] Medir cuánto de ese chunk es Tonal (se importa el agregado `tonal`) y valorar importar solo `@tonaljs/*` usados.
 - [ ] El chunk de alphaTab (1,1 MB, 275 gz) ya es perezoso; el PWA precachea ~8,3 MB en 105 entradas. Sin acción.
 
-Refactor (sin cambiar comportamiento):
-- [ ] `FretboardQuiz` y `EarTraining` repiten a mano grupos de radios: extraer un `RadioGroup` (ahorra ~60 líneas).
-- [ ] `readOpen/writeOpen` (CourseIndex) y `readStored/writeStored` (Tuner) son el mismo acceso seguro a `localStorage`:
-      extraer a un módulo `src/storage.ts`.
-- [ ] `Recorder` y `RoutinePlayer` repiten el `setInterval` que refresca la hora para pintar un contador: extraer `useNow`.
-- [ ] `Tuner` junta 10 `useState` y 6 `useRef`: sacar un hook `useTuner` y dejar el componente solo con la vista.
-- [ ] `vite.config.ts` importa TS de `src/` sin extensión: Vite avisa en cada e2e ("without a file extension").
-- [ ] Potes e interruptores de palanca (research.md §6.2): no se han hecho; los botones actuales cumplen y son más
-      fáciles en móvil. Valorar solo como decoración del metrónomo.
-- [ ] El tema solo cambia los colores del visor de partituras por fuera (alphaTab dibuja sobre fondo claro).
+Refactor (sin cambiar comportamiento), hecho el 2026-10-07:
+- [x] `Tuner` (309 → 156 líneas): estado y audio en el hook `useTuner`; la vista solo pinta.
+- [x] `RadioGroup` común para el quiz de mástil y el oído.
+- [x] `src/storage.ts` (`readStored`, `writeStored`, `readStoredObject`) en vez de dos copias.
+- [x] `useNow` para los contadores del `Recorder` y del `RoutinePlayer`.
+- [ ] `vite.config.ts` importa TS sin extensión: Vite avisa de que `configLoader: 'native'` será el predeterminado
+      en una versión futura. `--configLoader bundle` no lo silencia (probado). Arreglarlo exige poner extensión en
+      ~15 importaciones y `allowImportingTsExtensions`; se hará cuando Vite cambie el predeterminado.
 
 ## Fase 5: hecha (probada en bajo real por cable; falta el móvil)
 

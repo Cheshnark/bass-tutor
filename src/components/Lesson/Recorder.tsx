@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { tunerErrorOf, type TunerError } from '../../audio/tuner'
+import { useNow } from '../../useNow'
 
 type State = { kind: 'idle' } | { kind: 'recording'; startedAt: number } | { kind: 'recorded'; url: string } | { kind: 'error'; error: TunerError }
 
@@ -10,7 +11,6 @@ const ERROR_TEXT: Record<TunerError, string> = {
   otro: 'No se ha podido grabar.',
 }
 
-const now = () => Date.now()
 const mmss = (ms: number) => {
   const s = Math.floor(ms / 1000)
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
@@ -22,16 +22,10 @@ const mmss = (ms: number) => {
  */
 export function Recorder() {
   const [state, setState] = useState<State>({ kind: 'idle' })
-  const [tick, setTick] = useState(0)
   const recorderRef = useRef<MediaRecorder | null>(null)
   const urlRef = useRef<string | null>(null)
-
   // Solo para pintar el contador mientras se graba (no dispara sonidos).
-  useEffect(() => {
-    if (state.kind !== 'recording') return
-    const id = window.setInterval(() => setTick(now()), 500)
-    return () => window.clearInterval(id)
-  }, [state.kind])
+  const [now, syncNow] = useNow(state.kind === 'recording', 500)
 
   // Al salir: parar la grabación y liberar el micrófono y la grabación.
   useEffect(
@@ -64,9 +58,7 @@ export function Recorder() {
       }
       recorder.start()
       recorderRef.current = recorder
-      const t = now()
-      setTick(t)
-      setState({ kind: 'recording', startedAt: t })
+      setState({ kind: 'recording', startedAt: syncNow() })
     } catch (e) {
       setState({ kind: 'error', error: tunerErrorOf(e) })
     }
@@ -84,7 +76,7 @@ export function Recorder() {
     <div className="recorder">
       {state.kind === 'recording' ? (
         <button type="button" className="btn btn--primary" onClick={stop}>
-          ● Parar grabación ({mmss(tick - state.startedAt)})
+          ● Parar grabación ({mmss(now - state.startedAt)})
         </button>
       ) : (
         <button type="button" className="btn" onClick={() => void start()}>

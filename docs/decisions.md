@@ -478,3 +478,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Foco bajo la barra fija:** `html { scroll-padding-bottom: 8rem }` en vez de mover la barra: la barra "Siguiente"
   sigue fija y el navegador reserva su alto al llevar el foco a la vista.
 
+## 2026-10-07 · Refactor sin cambios de comportamiento
+
+- **`useTuner` separado de `Tuner`:** el hook lleva el micrófono, la entrada, la ganancia y el tono; `tunerReading` es
+  una función pura (probada). Motivo: el componente mezclaba 10 estados, 6 refs y la vista.
+- **Utilidades de un solo uso, compartidas:** `src/storage.ts` (acceso a `localStorage` que no lanza), `src/useNow.ts`
+  (hora refrescada solo para pintar contadores; no dispara sonidos) y `RadioGroup` (marcado idéntico al anterior, así
+  los e2e y los estilos no cambian).
+- **Descartado:** `vite --configLoader bundle` para silenciar el aviso de importaciones sin extensión; el aviso sale
+  igual (es un análisis de compatibilidad futura).
+

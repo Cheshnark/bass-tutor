@@ -4,6 +4,7 @@ import type { Module } from '../../content/schema'
 import { getTrack, STYLE_TRACKS, TRACK_IDS, type TrackId } from '../../content/tracks'
 import { PracticeReminder } from '../Practice/PracticeReminder'
 import { PanelTitle } from '../PanelTitle'
+import { readStoredObject, writeStored } from '../../storage'
 import { useLessonsProgress } from '../../state/progress/hooks'
 import type { LessonProgress } from '../../state/progress/model'
 import { ProgressPanel } from './ProgressPanel'
@@ -72,20 +73,11 @@ const STORAGE_OPEN = 'bass-tutor.course.open'
 
 /** Qué bloques dejó el alumno abiertos o cerrados (id → abierto). Sin almacenamiento, se usan los valores por defecto. */
 function readOpen(): Record<string, boolean> {
-  try {
-    const parsed: unknown = JSON.parse(localStorage.getItem(STORAGE_OPEN) ?? '{}')
-    return parsed && typeof parsed === 'object' ? (parsed as Record<string, boolean>) : {}
-  } catch {
-    return {}
-  }
+  return (readStoredObject(STORAGE_OPEN) as Record<string, boolean> | null) ?? {}
 }
 
 function writeOpen(open: Record<string, boolean>) {
-  try {
-    localStorage.setItem(STORAGE_OPEN, JSON.stringify(open))
-  } catch {
-    /* sin almacenamiento: no se recuerda */
-  }
+  writeStored(STORAGE_OPEN, JSON.stringify(open))
 }
 
 interface TrackStats {
