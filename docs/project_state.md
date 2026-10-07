@@ -11,11 +11,14 @@ _Última actualización: 2026-10-07_
   [accesibilidad.md](accesibilidad.md).
 - **Rendimiento (hecho)**: el detalle de los ejercicios (`alphaTex`, instrucciones y criterios) sale del chunk de
   arranque (715 → 550 kB; 193 → 165 gz, -14 %) y se descarga al abrir el primer ejercicio (169 kB, 30 gz; offline,
-  precacheado). Zod y YAML nunca llegaron al
-  navegador. Tonal medido: 10,6 kB gz, sin acción ([todos.md](todos.md)).
+  precacheado). Zod y YAML nunca llegaron al navegador. Tonal medido: 10,6 kB gz, sin acción ([todos.md](todos.md)).
 - **Refactor (hecho)**: `Tuner` partido en vista + hook `useTuner` (309 → 156 líneas), `RadioGroup` compartido,
-  `src/storage.ts` y `useNow`. Sin cambios de comportamiento: 233 unitarios y 232 e2e en verde. Lo único que queda
-  (el aviso de `configLoader` de Vite) y el chunk perezoso de ejercicios están en [todos.md](todos.md).
+  `src/storage.ts` y `useNow`. Sin cambios de comportamiento.
+- **Estado de las pruebas al cierre**: lint, tipos, 233 unitarios y 232 e2e (escritorio y móvil, con axe) en verde.
+- **Sin desplegar**: estos cambios están en `main` pero la versión publicada en GitHub Pages es la anterior
+  (el despliegue lo lanzas tú a mano).
+- **Lo único que queda del repaso**: el aviso de `configLoader` de Vite, que no es accionable hoy
+  ([todos.md](todos.md)).
 
 ## Nombre: Basscraft (hecho, 2026-10-06) y pruebas en el móvil
 
@@ -204,5 +207,7 @@ Opciones, por orden de recomendación:
 1. **Tú**: usar el curso y la Práctica unos días (el afinador en el móvil ya está probado).
 2. **Tú**: revisión pedagógica de la Fase 7, módulo a módulo (tocarlo, corregir y pasar a `revisada`). Puedo
    ayudarte con lo que encuentres.
-3. Opcional: II–V–I menor (blues/jazz), buscar los vídeos que faltan, o la Fase 8 (multiusuario) si decides publicar.
-4. Revisión manual de accesibilidad (lista en [accesibilidad.md](accesibilidad.md)).
+3. **Tú**: pasada a mano de accesibilidad: orden del foco con Tab y lector de pantalla (lista en
+   [accesibilidad.md](accesibilidad.md)); y ver cómo queda la cabecera a 320 px.
+4. **Tú**: desplegar la versión nueva en GitHub Pages cuando quieras.
+5. Opcional: buscar los vídeos que faltan, V alterado en el II–V–I menor, o la Fase 8 (multiusuario) si decides publicar.
