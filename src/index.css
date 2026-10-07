@@ -138,6 +138,11 @@
   box-sizing: border-box;
 }
 
+/* El foco por teclado no debe quedar bajo la barra fija de la lección (WCAG 2.4.11): reserva su alto al hacer scroll. */
+html {
+  scroll-padding-bottom: 8rem;
+}
+
 /* Casillas y botones de radio con el color del tema (no el azul del navegador) */
 input[type='radio'],
 input[type='checkbox'],
@@ -168,6 +173,8 @@ body {
 /* ── Cabecera: placa crema del cabezal ── */
 .app-header {
   display: grid;
+  /* minmax(0, 1fr): sin esto la pista crece al ancho del nav y la página desborda a 320 px (WCAG 1.4.10). */
+  grid-template-columns: minmax(0, 1fr);
   gap: 4px;
   padding: 12px 16px 0;
   border-bottom: 3px solid #0b0a09; /* ribete */
@@ -186,8 +193,9 @@ body {
 
 .app-header__top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 0 12px;
 }
 
 /* Logotipo: el nombre sin caja (no parece un botón) y cuatro cuerdas de grosor creciente debajo, como en el icono. */

@@ -15,16 +15,23 @@ controles principales.
   (completa/paso a paso, atril, Siguiente), metrónomo de la lección, Guardar intento, Reproducir, Iniciar metrónomo,
   Activar micrófono, cuerdas del afinador, respuestas del quiz y modo atril.
 - Tema automático: sigue `prefers-contrast: more` del sistema.
+- **Medidas objetivas de criterios que axe no decide** (`e2e/wcag-manual.spec.ts`, 8 vistas, Chromium):
+  - **1.4.10 Reflow**: a 320 px el documento no es más ancho que la ventana (el mástil, la partitura y las pestañas
+    se desplazan dentro de su caja).
+  - **1.4.12 Espaciado de texto**: con los valores del criterio (interlineado 1,5, letras 0,12 em, palabras 0,16 em,
+    párrafos 2 em) ningún elemento que recorta su contenido deja texto fuera.
+  - **2.4.11 Foco no oculto**: tabulando por la vista, ningún control enfocado queda tapado por otro elemento (la barra
+    fija de la lección reserva su alto con `scroll-padding-bottom`).
 
 ## Lo que hay que revisar a mano (axe no lo puede decidir)
 
 | Criterio | Cómo comprobarlo | Estado |
 |---|---|---|
 | 1.3.2 Orden con sentido / 2.4.3 Orden del foco | Recorrer cada vista solo con Tab | **Sin revisar**: falta pasada a mano |
-| 1.4.10 Reflow (320 px) | Zoom al 400 % o ventana de 320 px: sin scroll horizontal de página | El mástil y la partitura se desplazan dentro de su caja (decisión); **falta pasada a mano** |
-| 1.4.12 Espaciado de texto | Bookmarklet de espaciado: no se corta texto | Pendiente |
+| 1.4.10 Reflow (320 px) | Zoom al 400 % o ventana de 320 px: sin scroll horizontal de página | Automatizado (arriba). Corregido el 2026-10-07: la cabecera desbordaba hasta 349 px en todas las vistas. Falta ver cómo queda a mano |
+| 1.4.12 Espaciado de texto | Bookmarklet de espaciado: no se corta texto | Automatizado (arriba); sin infracciones |
 | 2.3.1 Tres destellos | El piloto destella con el pulso: hasta 5 por segundo al máximo del metrónomo (300 BPM). Es un punto de 22 px; el criterio solo cuenta destellos de área mucho mayor (umbral general). Con `prefers-reduced-motion` no destella | Cumple por área **[Inferencia: no medido con herramienta]** |
-| 2.4.11 Foco no tapado | La barra fija de Anterior/Siguiente no debe tapar el elemento con foco | **Falta pasada a mano** |
+| 2.4.11 Foco no tapado | La barra fija de Anterior/Siguiente no debe tapar el elemento con foco | Automatizado (arriba). Corregido el 2026-10-07: en la lección el foco de la autoevaluación y de "Guardar intento" quedaba bajo la barra |
 | 4.1.3 Mensajes de estado | Afinador (`role=status`), feedback del quiz y "Paso N de M" con `aria-live` | Revisado en el código |
 | Lector de pantalla | VoiceOver (iOS) o TalkBack (Android) en una lección y en el quiz | Pendiente (del autor) |
 

@@ -1,6 +1,18 @@
 # Estado del proyecto
 
-_Última actualización: 2026-10-06_
+_Última actualización: 2026-10-07_
+
+## Repaso técnico: accesibilidad, rendimiento y refactor (2026-10-07)
+
+- **Accesibilidad**: tres criterios que eran "pasada a mano" ahora los mide un e2e (`e2e/wcag-manual.spec.ts`) y se
+  corrigieron dos fallos reales: la **cabecera desbordaba a 320 px** en todas las vistas (el `nav` de pestañas
+  ensanchaba la rejilla; ahora `minmax(0, 1fr)`) y, en la lección, el **foco quedaba bajo la barra fija**
+  (`scroll-padding-bottom`). El espaciado de texto (1.4.12) no tenía infracciones. Detalle en
+  [accesibilidad.md](accesibilidad.md).
+- **Rendimiento**: sin urgencias. El chunk de arranque (715 kB, 193 gz) lleva 266 kB de JSON del curso, 205 de ellos
+  ejercicios que el índice no usa. Zod y YAML no llegan al navegador. Propuestas medidas en [todos.md](todos.md).
+- **Refactor**: lint, tipos y 226 tests en verde; sin `any` ni TODO. Candidatos (duplicación de radios, acceso a
+  `localStorage`, `setInterval` de contadores y el `Tuner`) en [todos.md](todos.md); ninguno aplicado todavía.
 
 ## Nombre: Basscraft (hecho, 2026-10-06) y pruebas en el móvil
 

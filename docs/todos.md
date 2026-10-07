@@ -51,8 +51,25 @@
 - [x] Tema cabezal, alto contraste (y automático), Ajustes en página propia, modo atril, piloto en cabecera, VU.
 - [x] axe WCAG 2.2 AA en todas las vistas y temas; controles principales ≥ 48 px.
 - [ ] **Tú**: ¿te gusta la paleta crema y negro? (decisión tomada por Claude; los colores son tokens y se cambian fácil).
-- [ ] Revisión manual de accesibilidad: teclado, zoom 400 %, foco no tapado por la barra fija, lector de pantalla
-      (lista en `docs/accesibilidad.md`).
+- [x] Reflow a 320 px, espaciado de texto y foco no tapado: medidos en e2e y corregidos (2026-10-07).
+- [ ] Revisión manual de accesibilidad: orden del foco con Tab y lector de pantalla (lista en `docs/accesibilidad.md`).
+
+## Repaso técnico (2026-10-07)
+
+Rendimiento (medido en el build):
+- [ ] El chunk de arranque pesa 715 kB (193 gz). De ahí, el JSON del curso son 266 kB; los ejercicios (alphaTex), 205 kB
+      (34 kB gz) que el índice no necesita. Sacarlos a un chunk perezoso exige que `getExercise` sea asíncrono
+      (lo usan `ExerciseCard`, `embeds`, `DailyQueue`, `RoutinePlayer`). Ganancia esperada: ~17 % del chunk.
+- [ ] Medir cuánto de ese chunk es Tonal (se importa el agregado `tonal`) y valorar importar solo `@tonaljs/*` usados.
+- [ ] El chunk de alphaTab (1,1 MB, 275 gz) ya es perezoso; el PWA precachea ~8,3 MB en 105 entradas. Sin acción.
+
+Refactor (sin cambiar comportamiento):
+- [ ] `FretboardQuiz` y `EarTraining` repiten a mano grupos de radios: extraer un `RadioGroup` (ahorra ~60 líneas).
+- [ ] `readOpen/writeOpen` (CourseIndex) y `readStored/writeStored` (Tuner) son el mismo acceso seguro a `localStorage`:
+      extraer a un módulo `src/storage.ts`.
+- [ ] `Recorder` y `RoutinePlayer` repiten el `setInterval` que refresca la hora para pintar un contador: extraer `useNow`.
+- [ ] `Tuner` junta 10 `useState` y 6 `useRef`: sacar un hook `useTuner` y dejar el componente solo con la vista.
+- [ ] `vite.config.ts` importa TS de `src/` sin extensión: Vite avisa en cada e2e ("without a file extension").
 - [ ] Potes e interruptores de palanca (research.md §6.2): no se han hecho; los botones actuales cumplen y son más
       fáciles en móvil. Valorar solo como decoración del metrónomo.
 - [ ] El tema solo cambia los colores del visor de partituras por fuera (alphaTab dibuja sobre fondo claro).

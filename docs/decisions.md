@@ -468,3 +468,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   CLAUDE.md). **No cambian** la ruta `/bass-tutor/`, el repo, la BD `bass-tutor`, `app: 'bass-tutor'` de las copias
   de progreso ni las claves de almacenamiento: cambiarlos rompería la app instalada, el progreso y las copias antiguas.
   Consecuencia: el nombre de fichero de la copia de progreso sigue siendo `bass-tutor-progreso-…json`.
+
+## 2026-10-07 · Accesibilidad medida: reflow, espaciado y foco
+
+- **Decisión:** los criterios 1.4.10, 1.4.12 y 2.4.11 se miden en `e2e/wcag-manual.spec.ts` en lugar de dejarlos como
+  pasada a mano. No sustituyen al lector de pantalla ni a Tab a mano; atrapan regresiones.
+- **Reflow:** la pestaña de herramientas sigue desplazándose dentro de su caja (no se parte en filas) y la fila del
+  logotipo puede envolver. El mástil y la partitura también se desplazan dentro de su caja.
+- **Foco bajo la barra fija:** `html { scroll-padding-bottom: 8rem }` en vez de mover la barra: la barra "Siguiente"
+  sigue fija y el navegador reserva su alto al llevar el foco a la vista.
+
