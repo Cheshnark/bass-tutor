@@ -73,8 +73,8 @@ comparación de melodías con obras reales **no se ha hecho** (no hay base de da
   características en Google entre comillas.
 - `docs/research.md` cita datos de Hal Leonard Bass Method y BassBuzz (cifras: páginas, número de lecciones) con
   enlace; son hechos con referencia, no copia.
-- **12 enlaces a vídeos de YouTube** (no incrustados, solo `<a href>`): Scott's Bass Lessons, Ryan Madora, Fender,
-  TalkingBass. Enlazar no copia contenido, pero ver `legal-provenance.md`.
+- **56 enlaces únicos a vídeos de YouTube** (no incrustados, solo `<a href>`; lista en `legal-provenance.md`): BassBuzz, Scott's Bass Lessons, StudyBass, Ryan Madora, Fender, D'Addario,
+  TalkingBass y otros. Enlazar no copia contenido, pero ver `legal-provenance.md`.
 
 ### Medios, fuentes e iconos
 - Binarios que han existido en git: `public/{favicon.svg, icon.svg, favicon.ico, apple-touch-icon-180x180.png,
