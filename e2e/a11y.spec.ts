@@ -36,6 +36,8 @@ const VIEWS: { name: string; path: string; ready: (page: Page) => Promise<void> 
   { name: 'metrónomo', path: '/#/metronomo', ready: (p) => expect(p.getByTestId('bpm-display')).toBeVisible() },
   { name: 'afinador', path: '/#/afinador', ready: (p) => expect(p.getByRole('button', { name: 'Activar micrófono' })).toBeVisible() },
   { name: 'ajustes', path: '/#/ajustes', ready: (p) => expect(p.getByRole('heading', { name: 'Ajustes', level: 1 })).toBeVisible() },
+  { name: 'créditos', path: '/#/creditos', ready: (p) => expect(p.getByRole('heading', { name: 'Créditos y avisos', level: 1 })).toBeVisible() },
+  { name: 'privacidad', path: '/#/privacidad', ready: (p) => expect(p.getByRole('heading', { name: 'Privacidad', level: 1 })).toBeVisible() },
 ]
 
 const THEMES = ['cabezal', 'alto-contraste'] as const

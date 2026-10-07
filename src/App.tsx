@@ -4,6 +4,8 @@ import { Dictionary } from './components/Dictionary/Dictionary'
 import { FretboardExplorer } from './components/FretboardExplorer'
 import { HeaderPilot } from './components/HeaderPilot'
 import { CourseIndex } from './components/Lesson/CourseIndex'
+import { CreditsView } from './components/Legal/CreditsView'
+import { PrivacyView } from './components/Legal/PrivacyView'
 import { LessonView } from './components/Lesson/LessonView'
 import { MetronomePanel } from './components/Metronome/MetronomePanel'
 import { PracticeView } from './components/Practice/PracticeView'
@@ -24,14 +26,16 @@ const VIEWS = [
   { id: 'afinador', label: 'Afinador' },
 ] as const
 
-type ViewId = (typeof VIEWS)[number]['id'] | 'ajustes'
+type ViewId = (typeof VIEWS)[number]['id'] | 'ajustes' | 'creditos' | 'privacidad'
 /** Título de la pestaña por vista. Las lecciones ponen el suyo (LessonView). */
 const VIEW_TITLES: Record<ViewId, string> = {
   ...(Object.fromEntries(VIEWS.map((v) => [v.id, v.label])) as Record<(typeof VIEWS)[number]['id'], string>),
   ajustes: 'Ajustes',
+  creditos: 'Créditos y avisos',
+  privacidad: 'Privacidad',
 }
-/** "ajustes" no es una pestaña: se llega desde el botón de la cabecera. */
-const VIEW_IDS: readonly ViewId[] = [...VIEWS.map((v) => v.id), 'ajustes']
+/** "ajustes", "creditos" y "privacidad" no son pestañas: se llega desde la cabecera y desde el pie. */
+const VIEW_IDS: readonly ViewId[] = [...VIEWS.map((v) => v.id), 'ajustes', 'creditos', 'privacidad']
 
 function App() {
   const { view, params } = useHashRoute<ViewId>(VIEW_IDS, 'curso')
@@ -91,11 +95,19 @@ function App() {
         {view === 'diccionario' && <Dictionary />}
         {view === 'afinador' && <Tuner />}
         {view === 'ajustes' && <SettingsView />}
+        {view === 'creditos' && <CreditsView />}
+        {view === 'privacidad' && <PrivacyView />}
         {/* Siempre montado: el metrónomo sigue sonando mientras navegas por otras vistas. */}
         <div hidden={view !== 'metronomo'}>
           <MetronomePanel />
         </div>
       </main>
+      {!standMode && (
+        <footer className="app-footer">
+          <a href="#/creditos">Créditos y avisos</a>
+          <a href="#/privacidad">Privacidad</a>
+        </footer>
+      )}
     </>
   )
 }

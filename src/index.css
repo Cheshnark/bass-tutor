@@ -690,3 +690,27 @@ input[type='number'] {
 .settings .controls {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
+
+/* Pie con los enlaces legales (créditos y privacidad). Objetivos táctiles de 44 px. */
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 16px 24px;
+}
+
+.app-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.legal ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+}
