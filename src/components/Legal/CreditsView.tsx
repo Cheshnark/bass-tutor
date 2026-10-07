@@ -87,7 +87,7 @@ export function CreditsView() {
       <section aria-labelledby="credits-contact">
         <h2 id="credits-contact">Contacto y retirada de contenido</h2>
         <p>
-          Si crees que algún contenido vulnera tus derechos o tiene un error, puedes <a href={CONTACT_URL}>{CONTACT_LABEL}</a>. Me comprometo a retirar el
+          Si crees que algún contenido vulnera tus derechos o tiene un error, escribe a <a href={CONTACT_URL}>{CONTACT_LABEL}</a>. Me comprometo a retirar el
           contenido señalado en cuanto lo compruebe.
         </p>
         <p>

@@ -46,4 +46,4 @@ Documentación del proyecto en [`docs/`](docs/): negocio, arquitectura, decision
 
 Contenido educativo «tal cual», sin garantía. Si notas dolor en manos o muñecas, para; usa un volumen razonable.
 Las marcas citadas son solo referencias, sin vínculo ni respaldo. Para reclamaciones o retirada de contenido:
-abre una [incidencia](https://github.com/Cheshnark/bass-tutor/issues) o ver *Créditos y avisos*.
+escribe a csnark.dev@gmail.com (ver también *Créditos y avisos*).
