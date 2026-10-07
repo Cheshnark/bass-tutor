@@ -62,6 +62,11 @@ Rendimiento (medido en el build):
       Ganancia menor de la estimada (-6 % gz): las instrucciones de los ejercicios siguen en el arranque.
       Segunda parte (misma fecha): también `instructions` y `passCriteria` salen del arranque → 550 kB (165 kB gz);
       el detalle va en `virtual:course-detail` (169 kB, 30 kB gz). En total, de 715 a 550 kB (193 → 165 kB gz, -14 %).
+- [ ] Tras desplegar la precarga de `TabView`: Lighthouse sobre `/#/curso/cuerdas-al-aire/4` en la web publicada,
+      **al menos 5 pasadas y mediana** (una sola pasada oscila ±10 puntos). Mirar si `TabView` se pide a la vez que
+      `course-detail` y cómo queda el TBT. Si no hay mejora, valorar quitar `preloadTabView`.
+- [ ] El JS del arranque tarda ~1,1 s en ejecutarse en Lighthouse móvil (TBT 440 ms en la lección): perfilar qué se
+      ejecuta al arrancar (react-dom + dexie son lo mayor; el JSON del curso se parsea entero).
 - [x] Tonal medido (2026-10-07): con los imports reales (`Chord`, `Interval`, `Note`, `Scale`) pesa 30 kB minificado
       / 10,6 kB gz, un 5 % del chunk de arranque (607 kB). Importar `@tonaljs/*` sueltos lo dejaría en 24 kB / 8,6 kB
       gz: -2 kB gz a cambio de reescribir los imports y perder el espacio de nombres. **No compensa; sin acción.**

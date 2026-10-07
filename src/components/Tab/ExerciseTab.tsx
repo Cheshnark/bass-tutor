@@ -2,6 +2,7 @@ import { useEffect, useState, type ComponentProps } from 'react'
 import { playableTex } from '../../content/course'
 import type { ExerciseMeta } from '../../content/schema'
 import { LazyTabView } from './LazyTabView'
+import { preloadTabView } from './loadTabView'
 
 type Props = { exercise: ExerciseMeta } & Pick<ComponentProps<typeof LazyTabView>, 'bpm'>
 
@@ -14,6 +15,7 @@ export function ExerciseTab({ exercise, bpm }: Props) {
 
   useEffect(() => {
     let cancelled = false
+    preloadTabView()
     playableTex(exercise).then(
       (tex) => !cancelled && setLoaded({ id: exercise.id, tex }),
       () => !cancelled && setLoaded('error'),

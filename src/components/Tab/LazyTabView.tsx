@@ -1,7 +1,7 @@
 import { lazy, Suspense, type ComponentProps } from 'react'
+import { loadTabView } from './loadTabView'
 
-// alphaTab (~1 MB) va en su propio chunk: solo se descarga al mostrar una tablatura.
-const TabView = lazy(() => import('./TabView'))
+const TabView = lazy(loadTabView)
 
 export function LazyTabView(props: ComponentProps<typeof TabView>) {
   return (

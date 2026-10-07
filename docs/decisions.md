@@ -508,3 +508,12 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   intento" está desactivado: con la lista vacía, `every` daría `true` y se guardaría un pase limpio sin evaluar.
 - **Medido:** arranque 607 → 550 kB (182 → 165 kB gz). El chunk del detalle: 169 kB (30 kB gz).
 
+## 2026-10-07 · Precarga de alphaTab junto al detalle del ejercicio
+
+- **Motivo:** al mover el detalle a un chunk perezoso, `ExerciseTab` solo montaba la partitura al tener el texto, así
+  que `course-detail` y `TabView` se descargaban en serie (visto en Lighthouse sobre lo desplegado: 503 ms y 740 ms).
+  `preloadTabView()` (`components/Tab/loadTabView.ts`) pide `TabView` al montar, en paralelo.
+- **Honestidad sobre la medida:** el A/B local (3 pasadas por variante) no distingue las dos: el ruido de Lighthouse
+  (60–77 puntos en la misma variante) tapa el efecto, y en local la latencia es casi nula. Se mantiene por ser
+  lógicamente correcto e inocuo; queda por confirmar con medidas repetidas sobre lo desplegado.
+

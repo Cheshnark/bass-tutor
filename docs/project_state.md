@@ -14,6 +14,14 @@ _Última actualización: 2026-10-07_
   precacheado). Zod y YAML nunca llegaron al navegador. Tonal medido: 10,6 kB gz, sin acción ([todos.md](todos.md)).
 - **Refactor (hecho)**: `Tuner` partido en vista + hook `useTuner` (309 → 156 líneas), `RadioGroup` compartido,
   `src/storage.ts` y `useNow`. Sin cambios de comportamiento.
+- **Lighthouse sobre la versión desplegada** (2026-10-07, móvil, Lighthouse 13.5, una pasada): portada
+  96/100/100 (FCP 2,2 s, LCP 2,3 s, TBT 0 ms) y lección con ejercicio 86/100/100 (TBT 440 ms, TTI 4,1 s)
+  (rendimiento/accesibilidad/buenas prácticas). Las cifras anteriores eran 98 y 97; **no son comparables sin más**
+  (otra versión de Lighthouse, una sola pasada, y en local la misma variante oscila entre 60 y 77). Lo que se vio en
+  la lección: el JS del arranque tarda ~1,1 s en ejecutarse (es lo que más pesa en el TBT) y el chunk del detalle y
+  `TabView` se pedían uno tras otro (503 ms y 740 ms). Se añadió la precarga de `TabView` en paralelo
+  (`preloadTabView`); **no está demostrado que mejore** (el A/B local no concluye). Pendiente: volver a medir sobre
+  lo desplegado, con varias pasadas ([todos.md](todos.md)).
 - **Estado de las pruebas al cierre**: lint, tipos, 233 unitarios y 232 e2e (escritorio y móvil, con axe) en verde.
 - **Sin desplegar**: estos cambios están en `main` pero la versión publicada en GitHub Pages es la anterior
   (el despliegue lo lanzas tú a mano).
