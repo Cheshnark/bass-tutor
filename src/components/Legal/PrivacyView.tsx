@@ -1,5 +1,5 @@
 import { APP_NAME } from '../../brand'
-import { CONTACT } from '../../legal'
+import { CONTACT_LABEL, CONTACT_URL } from '../../legal'
 import { PanelTitle } from '../PanelTitle'
 
 /**
@@ -74,7 +74,7 @@ export function PrivacyView() {
       <section aria-labelledby="privacy-contact">
         <h2 id="privacy-contact">Contacto</h2>
         <p>
-          Dudas sobre este aviso: <strong>{CONTACT}</strong>. <a href="#/creditos">Créditos y avisos</a>
+          Dudas sobre este aviso: <a href={CONTACT_URL}>{CONTACT_LABEL}</a>. <a href="#/creditos">Créditos y avisos</a>
         </p>
       </section>
     </section>

@@ -233,7 +233,7 @@ Refactor (sin cambiar comportamiento), hecho el 2026-10-07:
 
 ## Legal y publicación (auditoría 2026-10-07)
 
-- [ ] **Poner un contacto real** en `src/legal.ts` (`CONTACT`) y en el README; está como TODO visible en la app.
+- [x] Contacto: incidencias de GitHub (`src/legal.ts`); cambiar si prefieres un correo o formulario (2026-10-07).
 - [ ] **Verificar el soundfont `sonivox.sf2`** (origen y licencia de la conversión; la página de musical-artifacts dio 403): ver
       `docs/legal-licenses.md`, duda nº 1.
 - [ ] **Revisión del autor** de lecciones y ejercicios y rellenar la columna «revisado por el autor» de `docs/legal-provenance.md`

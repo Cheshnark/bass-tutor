@@ -5,7 +5,7 @@ Resumen operativo de [research.md](research.md). Si hay conflicto, manda este ar
 
 ## Producto
 
-Guía de práctica de bajo eléctrico en español, offline y sin backend. Cada lección sigue este esquema:
+Profesor de bajo eléctrico en español, offline y sin backend. Cada lección sigue este esquema:
 **explicación breve → demostración (audio/diagrama) → ejercicio con metrónomo y tempo objetivo →
 autoevaluación (¿limpio, a tiempo, sin tensión?) → programación del repaso.**
 No se puede marcar una lección como completada sin registrar un intento con tempo.

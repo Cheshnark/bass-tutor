@@ -1,5 +1,5 @@
 import { APP_NAME } from '../../brand'
-import { CONTACT, NOTICES_URL, REPO_URL } from '../../legal'
+import { CONTACT_LABEL, CONTACT_URL, NOTICES_URL, REPO_URL } from '../../legal'
 import { PanelTitle } from '../PanelTitle'
 
 /** Componentes de terceros que viajan con la app. La lista completa y los textos están en third-party-notices.txt. */
@@ -29,7 +29,7 @@ export function CreditsView() {
       <section aria-labelledby="credits-app">
         <h2 id="credits-app">{APP_NAME}</h2>
         <p>
-          Guía de práctica de bajo eléctrico, en español, sin cuenta y con funcionamiento sin conexión. Proyecto personal de código
+          Profesor de bajo eléctrico, en español, sin cuenta y con funcionamiento sin conexión. Proyecto personal de código
           abierto: <a href={REPO_URL}>{REPO_URL.replace('https://', '')}</a>.
         </p>
         <ul>
@@ -87,7 +87,7 @@ export function CreditsView() {
       <section aria-labelledby="credits-contact">
         <h2 id="credits-contact">Contacto y retirada de contenido</h2>
         <p>
-          Si crees que algún contenido vulnera tus derechos o tiene un error, escribe a: <strong>{CONTACT}</strong>. Me comprometo a retirar el
+          Si crees que algún contenido vulnera tus derechos o tiene un error, puedes <a href={CONTACT_URL}>{CONTACT_LABEL}</a>. Me comprometo a retirar el
           contenido señalado en cuanto lo compruebe.
         </p>
         <p>

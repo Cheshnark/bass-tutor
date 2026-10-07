@@ -524,6 +524,6 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Motivo:** MIT es compatible con todo lo que se distribuye (alphaTab MPL-2.0 sin modificar, Dexie Apache-2.0, fuentes OFL).
   El contenido es borrador redactado con IA y no revisado: licenciarlo ahora sería afirmar una procedencia no verificada.
 - **Consecuencias:** páginas de créditos y privacidad en la app; avisos de terceros generados; el soundfont de alphaTab queda
-  marcado como «origen y licencia por verificar» (`docs/legal-licenses.md`). El contacto en `src/legal.ts` es un TODO visible.
+  marcado como «origen y licencia por verificar» (`docs/legal-licenses.md`). El contacto es la página de incidencias de GitHub (`src/legal.ts`).
 - **Hecho comprobado:** la app no hace peticiones a otros orígenes (e2e `legal.spec.ts`); la imagen «todo local» es cierta, con la
   salvedad de que GitHub Pages aloja la web y ve las visitas.

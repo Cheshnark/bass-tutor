@@ -369,7 +369,7 @@ interface Settings { tuningId: string; leftHanded: boolean; notation: "latina" |
 
 ```md
 # Bajo·Lab — profesor de bajo (PWA)
-Guía de práctica de bajo eléctrico, en español, offline, sin backend.
+Profesor de bajo eléctrico, en español, offline, sin backend.
 Especificación: @docs/spec.md · Hoja de ruta: @docs/roadmap.md
 
 ## Comandos

@@ -68,7 +68,7 @@ Si decides **mantener «Basscraft»** (coste bajo):
    local salvo exportación previa** (avisar y recomendar exportar).
 2. Mantener `bass-tutor` solo en claves internas (BD y `localStorage`) y en `app: 'bass-tutor'`; aceptar también `app: 'basscraft'` al importar.
 3. `package.json` → `"name": "basscraft"`; actualizar `docs/architecture.md`, el workflow y la maqueta antigua.
-4. Unificar la descripción («Guía de práctica…» o «Profesor…») en manifest, `index.html`, README y spec.
+4. Descripción unificada a «Profesor de bajo eléctrico» (hecho 2026-10-07 en manifest, `index.html`, README, CLAUDE.md, spec y créditos).
 
 Si decides **renombrar** (por el conflicto con `basscraft.com` u otro): el nombre visible está centralizado en
 `src/brand.ts` (`APP_NAME`), así que cambia la cabecera, el título, el manifest y los avisos; **hay que reescribir a mano**:
