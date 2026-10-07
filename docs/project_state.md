@@ -2,6 +2,16 @@
 
 _Última actualización: 2026-10-07_
 
+## Auditoría legal-técnica (2026-10-07)
+
+Informes en `docs/legal-*.md` (no son asesoramiento legal). Resumen:
+- **Historial de git**: sin tablaturas, letras ni audio de terceros; los únicos binarios son los iconos propios. Los 49 commits llevan el email personal del autor ([legal-history-scan.md](legal-history-scan.md)).
+- **Procedencia**: 79 lecciones y 123 ejercicios (los docs decían 78/121), todo borrador redactado con IA, sin revisar; 56 enlaces de vídeo de terceros; único ejercicio a comparar de oído: `riff-tritono` ([legal-provenance.md](legal-provenance.md)).
+- **Licencias**: sin GPL/AGPL en lo distribuido; alphaTab (MPL-2.0) sin modificar; **duda abierta: origen y licencia de `sonivox.sf2`** ([legal-licenses.md](legal-licenses.md)).
+- **Archivos nuevos**: `LICENSE` (MIT), `CONTENT-LICENSE.md` (borrador), `THIRD_PARTY_NOTICES.md` (`npm run notices`), páginas *Créditos y avisos* y *Privacidad* en la app (pie), README actualizado. La app no hace peticiones a otros orígenes (e2e).
+- **Nombre**: `basscraft.com` pertenece a una empresa de sonido para eventos; marcas sin verificar en TMview/OEPM/USPTO ([legal-naming.md](legal-naming.md)).
+- **Pendiente del autor**: contacto real en `src/legal.ts`, revisión del contenido, decidir licencia del contenido y nombre ([todos.md](todos.md)).
+
 ## Repaso técnico: accesibilidad, rendimiento y refactor (2026-10-07)
 
 - **Accesibilidad**: tres criterios que eran "pasada a mano" ahora los mide un e2e (`e2e/wcag-manual.spec.ts`) y se

@@ -204,3 +204,14 @@
 ## Dependencias externas en runtime
 
 Ninguna. Fuentes y soundfont se sirven desde el propio origen.
+
+## Legal y créditos
+
+- Vistas `#/creditos` (`components/Legal/CreditsView.tsx`) y `#/privacidad` (`PrivacyView.tsx`), enlazadas desde el pie de la
+  app; datos editables (contacto, URL del repo, ruta de avisos) en `src/legal.ts`. El texto de privacidad describe lo que
+  hace el código: **si cambia el almacenamiento, el micrófono o se añade una petición de red, hay que actualizarlo**.
+- `THIRD_PARTY_NOTICES.md` y `public/third-party-notices.txt` (precacheado, sirve sin conexión) los genera
+  `npm run notices` (`scripts/third-party-notices.ts`) desde los `LICENSE` de `node_modules`. Regenerar al cambiar dependencias.
+- `scripts/legal-provenance.ts` genera la tabla de `docs/legal-provenance.md`.
+- Informes: `docs/legal-history-scan.md`, `legal-provenance.md`, `legal-licenses.md`, `legal-naming.md`. `LICENSE` (MIT, código)
+  y `CONTENT-LICENSE.md` (borrador, no en vigor).

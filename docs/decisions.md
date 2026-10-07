@@ -517,3 +517,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   (60–77 puntos en la misma variante) tapa el efecto, y en local la latencia es casi nula. Se mantiene por ser
   lógicamente correcto e inocuo; queda por confirmar con medidas repetidas sobre lo desplegado.
 
+
+## 2026-10-07 · Auditoría legal-técnica: MIT para el código, contenido sin licencia hasta revisarlo
+- **Decisión (del autor):** código bajo **MIT**; licencia propuesta para el contenido del curso, **CC BY-SA 4.0**, solo como
+  borrador (`CONTENT-LICENSE.md`) y sin aplicar hasta que el autor revise lecciones y ejercicios.
+- **Motivo:** MIT es compatible con todo lo que se distribuye (alphaTab MPL-2.0 sin modificar, Dexie Apache-2.0, fuentes OFL).
+  El contenido es borrador redactado con IA y no revisado: licenciarlo ahora sería afirmar una procedencia no verificada.
+- **Consecuencias:** páginas de créditos y privacidad en la app; avisos de terceros generados; el soundfont de alphaTab queda
+  marcado como «origen y licencia por verificar» (`docs/legal-licenses.md`). El contacto en `src/legal.ts` es un TODO visible.
+- **Hecho comprobado:** la app no hace peticiones a otros orígenes (e2e `legal.spec.ts`); la imagen «todo local» es cierta, con la
+  salvedad de que GitHub Pages aloja la web y ve las visitas.

@@ -230,3 +230,20 @@ Refactor (sin cambiar comportamiento), hecho el 2026-10-07:
 3. ~~¿Se publicará?~~ → Sí, para amigos bajistas (sin backend por ahora).
 4. ¿Grabas tú los audios de demostración o solo síntesis?
 5. ~~Nombre definitivo de la app~~ → Basscraft (2026-10-06).
+
+## Legal y publicación (auditoría 2026-10-07)
+
+- [ ] **Poner un contacto real** en `src/legal.ts` (`CONTACT`) y en el README; está como TODO visible en la app.
+- [ ] **Verificar el soundfont `sonivox.sf2`** (origen y licencia de la conversión; la página de musical-artifacts dio 403): ver
+      `docs/legal-licenses.md`, duda nº 1.
+- [ ] **Revisión del autor** de lecciones y ejercicios y rellenar la columna «revisado por el autor» de `docs/legal-provenance.md`
+      (empezar por `riff-tritono`: compararlo de oído con el riff de Black Sabbath que cita la lección).
+- [ ] Muestrear 5–10 lecciones buscando frases en un buscador (paráfrasis demasiado cercana a las fuentes de `pedagogy.md`).
+- [ ] Comprobar a mano marca y dominios de «Basscraft» (TMview, OEPM, USPTO, Google Play, dominios; `basscraft.com` es una
+      empresa de sonido): `docs/legal-naming.md`.
+- [ ] Decidir si unificar el nombre (repo y URL `bass-tutor` → `basscraft`) y el término «profesor»/«guía».
+- [ ] Decidir si se cambia el email de autor de git (los 49 commits llevan el email personal) y, si se activa
+      `CONTENT-LICENSE.md`, aplicar la licencia.
+- [ ] Comprobar el aviso de copyright de alphaTab en el chunk `TabView` minificado (`grep -l Kuschny dist/assets/*.js`).
+- [ ] Comprobar que los 56 enlaces de vídeo siguen vivos (`docs/legal-provenance.md`).
+- [ ] Consultar con un profesional de propiedad intelectual si se va a monetizar, publicar en tiendas o licenciar el contenido.

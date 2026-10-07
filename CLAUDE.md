@@ -3,6 +3,7 @@
 Guía de práctica de bajo eléctrico, en español, offline y sin backend.
 Especificación: @docs/spec.md · Hoja de ruta: @docs/roadmap.md · Estado: @docs/project_state.md
 Método pedagógico y fuentes: docs/pedagogy.md (léelo antes de escribir contenido).
+Legal: `docs/legal-*.md`, `LICENSE`, `CONTENT-LICENSE.md` (borrador). Si cambias almacenamiento, micrófono o red, actualiza `PrivacyView.tsx`.
 
 ## Idioma
 
