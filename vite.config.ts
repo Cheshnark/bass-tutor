@@ -47,7 +47,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,sf2}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,sf2,txt}'],
         // Solo el formato de fuente y el soundfont que se usan (woff2, sf2); fuera los demás formatos.
         globIgnores: ['font/Bravura.svg', '**/*.sf3', '**/*.eot', '**/*.otf', '**/*.woff'],
         // Los workers de alphaTab pesan ~2,3 MB cada uno (el límite por defecto es 2 MB).

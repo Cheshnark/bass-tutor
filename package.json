@@ -1,6 +1,7 @@
 {
   "name": "bass-tutor",
   "private": true,
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -12,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "content:check": "tsx scripts/content-check.ts"
+    "content:check": "tsx scripts/content-check.ts",
+    "notices": "tsx scripts/third-party-notices.ts"
   },
   "dependencies": {
     "@coderline/alphatab": "^1.8.4",
