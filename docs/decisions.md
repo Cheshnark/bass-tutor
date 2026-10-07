@@ -488,3 +488,14 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
 - **Descartado:** `vite --configLoader bundle` para silenciar el aviso de importaciones sin extensión; el aviso sale
   igual (es un análisis de compatibilidad futura).
 
+## 2026-10-07 · El alphaTex de los ejercicios, en un chunk aparte
+
+- **Decisión:** `virtual:course` lleva los ejercicios sin `alphaTex` (`ExerciseMeta`) y `virtual:course-tex` (id →
+  texto) se importa de forma dinámica desde `playableTex()`, que ahora devuelve una `Promise`. La partitura la monta
+  `ExerciseTab`, que muestra "Cargando partitura…" y un aviso si la descarga falla.
+- **Motivo:** el índice y la práctica no necesitan los textos y eran ~205 kB de JSON en el arranque.
+- **Alternativa descartada:** un chunk por lección. Más granular, pero el chunk único pesa 11 kB gz y se descarga una
+  vez; la complejidad extra no compensa.
+- **Medido:** -108 kB sin comprimir y -11 kB gz en el arranque (menos de lo estimado: el resto del JSON, instrucciones
+  incluidas, sigue ahí y comprime peor aislado).
+

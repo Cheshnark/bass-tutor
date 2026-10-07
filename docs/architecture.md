@@ -91,6 +91,9 @@
   son literales, y construcciones prohibidas (import/export, expresiones). Los errores dan la línea real del fichero.
 - **Carga en la app**: `scripts/vite-plugin-course.ts` expone `virtual:course` = curso validado como JSON (sin Zod ni
   yaml en el navegador); en dev invalida y recarga al cambiar `src/content`; si hay errores, falla el build.
+  Los ejercicios van **sin `alphaTex`** (`ExerciseMeta`); los textos están en `virtual:course-tex` (id → alphaTex),
+  un chunk aparte (~110 kB, 11 kB gz) que `playableTex()` importa al mostrar la primera partitura
+  (`components/Tab/ExerciseTab.tsx`). Offline, queda precacheado como el resto.
   Los `.mdx` se compilan con `@mdx-js/rollup` (+ `remark-frontmatter`) y se cargan con `import.meta.glob`: un chunk
   por lección. `lessonComponents` mapea `<Exercise/>`, `<Fretboard/>`, `<Tab/>`, `<Metronome/>` a componentes React.
 - **Pasos**: `src/content/remarkLessonSteps.ts` (plugin de remark, en `vite.config`) envuelve cada `##` de primer

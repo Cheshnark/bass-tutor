@@ -57,9 +57,10 @@
 ## Repaso técnico (2026-10-07)
 
 Rendimiento (medido en el build):
-- [ ] El chunk de arranque pesa 715 kB (193 gz). De ahí, el JSON del curso son 266 kB; los ejercicios (alphaTex), 205 kB
-      (34 kB gz) que el índice no necesita. Sacarlos a un chunk perezoso exige que `getExercise` sea asíncrono
-      (lo usan `ExerciseCard`, `embeds`, `DailyQueue`, `RoutinePlayer`). Ganancia esperada: ~17 % del chunk.
+- [x] Ejercicios fuera del chunk de arranque (2026-10-07): el JSON del curso ya no lleva el `alphaTex`; el chunk de
+      arranque baja de 715 a 607 kB (193 → 182 kB gz) y los textos van en un chunk propio de 110 kB (11 kB gz).
+      Ganancia menor de la estimada (-6 % gz): las instrucciones de los ejercicios siguen en el arranque.
+      Opción pendiente: partir también `instructions` y `passCriteria` (lo de cada ejercicio, no del índice).
 - [ ] Medir cuánto de ese chunk es Tonal (se importa el agregado `tonal`) y valorar importar solo `@tonaljs/*` usados.
 - [ ] El chunk de alphaTab (1,1 MB, 275 gz) ya es perezoso; el PWA precachea ~8,3 MB en 105 entradas. Sin acción.
 

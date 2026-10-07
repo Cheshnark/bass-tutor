@@ -9,8 +9,9 @@ _Última actualización: 2026-10-07_
   ensanchaba la rejilla; ahora `minmax(0, 1fr)`) y, en la lección, el **foco quedaba bajo la barra fija**
   (`scroll-padding-bottom`). El espaciado de texto (1.4.12) no tenía infracciones. Detalle en
   [accesibilidad.md](accesibilidad.md).
-- **Rendimiento**: sin urgencias. El chunk de arranque (715 kB, 193 gz) lleva 266 kB de JSON del curso, 205 de ellos
-  ejercicios que el índice no usa. Zod y YAML no llegan al navegador. Propuestas medidas en [todos.md](todos.md).
+- **Rendimiento (hecho)**: el `alphaTex` de los ejercicios sale del chunk de arranque (715 → 607 kB; 193 → 182 gz) y
+  se descarga al abrir la primera partitura (110 kB, 11 gz; offline, precacheado). Zod y YAML nunca llegaron al
+  navegador. Pendiente medir Tonal ([todos.md](todos.md)).
 - **Refactor (hecho)**: `Tuner` partido en vista + hook `useTuner` (309 → 156 líneas), `RadioGroup` compartido,
   `src/storage.ts` y `useNow`. Sin cambios de comportamiento: 233 unitarios y 232 e2e en verde. Lo único que queda
   (el aviso de `configLoader` de Vite) y el chunk perezoso de ejercicios están en [todos.md](todos.md).

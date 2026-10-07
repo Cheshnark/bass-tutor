@@ -207,8 +207,16 @@ export interface Module extends ModuleData {
   order: number
 }
 
+/** Ejercicio sin su alphaTex: lo que el navegador carga al arrancar (el texto llega aparte, al abrir la partitura). */
+export type ExerciseMeta = Omit<Exercise, 'alphaTex'>
+
 export interface Course {
   modules: Module[]
   lessons: Lesson[]
   exercises: Exercise[]
+}
+
+/** El curso tal como llega al navegador: los ejercicios, sin alphaTex. */
+export interface RuntimeCourse extends Omit<Course, 'exercises'> {
+  exercises: ExerciseMeta[]
 }

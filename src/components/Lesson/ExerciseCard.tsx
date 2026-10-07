@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { getExercise, playableTex } from '../../content/course'
+import { getExercise } from '../../content/course'
 import type { ExerciseEmbed } from '../../content/schema'
 import { useMetronome } from '../../state/metronome'
 import { recordAttempt, requestPersistence } from '../../state/progress/db'
 import { useExerciseProgress } from '../../state/progress/hooks'
 import { reachedTarget, suggestTempo } from '../../state/progress/model'
-import { LazyTabView } from '../Tab/LazyTabView'
+import { ExerciseTab } from '../Tab/ExerciseTab'
 import { LessonMetronome } from './embeds'
 import { Recorder } from './Recorder'
 
@@ -64,7 +64,7 @@ export function LessonExercise({ id }: ExerciseEmbed) {
       </p>
 
       <LessonMetronome bpm={suggestion} beatsPerBar={denominator === 4 ? numerator : undefined} />
-      <LazyTabView tex={playableTex(exercise)} title={exercise.title} bpm={validBpm ? bpm : undefined} />
+      <ExerciseTab exercise={exercise} bpm={validBpm ? bpm : undefined} />
       <Recorder />
 
       <fieldset className="lesson-exercise__criteria">

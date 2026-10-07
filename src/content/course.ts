@@ -1,10 +1,10 @@
 import data from 'virtual:course'
 import { withBacking } from './backing'
-import type { Course, Exercise, Lesson, Module } from './schema'
+import type { ExerciseMeta, Lesson, Module, RuntimeCourse } from './schema'
 import type { TrackId } from './tracks'
 
 /** Curso completo, validado en build por el plugin `virtual:course` (no hace falta revalidar aquí). */
-export const course = data as Course
+export const course = data as RuntimeCourse
 
 const lessonsById = new Map(course.lessons.map((l) => [l.id, l]))
 const exercisesById = new Map(course.exercises.map((e) => [e.id, e]))
@@ -13,7 +13,7 @@ export function getLesson(id: string): Lesson | undefined {
   return lessonsById.get(id)
 }
 
-export function getExercise(id: string): Exercise | undefined {
+export function getExercise(id: string): ExerciseMeta | undefined {
   return exercisesById.get(id)
 }
 
@@ -68,17 +68,23 @@ export function reviewDaysOf(exerciseId: string): number[] | undefined {
 }
 
 // alphaTex que suena: el del ejercicio más batería y acordes si tiene armonía (src/content/backing.ts).
-const playable = new Map<string, string>()
+// Los textos van en un chunk aparte (`virtual:course-tex`) que se descarga al abrir la primera partitura.
+const playable = new Map<string, Promise<string>>()
 
-export function playableTex(exercise: Exercise): string {
+export function playableTex(exercise: ExerciseMeta): Promise<string> {
   let tex = playable.get(exercise.id)
   if (tex === undefined) {
-    tex = withBacking(exercise.alphaTex, {
-      harmony: exercise.backing?.harmony,
-      timeSignature: exercise.timeSignature,
-      feel: exercise.feel,
-    })
-    playable.set(exercise.id, tex)
+    const request = import('virtual:course-tex').then(({ default: texById }) =>
+      withBacking(texById[exercise.id], {
+        harmony: exercise.backing?.harmony,
+        timeSignature: exercise.timeSignature,
+        feel: exercise.feel,
+      }),
+    )
+    // Si la descarga falla (red caída antes de cachear), el siguiente intento vuelve a pedirlo.
+    request.catch(() => playable.delete(exercise.id))
+    playable.set(exercise.id, request)
+    tex = request
   }
   return tex
 }

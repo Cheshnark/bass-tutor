@@ -3,7 +3,7 @@
  * (EMBED_SCHEMAS en src/content/schema.ts), así que aquí se confía en ellas.
  */
 import { useMemo } from 'react'
-import { getExercise, playableTex } from '../../content/course'
+import { getExercise } from '../../content/course'
 import type { FretboardEmbed, MetronomeEmbed, TabEmbed, VideoEmbed } from '../../content/schema'
 import { useMetronome } from '../../state/metronome'
 import { useSettings } from '../../state/settings'
@@ -11,7 +11,7 @@ import type { FretboardView } from '../../theory/fretboard'
 import { getTuning } from '../../theory/tunings'
 import { Fretboard } from '../Fretboard/Fretboard'
 import { useBeatPulse } from '../Metronome/useBeatPulse'
-import { LazyTabView } from '../Tab/LazyTabView'
+import { ExerciseTab } from '../Tab/ExerciseTab'
 
 export function LessonFretboard({ mode, root, type, frets = [0, 12], labels = 'note', tuning: fixedTuning }: FretboardEmbed) {
   const { tuningId, leftHanded, notation } = useSettings()
@@ -36,7 +36,7 @@ export function LessonTab({ exercise: id }: TabEmbed) {
   if (!exercise) return null
   return (
     <figure className="lesson-embed">
-      <LazyTabView tex={playableTex(exercise)} title={exercise.title} />
+      <ExerciseTab exercise={exercise} />
     </figure>
   )
 }
