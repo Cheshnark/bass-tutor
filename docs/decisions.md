@@ -527,3 +527,13 @@ Formato: fecha · decisión · motivo · alternativas descartadas.
   marcado como «origen y licencia por verificar» (`docs/legal-licenses.md`). El contacto es csnark.dev@gmail.com (`src/legal.ts`).
 - **Hecho comprobado:** la app no hace peticiones a otros orígenes (e2e `legal.spec.ts`); la imagen «todo local» es cierta, con la
   salvedad de que GitHub Pages aloja la web y ve las visitas.
+
+## 2026-10-07 · Cruces de cuerda: grupos de 3 notas y repetir empezando con el otro dedo
+
+**Problema** (detectado por el autor): en «Cruces de cuerda» todos los grupos eran de 2 notas por cuerda o de una
+sola, con 8 corcheas por compás. Con compases pares la alternancia empieza siempre con el índice, así que el cambio
+de cuerda lo hacía siempre la misma combinación de dedos (p. ej. el índice siempre entraba en la cuerda nueva).
+**Decisión**: añadir dos compases con grupos de 3 notas (3+3+2 y 1+3+3+1), donde el cambio cae por turnos en el
+índice y en el medio, y pedir tocar el ejercicio dos veces (empezando con el índice y con el medio). Nuevo criterio
+de superación y error común en la lección.
+**Motivo**: practicar solo una combinación de dedos en los cambios de cuerda deja la otra torpe.

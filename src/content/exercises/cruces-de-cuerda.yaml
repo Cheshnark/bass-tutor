@@ -1,8 +1,10 @@
 title: Cruces de cuerda
 status: borrador
 instructions: >-
-  Corcheas cambiando de cuerda: primero dos notas por cuerda, luego una sola, y al final saltando una
-  cuerda (E–D y A–G). La alternancia no se rompe nunca, aunque cambies de cuerda.
+  Corcheas cambiando de cuerda: primero dos notas por cuerda, luego tres (así el cambio cae unas veces en el
+  índice y otras en el medio), después una sola y al final saltando una cuerda (E–D y A–G). La alternancia no se
+  rompe nunca, aunque cambies de cuerda. Tócalo dos veces: una empezando con el índice y otra con el medio,
+  para que cada cambio de cuerda lo hagan los dos dedos.
 tempo:
   start: 60
   target: 90
@@ -11,6 +13,7 @@ timeSignature: 4/4
 feel: straight
 passCriteria:
   - La alternancia índice–medio no se rompe al cambiar de cuerda
+  - Los cambios de cuerda te salen igual de limpios empezando con el índice que con el medio
   - No aceleras justo antes de los saltos de cuerda
   - Todas las notas suenan con el mismo volumen, también en la cuerda G
 tags:
@@ -27,6 +30,7 @@ alphaTex: |
   \clef bass
   \ts (4 4)
   :8 0.4 0.4 0.3 0.3 0.2 0.2 0.1 0.1 | 0.1 0.1 0.2 0.2 0.3 0.3 0.4 0.4 |
+  0.4 0.4 0.4 0.3 0.3 0.3 0.2 0.2 | 0.2 0.1 0.1 0.1 0.2 0.2 0.2 0.3 |
   0.4 0.3 0.4 0.3 0.4 0.3 0.4 0.3 | 0.3 0.2 0.3 0.2 0.3 0.2 0.3 0.2 |
   0.2 0.1 0.2 0.1 0.2 0.1 0.2 0.1 | 0.4 0.2 0.4 0.2 0.4 0.2 0.4 0.2 |
   0.3 0.1 0.3 0.1 0.3 0.1 0.3 0.1 | :1 0.4

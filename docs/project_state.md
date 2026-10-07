@@ -2,6 +2,13 @@
 
 _Última actualización: 2026-10-07_
 
+## Corrección de contenido: cruces de cuerda (2026-10-07)
+
+Por una observación del autor: en `cruces-de-cuerda` el cambio de cuerda lo hacía siempre la misma combinación de
+dedos. Añadidos dos compases con grupos de 3 notas, criterio nuevo y la instrucción de tocarlo empezando con cada
+dedo (ver [decisions.md](decisions.md)). `alternancia-corcheas` (cuerdas al aire) y `apagado-derecha` (negras) no
+se tocan. Sigue en `borrador`.
+
 ## Auditoría legal-técnica (2026-10-07)
 
 Informes en `docs/legal-*.md` (no son asesoramiento legal). Resumen:
