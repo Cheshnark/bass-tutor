@@ -22,6 +22,11 @@ _Última actualización: 2026-10-07_
   `TabView` se pedían uno tras otro (503 ms y 740 ms). Se añadió la precarga de `TabView` en paralelo
   (`preloadTabView`); **no está demostrado que mejore** (el A/B local no concluye). Pendiente: volver a medir sobre
   lo desplegado, con varias pasadas ([todos.md](todos.md)).
+- **Lighthouse, 5 pasadas sobre la lección desplegada con la precarga** (2026-10-07): rendimiento 73 (mediana; rango
+  61–86), accesibilidad 100 y buenas prácticas 100 en todas. Medianas: FCP 3,0 s, LCP 3,9 s, TBT 328 ms, TTI 5,5 s.
+  La precarga **funciona** (`course-detail` y `TabView` se piden a la vez en las 5), pero la dispersión (dos pasadas a
+  61 con LCP de 8,9 s, una a 86) impide atribuirle una mejora. Conclusión: con esta herramienta la nota de rendimiento
+  de la lección es de ~73 ± 12 y no sirve para comparar cambios pequeños.
 - **Estado de las pruebas al cierre**: lint, tipos, 233 unitarios y 232 e2e (escritorio y móvil, con axe) en verde.
 - **Sin desplegar**: estos cambios están en `main` pero la versión publicada en GitHub Pages es la anterior
   (el despliegue lo lanzas tú a mano).

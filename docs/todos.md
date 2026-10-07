@@ -62,9 +62,10 @@ Rendimiento (medido en el build):
       Ganancia menor de la estimada (-6 % gz): las instrucciones de los ejercicios siguen en el arranque.
       Segunda parte (misma fecha): también `instructions` y `passCriteria` salen del arranque → 550 kB (165 kB gz);
       el detalle va en `virtual:course-detail` (169 kB, 30 kB gz). En total, de 715 a 550 kB (193 → 165 kB gz, -14 %).
-- [ ] Tras desplegar la precarga de `TabView`: Lighthouse sobre `/#/curso/cuerdas-al-aire/4` en la web publicada,
-      **al menos 5 pasadas y mediana** (una sola pasada oscila ±10 puntos). Mirar si `TabView` se pide a la vez que
-      `course-detail` y cómo queda el TBT. Si no hay mejora, valorar quitar `preloadTabView`.
+- [x] Precarga de `TabView` medida sobre lo desplegado (5 pasadas, 2026-10-07): activa (inicio simultáneo con
+      `course-detail`), efecto en la nota **no apreciable** frente al ruido (73, rango 61–86). Se mantiene.
+- [ ] Si se quiere comparar cambios de rendimiento de la lección: usar métricas menos ruidosas que la nota
+      (TBT, bytes y orden de peticiones) y más pasadas (≥ 10), o medir en local con red simulada fija.
 - [ ] El JS del arranque tarda ~1,1 s en ejecutarse en Lighthouse móvil (TBT 440 ms en la lección): perfilar qué se
       ejecuta al arrancar (react-dom + dexie son lo mayor; el JSON del curso se parsea entero).
 - [x] Tonal medido (2026-10-07): con los imports reales (`Chord`, `Interval`, `Note`, `Scale`) pesa 30 kB minificado
