@@ -691,21 +691,48 @@ input[type='number'] {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
-/* Pie con los enlaces legales (créditos y privacidad). Objetivos táctiles de 44 px. */
+/* La app ocupa al menos toda la pantalla: así el pie queda abajo del todo cuando el contenido es corto. */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+#root > .app-main {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Pie discreto con los enlaces legales; objetivos táctiles de 44 px. */
 .app-footer {
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 24px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 8px 16px 24px;
+  align-items: center;
+  gap: 0 4px;
+  padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
 }
 
 .app-footer a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  padding: 0 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.app-footer a + a {
+  border-left: 1px solid var(--border);
+  min-height: 20px;
 }
 
 .legal ul {

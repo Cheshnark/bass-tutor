@@ -9,6 +9,10 @@ dedos. Añadidos dos compases con grupos de 3 notas, criterio nuevo y la instruc
 dedo (ver [decisions.md](decisions.md)). `alternancia-corcheas` (cuerdas al aire) y `apagado-derecha` (negras) no
 se tocan. Sigue en `borrador`.
 
+## Pie de página (2026-10-08)
+
+Los enlaces *Créditos y avisos* y *Privacidad* van en un pie discreto (texto pequeño y atenuado, línea fina, separador, objetivos de 44 px) que queda **pegado al borde inferior cuando el contenido es corto** y al final del contenido cuando hay scroll (`#root` en columna con `min-height: 100dvh`). Comprobado en el navegador. Nota: el e2e `smoke.spec.ts` «por dónde va» (cursor de la partitura) falló 2 de 4 veces al ejecutarse con la suite completa y pasó 5 de 5 al aislarlo; parece inestable por carga, sin relación demostrada con el pie ([todos.md](todos.md)).
+
 ## Auditoría legal-técnica (2026-10-07)
 
 Informes en `docs/legal-*.md` (no son asesoramiento legal). Resumen:

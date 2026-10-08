@@ -247,3 +247,5 @@ Refactor (sin cambiar comportamiento), hecho el 2026-10-07:
 - [ ] Comprobar el aviso de copyright de alphaTab en el chunk `TabView` minificado (`grep -l Kuschny dist/assets/*.js`).
 - [ ] Comprobar que los 56 enlaces de vídeo siguen vivos (`docs/legal-provenance.md`).
 - [ ] Consultar con un profesional de propiedad intelectual si se va a monetizar, publicar en tiendas o licenciar el contenido.
+
+- [ ] E2e `smoke.spec.ts` «al reproducir la partitura se ve por dónde va»: inestable bajo carga (falló 2 de 4 con la suite completa, 5/5 aislado). Investigar la espera del resaltado `.at-highlight`.
